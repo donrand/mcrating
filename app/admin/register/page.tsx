@@ -1,5 +1,5 @@
 import { createAdminClient } from '@/lib/supabase';
-import Link from 'next/link';
+import AdminNav from '../AdminNav';
 import RegisterClient from './RegisterClient';
 
 export default async function RegisterPage() {
@@ -12,12 +12,11 @@ export default async function RegisterPage() {
 
   return (
     <div>
-      <div className="flex items-center gap-3 mb-8">
-        <Link href="/admin" className="text-gray-600 hover:text-white transition-colors text-sm">
-          ← 投稿レビュー
-        </Link>
-        <h1 className="text-2xl font-bold">バトル一括登録</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-2xl font-bold">管理画面</h1>
       </div>
+      <AdminNav active="register" />
+      <h2 className="text-lg font-semibold mb-6">バトル一括登録</h2>
       <RegisterClient
         mcs={mcs ?? []}
         tournaments={(tournaments ?? []).map(t => ({

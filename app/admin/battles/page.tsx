@@ -1,6 +1,6 @@
 import { createAdminClient } from '@/lib/supabase';
 import BattleDeleteClient from './BattleDeleteClient';
-import Link from 'next/link';
+import AdminNav from '../AdminNav';
 
 type BattleRow = {
   id: string;
@@ -24,13 +24,12 @@ export default async function AdminBattlesPage() {
 
   return (
     <div>
-      <div className="flex items-center gap-4 mb-8">
-        <Link href="/admin" className="text-gray-500 hover:text-white text-sm transition-colors">
-          ← 投稿レビューに戻る
-        </Link>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-2xl font-bold">管理画面</h1>
       </div>
-      <h1 className="text-2xl font-bold mb-1">バトル管理</h1>
-      <p className="text-gray-500 text-sm mb-8">
+      <AdminNav active="battles" />
+      <h2 className="text-lg font-semibold mb-1">バトル管理</h2>
+      <p className="text-gray-500 text-sm mb-6">
         チェックを入れて削除すると、レーティングが自動再計算されます
       </p>
       <BattleDeleteClient battles={(battles ?? []) as unknown as BattleRow[]} />

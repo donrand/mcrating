@@ -2,6 +2,7 @@ import { createAdminClient } from '@/lib/supabase';
 import { createSupabaseServerClient } from '@/lib/supabase-server';
 import AdminReviewClient from './AdminReviewClient';
 import LogoutButton from './LogoutButton';
+import AdminNav from './AdminNav';
 import Link from 'next/link';
 
 export default async function AdminPage() {
@@ -28,23 +29,21 @@ export default async function AdminPage() {
 
   return (
     <div>
-      <div className="flex items-center gap-3 mb-8">
-        <h1 className="text-2xl font-bold">管理画面 — 投稿レビュー</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-2xl font-bold">管理画面</h1>
+        <div className="flex items-center gap-4">
+          <span className="text-xs text-gray-500">{user?.email}</span>
+          <LogoutButton />
+        </div>
+      </div>
+      <AdminNav active="review" />
+      <div className="flex items-center gap-3 mb-6">
+        <h2 className="text-lg font-semibold">投稿レビュー</h2>
         {(submissions?.length ?? 0) > 0 && (
           <span className="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
             {submissions!.length}
           </span>
         )}
-        <div className="ml-auto flex items-center gap-4">
-          <Link href="/admin/register" className="text-sm text-gray-400 hover:text-white transition-colors">
-            一括登録
-          </Link>
-          <Link href="/admin/battles" className="text-sm text-gray-400 hover:text-white transition-colors">
-            バトル管理
-          </Link>
-          <span className="text-xs text-gray-500">{user?.email}</span>
-          <LogoutButton />
-        </div>
       </div>
       <AdminReviewClient
         submissions={submissions ?? []}
