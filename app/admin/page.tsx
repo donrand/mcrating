@@ -3,7 +3,6 @@ import { createSupabaseServerClient } from '@/lib/supabase-server';
 import AdminReviewClient from './AdminReviewClient';
 import LogoutButton from './LogoutButton';
 import AdminNav from './AdminNav';
-import Link from 'next/link';
 
 export default async function AdminPage() {
   const serverClient = createSupabaseServerClient();
