@@ -36,6 +36,9 @@ export default async function AdminPage() {
           </span>
         )}
         <div className="ml-auto flex items-center gap-4">
+          <Link href="/admin/register" className="text-sm text-gray-400 hover:text-white transition-colors">
+            一括登録
+          </Link>
           <Link href="/admin/battles" className="text-sm text-gray-400 hover:text-white transition-colors">
             バトル管理
           </Link>

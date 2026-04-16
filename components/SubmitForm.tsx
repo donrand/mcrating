@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { supabase } from '@/lib/supabase';
+import { analyzeImage } from '@/app/submit/analyzeImage';
 
 type MC = { id: string; name: string };
 type Tournament = { id: string; name: string };
@@ -31,6 +32,60 @@ export default function SubmitForm({ mcs, tournaments }: Props) {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [imageBase64, setImageBase64] = useState<string | null>(null);
+  const [imageMediaType, setImageMediaType] = useState<string>('image/jpeg');
+  const [analyzing, setAnalyzing] = useState(false);
+  const [analyzeError, setAnalyzeError] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  function handleImageChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setAnalyzeError(null);
+    setImageMediaType(file.type || 'image/jpeg');
+
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      const result = ev.target?.result as string;
+      setImagePreview(result);
+      // data:image/...;base64,<data> から <data> 部分を取得
+      const base64 = result.split(',')[1];
+      setImageBase64(base64);
+    };
+    reader.readAsDataURL(file);
+  }
+
+  async function handleAnalyze() {
+    if (!imageBase64) return;
+    setAnalyzing(true);
+    setAnalyzeError(null);
+
+    try {
+      const result = await analyzeImage(imageBase64, imageMediaType);
+
+      // 読み取った情報でフォームを更新
+      setForm(f => ({
+        ...f,
+        tournament_name: result.tournament_name || f.tournament_name,
+        held_on: result.held_on || f.held_on,
+        mc_a_name: result.mc_a_name || f.mc_a_name,
+        mc_b_name: result.mc_b_name || f.mc_b_name,
+        winner: result.winner || f.winner,
+        round_name: result.round_name || f.round_name,
+      }));
+
+      // 新規入力モードに切り替え（名前が入力されるため）
+      if (result.tournament_name) setIsNewTournament(true);
+      if (result.mc_a_name) setIsNewMcA(true);
+      if (result.mc_b_name) setIsNewMcB(true);
+    } catch {
+      setAnalyzeError('画像の読み取りに失敗しました。手動で入力してください。');
+    } finally {
+      setAnalyzing(false);
+    }
+  }
 
   const isYouTubeUrl = (url: string) =>
     url.includes('youtube.com') || url.includes('youtu.be');
@@ -92,6 +147,56 @@ export default function SubmitForm({ mcs, tournaments }: Props) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* 画像アップロード */}
+      <div className="bg-gray-900 border border-gray-700 rounded-xl p-4">
+        <label className="block text-sm font-medium text-gray-300 mb-2">
+          画像から自動入力
+          <span className="ml-2 text-xs text-gray-500 font-normal">（スクリーンショット・フライヤーなど）</span>
+        </label>
+        <div className="flex flex-col gap-3">
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              className="px-4 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-600 rounded-lg text-sm text-gray-300 transition-colors"
+            >
+              画像を選択
+            </button>
+            {imageBase64 && (
+              <button
+                type="button"
+                onClick={handleAnalyze}
+                disabled={analyzing}
+                className="px-4 py-2 bg-yellow-400 hover:bg-yellow-300 disabled:opacity-50 text-gray-900 font-semibold rounded-lg text-sm transition-colors"
+              >
+                {analyzing ? '読み取り中...' : '画像から読み取る'}
+              </button>
+            )}
+          </div>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+            className="hidden"
+          />
+          {imagePreview && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={imagePreview}
+              alt="選択した画像"
+              className="max-h-48 rounded-lg object-contain border border-gray-700"
+            />
+          )}
+          {analyzeError && (
+            <p className="text-red-400 text-xs">{analyzeError}</p>
+          )}
+          {analyzing && (
+            <p className="text-yellow-400 text-xs">AIが画像を解析しています...</p>
+          )}
+        </div>
+      </div>
+
       {/* 大会 */}
       <div>
         <label className="block text-sm font-medium text-gray-300 mb-1">大会 <span className="text-red-400">*</span></label>
