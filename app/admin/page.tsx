@@ -2,6 +2,7 @@ import { createAdminClient } from '@/lib/supabase';
 import { createSupabaseServerClient } from '@/lib/supabase-server';
 import AdminReviewClient from './AdminReviewClient';
 import LogoutButton from './LogoutButton';
+import Link from 'next/link';
 
 export default async function AdminPage() {
   const serverClient = createSupabaseServerClient();
@@ -34,7 +35,10 @@ export default async function AdminPage() {
             {submissions!.length}
           </span>
         )}
-        <div className="ml-auto flex items-center gap-3">
+        <div className="ml-auto flex items-center gap-4">
+          <Link href="/admin/battles" className="text-sm text-gray-400 hover:text-white transition-colors">
+            バトル管理
+          </Link>
           <span className="text-xs text-gray-500">{user?.email}</span>
           <LogoutButton />
         </div>
