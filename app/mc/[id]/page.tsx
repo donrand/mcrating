@@ -19,6 +19,8 @@ type RatingRow = {
     tournament_id: string;
     mc_a_id: string;
     mc_b_id: string;
+    mc_a: { id: string; name: string } | null;
+    mc_b: { id: string; name: string } | null;
     tournaments: { name: string; held_on: string | null } | null;
   } | null;
 };
@@ -28,7 +30,7 @@ export default async function MCProfilePage({ params }: Props) {
     supabase.from('mcs').select('*').eq('id', params.id).single(),
     supabase
       .from('ratings')
-      .select('*, battles(winner, round_name, tournament_id, mc_a_id, mc_b_id, tournaments(name, held_on))')
+      .select('*, battles(winner, round_name, tournament_id, mc_a_id, mc_b_id, mc_a:mcs!battles_mc_a_id_fkey(id, name), mc_b:mcs!battles_mc_b_id_fkey(id, name), tournaments(name, held_on))')
       .eq('mc_id', params.id),
   ]);
 
@@ -123,18 +125,23 @@ export default async function MCProfilePage({ params }: Props) {
                 <th className="pb-3 pr-4">大会</th>
                 <th className="pb-3 pr-4">ラウンド</th>
                 <th className="pb-3 pr-4">勝敗</th>
+                <th className="pb-3 pr-4">対戦相手</th>
                 <th className="pb-3 text-right">レート変動</th>
               </tr>
             </thead>
             <tbody>
               {battleHistory.length === 0 && (
-                <tr><td colSpan={4} className="py-8 text-center text-gray-600">試合データがありません</td></tr>
+                <tr><td colSpan={5} className="py-8 text-center text-gray-600">試合データがありません</td></tr>
               )}
               {battleHistory.map((r) => {
                 const isWin =
                   (r.battles?.winner === 'a' && r.battles?.mc_a_id === params.id) ||
                   (r.battles?.winner === 'b' && r.battles?.mc_b_id === params.id);
                 const isDraw = r.battles?.winner === 'draw';
+                const opponent =
+                  r.battles?.mc_a_id === params.id
+                    ? r.battles?.mc_b
+                    : r.battles?.mc_a;
                 return (
                   <tr key={r.id} className="border-b border-gray-900 hover:bg-gray-900 transition-colors">
                     <td className="py-3 pr-4">{r.battles?.tournaments?.name ?? '不明'}</td>
@@ -145,6 +152,13 @@ export default async function MCProfilePage({ params }: Props) {
                       }`}>
                         {isDraw ? '△' : isWin ? '勝' : '敗'}
                       </span>
+                    </td>
+                    <td className="py-3 pr-4 text-gray-300">
+                      {opponent ? (
+                        <a href={`/mc/${opponent.id}`} className="hover:text-yellow-400 transition-colors">
+                          {opponent.name}
+                        </a>
+                      ) : '—'}
                     </td>
                     <td className={`py-3 text-right font-mono font-bold ${r.delta >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                       {r.delta >= 0 ? '+' : ''}{r.delta.toFixed(1)}

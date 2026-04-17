@@ -8,6 +8,7 @@ export default async function Home() {
     .from('mcs')
     .select('*')
     .eq('is_active', true)
+    .gte('battle_count', 5)
     .order('current_rating', { ascending: false });
 
   if (error) {
