@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabase';
+import Link from 'next/link';
 
 export const revalidate = 60;
 
@@ -35,7 +36,11 @@ export default async function TournamentsPage() {
             )}
             {(tournaments ?? []).map((t) => (
               <tr key={t.id} className="border-b border-gray-900 hover:bg-gray-900 transition-colors">
-                <td className="py-3 pr-4 font-medium">{t.name}</td>
+                <td className="py-3 pr-4 font-medium">
+                  <Link href={`/tournaments/${t.id}`} className="hover:text-yellow-400 transition-colors">
+                    {t.name}
+                  </Link>
+                </td>
                 <td className="py-3 pr-4 text-gray-400 tabular-nums">{t.held_on ?? '—'}</td>
                 <td className="py-3 pr-4">
                   {t.category ? (

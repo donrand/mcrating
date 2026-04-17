@@ -1,0 +1,647 @@
+{
+  "tournaments": [
+    { "key": "fsd_s1", "name": "フリースタイルダンジョン 1st season", "category": "FSD", "grade_coeff": 1.5, "held_on": "2015-09-30" },
+    { "key": "fsd_s2", "name": "フリースタイルダンジョン 2nd season", "category": "FSD", "grade_coeff": 1.5, "held_on": "2016-04-13" },
+    { "key": "fsd_s4", "name": "フリースタイルダンジョン 4th season", "category": "FSD", "grade_coeff": 1.5, "held_on": "2017-08-30" },
+    { "key": "fsd_s5", "name": "フリースタイルダンジョン 5th season", "category": "FSD", "grade_coeff": 1.5, "held_on": "2018-08-29" },
+    { "key": "fsd_s6", "name": "フリースタイルダンジョン 6th season", "category": "FSD", "grade_coeff": 1.5, "held_on": "2019-01-16" },
+    { "key": "fsd_s7", "name": "フリースタイルダンジョン 7th season", "category": "FSD", "grade_coeff": 1.5, "held_on": "2019-10-02" }
+  ],
+
+  "battles": [
+
+    // ═══════════════════════════════════════
+    // 1st season
+    // モンスター：T-Pablow / サイプレス上野 / 漢 a.k.a. GAMI / DOTAMA / R-指定（ラスボス）
+    // ═══════════════════════════════════════
+
+    // Dragon One: T-Pablow ◯, サイプレス上野 ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "Dragon One",       "mc_b": "T-Pablow",        "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "2nd_BATTLE", "mc_a": "Dragon One",       "mc_b": "サイプレス上野",  "winner": "b" },
+
+    // LEON a.k.a. 獅子: サイプレス上野 ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "LEON a.k.a. 獅子", "mc_b": "サイプレス上野",  "winner": "b" },
+
+    // Salvador: 漢 a.k.a. GAMI ◯, T-Pablow ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "Salvador",         "mc_b": "漢 a.k.a. GAMI",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "2nd_BATTLE", "mc_a": "Salvador",         "mc_b": "T-Pablow",        "winner": "b" },
+
+    // KOPERU: T-Pablow ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "KOPERU",           "mc_b": "T-Pablow",        "winner": "b" },
+
+    // HELL BELL: サイプレス上野 ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "HELL BELL",        "mc_b": "サイプレス上野",  "winner": "b" },
+
+    // Kiss Shot: 漢 a.k.a. GAMI ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "Kiss Shot",        "mc_b": "漢 a.k.a. GAMI",  "winner": "b" },
+
+    // CHICO CARLITO: サイプレス上野 ◯, T-Pablow ◯, 漢 a.k.a. GAMI ◯, R-指定 ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "CHICO CARLITO",   "mc_b": "サイプレス上野",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "2nd_BATTLE", "mc_a": "CHICO CARLITO",   "mc_b": "T-Pablow",        "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "3rd_BATTLE", "mc_a": "CHICO CARLITO",   "mc_b": "漢 a.k.a. GAMI",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "FINAL_BATTLE","mc_a": "CHICO CARLITO",  "mc_b": "R-指定",          "winner": "b" },
+
+    // ニガリ: R-指定 ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "MC☆ニガリ",       "mc_b": "R-指定",          "winner": "b" },
+
+    // HIDE: T-Pablow ◯, 漢 a.k.a. GAMI ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "HIDE",             "mc_b": "T-Pablow",        "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "2nd_BATTLE", "mc_a": "HIDE",             "mc_b": "漢 a.k.a. GAMI",  "winner": "b" },
+
+    // 焚巻: サイプレス上野 ◯, R-指定 ◯, T-Pablow ◯, 漢 a.k.a. GAMI ◯, 般若 × (ラスボス般若は4th BATTLEで登場)
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "焚巻",             "mc_b": "サイプレス上野",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "2nd_BATTLE", "mc_a": "焚巻",             "mc_b": "R-指定",          "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "3rd_BATTLE", "mc_a": "焚巻",             "mc_b": "T-Pablow",        "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "4th_BATTLE", "mc_a": "焚巻",             "mc_b": "漢 a.k.a. GAMI",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "FINAL_BATTLE","mc_a": "焚巻",            "mc_b": "般若",             "winner": "b" },
+
+    // Lick-G: T-Pablow ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "Lick-G",           "mc_b": "T-Pablow",        "winner": "b" },
+
+    // BALA a.k.a. SHIBAKEN: サイプレス上野 ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "BALA a.k.a. SHIBAKEN","mc_b": "サイプレス上野","winner": "b" },
+
+    // 黄猿: T-Pablow ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "黄猿",             "mc_b": "T-Pablow",        "winner": "b" },
+
+    // ENEMY: R-指定 ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "ENEMY",            "mc_b": "R-指定",          "winner": "b" },
+
+    // 掌幻: 漢 a.k.a. GAMI ◯, T-Pablow ◯, サイプレス上野 ◯, R-指定 ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "掌幻",             "mc_b": "漢 a.k.a. GAMI",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "2nd_BATTLE", "mc_a": "掌幻",             "mc_b": "T-Pablow",        "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "3rd_BATTLE", "mc_a": "掌幻",             "mc_b": "サイプレス上野",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "FINAL_BATTLE","mc_a": "掌幻",            "mc_b": "R-指定",          "winner": "b" },
+
+    // RACK: T-Pablow ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "RACK",             "mc_b": "T-Pablow",        "winner": "b" },
+
+    // TKda黒ぶち: サイプレス上野 ◯, ACE（隠れ）×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "TKda黒ぶち",       "mc_b": "サイプレス上野",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "2nd_BATTLE", "mc_a": "TKda黒ぶち",       "mc_b": "ACE",             "winner": "b" },
+
+    // 言xTHEANSWER: 漢 a.k.a. GAMI ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "言xTHEANSWER",    "mc_b": "漢 a.k.a. GAMI",  "winner": "b" },
+
+    // D.D.S: サイプレス上野 ◯, R指定 ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "D.D.S",            "mc_b": "サイプレス上野",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "2nd_BATTLE", "mc_a": "D.D.S",            "mc_b": "R-指定",          "winner": "b" },
+
+    // DOTAMA: T-Pablow ◯, サイプレス上野 ◯, ACE（隠れ）◯, R指定 ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "DOTAMA",           "mc_b": "T-Pablow",        "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "2nd_BATTLE", "mc_a": "DOTAMA",           "mc_b": "サイプレス上野",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "3rd_BATTLE", "mc_a": "DOTAMA",           "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "FINAL_BATTLE","mc_a": "DOTAMA",          "mc_b": "R-指定",          "winner": "b" },
+
+    // GOMESS: サイプレス上野 ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "GOMESS",           "mc_b": "サイプレス上野",  "winner": "b" },
+
+    // PONY: T-Pablow ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "PONY",             "mc_b": "T-Pablow",        "winner": "b" },
+
+    // GADORO: 漢 a.k.a. GAMI ◯, サイプレス上野 ◯, Mr.Q（隠れ）×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "GADORO",           "mc_b": "漢 a.k.a. GAMI",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "2nd_BATTLE", "mc_a": "GADORO",           "mc_b": "サイプレス上野",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "3rd_BATTLE", "mc_a": "GADORO",           "mc_b": "Mr.Q",            "winner": "b" },
+
+    // Mr. Smile: T-Pablow ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "Mr. Smile",        "mc_b": "T-Pablow",        "winner": "b" },
+
+    // 輪入道: 漢 a.k.a. GAMI ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "輪入道",           "mc_b": "漢 a.k.a. GAMI",  "winner": "b" },
+
+    // MEGA-G: 漢 a.k.a. GAMI ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "MEGA-G",           "mc_b": "漢 a.k.a. GAMI",  "winner": "b" },
+
+    // 押忍マン: サイプレス上野 ◯, 漢 a.k.a. GAMI ◯, 焚巻（隠れ）◯, R-指定 ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "押忍マン",         "mc_b": "サイプレス上野",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "2nd_BATTLE", "mc_a": "押忍マン",         "mc_b": "漢 a.k.a. GAMI",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "3rd_BATTLE", "mc_a": "押忍マン",         "mc_b": "焚巻",            "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "FINAL_BATTLE","mc_a": "押忍マン",        "mc_b": "R-指定",          "winner": "b" },
+
+    // ニガリ（2回目）: T-Pablow ◯ ※ドロップアウト
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "MC☆ニガリ",       "mc_b": "T-Pablow",        "winner": "a" },
+
+    // YZERR: 漢 a.k.a. GAMI ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "YZERR",            "mc_b": "漢 a.k.a. GAMI",  "winner": "b" },
+
+    // CIMA: サイプレス上野 ◯, 漢 a.k.a. GAMI ◯, T-Pablow ◯, R-指定 ×
+    { "tournament_key": "fsd_s1", "round": "1st_BATTLE", "mc_a": "CIMA",             "mc_b": "サイプレス上野",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "2nd_BATTLE", "mc_a": "CIMA",             "mc_b": "漢 a.k.a. GAMI",  "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "3rd_BATTLE", "mc_a": "CIMA",             "mc_b": "T-Pablow",        "winner": "a" },
+    { "tournament_key": "fsd_s1", "round": "FINAL_BATTLE","mc_a": "CIMA",            "mc_b": "R-指定",          "winner": "b" },
+
+    // ═══════════════════════════════════════
+    // 2nd season
+    // モンスター：サイプレス上野 / CHICO CARLITO / T-Pablow / 漢 a.k.a. GAMI / DOTAMA / R-指定（ラスボス：般若）
+    // ※追加モンスター：CHICO CARLITO, DOTAMA (Rec2から)
+    // ═══════════════════════════════════════
+
+    // KOPERU: サイプレス上野 ◯, R-指定 ◯（賞金20万円獲得 ドロップアウト）
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "KOPERU",           "mc_b": "サイプレス上野",  "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "2nd_BATTLE", "mc_a": "KOPERU",           "mc_b": "R-指定",          "winner": "a" },
+
+    // MC KUREI: T-Pablow ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "MC KUREI",         "mc_b": "T-Pablow",        "winner": "b" },
+
+    // USU a.k.a. SQUEZ: サイプレス上野 ◯, CHICO CARLITO ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "USU a.k.a. SQUEZ", "mc_b": "サイプレス上野",  "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "2nd_BATTLE", "mc_a": "USU a.k.a. SQUEZ", "mc_b": "CHICO CARLITO",  "winner": "b" },
+
+    // 句潤: 漢 a.k.a. GAMI ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "句潤",             "mc_b": "漢 a.k.a. GAMI",  "winner": "b" },
+
+    // 崇勲: T-Pablow ◯, DOTAMA ◯, CHICO CARLITO ◯, R-指定 ◯, 般若 ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "崇勲",             "mc_b": "T-Pablow",        "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "2nd_BATTLE", "mc_a": "崇勲",             "mc_b": "DOTAMA",          "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "3rd_BATTLE", "mc_a": "崇勲",             "mc_b": "CHICO CARLITO",   "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "4th_BATTLE", "mc_a": "崇勲",             "mc_b": "R-指定",          "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "FINAL_BATTLE","mc_a": "崇勲",            "mc_b": "般若",             "winner": "b" },
+
+    // RYOTA: 漢 a.k.a. GAMI ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "RYOTA",            "mc_b": "漢 a.k.a. GAMI",  "winner": "b" },
+
+    // はなび: サイプレス上野 ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "はなび",           "mc_b": "サイプレス上野",  "winner": "b" },
+
+    // 黄猿: CHICO CARLITO ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "黄猿",             "mc_b": "CHICO CARLITO",   "winner": "b" },
+
+    // 田中光: DOTAMA ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "田中光",           "mc_b": "DOTAMA",          "winner": "b" },
+
+    // TARO SOUL: 漢 a.k.a. GAMI ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "TARO SOUL",        "mc_b": "漢 a.k.a. GAMI",  "winner": "b" },
+
+    // HIDADDY: CHICO CARLITO ◯, サイプレス上野 ◯, R-指定 ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "HIDADDY",          "mc_b": "CHICO CARLITO",   "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "2nd_BATTLE", "mc_a": "HIDADDY",          "mc_b": "サイプレス上野",  "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "3rd_BATTLE", "mc_a": "HIDADDY",          "mc_b": "R-指定",          "winner": "b" },
+
+    // 龍道: T-Pablow ◯, DOTAMA ◯, サイプレス上野 ◯（賞金30万円獲得 ドロップアウト）
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "龍道",             "mc_b": "T-Pablow",        "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "2nd_BATTLE", "mc_a": "龍道",             "mc_b": "DOTAMA",          "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "3rd_BATTLE", "mc_a": "龍道",             "mc_b": "サイプレス上野",  "winner": "a" },
+
+    // NONKEY: 漢 a.k.a. GAMI ◯, R-指定 ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "NONKEY",           "mc_b": "漢 a.k.a. GAMI",  "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "2nd_BATTLE", "mc_a": "NONKEY",           "mc_b": "R-指定",          "winner": "b" },
+
+    // PONY: サイプレス上野 ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "PONY",             "mc_b": "サイプレス上野",  "winner": "b" },
+
+    // スナフキン: DOTAMA ◯, T-Pablow ◯, CHICO CARLITO ◯, R-指定 ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "スナフキン",       "mc_b": "DOTAMA",          "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "2nd_BATTLE", "mc_a": "スナフキン",       "mc_b": "T-Pablow",        "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "3rd_BATTLE", "mc_a": "スナフキン",       "mc_b": "CHICO CARLITO",   "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "FINAL_BATTLE","mc_a": "スナフキン",      "mc_b": "R-指定",          "winner": "b" },
+
+    // REIDAM: T-Pablow ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "REIDAM",           "mc_b": "T-Pablow",        "winner": "b" },
+
+    // GASHIMA: 漢 a.k.a. GAMI ◯, CHICO CARLITO ◯, DOTAMA ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "GASHIMA",          "mc_b": "漢 a.k.a. GAMI",  "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "2nd_BATTLE", "mc_a": "GASHIMA",          "mc_b": "CHICO CARLITO",   "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "3rd_BATTLE", "mc_a": "GASHIMA",          "mc_b": "DOTAMA",          "winner": "b" },
+
+    // Lick-G: CHICO CARLITO ◯, サイプレス上野 ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "Lick-G",           "mc_b": "CHICO CARLITO",   "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "2nd_BATTLE", "mc_a": "Lick-G",           "mc_b": "サイプレス上野",  "winner": "b" },
+
+    // 掌幻: DOTAMA ◯, サイプレス上野 ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "掌幻",             "mc_b": "DOTAMA",          "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "2nd_BATTLE", "mc_a": "掌幻",             "mc_b": "サイプレス上野",  "winner": "b" },
+
+    // TKda黒ぶち: T-Pablow ◯, 漢 a.k.a. GAMI ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "TKda黒ぶち",       "mc_b": "T-Pablow",        "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "2nd_BATTLE", "mc_a": "TKda黒ぶち",       "mc_b": "漢 a.k.a. GAMI",  "winner": "b" },
+
+    // GADORO: CHICO CARLITO ◯, 漢 a.k.a. GAMI ◯, R-指定 ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "GADORO",           "mc_b": "CHICO CARLITO",   "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "2nd_BATTLE", "mc_a": "GADORO",           "mc_b": "漢 a.k.a. GAMI",  "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "3rd_BATTLE", "mc_a": "GADORO",           "mc_b": "R-指定",          "winner": "b" },
+
+    // ACE: T-Pablow ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "ACE",              "mc_b": "T-Pablow",        "winner": "b" },
+
+    // ※3rd season はチーム戦のため除外
+    // ※晋平太のダンジョン制覇は3rd season Rec7（シングル戦）
+    // 晋平太: サイプレス上野 ◯, 漢 a.k.a. GAMI ◯, T-Pablow ◯, R-指定 ◯, 般若 ◯
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "晋平太",           "mc_b": "サイプレス上野",  "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "2nd_BATTLE", "mc_a": "晋平太",           "mc_b": "漢 a.k.a. GAMI",  "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "3rd_BATTLE", "mc_a": "晋平太",           "mc_b": "T-Pablow",        "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "4th_BATTLE", "mc_a": "晋平太",           "mc_b": "R-指定",          "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "FINAL_BATTLE","mc_a": "晋平太",          "mc_b": "般若",             "winner": "a" },
+
+    // 呂布カルマ: 漢 a.k.a. GAMI ◯, T-Pablow ◯, DOTAMA ◯, R-指定 × (3rd season シングル戦)
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "呂布カルマ",       "mc_b": "漢 a.k.a. GAMI",  "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "2nd_BATTLE", "mc_a": "呂布カルマ",       "mc_b": "T-Pablow",        "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "3rd_BATTLE", "mc_a": "呂布カルマ",       "mc_b": "DOTAMA",          "winner": "a" },
+    { "tournament_key": "fsd_s2", "round": "FINAL_BATTLE","mc_a": "呂布カルマ",      "mc_b": "R-指定",          "winner": "b" },
+
+    // EINSHTEIN (3rd seasonシングル戦): CHICO CARLITO ×
+    { "tournament_key": "fsd_s2", "round": "1st_BATTLE", "mc_a": "EINSHTEIN",        "mc_b": "CHICO CARLITO",   "winner": "b" },
+
+    // ═══════════════════════════════════════
+    // 4th season
+    // モンスター：ACE / 崇勲 / FORK / 呂布カルマ / 裂固 / 輪入道（ラスボス：般若）
+    // ═══════════════════════════════════════
+
+    // G-HOPE: 裂固 ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "G-HOPE",           "mc_b": "裂固",            "winner": "b" },
+
+    // FRANKEN: 呂布カルマ ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "FRANKEN",          "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // 雄猿: 輪入道 ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "雄猿",             "mc_b": "輪入道",          "winner": "b" },
+
+    // 魅RIン: FORK ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "魅RIン",           "mc_b": "FORK",            "winner": "b" },
+
+    // ONE a.k.a ELIONE: 崇勲 ◯, ACE ◯, 呂布カルマ ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "ONE a.k.a ELIONE", "mc_b": "崇勲",            "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "2nd_BATTLE", "mc_a": "ONE a.k.a ELIONE", "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "3rd_BATTLE", "mc_a": "ONE a.k.a ELIONE", "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // BOZ: 呂布カルマ ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "BOZ",              "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // 1horse: 崇勲 ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "1horse",           "mc_b": "崇勲",            "winner": "b" },
+
+    // 裸武: 裂固 ◯, FORK ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "裸武",             "mc_b": "裂固",            "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "2nd_BATTLE", "mc_a": "裸武",             "mc_b": "FORK",            "winner": "b" },
+
+    // GOTIT: 輪入道 ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "GOTIT",            "mc_b": "輪入道",          "winner": "b" },
+
+    // SURRY: ACE ◯, 裂固 ◯, FORK ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "SURRY",            "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "2nd_BATTLE", "mc_a": "SURRY",            "mc_b": "裂固",            "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "3rd_BATTLE", "mc_a": "SURRY",            "mc_b": "FORK",            "winner": "b" },
+
+    // ID: 崇勲 ◯, ACE ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "ID",               "mc_b": "崇勲",            "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "2nd_BATTLE", "mc_a": "ID",               "mc_b": "ACE",             "winner": "b" },
+
+    // MC KUREI: 裂固 ◯, FORK ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "MC KUREI",         "mc_b": "裂固",            "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "2nd_BATTLE", "mc_a": "MC KUREI",         "mc_b": "FORK",            "winner": "b" },
+
+    // MC松島: 輪入道 ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "MC松島",           "mc_b": "輪入道",          "winner": "b" },
+
+    // MU-TON: 呂布カルマ ◯, 裂固 ◯（賞金20万円獲得 ドロップアウト）
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "MU-TON",           "mc_b": "呂布カルマ",      "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "2nd_BATTLE", "mc_a": "MU-TON",           "mc_b": "裂固",            "winner": "a" },
+
+    // 押忍マン: ACE ◯, 崇勲 ◯, 輪入道 ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "押忍マン",         "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "2nd_BATTLE", "mc_a": "押忍マン",         "mc_b": "崇勲",            "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "3rd_BATTLE", "mc_a": "押忍マン",         "mc_b": "輪入道",          "winner": "b" },
+
+    // 句潤: ACE ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "句潤",             "mc_b": "ACE",             "winner": "b" },
+
+    // 黄猿: 裂固 ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "黄猿",             "mc_b": "裂固",            "winner": "b" },
+
+    // FEIDA-WAN: 呂布カルマ ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "FEIDA-WAN",        "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // SAM: 輪入道 ◯, 崇勲 ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "SAM",              "mc_b": "輪入道",          "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "2nd_BATTLE", "mc_a": "SAM",              "mc_b": "崇勲",            "winner": "b" },
+
+    // じょう: ACE ◯, 呂布カルマ ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "じょう",           "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "2nd_BATTLE", "mc_a": "じょう",           "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // ハハノシキュウ: 輪入道 ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "ハハノシキュウ",   "mc_b": "輪入道",          "winner": "b" },
+
+    // 歩歩: 輪入道 ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "歩歩",             "mc_b": "輪入道",          "winner": "b" },
+
+    // D96: FORK ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "D96",              "mc_b": "FORK",            "winner": "b" },
+
+    // 9for: 裂固 ◯, 崇勲 ◯（賞金20万円獲得 ドロップアウト）
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "9for",             "mc_b": "裂固",            "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "2nd_BATTLE", "mc_a": "9for",             "mc_b": "崇勲",            "winner": "a" },
+
+    // Amateras: 輪入道 ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "Amateras",         "mc_b": "輪入道",          "winner": "b" },
+
+    // GADORO: ACE ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "GADORO",           "mc_b": "ACE",             "winner": "b" },
+
+    // GASHIMA: 呂布カルマ ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "GASHIMA",          "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // Core-Boy: 裂固 ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "Core-Boy",         "mc_b": "裂固",            "winner": "b" },
+
+    // 椿: 呂布カルマ ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "椿",               "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // peko: 崇勲 ◯, ACE ◯, 輪入道 ◯, FORK ◯, 般若 ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "peko",             "mc_b": "崇勲",            "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "2nd_BATTLE", "mc_a": "peko",             "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "3rd_BATTLE", "mc_a": "peko",             "mc_b": "輪入道",          "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "4th_BATTLE", "mc_a": "peko",             "mc_b": "FORK",            "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "FINAL_BATTLE","mc_a": "peko",            "mc_b": "般若",             "winner": "b" },
+
+    // KOOPA: 裂固 ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "KOOPA",            "mc_b": "裂固",            "winner": "b" },
+
+    // SIMON JAP: ACE ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "SIMON JAP",        "mc_b": "ACE",             "winner": "b" },
+
+    // 龍道: 崇勲 ◯, 呂布カルマ ×
+    { "tournament_key": "fsd_s4", "round": "1st_BATTLE", "mc_a": "龍道",             "mc_b": "崇勲",            "winner": "a" },
+    { "tournament_key": "fsd_s4", "round": "2nd_BATTLE", "mc_a": "龍道",             "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // ═══════════════════════════════════════
+    // 5th season
+    // モンスター：ACE / 崇勲 / FORK / 呂布カルマ / 裂固 / 輪入道（ラスボス：般若）
+    // ═══════════════════════════════════════
+
+    // T-TANGG: 崇勲 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "T-TANGG",          "mc_b": "崇勲",            "winner": "b" },
+
+    // HIBIKI: 裂固 ◯, 呂布カルマ ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "HIBIKI",           "mc_b": "裂固",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "HIBIKI",           "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // BATTLE手裏剣: 崇勲 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "BATTLE手裏剣",     "mc_b": "崇勲",            "winner": "b" },
+
+    // Lick-G: ACE ◯, FORK ◯, 輪入道 ◯, 呂布カルマ ◯, 般若 ◯（史上2人目 制覇 100万円獲得）
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "Lick-G",           "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "Lick-G",           "mc_b": "FORK",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "3rd_BATTLE", "mc_a": "Lick-G",           "mc_b": "輪入道",          "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "4th_BATTLE", "mc_a": "Lick-G",           "mc_b": "呂布カルマ",      "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "FINAL_BATTLE","mc_a": "Lick-G",          "mc_b": "般若",             "winner": "a" },
+
+    // Luiz: 輪入道 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "Luiz",             "mc_b": "輪入道",          "winner": "b" },
+
+    // MULBE: ACE ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "MULBE",            "mc_b": "ACE",             "winner": "b" },
+
+    // JAKE: 崇勲 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "JAKE",             "mc_b": "崇勲",            "winner": "b" },
+
+    // SURRY: 裂固 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "SURRY",            "mc_b": "裂固",            "winner": "b" },
+
+    // キョンス: FORK ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "キョンス",         "mc_b": "FORK",            "winner": "b" },
+
+    // MC☆ニガリ: 裂固 ◯, 呂布カルマ ◯, 崇勲 ◯, 輪入道 ◯, 般若 ◯（史上3人目 制覇 100万円獲得）
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "MC☆ニガリ",       "mc_b": "裂固",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "MC☆ニガリ",       "mc_b": "呂布カルマ",      "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "3rd_BATTLE", "mc_a": "MC☆ニガリ",       "mc_b": "崇勲",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "4th_BATTLE", "mc_a": "MC☆ニガリ",       "mc_b": "輪入道",          "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "FINAL_BATTLE","mc_a": "MC☆ニガリ",      "mc_b": "般若",             "winner": "a" },
+
+    // T-Pablow: 崇勲 ◯, 裂固 ◯, 輪入道 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "T-Pablow",         "mc_b": "崇勲",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "T-Pablow",         "mc_b": "裂固",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "3rd_BATTLE", "mc_a": "T-Pablow",         "mc_b": "輪入道",          "winner": "b" },
+
+    // CHICO CARLITO: 裂固 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "CHICO CARLITO",   "mc_b": "裂固",            "winner": "b" },
+
+    // DOTAMA: 崇勲 ◯, ACE ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "DOTAMA",           "mc_b": "崇勲",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "DOTAMA",           "mc_b": "ACE",             "winner": "b" },
+
+    // 漢 a.k.a.GAMI: 輪入道 ◯, ACE ◯, 裂固 ◯, 呂布カルマ ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "漢 a.k.a. GAMI",  "mc_b": "輪入道",          "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "漢 a.k.a. GAMI",  "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "3rd_BATTLE", "mc_a": "漢 a.k.a. GAMI",  "mc_b": "裂固",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "4th_BATTLE", "mc_a": "漢 a.k.a. GAMI",  "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // サイプレス上野: 呂布カルマ ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "サイプレス上野",   "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // R-指定: FORK ◯, ACE ◯, 呂布カルマ ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "R-指定",           "mc_b": "FORK",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "R-指定",           "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "3rd_BATTLE", "mc_a": "R-指定",           "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // ふぁんく: 崇勲 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "ふぁんく",         "mc_b": "崇勲",            "winner": "b" },
+
+    // 雄猿: 裂固 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "雄猿",             "mc_b": "裂固",            "winner": "b" },
+
+    // スナフキン: 呂布カルマ ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "スナフキン",       "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // CIMA: 輪入道 ◯, ACE ◯, 呂布カルマ ◯（賞金30万円獲得 ドロップアウト）
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "CIMA",             "mc_b": "輪入道",          "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "CIMA",             "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "3rd_BATTLE", "mc_a": "CIMA",             "mc_b": "呂布カルマ",      "winner": "a" },
+
+    // SIMON JAP: FORK ◯, ACE ◯, 崇勲 ◯, 輪入道 ◯, 般若 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "SIMON JAP",        "mc_b": "FORK",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "SIMON JAP",        "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "3rd_BATTLE", "mc_a": "SIMON JAP",        "mc_b": "崇勲",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "4th_BATTLE", "mc_a": "SIMON JAP",        "mc_b": "輪入道",          "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "FINAL_BATTLE","mc_a": "SIMON JAP",       "mc_b": "般若",             "winner": "b" },
+
+    // HARDY: 裂固 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "HARDY",            "mc_b": "裂固",            "winner": "b" },
+
+    // HIBIKI（2回目）: 輪入道 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "HIBIKI",           "mc_b": "輪入道",          "winner": "b" },
+
+    // 藤KooS: ACE ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "藤KooS",           "mc_b": "ACE",             "winner": "b" },
+
+    // G-HOPE: 崇勲 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "G-HOPE",           "mc_b": "崇勲",            "winner": "b" },
+
+    // 9for: 裂固 ◯, FORK ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "9for",             "mc_b": "裂固",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "9for",             "mc_b": "FORK",            "winner": "b" },
+
+    // じょう: ACE ◯, 輪入道 ◯, FORK ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "じょう",           "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "じょう",           "mc_b": "輪入道",          "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "3rd_BATTLE", "mc_a": "じょう",           "mc_b": "FORK",            "winner": "b" },
+
+    // TERU: 裂固 ◯, 呂布カルマ ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "TERU",             "mc_b": "裂固",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "TERU",             "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // BunTes: 崇勲 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "BunTes",           "mc_b": "崇勲",            "winner": "b" },
+
+    // NOuTY: 呂布カルマ ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "NOuTY",            "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // 野武士: ACE ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "野武士",           "mc_b": "ACE",             "winner": "b" },
+
+    // 小池潔宗: 崇勲 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "小池潔宗",         "mc_b": "崇勲",            "winner": "b" },
+
+    // ミステリオ: 輪入道 ◯, 裂固 ◯, FORK ◯, 呂布カルマ ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "ミステリオ",       "mc_b": "輪入道",          "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "ミステリオ",       "mc_b": "裂固",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "3rd_BATTLE", "mc_a": "ミステリオ",       "mc_b": "FORK",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "4th_BATTLE", "mc_a": "ミステリオ",       "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // 百足: ACE ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "百足",             "mc_b": "ACE",             "winner": "b" },
+
+    // KYO虎: ACE ◯, 裂固 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "KYO虎",            "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "KYO虎",            "mc_b": "裂固",            "winner": "b" },
+
+    // POWER WAVE: 輪入道 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "POWER WAVE",       "mc_b": "輪入道",          "winner": "b" },
+
+    // CHEHON: ACE ◯, 崇勲 ◯, 呂布カルマ ◯（賞金30万円獲得 ドロップアウト）
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "CHEHON",           "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "2nd_BATTLE", "mc_a": "CHEHON",           "mc_b": "崇勲",            "winner": "a" },
+    { "tournament_key": "fsd_s5", "round": "3rd_BATTLE", "mc_a": "CHEHON",           "mc_b": "呂布カルマ",      "winner": "a" },
+
+    // NG-HEAD: 裂固 ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "NG-HEAD",          "mc_b": "裂固",            "winner": "b" },
+
+    // 我次郎MIC: FORK ×
+    { "tournament_key": "fsd_s5", "round": "1st_BATTLE", "mc_a": "我次郎MIC",        "mc_b": "FORK",            "winner": "b" },
+
+    // ═══════════════════════════════════════
+    // 6th season (MONSTER維新軍戦 - 通常ルールと同じ形式で記録)
+    // モンスター：崇勲 / 裂固 / ACE / 輪入道 / サイプレス上野 / FORK / 呂布カルマ / R-指定
+    // ※ラスボスなし（維新軍を4人倒せば終了）
+    // ═══════════════════════════════════════
+
+    { "tournament_key": "fsd_s6", "round": "1st_BATTLE", "mc_a": "Dragon One",       "mc_b": "崇勲",            "winner": "a" },
+    { "tournament_key": "fsd_s6", "round": "2nd_BATTLE", "mc_a": "Dragon One",       "mc_b": "裂固",            "winner": "b" },
+
+    { "tournament_key": "fsd_s6", "round": "1st_BATTLE", "mc_a": "HARDY",            "mc_b": "裂固",            "winner": "b" },
+
+    { "tournament_key": "fsd_s6", "round": "1st_BATTLE", "mc_a": "T-TANGG",          "mc_b": "裂固",            "winner": "b" },
+
+    { "tournament_key": "fsd_s6", "round": "1st_BATTLE", "mc_a": "ONE a.k.a. ELIONE","mc_b": "裂固",            "winner": "b" },
+
+    { "tournament_key": "fsd_s6", "round": "1st_BATTLE", "mc_a": "歩歩",             "mc_b": "裂固",            "winner": "a" },
+    { "tournament_key": "fsd_s6", "round": "2nd_BATTLE", "mc_a": "歩歩",             "mc_b": "ACE",             "winner": "b" },
+
+    { "tournament_key": "fsd_s6", "round": "1st_BATTLE", "mc_a": "TK da 黒ぶち",     "mc_b": "ACE",             "winner": "a" },
+    { "tournament_key": "fsd_s6", "round": "2nd_BATTLE", "mc_a": "TK da 黒ぶち",     "mc_b": "輪入道",          "winner": "a" },
+    { "tournament_key": "fsd_s6", "round": "3rd_BATTLE", "mc_a": "TK da 黒ぶち",     "mc_b": "サイプレス上野",  "winner": "b" },
+
+    { "tournament_key": "fsd_s6", "round": "1st_BATTLE", "mc_a": "ふぁんく",         "mc_b": "サイプレス上野",  "winner": "a" },
+    { "tournament_key": "fsd_s6", "round": "2nd_BATTLE", "mc_a": "ふぁんく",         "mc_b": "FORK",            "winner": "b" },
+
+    { "tournament_key": "fsd_s6", "round": "1st_BATTLE", "mc_a": "MC☆ニガリ",       "mc_b": "FORK",            "winner": "a" },
+    { "tournament_key": "fsd_s6", "round": "2nd_BATTLE", "mc_a": "MC☆ニガリ",       "mc_b": "呂布カルマ",      "winner": "b" },
+
+    { "tournament_key": "fsd_s6", "round": "1st_BATTLE", "mc_a": "NAIKA MC",         "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // ═══════════════════════════════════════
+    // 7th season
+    // モンスター：ID / ERONE / JUMBO MAATCH / TKda黒ぶち / 呂布カルマ / FORK（ラスボス：R-指定）
+    // ═══════════════════════════════════════
+
+    // ベル: ID ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "ベル",             "mc_b": "ID",              "winner": "b" },
+
+    // FRANKEN: TKda黒ぶち ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "FRANKEN",          "mc_b": "TKda黒ぶち",      "winner": "b" },
+
+    // しぇん: ID ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "しぇん",           "mc_b": "ID",              "winner": "b" },
+
+    // PONEY: JUMBO MAATCH ◯, FORK ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "PONEY",            "mc_b": "JUMBO MAATCH",    "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "2nd_BATTLE", "mc_a": "PONEY",            "mc_b": "FORK",            "winner": "b" },
+
+    // BALA a.k.a. SBKN: ERONE ◯, TKda黒ぶち ◯, JUMBO MAATCH ◯, 呂布カルマ ◯, R-指定 ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "BALA a.k.a. SBKN", "mc_b": "ERONE",           "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "2nd_BATTLE", "mc_a": "BALA a.k.a. SBKN", "mc_b": "TKda黒ぶち",      "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "3rd_BATTLE", "mc_a": "BALA a.k.a. SBKN", "mc_b": "JUMBO MAATCH",    "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "4th_BATTLE", "mc_a": "BALA a.k.a. SBKN", "mc_b": "呂布カルマ",      "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "FINAL_BATTLE","mc_a": "BALA a.k.a. SBKN","mc_b": "R-指定",          "winner": "b" },
+
+    // がーどまん: ERONE ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "がーどまん",       "mc_b": "ERONE",           "winner": "b" },
+
+    // U-mallow: JUMBO MAATCH ◯, ID ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "U-mallow",         "mc_b": "JUMBO MAATCH",    "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "2nd_BATTLE", "mc_a": "U-mallow",         "mc_b": "ID",              "winner": "b" },
+
+    // TORA: ERONE ◯, TKda黒ぶち ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "TORA",             "mc_b": "ERONE",           "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "2nd_BATTLE", "mc_a": "TORA",             "mc_b": "TKda黒ぶち",      "winner": "b" },
+
+    // N0uTY: ERONE ◯, TKda黒ぶち ◯, 呂布カルマ ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "N0uTY",            "mc_b": "ERONE",           "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "2nd_BATTLE", "mc_a": "N0uTY",            "mc_b": "TKda黒ぶち",      "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "3rd_BATTLE", "mc_a": "N0uTY",            "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // ミメイ: FORK ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "ミメイ",           "mc_b": "FORK",            "winner": "b" },
+
+    // BATTLE手裏剣: JUMBO MAATCH ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "BATTLE手裏剣",     "mc_b": "JUMBO MAATCH",    "winner": "b" },
+
+    // Authority: ID ◯, TKda黒ぶち ◯, FORK ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "Authority",        "mc_b": "ID",              "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "2nd_BATTLE", "mc_a": "Authority",        "mc_b": "TKda黒ぶち",      "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "3rd_BATTLE", "mc_a": "Authority",        "mc_b": "FORK",            "winner": "b" },
+
+    // SHAMO: TKda黒ぶち ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "SHAMO",            "mc_b": "TKda黒ぶち",      "winner": "b" },
+
+    // Atmoshiphere: 呂布カルマ ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "Atmoshiphere",     "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // KOOPA: JUMBO MAATCH ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "KOOPA",            "mc_b": "JUMBO MAATCH",    "winner": "b" },
+
+    // 韻マン: ERONE ◯, ID ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "韻マン",           "mc_b": "ERONE",           "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "2nd_BATTLE", "mc_a": "韻マン",           "mc_b": "ID",              "winner": "b" },
+
+    // MC松島: TKda黒ぶち ◯, ERONE ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "MC松島",           "mc_b": "TKda黒ぶち",      "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "2nd_BATTLE", "mc_a": "MC松島",           "mc_b": "ERONE",           "winner": "b" },
+
+    // バチスタ: FORK ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "バチスタ",         "mc_b": "FORK",            "winner": "b" },
+
+    // T-STONE: ERONE ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "T-STONE",          "mc_b": "ERONE",           "winner": "b" },
+
+    // ISH-ONE: TKda黒ぶち ◯, 呂布カルマ ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "ISH-ONE",          "mc_b": "TKda黒ぶち",      "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "2nd_BATTLE", "mc_a": "ISH-ONE",          "mc_b": "呂布カルマ",      "winner": "b" },
+
+    // MAKA: JUMBO MAATCH ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "MAKA",             "mc_b": "JUMBO MAATCH",    "winner": "b" },
+
+    // Parmlight: FORK ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "Parmlight",        "mc_b": "FORK",            "winner": "b" },
+
+    // bunTes: JUMBO MAATCH ◯, ID ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "bunTes",           "mc_b": "JUMBO MAATCH",    "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "2nd_BATTLE", "mc_a": "bunTes",           "mc_b": "ID",              "winner": "b" },
+
+    // SAM: 呂布カルマ ◯, ERONE ◯, FORK ×
+    { "tournament_key": "fsd_s7", "round": "1st_BATTLE", "mc_a": "SAM",              "mc_b": "呂布カルマ",      "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "2nd_BATTLE", "mc_a": "SAM",              "mc_b": "ERONE",           "winner": "a" },
+    { "tournament_key": "fsd_s7", "round": "3rd_BATTLE", "mc_a": "SAM",              "mc_b": "FORK",            "winner": "b" }
+
+  ]
+}
