@@ -4,6 +4,8 @@ import RatingChart from '@/components/RatingChart';
 
 export const revalidate = 60;
 
+const ROUND_ORDER = ['1回戦', 'シード戦', '2回戦', 'ベスト16', 'ベスト8', '準決勝', '決勝'];
+
 type Props = { params: { id: string } };
 
 type RatingRow = {
@@ -27,21 +29,30 @@ export default async function MCProfilePage({ params }: Props) {
     supabase
       .from('ratings')
       .select('*, battles(winner, round_name, tournament_id, mc_a_id, mc_b_id, tournaments(name, held_on))')
-      .eq('mc_id', params.id)
-      .order('created_at', { ascending: true }),
+      .eq('mc_id', params.id),
   ]);
 
   if (!mc) notFound();
 
-  // レーティング推移データ
-  const chartData = (ratings as unknown as RatingRow[] ?? []).map((r) => ({
+  // 時系列ソート: held_on → ROUND_ORDER
+  const sortedRatings = [...(ratings as unknown as RatingRow[] ?? [])].sort((a, b) => {
+    const dateA = a.battles?.tournaments?.held_on ?? '';
+    const dateB = b.battles?.tournaments?.held_on ?? '';
+    if (dateA !== dateB) return dateA.localeCompare(dateB);
+    const roundA = ROUND_ORDER.indexOf(a.battles?.round_name ?? '');
+    const roundB = ROUND_ORDER.indexOf(b.battles?.round_name ?? '');
+    return (roundA === -1 ? 999 : roundA) - (roundB === -1 ? 999 : roundB);
+  });
+
+  // レーティング推移データ（時系列順）
+  const chartData = sortedRatings.map((r) => ({
     date: r.battles?.tournaments?.held_on?.slice(0, 7) ?? '不明',
     rating: r.rating_after,
     opponent: '',
   }));
 
-  // 試合履歴（直近20件）
-  const battleHistory = [...(ratings as unknown as RatingRow[] ?? [])].reverse().slice(0, 20);
+  // 試合履歴（直近20件・新しい順）
+  const battleHistory = [...sortedRatings].reverse().slice(0, 20);
 
   // 順位を計算（全MCのレートと比較）
   const { data: allMcs } = await supabase
