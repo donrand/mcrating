@@ -28,8 +28,11 @@ function calcElo(ratingA: number, ratingB: number, result: number, gradeCoeff: n
 }
 
 async function main() {
-  const rawData = fs.readFileSync(path.resolve(__dirname, 'seed_data.json'), 'utf-8');
-  const data = JSON.parse(rawData) as {
+  const targetFile = process.argv[2] ?? path.resolve(__dirname, 'seed_data.json');
+  const rawData = fs.readFileSync(path.resolve(targetFile), 'utf-8');
+  // JSONコメント（// ...）を除去してパース
+  const cleanData = rawData.replace(/\/\/[^\n]*/g, '');
+  const data = JSON.parse(cleanData) as {
     tournaments: { key: string; name: string; category: string; grade_coeff: number; held_on: string }[];
     battles: { tournament_key: string; round: string; mc_a: string; mc_b: string; winner: string }[];
   };
