@@ -1,7 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import BattlesClient from './BattlesClient';
 
-export const revalidate = 60;
+export const revalidate = 300;
 
 type BattleRow = {
   id: string;

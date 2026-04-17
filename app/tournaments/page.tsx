@@ -1,12 +1,12 @@
 import { supabase } from '@/lib/supabase';
 import Link from 'next/link';
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export default async function TournamentsPage() {
   const { data: tournaments } = await supabase
     .from('tournaments')
-    .select('*')
+    .select('id, name, grade_coeff, held_on')
     .order('held_on', { ascending: false });
 
   return (

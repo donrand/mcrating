@@ -2,7 +2,7 @@ import { createAdminClient } from '@/lib/supabase';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 const ROUND_ORDER = ['1回戦', 'シード戦', '2回戦', 'ベスト16', 'ベスト8', '準決勝', '決勝'];
 
@@ -12,7 +12,7 @@ export default async function TournamentDetailPage({ params }: Props) {
   const admin = createAdminClient();
 
   const [{ data: tournament }, { data: battles }] = await Promise.all([
-    admin.from('tournaments').select('*').eq('id', params.id).single(),
+    admin.from('tournaments').select('id, name, grade_coeff, held_on').eq('id', params.id).single(),
     admin
       .from('battles')
       .select('id, winner, round_name, mc_a:mcs!battles_mc_a_id_fkey(id, name), mc_b:mcs!battles_mc_b_id_fkey(id, name)')

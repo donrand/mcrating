@@ -1,10 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import type { MC } from '@/lib/supabase';
+import type { RankingMC } from '@/app/RankingPage';
 
 type Props = {
-  mcs: MC[];
+  mcs: RankingMC[];
 };
 
 export default function RankingTable({ mcs }: Props) {

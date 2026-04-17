@@ -1,10 +1,16 @@
 'use client';
 
 import RankingTable from '@/components/RankingTable';
-import type { MC } from '@/lib/supabase';
+
+export type RankingMC = {
+  id: string;
+  name: string;
+  current_rating: number;
+  battle_count: number;
+};
 
 type Props = {
-  initialMcs: MC[];
+  initialMcs: RankingMC[];
 };
 
 export default function RankingPage({ initialMcs }: Props) {

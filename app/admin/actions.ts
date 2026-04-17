@@ -145,7 +145,10 @@ export async function approveSubmission(
     .eq('id', submission.id);
 
   revalidatePath('/');
+  revalidatePath('/battles');
   revalidatePath('/admin');
+  revalidatePath(`/mc/${mcAId}`);
+  revalidatePath(`/mc/${mcBId}`);
 }
 
 /**
