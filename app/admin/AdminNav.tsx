@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-type Tab = 'review' | 'register' | 'battles';
+type Tab = 'review' | 'register' | 'battles' | 'coefficients';
 
 type Props = { active: Tab };
 
@@ -8,6 +8,7 @@ const tabs = [
   { key: 'review' as Tab, label: '投稿レビュー', href: '/admin' },
   { key: 'register' as Tab, label: '一括登録', href: '/admin/register' },
   { key: 'battles' as Tab, label: 'バトル管理', href: '/admin/battles' },
+  { key: 'coefficients' as Tab, label: '格係数管理', href: '/admin/coefficients' },
 ];
 
 export default function AdminNav({ active }: Props) {
