@@ -42,7 +42,8 @@ export default async function MCProfilePage({ params, searchParams }: Props) {
     supabase
       .from('ratings')
       .select('id, rating_after, rating_before, delta, battles(winner, round_name, tournament_id, mc_a_id, mc_b_id, mc_a:mcs!battles_mc_a_id_fkey(id, name), mc_b:mcs!battles_mc_b_id_fkey(id, name), tournaments(name, held_on))')
-      .eq('mc_id', params.id),
+      .eq('mc_id', params.id)
+      .range(0, 9999),
     supabase
       .from('mcs')
       .select('id, current_rating')
