@@ -8,9 +8,11 @@ import { revalidatePath } from 'next/cache';
 const ROUND_ORDER = ['1回戦', 'シード戦', '2回戦', 'ベスト16', 'ベスト8', '準決勝', '決勝'];
 
 /**
- * 全承認済みバトルを時系列順に再計算してratings/mcsを更新する
+ * 全承認済みバトルを時系列順に再計算してratings/mcsを更新する（手動トリガー用）
  */
-async function recalculateAllRatings(admin: ReturnType<typeof createAdminClient>) {
+export async function recalculateAllRatings() {
+  const admin = createAdminClient();
+
   // 全承認済みバトルを時系列順に取得
   const { data: allBattles } = await admin
     .from('battles')
@@ -72,26 +74,34 @@ async function recalculateAllRatings(admin: ReturnType<typeof createAdminClient>
     await admin.from('ratings').insert(ratingsToInsert.slice(i, i + batchSize));
   }
 
-  return { mcRatings, mcBattleCounts };
+  // 全MCのレートと試合数を更新
+  const { data: allMcs } = await admin.from('mcs').select('id');
+  for (const mc of allMcs ?? []) {
+    if (mcRatings.has(mc.id)) {
+      await admin.from('mcs').update({
+        current_rating: mcRatings.get(mc.id)!,
+        battle_count: mcBattleCounts.get(mc.id) ?? 0,
+      }).eq('id', mc.id);
+    } else {
+      // バトルが存在しないMCはリセット
+      await admin.from('mcs').update({
+        current_rating: INITIAL_RATING,
+        battle_count: 0,
+      }).eq('id', mc.id);
+    }
+  }
+
+  revalidatePath('/');
+  revalidatePath('/battles');
 }
 
 /**
- * 選択されたバトルを削除し、全レーティングを時系列で再計算する
+ * 選択されたバトルを削除する（レーティング再計算は行わない）
  */
 export async function deleteBattles(battleIds: string[]) {
   if (battleIds.length === 0) return;
 
   const admin = createAdminClient();
-
-  // 削除対象バトルに関係するMC IDを取得
-  const { data: targetBattles } = await admin
-    .from('battles')
-    .select('mc_a_id, mc_b_id')
-    .in('id', battleIds);
-
-  const affectedMcIds = Array.from(
-    new Set((targetBattles ?? []).flatMap(b => [b.mc_a_id, b.mc_b_id])),
-  );
 
   // ratingsを先に削除（FK制約のため）
   await admin.from('ratings').delete().in('battle_id', battleIds);
@@ -99,28 +109,5 @@ export async function deleteBattles(battleIds: string[]) {
   // battlesを削除
   await admin.from('battles').delete().in('id', battleIds);
 
-  // 全レーティングを時系列で再計算
-  const { mcRatings, mcBattleCounts } = await recalculateAllRatings(admin);
-
-  // 全参加MCのレートを更新
-  for (const [mcId, rating] of Array.from(mcRatings.entries())) {
-    await admin.from('mcs').update({
-      current_rating: rating,
-      battle_count: mcBattleCounts.get(mcId) ?? 0,
-    }).eq('id', mcId);
-  }
-
-  // 全バトルが削除されたMCはリセット
-  for (const mcId of affectedMcIds) {
-    if (!mcRatings.has(mcId)) {
-      await admin.from('mcs').update({
-        current_rating: INITIAL_RATING,
-        battle_count: 0,
-      }).eq('id', mcId);
-    }
-  }
-
-  revalidatePath('/');
-  revalidatePath('/battles');
   revalidatePath('/admin/battles');
 }

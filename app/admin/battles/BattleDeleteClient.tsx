@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { deleteBattles } from './actions';
+import { deleteBattles, recalculateAllRatings } from './actions';
 
 type BattleRow = {
   id: string;
@@ -19,6 +19,8 @@ export default function BattleDeleteClient({ battles }: Props) {
   const [checked, setChecked] = useState<Set<string>>(new Set());
   const [processing, setProcessing] = useState(false);
   const [done, setDone] = useState<string | null>(null);
+  const [recalculating, setRecalculating] = useState(false);
+  const [recalcResult, setRecalcResult] = useState<{ ok: boolean; message: string } | null>(null);
 
   function toggleOne(id: string) {
     setChecked(prev => {
@@ -38,13 +40,28 @@ export default function BattleDeleteClient({ battles }: Props) {
 
   async function handleDelete() {
     if (checked.size === 0) return;
-    if (!confirm(`${checked.size}件のバトルを削除します。レーティングも再計算されます。よろしいですか？`)) return;
+    if (!confirm(`${checked.size}件のバトルを削除します。よろしいですか？`)) return;
 
     setProcessing(true);
     await deleteBattles(Array.from(checked));
     setDone(`${checked.size}件を削除しました`);
     setChecked(new Set());
     setProcessing(false);
+  }
+
+  async function handleRecalculate() {
+    if (!confirm('全レーティングを再計算します。時間がかかる場合があります。よろしいですか？')) return;
+
+    setRecalculating(true);
+    setRecalcResult(null);
+    try {
+      await recalculateAllRatings();
+      setRecalcResult({ ok: true, message: 'レーティングの再計算が完了しました' });
+    } catch {
+      setRecalcResult({ ok: false, message: 'レーティングの再計算に失敗しました' });
+    } finally {
+      setRecalculating(false);
+    }
   }
 
   // 日付ごとにグループ化
@@ -86,6 +103,28 @@ export default function BattleDeleteClient({ battles }: Props) {
           {done}（ページを再読み込みすると反映されます）
         </div>
       )}
+
+      {/* レーティング全再計算 */}
+      <div className="mb-6 p-4 bg-gray-900 rounded-xl border border-gray-800">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-sm font-semibold text-gray-300">レーティング全再計算</p>
+            <p className="text-xs text-gray-500 mt-0.5">全承認済みバトルをもとにレーティングを最初から計算し直します</p>
+          </div>
+          <button
+            onClick={handleRecalculate}
+            disabled={recalculating}
+            className="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 disabled:opacity-40 disabled:cursor-not-allowed text-white font-semibold rounded-lg text-sm transition-colors shrink-0"
+          >
+            {recalculating ? '計算中...' : '全再計算を実行'}
+          </button>
+        </div>
+        {recalcResult && (
+          <div className={`mt-3 p-2 rounded text-sm ${recalcResult.ok ? 'bg-green-900/30 border border-green-700 text-green-400' : 'bg-red-900/30 border border-red-700 text-red-400'}`}>
+            {recalcResult.message}
+          </div>
+        )}
+      </div>
 
       {battles.length === 0 && (
         <p className="text-gray-600 text-center py-16">承認済みバトルがありません</p>

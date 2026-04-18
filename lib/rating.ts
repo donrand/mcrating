@@ -56,10 +56,12 @@ export function calcRatingDelta(
     scoreB = 0.5;
   }
 
-  const bonus = participationBonus(gradeCoeff);
+  // 出場ボーナスは勝者のみに付与
+  const bonusA = result === 'a' ? gradeCoeff * 5 : 0;
+  const bonusB = result === 'b' ? gradeCoeff * 5 : 0;
 
-  const deltaA = bonus + K * gradeCoeff * (scoreA - expectedA);
-  const deltaB = bonus + K * gradeCoeff * (scoreB - expectedB);
+  const deltaA = bonusA + K * gradeCoeff * (scoreA - expectedA);
+  const deltaB = bonusB + K * gradeCoeff * (scoreB - expectedB);
 
   const newRatingA = Math.max(RATING_FLOOR, ratingA + deltaA);
   const newRatingB = Math.max(RATING_FLOOR, ratingB + deltaB);
