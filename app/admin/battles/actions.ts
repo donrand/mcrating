@@ -20,11 +20,19 @@ export async function recalculateAllRatings() {
   await requireAdmin();
   const admin = createAdminClient();
 
-  // 全承認済みバトルを時系列順に取得
-  const { data: allBattles } = await admin
-    .from('battles')
-    .select('id, mc_a_id, mc_b_id, winner, round_name, tournaments(held_on, grade_coeff)')
-    .eq('status', 'approved');
+  // 全承認済みバトルを全件取得（Supabase上限1000件を回避するためページネーション）
+  const allBattles: { id: string; mc_a_id: string; mc_b_id: string; winner: string; round_name: string | null; tournaments: unknown }[] = [];
+  const PAGE = 1000;
+  for (let from = 0; ; from += PAGE) {
+    const { data } = await admin
+      .from('battles')
+      .select('id, mc_a_id, mc_b_id, winner, round_name, tournaments(held_on, grade_coeff)')
+      .eq('status', 'approved')
+      .range(from, from + PAGE - 1);
+    if (!data || data.length === 0) break;
+    allBattles.push(...data);
+    if (data.length < PAGE) break;
+  }
 
   type TournamentMeta = { held_on: string | null; grade_coeff: number };
   const sorted = [...(allBattles ?? [])].sort((a, b) => {

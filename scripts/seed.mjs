@@ -113,14 +113,21 @@ async function main() {
   // ── 4. バトルを一括登録 ──────────────────────────────
   console.log('\n[3/3] バトルを登録中...');
 
-  // 既存バトルを取得して重複を避ける
-  const { data: existingBattles } = await admin
-    .from('battles')
-    .select('tournament_id, mc_a_id, mc_b_id, round_name')
-    .eq('status', 'approved');
+  // 既存バトルを全件取得して重複を避ける（Supabase上限1000件対策）
+  const existingBattles = [];
+  for (let from = 0; ; from += 1000) {
+    const { data } = await admin
+      .from('battles')
+      .select('tournament_id, mc_a_id, mc_b_id, round_name')
+      .eq('status', 'approved')
+      .range(from, from + 999);
+    if (!data || data.length === 0) break;
+    existingBattles.push(...data);
+    if (data.length < 1000) break;
+  }
 
   const existingSet = new Set(
-    (existingBattles ?? []).map(b => `${b.tournament_id}|${b.mc_a_id}|${b.mc_b_id}|${b.round_name ?? ''}`)
+    existingBattles.map(b => `${b.tournament_id}|${b.mc_a_id}|${b.mc_b_id}|${b.round_name ?? ''}`)
   );
 
   const battleBatch = [];
@@ -182,13 +189,16 @@ async function main() {
 
   // ── 5. battle_count を更新 ───────────────────────────
   console.log('\n[後処理] MCのbattle_countを更新中...');
-  const { data: allBattles } = await admin
-    .from('battles')
-    .select('mc_a_id, mc_b_id')
-    .eq('status', 'approved');
+  const allBattlesForCount = [];
+  for (let from = 0; ; from += 1000) {
+    const { data } = await admin.from('battles').select('mc_a_id, mc_b_id').eq('status', 'approved').range(from, from + 999);
+    if (!data || data.length === 0) break;
+    allBattlesForCount.push(...data);
+    if (data.length < 1000) break;
+  }
 
   const counts = new Map();
-  for (const b of allBattles ?? []) {
+  for (const b of allBattlesForCount) {
     counts.set(b.mc_a_id, (counts.get(b.mc_a_id) ?? 0) + 1);
     counts.set(b.mc_b_id, (counts.get(b.mc_b_id) ?? 0) + 1);
   }
