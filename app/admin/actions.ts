@@ -1,8 +1,14 @@
 'use server';
 
 import { createAdminClient } from '@/lib/supabase';
+import { createSupabaseServerClient } from '@/lib/supabase-server';
 import { revalidatePath } from 'next/cache';
 import type { Submission } from '@/lib/supabase';
+
+async function requireAdmin() {
+  const { data: { user } } = await createSupabaseServerClient().auth.getUser();
+  if (!user) throw new Error('認証が必要です');
+}
 
 type MC = { id: string; name: string };
 type Tournament = { id: string; name: string; grade_coeff: number };
@@ -16,6 +22,7 @@ export async function approveSubmission(
   existingMcs: MC[],
   existingTournaments: Tournament[],
 ) {
+  await requireAdmin();
   const admin = createAdminClient();
 
   // 大会を解決（既存 or 新規作成）
@@ -120,6 +127,7 @@ export async function approveSubmission(
  * 投稿を却下する
  */
 export async function rejectSubmission(submissionId: string, reason: string) {
+  await requireAdmin();
   const admin = createAdminClient();
   await admin
     .from('submissions')

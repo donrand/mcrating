@@ -1,8 +1,14 @@
 'use server';
 
 import { createAdminClient } from '@/lib/supabase';
+import { createSupabaseServerClient } from '@/lib/supabase-server';
 import { calcRatingDelta, INITIAL_RATING } from '@/lib/rating';
 import { revalidatePath } from 'next/cache';
+
+async function requireAdmin() {
+  const { data: { user } } = await createSupabaseServerClient().auth.getUser();
+  if (!user) throw new Error('認証が必要です');
+}
 
 type BattleInput = {
   mc_a_name: string;
@@ -31,6 +37,7 @@ export async function registerBattles(
   tournament: TournamentInput,
   battles: BattleInput[],
 ): Promise<RegisterResult> {
+  await requireAdmin();
   const admin = createAdminClient();
   const errors: string[] = [];
   let registered = 0;
