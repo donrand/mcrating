@@ -89,21 +89,16 @@ export async function recalculateAllRatings() {
     await admin.from('ratings').insert(ratingsToInsert.slice(i, i + batchSize));
   }
 
-  // 全MCのレートと試合数を更新
+  // 全MCのレートと試合数を一括upsert（個別awaitによるタイムアウト回避）
   const { data: allMcs } = await admin.from('mcs').select('id');
-  for (const mc of allMcs ?? []) {
-    if (mcRatings.has(mc.id)) {
-      await admin.from('mcs').update({
-        current_rating: mcRatings.get(mc.id)!,
-        battle_count: mcBattleCounts.get(mc.id) ?? 0,
-      }).eq('id', mc.id);
-    } else {
-      // バトルが存在しないMCはリセット
-      await admin.from('mcs').update({
-        current_rating: INITIAL_RATING,
-        battle_count: 0,
-      }).eq('id', mc.id);
-    }
+  const mcUpdates = (allMcs ?? []).map(mc => ({
+    id: mc.id,
+    current_rating: mcRatings.get(mc.id) ?? INITIAL_RATING,
+    battle_count: mcBattleCounts.get(mc.id) ?? 0,
+  }));
+  const MC_BATCH = 200;
+  for (let i = 0; i < mcUpdates.length; i += MC_BATCH) {
+    await admin.from('mcs').upsert(mcUpdates.slice(i, i + MC_BATCH));
   }
 
   revalidatePath('/');
