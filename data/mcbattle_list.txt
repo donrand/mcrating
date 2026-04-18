@@ -1,0 +1,230 @@
+# MCバトル 大会一覧 — seed_data 収録状況
+# 凡例: [done]=JSON収録済 [supa]=Supabase登録済 [part]=部分的 [----]=未収録 [excl]=除外
+# フォーマット: KEY | 大会名/回 | 開催日 | 優勝者 | 状況 | 備考
+# ============================================================
+
+## UMB — ULTIMATE MC BATTLE
+## 主催: Libra Records / 創設: 2005
+
+umb2005  | 2005                 | 2005       | カルデラビスタ     | [----] | 16名。詳細ソースなし
+umb2006  | 2006                 | 2006       | FORK               | [----] | 16名。詳細ソースなし
+umb2007  | 2007                 | 2007       | GOCCI              | [----] | 16名。詳細ソースなし
+umb2008  | 2008                 | 2008       | 般若               | [----] | 16名。詳細ソースなし
+umb2009  | 2009                 | 2009       | 鎮座DOPENESS       | [----] | 16名。詳細ソースなし
+umb2010  | 2010                 | 2010       | 晋平太             | [----] | 16名。詳細ソースなし
+umb2011  | 2011                 | 2011-12-30 | 晋平太             | [part] | 32名。一部試合のみ判明
+umb2012  | 2012                 | 2012-12-30 | R-指定             | [part] | 32名。決勝・出場者のみ
+umb2013  | 2013                 | 2013-12-30 | R-指定             | [part] | 32名。決勝のみ
+umb2014  | 2014                 | 2014-12-30 | R-指定             | [done] |
+umb2015  | 2015                 | 2015-12-30 | CHICO CARLITO      | [done] |
+umb2016  | 2016                 | 2016-12-30 | NAIKA MC           | [done] |
+umb2017  | 2017                 | 2017-12-30 | DOTAMA             | [done] |
+umb2018  | 2018                 | 2018-12-30 | MU-TON             | [done] |
+umb2019  | 2019                 | 2019-12-28 | Authority          | [done] |
+umb2020  | 2020                 | 2020-12-27 | 早雲               | [done] |
+umb2021  | 2021                 | 2021-12-26 | MC☆ニガリ         | [supa] |
+umb2022  | 2022                 | 2022-12-23 | SILENT KILLA JOINT | [supa] |
+umb2023  | 2023                 | 2023-12-26 | GOTIT              | [done] |
+umb2024  | 2024                 | 2024-12-28 | KOOPA              | [supa] |
+umb2025  | 2025                 | 2025-12-29 | MC☆ニガリ         | [supa] |
+
+
+## 戦極 — 戦極 MC BATTLE
+## 主催: MC正社員 / 創設: 2012
+
+sengoku1  | 第1章   | 2012       | 晋平太             | [----] | YouTube動画あり
+sengoku2  | 第2章   | 2012       | 黄猿               | [----] | YouTube動画あり
+sengoku3  | 第3章   | 2012       | TKda黒ぶち         | [----] | YouTube動画あり
+sengoku4  | 第4章   | 2013       | TKda黒ぶち         | [----] | YouTube動画あり
+sengoku5  | 第5章   | 2013       | チプルソ           | [----] | YouTube動画あり
+sengoku6  | 第6章   | 2013       | 鎮座DOPENESS       | [----] | YouTube動画あり
+sengoku7  | 第7章   | 2014       | DOTAMA             | [----] | YouTube動画あり
+sengoku8  | 第8章   | 2014       | サイプレス上野     | [----] | YouTube動画あり
+sengoku9  | 第9章   | 2014       | DOTAMA             | [----] | YouTube動画あり
+sengoku10 | 第10章  | 2014       | 晋平太             | [----] | YouTube動画あり
+sengoku11 | 第11章  | 2015       | GOLBY              | [----] | YouTube動画あり
+sengoku12 | 第12章  | 2015-06-14 | 呂布カルマ         | [done] | 64名
+sengoku13 | 第13章  | 2015-12-27 | NAIKA MC           | [done] | 64名
+sengoku14 | 第14章  | 2016       | 呂布カルマ/K.Lee   | [----] | DVDあり
+sengoku15 | 第15章  | 2016-11-06 | GADORO             | [done] | 64名
+sengoku16 | 第16章  | 2017       | MOL53              | [----] | DVDあり
+sengoku17 | 第17章  | 2018-02-17 | GIL                | [done] | 64名
+sengoku18 | 第18章  | 2018-08-11 | 漢 a.k.a. GAMI     | [done] | 48名
+sengoku19 | 第19章  | 2019       | MU-TON/SAM/ID      | [----] | DVDあり
+sengoku20 | 第20章  | 2019       | SAM                | [----] | DVDあり
+sengoku21 | 第21章  | 2020-02-15 | AUTHORITY          | [done] | 48名
+sengoku22 | 第22章  | 2020-12-26 | MU-TON             | [done] |
+sengoku23 | 第23章  | 2021-04-10 | SKRYU              | [done] |
+sengoku24 | 第24章  | 2021-10-09 | 呂布カルマ         | [done] | 武道館
+sengoku25 | 第25章  | 2021-12-30 | SAM                | [done] |
+sengoku26 | 第26章  | 2022-06-19 | MU-TON             | [done] |
+sengoku27 | 第27章  | 2022-10-29 | MU-TON             | [done] |
+sengoku28 | 第28章  | 2022-12-30 | ミメイ             | [done] |
+sengoku29 | 第29章  | 2023-03-12 | SAM                | [done] | 国技館
+sengoku30 | 第30章  | 2023-07-22 | SAM/MAKA/DOTAMA    | [done] | 3on3
+sengoku31 | 第31章  | 2023-12-30 | SAM                | [done] |
+sengoku32 | 第32章  | 2024       | 泰斗a.k.a.裂固     | [----] | 未調査
+
+
+## KOK — KING OF KINGS
+## 主催: 9SARI GROUP (漢 a.k.a. GAMI) / 創設: 2015
+
+kok2015 | KOK 2015 | 2016-01    | 崇勲               | [----] |
+kok2016 | KOK 2016 | 2017-01    | GADORO             | [----] |
+kok2017 | KOK 2017 | 2018-01    | GADORO             | [----] |
+kok2018 | KOK 2018 | 2019-01    | 呂布カルマ         | [----] |
+kok2019 | KOK 2019 | 2020-01-05 | RAWAXXX            | [----] | 調査中
+kok2020 | KOK 2020 | 2021-01-09 | 呂布カルマ         | [done] |
+kok2021 | KOK 2021 | 2022-01-23 | FORK               | [done] |
+kok2022 | KOK 2022 | 2023-01-22 | 裂固               | [done] |
+kok2023 | KOK 2023 | 2024-01-08 | MOL53              | [done] |
+kok2024 | KOK 2024 | 2025-01-11 | 9for               | [done] |
+kok2025 | KOK 2025 | 2026-01-10 | T-TANGG            | [done] |
+
+
+## ADRENALINE — (旧) ADRENALINE / 真 ADRENALINE
+## 主催: ACE & HIDE / 創設: 2014
+
+adrenaline2014   | ADRENALINE 2014             | 2014-08-24 | R指定          | [done] | 旧AD・個人戦
+adrenaline2015   | ADRENALINE 2015             | 2015       | —              | [excl] | 旧AD・チーム戦。除外
+adrenaline2016   | ADRENALINE 2016             | 2016       | —              | [excl] | 旧AD・チーム戦。除外
+adrenaline2017   | ADRENALINE 2017             | 2017       | —              | [excl] | 旧AD・チーム戦。除外
+adrenaline2018   | ADRENALINE 2018 FINAL       | 2018       | —              | [excl] | 旧AD・チーム戦。除外
+adrenaline2019   | ADRENALINE 2019（最終回）   | 2019       | —              | [excl] | 旧AD・チーム戦。除外
+shin_ad_2020_mar | 真ADRENALINE 2020           | 2020-03-22 | 輪入道         | [done] |
+shin_ad_abema    | 真ADRENALINE ABEMAノ乱      | 2021-01-30 | 孫GONG         | [done] |
+kok_ad_1         | KOK vs 真ADRENALINE #1      | 2021-05-02 | FORK           | [done] | 優勝者KOK出場権
+kok_ad_2         | KOK vs 真ADRENALINE #2      | 2021-08-07 | 句潤           | [done] | 優勝者KOK出場権
+shin_ad_fukuoka  | 真ADRENALINE 福岡ノ乱       | 2021-09-05 | Fuma no KTR    | [done] |
+reggae_ad_1      | 渋谷レゲエ祭 vs 真AD #1     | 2021-11-14 | MU-TON         | [done] | レゲエ×HIPHOP
+kok_ad_3         | KOK vs 真ADRENALINE #3      | 2022-02-27 | CIMA           | [done] | 優勝者KOK出場権
+reggae_ad_2      | 渋谷レゲエ祭 vs 真AD #2     | 2022-06-25 | DOTAMA         | [done] | レゲエ×HIPHOP
+kok_ad_4         | KOK vs 真ADRENALINE #4      | 2022-10-01 | 晋平太         | [done] | 優勝者KOK出場権
+reggae_ad_3      | 渋谷レゲエ祭 vs 真AD #3     | 2023-04-22 | CHEHON         | [done] | レゲエ×HIPHOP
+kok_ad_5         | KOK vs 真ADRENALINE #5      | 2023-07-14 | 晋平太         | [done] |
+kok_ad_6         | KOK vs 真ADRENALINE #6      | 2023-12-17 | Authority      | [done] | 優勝者KOK出場権
+
+
+## FSD — フリースタイルダンジョン
+## 主催: テレビ朝日 / 創設: 2015
+
+fsd_s1 | 1st season | 2015-09 | 晋平太     | [done] |
+fsd_s2 | 2nd season | 2016-04 | Lick-G     | [done] |
+fsd_s3 | 3rd season | 2016    | —          | [excl] | チーム戦。フォーマット不整合・除外
+fsd_s4 | 4th season | 2017-08 | MC☆ニガリ  | [done] |
+fsd_s5 | 5th season | 2018-08 | MC☆ニガリ  | [done] |
+fsd_s6 | 6th season | 2019-01 | —          | [done] | 維新軍戦のみ収録
+fsd_s7 | 7th season | 2019-10 | MC☆ニガリ  | [done] |
+
+
+## SPOTLIGHT — SPOTLIGHT
+## 主催: 韻踏合組合 / 創設: 2008
+
+spl2008  | 2008      | 2008 | 悠然               | [----] |
+spl2009  | 2009      | 2009 | R-指定             | [----] |
+spl2010  | 2010      | 2010 | peko               | [----] |
+spl2011  | 2011      | 2011 | R-指定             | [----] |
+spl2012  | 2012      | 2012 | SURRY              | [----] |
+spl2013  | 2013      | 2013 | CIMA               | [----] |
+spl2014  | 2014      | 2014 | R-指定             | [----] |
+spl2015  | 2015      | 2015 | 呂布カルマ         | [----] |
+spl2016  | 2016      | 2016 | 裂固               | [----] |
+spl2017  | 2017      | 2017 | MOL53              | [----] |
+spl2018  | 2018      | 2018 | 呂布カルマ         | [----] |
+spl2019  | 2019      | 2019 | Authority          | [----] |
+spl2020  | 2020      | 2020 | 輪入道             | [----] |
+spl2021  | 2021      | 2021 | MC☆ニガリ         | [----] |
+spl2022k | 2022 関東 | 2022 | 輪入道             | [----] |
+spl2022  | 2022 大阪 | 2022 | MOL53              | [----] |
+spl2023k | 2023 関東 | 2023 | 輪入道             | [----] |
+spl2023  | 2023 大阪 | 2023 | MC☆ニガリ         | [----] |
+spl2024k | 2024 関東 | 2024 | 裂固               | [----] |
+spl2024  | 2024 大阪 | 2024 | CIMA               | [----] |
+spl2025  | 2025      | 2025 | レイジ             | [----] |
+
+
+## 凱旋 — 凱旋 MC BATTLE
+## 主催: 怨念JAP / 創設: 2017
+
+gaisen_2018s    | 東西選抜 2018          | 2018-06-24 | K-razy           | [----] | YouTubeに全試合あり
+gaisen_2019sp   | 春ノ陣 2019            | 2019-04-04 | CIMA             | [----] | YouTubeに全試合あり
+gaisen_2019su   | 夏ノ陣 2019            | 2019-07-31 | Authority        | [----] | YouTubeに全試合あり
+gaisen_2019au   | 秋ノ陣 2019            | 2019-10-20 | ライマーズ       | [----] | YouTubeに全試合あり
+gaisen_2020wi   | 冬ノ陣 2020            | 2020-01-19 | 呂布カルマ       | [----] | YouTubeに全試合あり
+gaisen_2020su   | 夏ノ陣 2020            | 2020-07    | MU-TON           | [----] |
+gaisen_2020au   | 秋ノ陣 2020            | 2020-10    | 真ADRENALINE     | [----] | 3on3
+gaisen_2020ab   | ABEMA独占              | 2020-12    | RAWAXXX          | [----] |
+gaisen_2021ar   | アリーナの陣           | 2021-02    | 輪入道           | [----] |
+gaisen_2021yoko | ZEPP TOUR 横浜         | 2021-06    | S-kaine          | [----] |
+gaisen_2021nago | ZEPP TOUR 名古屋       | 2021-07    | ID               | [----] |
+gaisen_2021fuku | ZEPP TOUR 福岡         | 2021-07    | SKRYU            | [----] |
+gaisen_2021osa  | ZEPP TOUR 大阪         | 2021-07    | SAM              | [----] |
+gaisen_2021send | PIT TOUR 仙台          | 2021-12    | 呂布000カルマ    | [----] |
+gaisen_2021toyo | PIT TOUR 豊洲          | 2021-12    | SAM              | [----] |
+gaisen_2022sp   | 春の三連祭             | 2022-03    | 輪入道           | [----] |
+gaisen_2022ssa  | さいたまSA             | 2022-05    | T-Pablow         | [----] | 3万人動員
+gaisen_2022au   | 秋ノ陣 3on3            | 2022-11    | 伝説建設         | [----] | 3on3
+gaisen_2023hok  | NORTH TOUR 北海道      | 2023-02    | 呂布カルマ       | [----] |
+gaisen_2023send | NORTH TOUR 仙台        | 2023-02    | 句潤             | [----] |
+gaisen_2023tgk  | THE GIANT KILLING      | 2023-04    | がーどまん       | [----] |
+gaisen_2023osa  | 大阪ノ陣               | 2023-05    | NAIKA MC         | [----] |
+gaisen_2023sp   | Special 東京GS         | 2023-08    | T-Pablow         | [----] | 東京ガーデンシアター
+gaisen_2023fuku | 冬ノ陣 福岡            | 2023-12    | RAY              | [----] |
+gaisen_2024tgk2 | THE GIANT KILLING 2    | 2024-03    | NAIKA MC         | [----] | 豊洲PIT
+gaisen_2024sp   | 東西選抜 春ノ陣        | 2024-05    | T-TANGG          | [----] | Zepp難波
+
+
+## 罵倒 — THE 罵倒
+## 主催: CASTLE RECORDS / 創設: 2008
+
+batou2008 | 2008 | 2008 | MC多音             | [----] |
+batou2009 | 2009 | 2009 | ZONE THE DARKNESS  | [----] | ZORNの旧名義
+batou2010 | 2010 | 2010 | ZONE THE DARKNESS  | [----] |
+batou2011 | 2011 | 2011 | ZONE THE DARKNESS  | [----] |
+batou2012 | 2012 | 2012 | TKda黒ぶち         | [----] |
+batou2013 | 2013 | 2013 | GOLBY              | [----] |
+batou2014 | 2014 | 2014 | 輪入道             | [----] |
+batou2015 | 2015 | 2015 | 呂布カルマ         | [----] |
+batou2016 | 2016 | 2016 | 輪入道             | [----] |
+batou2017 | 2017 | 2017 | Lick-G             | [----] |
+batou2018 | 2018 | 2018 | 輪入道             | [----] | 2018年で一旦終了
+batou2023 | 2023 | 2023 | 漢 a.k.a. GAMI     | [----] | 復活。KOK出場権
+batou2024 | 2024 | 2024 | SIMON JAP          | [----] | KOK出場権
+
+
+## 口喧嘩祭 — 口喧嘩祭
+## 主催: HIKIGANE SOUND / 創設: 2015
+
+kuchi2015   | 2015         | 2015 | —      | [----] | 岐阜・柳ヶ瀬。詳細不明
+kuchi2016   | 2016         | 2016 | —      | [----] |
+kuchi2017   | 2017         | 2017 | —      | [----] |
+kuchi2018   | 2018         | 2018 | —      | [----] |
+kuchi2019   | 2019         | 2019 | —      | [----] |
+kuchi2020   | 2020         | 2020 | —      | [----] |
+kuchi2021   | 2021         | 2021 | 裂固   | [----] | KOK出場権
+kuchi2022   | 2022         | 2022 | 裂固   | [----] | KOK出場権
+kuchi2023sp | 2023 SPECIAL | 2023 | MOL53  | [----] | KOK出場権
+kuchi2024   | 2024         | 2024 | —      | [----] |
+
+
+## NEO GENESIS — NEO GENESIS
+## 主催: RunLine / 創設: 2023
+
+neogen1 | VOL.1 | 2023-03 | ミメイ   | [----] |
+neogen2 | VOL.2 | 2023-09 | REDWING  | [----] |
+neogen3 | VOL.3 | 2024-03 | Shamis   | [----] | 川崎CLUB CITTA
+neogen4 | VOL.4 | 2024-06 | 楓       | [----] | KOK出場権
+neogen5 | VOL.5 | 2024-08 | ミメイ   | [----] |
+neogen6 | VOL.6 | 2024-10 | K-rush   | [----] | KOK出場権
+neogen7 | VOL.7 | 2025    | Rude-α   | [----] |
+neogen8 | VOL.8 | 2025    | REDWING  | [----] |
+neogen9 | VOL.9 | 2025    | DOTAMA   | [----] |
+
+
+## U-22 — U-22 MC BATTLE
+## 主催: MC正社員 / 創設: 2021
+
+u22_2021 | 2021       | 2021 | SKRYU   | [----] |
+u22_2022 | 2022       | 2022 | S-kainê | [----] |
+u22_2023 | 2023       | 2023 | —       | [----] |
+u22_2024 | 2024 FINAL | 2024 | —       | [----] | KOK出場権

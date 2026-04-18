@@ -7,6 +7,7 @@ export type RankingMC = {
   name: string;
   current_rating: number;
   battle_count: number;
+  win_count: number;
 };
 
 type Props = {

@@ -1,0 +1,6810 @@
+{
+  "tournaments": [
+    {
+      "key": "kok2020",
+      "name": "KING OF KINGS 2020 GRAND CHAMPIONSHIP FINAL",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2021-01-09"
+    },
+    {
+      "key": "kok2021",
+      "name": "KOK 2021 GRAND CHAMPIONSHIP FINAL",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2022-01-23"
+    },
+    {
+      "key": "kok2022",
+      "name": "KOK 2022 GRAND CHAMPIONSHIP FINAL",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2023-01-22"
+    },
+    {
+      "key": "kok2023",
+      "name": "KING OF KINGS 2023 GRAND CHAMPIONSHIP FINAL",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2024-01-08"
+    },
+    {
+      "key": "kok2024",
+      "name": "KING OF KINGS 2024 GRAND CHAMPIONSHIP FINAL",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2025-01-11"
+    },
+    {
+      "key": "kok2025",
+      "name": "KING OF KINGS 2025 GRAND CHAMPIONSHIP FINAL",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2026-01-10"
+    },
+    {
+      "key": "sengoku22",
+      "name": "戦極MCBATTLE 第22章 -Re:Born- 2020",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2020-12-26"
+    },
+    {
+      "key": "sengoku23",
+      "name": "戦極MCBATTLE 第23章 New classic JPN",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2021-04-10"
+    },
+    {
+      "key": "sengoku24",
+      "name": "戦極MCBATTLE 第24章 日本武道館",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2021-10-09"
+    },
+    {
+      "key": "sengoku25",
+      "name": "戦極MCBATTLE 第25章 THE NEXT 2021",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2021-12-30"
+    },
+    {
+      "key": "sengoku26",
+      "name": "戦極MCBATTLE 第26章 -祝北海道公演-",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2022-06-19"
+    },
+    {
+      "key": "sengoku27",
+      "name": "戦極MCBATTLE 第27章 -東北仙台公演-",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2022-10-29"
+    },
+    {
+      "key": "sengoku28",
+      "name": "戦極MCBATTLE 第28章 関西大阪公演",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2022-12-30"
+    },
+    {
+      "key": "sengoku29",
+      "name": "戦極MCBATTLE 第29章 両国国技館",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2023-03-12"
+    },
+    {
+      "key": "sengoku30",
+      "name": "戦極MCBATTLE 第30章 The 3on3 MATCH",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2023-07-22"
+    },
+    {
+      "key": "sengoku31",
+      "name": "戦極MCBATTLE 第31章 北海道祭2023",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2023-12-30"
+    },
+    {
+      "key": "umb2023",
+      "name": "UMB 2023 GRAND CHAMPIONSHIP",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2023-12-26"
+    },
+    {
+      "key": "umb2020",
+      "name": "UMB 2020 GRAND CHAMPIONSHIP",
+      "category": "主要大会",
+      "grade_coeff": 3.0,
+      "held_on": "2020-12-27"
+    },
+    {
+      "key": "fsd_s1",
+      "name": "フリースタイルダンジョン 1st season",
+      "category": "FSD",
+      "grade_coeff": 1.5,
+      "held_on": "2015-09-30"
+    },
+    {
+      "key": "fsd_s2",
+      "name": "フリースタイルダンジョン 2nd season",
+      "category": "FSD",
+      "grade_coeff": 1.5,
+      "held_on": "2016-04-13"
+    },
+    {
+      "key": "fsd_s4",
+      "name": "フリースタイルダンジョン 4th season",
+      "category": "FSD",
+      "grade_coeff": 1.5,
+      "held_on": "2017-08-30"
+    },
+    {
+      "key": "fsd_s5",
+      "name": "フリースタイルダンジョン 5th season",
+      "category": "FSD",
+      "grade_coeff": 1.5,
+      "held_on": "2018-08-29"
+    },
+    {
+      "key": "fsd_s6",
+      "name": "フリースタイルダンジョン 6th season",
+      "category": "FSD",
+      "grade_coeff": 1.5,
+      "held_on": "2019-01-16"
+    },
+    {
+      "key": "fsd_s7",
+      "name": "フリースタイルダンジョン 7th season",
+      "category": "FSD",
+      "grade_coeff": 1.5,
+      "held_on": "2019-10-02"
+    },
+    {
+      "key": "umb2014",
+      "name": "ULTIMATE MC BATTLE 2014 GRAND CHAMPIONSHIP",
+      "category": "UMB",
+      "grade_coeff": 2.0,
+      "held_on": "2014-12-30"
+    },
+    {
+      "key": "umb2015",
+      "name": "ULTIMATE MC BATTLE 2015 GRAND CHAMPIONSHIP",
+      "category": "UMB",
+      "grade_coeff": 2.0,
+      "held_on": "2015-12-30"
+    },
+    {
+      "key": "umb2016",
+      "name": "ULTIMATE MC BATTLE 2016 GRAND CHAMPIONSHIP",
+      "category": "UMB",
+      "grade_coeff": 2.0,
+      "held_on": "2016-12-30"
+    },
+    {
+      "key": "umb2017",
+      "name": "ULTIMATE MC BATTLE 2017 GRAND CHAMPIONSHIP",
+      "category": "UMB",
+      "grade_coeff": 2.0,
+      "held_on": "2017-12-30"
+    },
+    {
+      "key": "umb2018",
+      "name": "ULTIMATE MC BATTLE 2018 GRAND CHAMPIONSHIP",
+      "category": "UMB",
+      "grade_coeff": 2.0,
+      "held_on": "2018-12-30"
+    },
+    {
+      "key": "umb2019",
+      "name": "ULTIMATE MC BATTLE 2019 GRAND CHAMPIONSHIP",
+      "category": "UMB",
+      "grade_coeff": 2.0,
+      "held_on": "2019-12-28"
+    }
+  ],
+  "battles": [
+    {
+      "tournament_key": "kok2020",
+      "round": "ベスト16",
+      "mc_a": "RAWAXXX",
+      "mc_b": "Authority",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2020",
+      "round": "ベスト16",
+      "mc_a": "Luvit",
+      "mc_b": "崇勲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2020",
+      "round": "ベスト16",
+      "mc_a": "句潤",
+      "mc_b": "MU-TON",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2020",
+      "round": "ベスト16",
+      "mc_a": "鎮座DOPENESS",
+      "mc_b": "SKRYU",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2020",
+      "round": "ベスト16",
+      "mc_a": "輪入道",
+      "mc_b": "BASE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2020",
+      "round": "ベスト16",
+      "mc_a": "Maiji",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2020",
+      "round": "ベスト16",
+      "mc_a": "呂布カルマ",
+      "mc_b": "S-kaine",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2020",
+      "round": "ベスト16",
+      "mc_a": "SIMON JAP",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2020",
+      "round": "ベスト8",
+      "mc_a": "RAWAXXX",
+      "mc_b": "崇勲",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2020",
+      "round": "ベスト8",
+      "mc_a": "MU-TON",
+      "mc_b": "鎮座DOPENESS",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2020",
+      "round": "ベスト8",
+      "mc_a": "Maiji",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2020",
+      "round": "ベスト8",
+      "mc_a": "呂布カルマ",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2020",
+      "round": "準決勝",
+      "mc_a": "RAWAXXX",
+      "mc_b": "鎮座DOPENESS",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2020",
+      "round": "準決勝",
+      "mc_a": "呂布カルマ",
+      "mc_b": "輪入道",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2020",
+      "round": "決勝",
+      "mc_a": "鎮座DOPENESS",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "ベスト16",
+      "mc_a": "FORK",
+      "mc_b": "Yella goat",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "ベスト16",
+      "mc_a": "VENOM",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "ベスト16",
+      "mc_a": "CHEHON",
+      "mc_b": "PONEY",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "ベスト16",
+      "mc_a": "智大",
+      "mc_b": "CIMA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "ベスト16",
+      "mc_a": "Maiji",
+      "mc_b": "MC☆ニガリ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "ベスト16",
+      "mc_a": "呂布カルマ",
+      "mc_b": "N1NYO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "ベスト16",
+      "mc_a": "句潤",
+      "mc_b": "HI-KING TAKASE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "ベスト16",
+      "mc_a": "晋平太",
+      "mc_b": "梵頭",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "ベスト8",
+      "mc_a": "SILENT KILLA JOINT",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "ベスト8",
+      "mc_a": "CHEHON",
+      "mc_b": "CIMA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "ベスト8",
+      "mc_a": "MC☆ニガリ",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "ベスト8",
+      "mc_a": "梵頭",
+      "mc_b": "句潤",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "準決勝",
+      "mc_a": "CHEHON",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "準決勝",
+      "mc_a": "梵頭",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2021",
+      "round": "決勝",
+      "mc_a": "呂布カルマ",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "ベスト16",
+      "mc_a": "S-kaine",
+      "mc_b": "阿修羅",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "ベスト16",
+      "mc_a": "紅蓮",
+      "mc_b": "REDWING",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "ベスト16",
+      "mc_a": "MAKA",
+      "mc_b": "CIMA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "ベスト16",
+      "mc_a": "T-TANGG",
+      "mc_b": "MOL53",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "ベスト16",
+      "mc_a": "Fuma no KTR",
+      "mc_b": "REIDAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "ベスト16",
+      "mc_a": "ORYO",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "ベスト16",
+      "mc_a": "晋平太",
+      "mc_b": "K-rush",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "ベスト16",
+      "mc_a": "ふぁんく",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "ベスト8",
+      "mc_a": "S-kaine",
+      "mc_b": "REDWING",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "ベスト8",
+      "mc_a": "MOL53",
+      "mc_b": "CIMA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "ベスト8",
+      "mc_a": "REIDAM",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "ベスト8",
+      "mc_a": "K-rush",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "準決勝",
+      "mc_a": "S-kaine",
+      "mc_b": "MOL53",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "準決勝",
+      "mc_a": "裂固",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2022",
+      "round": "決勝",
+      "mc_a": "MOL53",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "ベスト16",
+      "mc_a": "SAM",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "ベスト16",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "句潤",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "ベスト16",
+      "mc_a": "MOL53",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "ベスト16",
+      "mc_a": "Shamis",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "ベスト16",
+      "mc_a": "MAKA",
+      "mc_b": "だーひー",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "ベスト16",
+      "mc_a": "REIDAM",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "ベスト16",
+      "mc_a": "Authority",
+      "mc_b": "MC☆ニガリ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "ベスト16",
+      "mc_a": "NAIKA MC",
+      "mc_b": "GOTIT",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "ベスト8",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "ベスト8",
+      "mc_a": "MOL53",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "ベスト8",
+      "mc_a": "呂布カルマ",
+      "mc_b": "だーひー",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "ベスト8",
+      "mc_a": "NAIKA MC",
+      "mc_b": "Authority",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "準決勝",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "MOL53",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "準決勝",
+      "mc_a": "Authority",
+      "mc_b": "だーひー",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2023",
+      "round": "決勝",
+      "mc_a": "MOL53",
+      "mc_b": "だーひー",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "ベスト16",
+      "mc_a": "CIMA",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "ベスト16",
+      "mc_a": "KOOPA",
+      "mc_b": "GIL",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "ベスト16",
+      "mc_a": "ミメイ",
+      "mc_b": "lonelow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "ベスト16",
+      "mc_a": "9for",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "ベスト16",
+      "mc_a": "K-rush",
+      "mc_b": "SIMON JAP",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "ベスト16",
+      "mc_a": "T-TANGG",
+      "mc_b": "KOPERU",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "ベスト16",
+      "mc_a": "輪入道",
+      "mc_b": "LOWCH",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "ベスト16",
+      "mc_a": "杏地",
+      "mc_b": "S-kaine",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "ベスト8",
+      "mc_a": "GIL",
+      "mc_b": "CIMA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "ベスト8",
+      "mc_a": "ミメイ",
+      "mc_b": "9for",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "ベスト8",
+      "mc_a": "T-TANGG",
+      "mc_b": "SIMON JAP",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "ベスト8",
+      "mc_a": "S-kaine",
+      "mc_b": "輪入道",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "準決勝",
+      "mc_a": "9for",
+      "mc_b": "GIL",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "準決勝",
+      "mc_a": "S-kaine",
+      "mc_b": "SIMON JAP",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2024",
+      "round": "決勝",
+      "mc_a": "9for",
+      "mc_b": "S-kaine",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "ベスト16",
+      "mc_a": "NAIKA MC",
+      "mc_b": "盧舎那",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "ベスト16",
+      "mc_a": "T-TANGG",
+      "mc_b": "脱走",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "ベスト16",
+      "mc_a": "MC☆ニガリ",
+      "mc_b": "REDWING",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "ベスト16",
+      "mc_a": "9for",
+      "mc_b": "OWG",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "ベスト16",
+      "mc_a": "PONEY",
+      "mc_b": "句潤",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "ベスト16",
+      "mc_a": "K-rush",
+      "mc_b": "ST-C",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "ベスト16",
+      "mc_a": "Donatello",
+      "mc_b": "レイジ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "ベスト16",
+      "mc_a": "Sitissy luvit",
+      "mc_b": "L.B.R.L",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "ベスト8",
+      "mc_a": "NAIKA MC",
+      "mc_b": "T-TANGG",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "ベスト8",
+      "mc_a": "9for",
+      "mc_b": "REDWING",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "ベスト8",
+      "mc_a": "K-rush",
+      "mc_b": "PONEY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "ベスト8",
+      "mc_a": "Donatello",
+      "mc_b": "Sitissy luvit",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "準決勝",
+      "mc_a": "9for",
+      "mc_b": "T-TANGG",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "準決勝",
+      "mc_a": "PONEY",
+      "mc_b": "Sitissy luvit",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "kok2025",
+      "round": "決勝",
+      "mc_a": "T-TANGG",
+      "mc_b": "Sitissy luvit",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "NAIKA MC",
+      "mc_b": "梵頭",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "Scooby J",
+      "mc_b": "句潤",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "QN a.k.a Young親方",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "RAWAXXX",
+      "mc_b": "GOMESS",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "egavvo",
+      "mc_b": "Itaq",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "早雲",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "MAKA",
+      "mc_b": "ダースレイダー",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "POWER WAVE",
+      "mc_b": "鎮座DOPENESS",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "Amateras",
+      "mc_b": "Charlu",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "SAM",
+      "mc_b": "S-kaine",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "018",
+      "mc_b": "G.O",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "MU-TON",
+      "mc_b": "ミステリオ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "Nidra Assassin",
+      "mc_b": "十影",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "SIMON JAP",
+      "mc_b": "Randy Wati Sati",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "Fuma no KTR",
+      "mc_b": "SKRYU",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "1回戦",
+      "mc_a": "呂布カルマ",
+      "mc_b": "韻マン",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "2回戦",
+      "mc_a": "Scooby J",
+      "mc_b": "梵頭",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "2回戦",
+      "mc_a": "GOMESS",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "2回戦",
+      "mc_a": "早雲",
+      "mc_b": "Itaq",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "2回戦",
+      "mc_a": "MAKA",
+      "mc_b": "鎮座DOPENESS",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "2回戦",
+      "mc_a": "Amateras",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "2回戦",
+      "mc_a": "MU-TON",
+      "mc_b": "018",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "2回戦",
+      "mc_a": "Nidra Assassin",
+      "mc_b": "SIMON JAP",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "2回戦",
+      "mc_a": "SKRYU",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "ベスト8",
+      "mc_a": "Scooby J",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "ベスト8",
+      "mc_a": "早雲",
+      "mc_b": "鎮座DOPENESS",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "ベスト8",
+      "mc_a": "SAM",
+      "mc_b": "MU-TON",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "ベスト8",
+      "mc_a": "呂布カルマ",
+      "mc_b": "SIMON JAP",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "準決勝",
+      "mc_a": "早雲",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "準決勝",
+      "mc_a": "MU-TON",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku22",
+      "round": "決勝",
+      "mc_a": "SILENT KILLA JOINT",
+      "mc_b": "MU-TON",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "ベル",
+      "mc_b": "Fuma no KTR",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "クボタカイ",
+      "mc_b": "MAVEL",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "がーどまん",
+      "mc_b": "SKRYU",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "Rin音",
+      "mc_b": "梵頭",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "ハハノシキュウ",
+      "mc_b": "松島諒",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "しょうたTHE不安喰い",
+      "mc_b": "RAGA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "JAKE",
+      "mc_b": "Luvit",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "MC小法師",
+      "mc_b": "崇勲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "MCリトル",
+      "mc_b": "SHJ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "言xTHEANSWER",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "risano",
+      "mc_b": "TERU",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "CHEHON",
+      "mc_b": "KYO虎",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "GOMESS",
+      "mc_b": "chemicl",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "ツチヤチカら",
+      "mc_b": "Nidra Assassin",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "MU-TON",
+      "mc_b": "MC☆ニガリ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "1回戦",
+      "mc_a": "Kaine dot Co",
+      "mc_b": "S-kaine",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "2回戦",
+      "mc_a": "Fuma no KTR",
+      "mc_b": "MAVEL",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "2回戦",
+      "mc_a": "梵頭",
+      "mc_b": "SKRYU",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "2回戦",
+      "mc_a": "ハハノシキュウ",
+      "mc_b": "RAGA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "2回戦",
+      "mc_a": "JAKE",
+      "mc_b": "崇勲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "2回戦",
+      "mc_a": "SHJ",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "2回戦",
+      "mc_a": "CHEHON",
+      "mc_b": "TERU",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "2回戦",
+      "mc_a": "ツチヤチカら",
+      "mc_b": "chemicl",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "2回戦",
+      "mc_a": "MU-TON",
+      "mc_b": "S-kaine",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "ベスト8",
+      "mc_a": "Fuma no KTR",
+      "mc_b": "SKRYU",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "ベスト8",
+      "mc_a": "崇勲",
+      "mc_b": "ハハノシキュウ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "ベスト8",
+      "mc_a": "CHEHON",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "ベスト8",
+      "mc_a": "ツチヤチカら",
+      "mc_b": "S-kaine",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "準決勝",
+      "mc_a": "ハハノシキュウ",
+      "mc_b": "SKRYU",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "準決勝",
+      "mc_a": "S-kaine",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku23",
+      "round": "決勝",
+      "mc_a": "SKRYU",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "ベスト16",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "Novel Core",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "ベスト16",
+      "mc_a": "MU-TON",
+      "mc_b": "韻マン",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "ベスト16",
+      "mc_a": "DOTAMA",
+      "mc_b": "百足",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "ベスト16",
+      "mc_a": "ID",
+      "mc_b": "鬼ピュアワンライン",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "ベスト16",
+      "mc_a": "GIL",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "ベスト16",
+      "mc_a": "SKRYU",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "ベスト16",
+      "mc_a": "JUMBO MAATCH",
+      "mc_b": "BUFFALO SOLDIER",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "ベスト16",
+      "mc_a": "晋平太",
+      "mc_b": "Authority",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "ベスト8",
+      "mc_a": "MU-TON",
+      "mc_b": "CHICO CARLITO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "ベスト8",
+      "mc_a": "DOTAMA",
+      "mc_b": "鬼ピュアワンライン",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "ベスト8",
+      "mc_a": "SAM",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "ベスト8",
+      "mc_a": "晋平太",
+      "mc_b": "BUFFALO SOLDIER",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "準決勝",
+      "mc_a": "MU-TON",
+      "mc_b": "鬼ピュアワンライン",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "準決勝",
+      "mc_a": "晋平太",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku24",
+      "round": "決勝",
+      "mc_a": "呂布カルマ",
+      "mc_b": "鬼ピュアワンライン",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "ベスト16",
+      "mc_a": "GOLBY",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "ベスト16",
+      "mc_a": "HIDADDY",
+      "mc_b": "鬼ピュアワンライン",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "ベスト16",
+      "mc_a": "ベル",
+      "mc_b": "DOTAMA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "ベスト16",
+      "mc_a": "Charlu",
+      "mc_b": "Nidra Assassin",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "ベスト16",
+      "mc_a": "5LEEP3ALKER",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "ベスト16",
+      "mc_a": "GIL",
+      "mc_b": "GOMESS",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "ベスト16",
+      "mc_a": "MU-TON",
+      "mc_b": "写楽",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "ベスト16",
+      "mc_a": "risano",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "ベスト8",
+      "mc_a": "SAM",
+      "mc_b": "鬼ピュアワンライン",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "ベスト8",
+      "mc_a": "Charlu",
+      "mc_b": "DOTAMA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "ベスト8",
+      "mc_a": "GOMESS",
+      "mc_b": "5LEEP3ALKER",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "ベスト8",
+      "mc_a": "MU-TON",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "準決勝",
+      "mc_a": "SAM",
+      "mc_b": "DOTAMA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "準決勝",
+      "mc_a": "5LEEP3ALKER",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku25",
+      "round": "決勝",
+      "mc_a": "SAM",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "ベスト16",
+      "mc_a": "MCリトル",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "ベスト16",
+      "mc_a": "GOMESS",
+      "mc_b": "Yella goat",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "ベスト16",
+      "mc_a": "クフェア",
+      "mc_b": "脱走",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "ベスト16",
+      "mc_a": "ウマバヒナタ",
+      "mc_b": "RAWAXXX",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "ベスト16",
+      "mc_a": "MU-TON",
+      "mc_b": "Dumbperson",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "ベスト16",
+      "mc_a": "ベル",
+      "mc_b": "Nidra Assassin",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "ベスト16",
+      "mc_a": "LARGE IRON",
+      "mc_b": "松島諒",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "ベスト16",
+      "mc_a": "梵頭",
+      "mc_b": "DOTAMA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "ベスト8",
+      "mc_a": "呂布カルマ",
+      "mc_b": "Yella goat",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "ベスト8",
+      "mc_a": "脱走",
+      "mc_b": "RAWAXXX",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "ベスト8",
+      "mc_a": "MU-TON",
+      "mc_b": "ベル",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "ベスト8",
+      "mc_a": "DOTAMA",
+      "mc_b": "松島諒",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "準決勝",
+      "mc_a": "呂布カルマ",
+      "mc_b": "脱走",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "準決勝",
+      "mc_a": "MU-TON",
+      "mc_b": "DOTAMA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku26",
+      "round": "決勝",
+      "mc_a": "MU-TON",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "ベスト16",
+      "mc_a": "NAIKA MC",
+      "mc_b": "GIL",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "ベスト16",
+      "mc_a": "ふぁんく",
+      "mc_b": "MOL53",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "ベスト16",
+      "mc_a": "晋平太",
+      "mc_b": "JAG-ME",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "ベスト16",
+      "mc_a": "MU-TON",
+      "mc_b": "鬼",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "ベスト16",
+      "mc_a": "しーじん",
+      "mc_b": "TERU",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "ベスト16",
+      "mc_a": "AILI",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "ベスト16",
+      "mc_a": "KT",
+      "mc_b": "DOTAMA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "ベスト16",
+      "mc_a": "HUNGER",
+      "mc_b": "GOCCI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "ベスト8",
+      "mc_a": "GIL",
+      "mc_b": "MOL53",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "ベスト8",
+      "mc_a": "MU-TON",
+      "mc_b": "晋平太",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "ベスト8",
+      "mc_a": "TERU",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "ベスト8",
+      "mc_a": "DOTAMA",
+      "mc_b": "HUNGER",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "準決勝",
+      "mc_a": "MOL53",
+      "mc_b": "MU-TON",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "準決勝",
+      "mc_a": "呂布カルマ",
+      "mc_b": "DOTAMA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku27",
+      "round": "決勝",
+      "mc_a": "MU-TON",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "ベスト16",
+      "mc_a": "DOTAMA",
+      "mc_b": "GOLBY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "ベスト16",
+      "mc_a": "ミメイ",
+      "mc_b": "MOL53",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "ベスト16",
+      "mc_a": "KOPERU",
+      "mc_b": "ID",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "ベスト16",
+      "mc_a": "ミステリオ",
+      "mc_b": "SKRYU",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "ベスト16",
+      "mc_a": "ふぁんく",
+      "mc_b": "晋平太",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "ベスト16",
+      "mc_a": "KT",
+      "mc_b": "梵頭",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "ベスト16",
+      "mc_a": "Nidra Assassin",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "ベスト16",
+      "mc_a": "RED WING",
+      "mc_b": "MU-TON",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "ベスト8",
+      "mc_a": "ミメイ",
+      "mc_b": "GOLBY",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "ベスト8",
+      "mc_a": "KOPERU",
+      "mc_b": "SKRYU",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "ベスト8",
+      "mc_a": "晋平太",
+      "mc_b": "梵頭",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "ベスト8",
+      "mc_a": "MU-TON",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "準決勝",
+      "mc_a": "SKRYU",
+      "mc_b": "ミメイ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "準決勝",
+      "mc_a": "梵頭",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku28",
+      "round": "決勝",
+      "mc_a": "ミメイ",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "1回戦",
+      "mc_a": "ミメイ",
+      "mc_b": "CHEHON",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "1回戦",
+      "mc_a": "梵頭",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "1回戦",
+      "mc_a": "カルデラビスタ",
+      "mc_b": "晋平太",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "1回戦",
+      "mc_a": "寿君",
+      "mc_b": "MCリトル",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "1回戦",
+      "mc_a": "Fuma no KTR",
+      "mc_b": "G YARD",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "1回戦",
+      "mc_a": "MU-TON",
+      "mc_b": "ID",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "1回戦",
+      "mc_a": "ミステリオ",
+      "mc_b": "DOTAMA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "1回戦",
+      "mc_a": "METEOR",
+      "mc_b": "SKRYU",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "1回戦",
+      "mc_a": "MOL53",
+      "mc_b": "CHICO CARLITO",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "1回戦",
+      "mc_a": "裂固",
+      "mc_b": "がーどまん",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "1回戦",
+      "mc_a": "#KTちゃん",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "1回戦",
+      "mc_a": "MonyHorse",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "シード戦",
+      "mc_a": "CHEHON",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "シード戦",
+      "mc_a": "Fuma no KTR",
+      "mc_b": "MCリトル",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "シード戦",
+      "mc_a": "ミステリオ",
+      "mc_b": "SKRYU",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "シード戦",
+      "mc_a": "裂固",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "ベスト8",
+      "mc_a": "SAM",
+      "mc_b": "晋平太",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "ベスト8",
+      "mc_a": "MU-TON",
+      "mc_b": "Fuma no KTR",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "ベスト8",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "ミステリオ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "ベスト8",
+      "mc_a": "漢 a.k.a. GAMI",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "準決勝",
+      "mc_a": "Fuma no KTR",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "準決勝",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku29",
+      "round": "決勝",
+      "mc_a": "SAM",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "裂固",
+      "mc_b": "TERU",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "Fuma no KTR",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "輪入道",
+      "mc_b": "9for",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "ミメイ",
+      "mc_b": "RAY",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "GOMESS",
+      "mc_b": "がーどまん",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "晋平太",
+      "mc_b": "ID",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "#KTちゃん",
+      "mc_b": "DOTAMA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "MAKA",
+      "mc_b": "久保田",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "ミステリオ",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "MOL53",
+      "mc_b": "RunLine",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "SILENT KILLA JOINT",
+      "mc_b": "L.B.R.L",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "CIMA",
+      "mc_b": "Kampf",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "MU-TON",
+      "mc_b": "Dumbperson",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "梵頭",
+      "mc_b": "SONOTA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "MU-TON（代）",
+      "mc_b": "ゆうま",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "1回戦",
+      "mc_a": "漢 a.k.a. GAMI",
+      "mc_b": "ハハノシキュウ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "準決勝",
+      "mc_a": "裂固",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "準決勝",
+      "mc_a": "輪入道",
+      "mc_b": "MOL53",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "準決勝",
+      "mc_a": "CIMA",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "準決勝",
+      "mc_a": "DOTAMA",
+      "mc_b": "SONOTA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "準決勝",
+      "mc_a": "MAKA",
+      "mc_b": "ゆうま",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "準決勝",
+      "mc_a": "ハハノシキュウ",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "準決勝",
+      "mc_a": "GOMESS",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "準決勝",
+      "mc_a": "RAY",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "準決勝",
+      "mc_a": "ID",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "決勝",
+      "mc_a": "DOTAMA",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "決勝",
+      "mc_a": "MAKA",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "決勝",
+      "mc_a": "輪入道",
+      "mc_b": "SAM",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku30",
+      "round": "決勝",
+      "mc_a": "輪入道",
+      "mc_b": "DOTAMA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "ベスト16",
+      "mc_a": "Authority",
+      "mc_b": "SATORU",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "ベスト16",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "mogura",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "ベスト16",
+      "mc_a": "MOL53",
+      "mc_b": "BHS",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "ベスト16",
+      "mc_a": "Ry-lax",
+      "mc_b": "B.I.G.JOE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "ベスト16",
+      "mc_a": "DOTAMA",
+      "mc_b": "脱走",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "ベスト16",
+      "mc_a": "ミメイ",
+      "mc_b": "杏地",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "ベスト16",
+      "mc_a": "#KTちゃん",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "ベスト16",
+      "mc_a": "COCRGI WHITE",
+      "mc_b": "札幌のギャグ男",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "ベスト8",
+      "mc_a": "Authority",
+      "mc_b": "CHICO CARLITO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "ベスト8",
+      "mc_a": "MOL53",
+      "mc_b": "Ry-lax",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "ベスト8",
+      "mc_a": "杏地",
+      "mc_b": "DOTAMA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "ベスト8",
+      "mc_a": "COCRGI WHITE",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "準決勝",
+      "mc_a": "Ry-lax",
+      "mc_b": "Authority",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "準決勝",
+      "mc_a": "杏地",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "sengoku31",
+      "round": "決勝",
+      "mc_a": "Authority",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "SyAchi",
+      "mc_b": "灯火",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "実成",
+      "mc_b": "CHARLIE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "K-razy",
+      "mc_b": "杏地",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "MC☆ニガリ",
+      "mc_b": "PONEY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "alpha",
+      "mc_b": "I.T.1",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "miniRA",
+      "mc_b": "紅蓮",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "一念",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "外れクジ",
+      "mc_b": "Chakr@The3rd",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "zakky",
+      "mc_b": "ORYO",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "DAYO",
+      "mc_b": "NAJIMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "HIBIKI",
+      "mc_b": "K.K FLOW",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "楓",
+      "mc_b": "ENRA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "JAG-ME",
+      "mc_b": "KEN",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "SHOYA",
+      "mc_b": "オノダマン",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "ふーわ",
+      "mc_b": "K-rush",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "1回戦",
+      "mc_a": "Kizushi命",
+      "mc_b": "$IVA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "KANNDAI",
+      "mc_b": "SyAchi",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "USTR",
+      "mc_b": "CHARLIE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "JINTOKU",
+      "mc_b": "K-razy",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "Bluek",
+      "mc_b": "PONEY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "YONA",
+      "mc_b": "I.T.1",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "梵頭",
+      "mc_b": "miniRA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "amida",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "GOTIT",
+      "mc_b": "外れクジ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "NAIKA MC",
+      "mc_b": "ORYO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "GCI",
+      "mc_b": "NAJIMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "GO MAD",
+      "mc_b": "K.K FLOW",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "KATY",
+      "mc_b": "楓",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "TYK",
+      "mc_b": "KEN",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "Route",
+      "mc_b": "オノダマン",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "REIDAM",
+      "mc_b": "K-rush",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "2回戦",
+      "mc_a": "YASSAN",
+      "mc_b": "$IVA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "ベスト16",
+      "mc_a": "CHARLIE",
+      "mc_b": "SyAchi",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "ベスト16",
+      "mc_a": "K-razy",
+      "mc_b": "PONEY",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "ベスト16",
+      "mc_a": "miniRA",
+      "mc_b": "I.T.1",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "ベスト16",
+      "mc_a": "SAM",
+      "mc_b": "GOTIT",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "ベスト16",
+      "mc_a": "NAIKA MC",
+      "mc_b": "NAJIMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "ベスト16",
+      "mc_a": "K.K FLOW",
+      "mc_b": "楓",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "ベスト16",
+      "mc_a": "Route",
+      "mc_b": "KEN",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "ベスト16",
+      "mc_a": "$IVA",
+      "mc_b": "K-rush",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "ベスト8",
+      "mc_a": "K-razy",
+      "mc_b": "SyAchi",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "ベスト8",
+      "mc_a": "GOTIT",
+      "mc_b": "miniRA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "ベスト8",
+      "mc_a": "NAIKA MC",
+      "mc_b": "楓",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "ベスト8",
+      "mc_a": "KEN",
+      "mc_b": "K-rush",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "準決勝",
+      "mc_a": "GOTIT",
+      "mc_b": "SyAchi",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "準決勝",
+      "mc_a": "NAIKA MC",
+      "mc_b": "K-rush",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2023",
+      "round": "決勝",
+      "mc_a": "GOTIT",
+      "mc_b": "K-rush",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "小池潔宗",
+      "mc_b": "蛇",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "FEIDA-WAN",
+      "mc_b": "SIMON JAP",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "早雲",
+      "mc_b": "TORA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "サイプレス上野",
+      "mc_b": "スナフキン",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "S-kaine",
+      "mc_b": "$IVA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "JACKTER",
+      "mc_b": "JAYPAY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "ALCI",
+      "mc_b": "VENOM",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "REIDAM",
+      "mc_b": "MAKA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "BEZIRO",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "KZ",
+      "mc_b": "USTR",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "HIGH BRIDG3",
+      "mc_b": "脱走",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "ACE",
+      "mc_b": "JAKE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "SHUN-P",
+      "mc_b": "だーひー",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "SKRYU",
+      "mc_b": "MUD ASH",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "ALSEAD",
+      "mc_b": "MAKI DA SHIT",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "T-STONE",
+      "mc_b": "T-TANGG",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "BALA SBKN",
+      "mc_b": "MULBE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "MAVEL",
+      "mc_b": "句潤",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "山本びんた",
+      "mc_b": "Scooby J",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "玲音",
+      "mc_b": "BUSS",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "梵頭",
+      "mc_b": "KOOPA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "黄猿",
+      "mc_b": "J-MACK",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "MC☆ニガリ a.k.a 赤い稲妻",
+      "mc_b": "True or 4-SE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "裂固",
+      "mc_b": "SHAMO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "RAGA",
+      "mc_b": "しぇん",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "呂布カルマ",
+      "mc_b": "Dar-T なたでここ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "MC小法師",
+      "mc_b": "PONEY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "阿修羅",
+      "mc_b": "SURRY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "Atmoshiphere",
+      "mc_b": "ふーわ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "CJ",
+      "mc_b": "HI-KING TAKASE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "KATY",
+      "mc_b": "ふぁんく",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "1回戦",
+      "mc_a": "D.D.S",
+      "mc_b": "BASE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "小池潔宗",
+      "mc_b": "FEIDA-WAN",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "早雲",
+      "mc_b": "スナフキン",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "JAYPAY",
+      "mc_b": "S-kaine",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "ALCI",
+      "mc_b": "MAKA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "輪入道",
+      "mc_b": "USTR",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "JAKE",
+      "mc_b": "脱走",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "SKRYU",
+      "mc_b": "だーひー",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "ALSEAD",
+      "mc_b": "T-TANGG",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "BALA SBKN",
+      "mc_b": "句潤",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "BUSS",
+      "mc_b": "Scooby J",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "梵頭",
+      "mc_b": "黄猿",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "MC☆ニガリ a.k.a 赤い稲妻",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "呂布カルマ",
+      "mc_b": "しぇん",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "SURRY",
+      "mc_b": "PONEY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "ふーわ",
+      "mc_b": "HI-KING TAKASE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "2回戦",
+      "mc_a": "ふぁんく",
+      "mc_b": "D.D.S",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "ベスト16",
+      "mc_a": "FEIDA-WAN",
+      "mc_b": "早雲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "ベスト16",
+      "mc_a": "MAKA",
+      "mc_b": "S-kaine",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "ベスト16",
+      "mc_a": "JAKE",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "ベスト16",
+      "mc_a": "ALSEAD",
+      "mc_b": "SKRYU",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "ベスト16",
+      "mc_a": "Scooby J",
+      "mc_b": "句潤",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "ベスト16",
+      "mc_a": "裂固",
+      "mc_b": "黄猿",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "ベスト16",
+      "mc_a": "PONEY",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "ベスト16",
+      "mc_a": "ふぁんく",
+      "mc_b": "ふーわ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "ベスト8",
+      "mc_a": "S-kaine",
+      "mc_b": "早雲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "ベスト8",
+      "mc_a": "輪入道",
+      "mc_b": "SKRYU",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "ベスト8",
+      "mc_a": "句潤",
+      "mc_b": "黄猿",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "ベスト8",
+      "mc_a": "ふぁんく",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "準決勝",
+      "mc_a": "SKRYU",
+      "mc_b": "早雲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "準決勝",
+      "mc_a": "呂布カルマ",
+      "mc_b": "句潤",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2020",
+      "round": "決勝",
+      "mc_a": "句潤",
+      "mc_b": "早雲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "Dragon One",
+      "mc_b": "T-Pablow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "2nd_BATTLE",
+      "mc_a": "Dragon One",
+      "mc_b": "サイプレス上野",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "LEON a.k.a. 獅子",
+      "mc_b": "サイプレス上野",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "Salvador",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "2nd_BATTLE",
+      "mc_a": "Salvador",
+      "mc_b": "T-Pablow",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "KOPERU",
+      "mc_b": "T-Pablow",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "HELL BELL",
+      "mc_b": "サイプレス上野",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "Kiss Shot",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "2nd_BATTLE",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "T-Pablow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "3rd_BATTLE",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "FINAL_BATTLE",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "MC☆ニガリ",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "HIDE",
+      "mc_b": "T-Pablow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "2nd_BATTLE",
+      "mc_a": "HIDE",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "焚巻",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "2nd_BATTLE",
+      "mc_a": "焚巻",
+      "mc_b": "R-指定",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "3rd_BATTLE",
+      "mc_a": "焚巻",
+      "mc_b": "T-Pablow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "4th_BATTLE",
+      "mc_a": "焚巻",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "FINAL_BATTLE",
+      "mc_a": "焚巻",
+      "mc_b": "般若",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "Lick-G",
+      "mc_b": "T-Pablow",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "BALA a.k.a. SHIBAKEN",
+      "mc_b": "サイプレス上野",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "黄猿",
+      "mc_b": "T-Pablow",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "ENEMY",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "掌幻",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "2nd_BATTLE",
+      "mc_a": "掌幻",
+      "mc_b": "T-Pablow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "3rd_BATTLE",
+      "mc_a": "掌幻",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "FINAL_BATTLE",
+      "mc_a": "掌幻",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "RACK",
+      "mc_b": "T-Pablow",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "TKda黒ぶち",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "2nd_BATTLE",
+      "mc_a": "TKda黒ぶち",
+      "mc_b": "ACE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "言xTHEANSWER",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "D.D.S",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "2nd_BATTLE",
+      "mc_a": "D.D.S",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "DOTAMA",
+      "mc_b": "T-Pablow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "2nd_BATTLE",
+      "mc_a": "DOTAMA",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "3rd_BATTLE",
+      "mc_a": "DOTAMA",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "FINAL_BATTLE",
+      "mc_a": "DOTAMA",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "GOMESS",
+      "mc_b": "サイプレス上野",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "PONY",
+      "mc_b": "T-Pablow",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "GADORO",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "2nd_BATTLE",
+      "mc_a": "GADORO",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "3rd_BATTLE",
+      "mc_a": "GADORO",
+      "mc_b": "Mr.Q",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "Mr. Smile",
+      "mc_b": "T-Pablow",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "輪入道",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "MEGA-G",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "押忍マン",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "2nd_BATTLE",
+      "mc_a": "押忍マン",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "3rd_BATTLE",
+      "mc_a": "押忍マン",
+      "mc_b": "焚巻",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "FINAL_BATTLE",
+      "mc_a": "押忍マン",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "MC☆ニガリ",
+      "mc_b": "T-Pablow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "YZERR",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "1st_BATTLE",
+      "mc_a": "CIMA",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "2nd_BATTLE",
+      "mc_a": "CIMA",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "3rd_BATTLE",
+      "mc_a": "CIMA",
+      "mc_b": "T-Pablow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s1",
+      "round": "FINAL_BATTLE",
+      "mc_a": "CIMA",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "KOPERU",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "2nd_BATTLE",
+      "mc_a": "KOPERU",
+      "mc_b": "R-指定",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "MC KUREI",
+      "mc_b": "T-Pablow",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "USU a.k.a. SQUEZ",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "2nd_BATTLE",
+      "mc_a": "USU a.k.a. SQUEZ",
+      "mc_b": "CHICO CARLITO",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "句潤",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "崇勲",
+      "mc_b": "T-Pablow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "2nd_BATTLE",
+      "mc_a": "崇勲",
+      "mc_b": "DOTAMA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "3rd_BATTLE",
+      "mc_a": "崇勲",
+      "mc_b": "CHICO CARLITO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "4th_BATTLE",
+      "mc_a": "崇勲",
+      "mc_b": "R-指定",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "FINAL_BATTLE",
+      "mc_a": "崇勲",
+      "mc_b": "般若",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "RYOTA",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "はなび",
+      "mc_b": "サイプレス上野",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "黄猿",
+      "mc_b": "CHICO CARLITO",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "田中光",
+      "mc_b": "DOTAMA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "TARO SOUL",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "HIDADDY",
+      "mc_b": "CHICO CARLITO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "2nd_BATTLE",
+      "mc_a": "HIDADDY",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "3rd_BATTLE",
+      "mc_a": "HIDADDY",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "龍道",
+      "mc_b": "T-Pablow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "2nd_BATTLE",
+      "mc_a": "龍道",
+      "mc_b": "DOTAMA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "3rd_BATTLE",
+      "mc_a": "龍道",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "NONKEY",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "2nd_BATTLE",
+      "mc_a": "NONKEY",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "PONY",
+      "mc_b": "サイプレス上野",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "スナフキン",
+      "mc_b": "DOTAMA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "2nd_BATTLE",
+      "mc_a": "スナフキン",
+      "mc_b": "T-Pablow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "3rd_BATTLE",
+      "mc_a": "スナフキン",
+      "mc_b": "CHICO CARLITO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "FINAL_BATTLE",
+      "mc_a": "スナフキン",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "REIDAM",
+      "mc_b": "T-Pablow",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "GASHIMA",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "2nd_BATTLE",
+      "mc_a": "GASHIMA",
+      "mc_b": "CHICO CARLITO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "3rd_BATTLE",
+      "mc_a": "GASHIMA",
+      "mc_b": "DOTAMA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "Lick-G",
+      "mc_b": "CHICO CARLITO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "2nd_BATTLE",
+      "mc_a": "Lick-G",
+      "mc_b": "サイプレス上野",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "掌幻",
+      "mc_b": "DOTAMA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "2nd_BATTLE",
+      "mc_a": "掌幻",
+      "mc_b": "サイプレス上野",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "TKda黒ぶち",
+      "mc_b": "T-Pablow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "2nd_BATTLE",
+      "mc_a": "TKda黒ぶち",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "GADORO",
+      "mc_b": "CHICO CARLITO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "2nd_BATTLE",
+      "mc_a": "GADORO",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "3rd_BATTLE",
+      "mc_a": "GADORO",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "ACE",
+      "mc_b": "T-Pablow",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "晋平太",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "2nd_BATTLE",
+      "mc_a": "晋平太",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "3rd_BATTLE",
+      "mc_a": "晋平太",
+      "mc_b": "T-Pablow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "4th_BATTLE",
+      "mc_a": "晋平太",
+      "mc_b": "R-指定",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "FINAL_BATTLE",
+      "mc_a": "晋平太",
+      "mc_b": "般若",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "呂布カルマ",
+      "mc_b": "漢 a.k.a. GAMI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "2nd_BATTLE",
+      "mc_a": "呂布カルマ",
+      "mc_b": "T-Pablow",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "3rd_BATTLE",
+      "mc_a": "呂布カルマ",
+      "mc_b": "DOTAMA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "FINAL_BATTLE",
+      "mc_a": "呂布カルマ",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s2",
+      "round": "1st_BATTLE",
+      "mc_a": "EINSHTEIN",
+      "mc_b": "CHICO CARLITO",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "G-HOPE",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "FRANKEN",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "雄猿",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "魅RIン",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "ONE a.k.a ELIONE",
+      "mc_b": "崇勲",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "2nd_BATTLE",
+      "mc_a": "ONE a.k.a ELIONE",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "3rd_BATTLE",
+      "mc_a": "ONE a.k.a ELIONE",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "BOZ",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "1horse",
+      "mc_b": "崇勲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "裸武",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "2nd_BATTLE",
+      "mc_a": "裸武",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "GOTIT",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "SURRY",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "2nd_BATTLE",
+      "mc_a": "SURRY",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "3rd_BATTLE",
+      "mc_a": "SURRY",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "ID",
+      "mc_b": "崇勲",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "2nd_BATTLE",
+      "mc_a": "ID",
+      "mc_b": "ACE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "MC KUREI",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "2nd_BATTLE",
+      "mc_a": "MC KUREI",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "MC松島",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "MU-TON",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "2nd_BATTLE",
+      "mc_a": "MU-TON",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "押忍マン",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "2nd_BATTLE",
+      "mc_a": "押忍マン",
+      "mc_b": "崇勲",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "3rd_BATTLE",
+      "mc_a": "押忍マン",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "句潤",
+      "mc_b": "ACE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "黄猿",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "FEIDA-WAN",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "SAM",
+      "mc_b": "輪入道",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "2nd_BATTLE",
+      "mc_a": "SAM",
+      "mc_b": "崇勲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "じょう",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "2nd_BATTLE",
+      "mc_a": "じょう",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "ハハノシキュウ",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "歩歩",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "D96",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "9for",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "2nd_BATTLE",
+      "mc_a": "9for",
+      "mc_b": "崇勲",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "Amateras",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "GADORO",
+      "mc_b": "ACE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "GASHIMA",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "Core-Boy",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "椿",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "peko",
+      "mc_b": "崇勲",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "2nd_BATTLE",
+      "mc_a": "peko",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "3rd_BATTLE",
+      "mc_a": "peko",
+      "mc_b": "輪入道",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "4th_BATTLE",
+      "mc_a": "peko",
+      "mc_b": "FORK",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "FINAL_BATTLE",
+      "mc_a": "peko",
+      "mc_b": "般若",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "KOOPA",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "SIMON JAP",
+      "mc_b": "ACE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "1st_BATTLE",
+      "mc_a": "龍道",
+      "mc_b": "崇勲",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s4",
+      "round": "2nd_BATTLE",
+      "mc_a": "龍道",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "T-TANGG",
+      "mc_b": "崇勲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "HIBIKI",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "HIBIKI",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "BATTLE手裏剣",
+      "mc_b": "崇勲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "Lick-G",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "Lick-G",
+      "mc_b": "FORK",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "3rd_BATTLE",
+      "mc_a": "Lick-G",
+      "mc_b": "輪入道",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "4th_BATTLE",
+      "mc_a": "Lick-G",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "FINAL_BATTLE",
+      "mc_a": "Lick-G",
+      "mc_b": "般若",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "Luiz",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "MULBE",
+      "mc_b": "ACE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "JAKE",
+      "mc_b": "崇勲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "SURRY",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "キョンス",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "MC☆ニガリ",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "MC☆ニガリ",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "3rd_BATTLE",
+      "mc_a": "MC☆ニガリ",
+      "mc_b": "崇勲",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "4th_BATTLE",
+      "mc_a": "MC☆ニガリ",
+      "mc_b": "輪入道",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "FINAL_BATTLE",
+      "mc_a": "MC☆ニガリ",
+      "mc_b": "般若",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "T-Pablow",
+      "mc_b": "崇勲",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "T-Pablow",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "3rd_BATTLE",
+      "mc_a": "T-Pablow",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "DOTAMA",
+      "mc_b": "崇勲",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "DOTAMA",
+      "mc_b": "ACE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "漢 a.k.a. GAMI",
+      "mc_b": "輪入道",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "漢 a.k.a. GAMI",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "3rd_BATTLE",
+      "mc_a": "漢 a.k.a. GAMI",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "4th_BATTLE",
+      "mc_a": "漢 a.k.a. GAMI",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "サイプレス上野",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "R-指定",
+      "mc_b": "FORK",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "R-指定",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "3rd_BATTLE",
+      "mc_a": "R-指定",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "ふぁんく",
+      "mc_b": "崇勲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "雄猿",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "スナフキン",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "CIMA",
+      "mc_b": "輪入道",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "CIMA",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "3rd_BATTLE",
+      "mc_a": "CIMA",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "SIMON JAP",
+      "mc_b": "FORK",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "SIMON JAP",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "3rd_BATTLE",
+      "mc_a": "SIMON JAP",
+      "mc_b": "崇勲",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "4th_BATTLE",
+      "mc_a": "SIMON JAP",
+      "mc_b": "輪入道",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "FINAL_BATTLE",
+      "mc_a": "SIMON JAP",
+      "mc_b": "般若",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "HARDY",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "HIBIKI",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "藤KooS",
+      "mc_b": "ACE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "G-HOPE",
+      "mc_b": "崇勲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "9for",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "9for",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "じょう",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "じょう",
+      "mc_b": "輪入道",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "3rd_BATTLE",
+      "mc_a": "じょう",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "TERU",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "TERU",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "BunTes",
+      "mc_b": "崇勲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "NOuTY",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "野武士",
+      "mc_b": "ACE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "小池潔宗",
+      "mc_b": "崇勲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "ミステリオ",
+      "mc_b": "輪入道",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "ミステリオ",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "3rd_BATTLE",
+      "mc_a": "ミステリオ",
+      "mc_b": "FORK",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "4th_BATTLE",
+      "mc_a": "ミステリオ",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "百足",
+      "mc_b": "ACE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "KYO虎",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "KYO虎",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "POWER WAVE",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "CHEHON",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "2nd_BATTLE",
+      "mc_a": "CHEHON",
+      "mc_b": "崇勲",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "3rd_BATTLE",
+      "mc_a": "CHEHON",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "NG-HEAD",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s5",
+      "round": "1st_BATTLE",
+      "mc_a": "我次郎MIC",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "1st_BATTLE",
+      "mc_a": "Dragon One",
+      "mc_b": "崇勲",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "2nd_BATTLE",
+      "mc_a": "Dragon One",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "1st_BATTLE",
+      "mc_a": "HARDY",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "1st_BATTLE",
+      "mc_a": "T-TANGG",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "1st_BATTLE",
+      "mc_a": "ONE a.k.a. ELIONE",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "1st_BATTLE",
+      "mc_a": "歩歩",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "2nd_BATTLE",
+      "mc_a": "歩歩",
+      "mc_b": "ACE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "1st_BATTLE",
+      "mc_a": "TK da 黒ぶち",
+      "mc_b": "ACE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "2nd_BATTLE",
+      "mc_a": "TK da 黒ぶち",
+      "mc_b": "輪入道",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "3rd_BATTLE",
+      "mc_a": "TK da 黒ぶち",
+      "mc_b": "サイプレス上野",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "1st_BATTLE",
+      "mc_a": "ふぁんく",
+      "mc_b": "サイプレス上野",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "2nd_BATTLE",
+      "mc_a": "ふぁんく",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "1st_BATTLE",
+      "mc_a": "MC☆ニガリ",
+      "mc_b": "FORK",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "2nd_BATTLE",
+      "mc_a": "MC☆ニガリ",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s6",
+      "round": "1st_BATTLE",
+      "mc_a": "NAIKA MC",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "ベル",
+      "mc_b": "ID",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "FRANKEN",
+      "mc_b": "TKda黒ぶち",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "しぇん",
+      "mc_b": "ID",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "PONEY",
+      "mc_b": "JUMBO MAATCH",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "2nd_BATTLE",
+      "mc_a": "PONEY",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "BALA a.k.a. SBKN",
+      "mc_b": "ERONE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "2nd_BATTLE",
+      "mc_a": "BALA a.k.a. SBKN",
+      "mc_b": "TKda黒ぶち",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "3rd_BATTLE",
+      "mc_a": "BALA a.k.a. SBKN",
+      "mc_b": "JUMBO MAATCH",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "4th_BATTLE",
+      "mc_a": "BALA a.k.a. SBKN",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "FINAL_BATTLE",
+      "mc_a": "BALA a.k.a. SBKN",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "がーどまん",
+      "mc_b": "ERONE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "U-mallow",
+      "mc_b": "JUMBO MAATCH",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "2nd_BATTLE",
+      "mc_a": "U-mallow",
+      "mc_b": "ID",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "TORA",
+      "mc_b": "ERONE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "2nd_BATTLE",
+      "mc_a": "TORA",
+      "mc_b": "TKda黒ぶち",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "N0uTY",
+      "mc_b": "ERONE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "2nd_BATTLE",
+      "mc_a": "N0uTY",
+      "mc_b": "TKda黒ぶち",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "3rd_BATTLE",
+      "mc_a": "N0uTY",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "ミメイ",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "BATTLE手裏剣",
+      "mc_b": "JUMBO MAATCH",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "Authority",
+      "mc_b": "ID",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "2nd_BATTLE",
+      "mc_a": "Authority",
+      "mc_b": "TKda黒ぶち",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "3rd_BATTLE",
+      "mc_a": "Authority",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "SHAMO",
+      "mc_b": "TKda黒ぶち",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "Atmoshiphere",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "KOOPA",
+      "mc_b": "JUMBO MAATCH",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "韻マン",
+      "mc_b": "ERONE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "2nd_BATTLE",
+      "mc_a": "韻マン",
+      "mc_b": "ID",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "MC松島",
+      "mc_b": "TKda黒ぶち",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "2nd_BATTLE",
+      "mc_a": "MC松島",
+      "mc_b": "ERONE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "バチスタ",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "T-STONE",
+      "mc_b": "ERONE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "ISH-ONE",
+      "mc_b": "TKda黒ぶち",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "2nd_BATTLE",
+      "mc_a": "ISH-ONE",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "MAKA",
+      "mc_b": "JUMBO MAATCH",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "Parmlight",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "bunTes",
+      "mc_b": "JUMBO MAATCH",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "2nd_BATTLE",
+      "mc_a": "bunTes",
+      "mc_b": "ID",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "1st_BATTLE",
+      "mc_a": "SAM",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "2nd_BATTLE",
+      "mc_a": "SAM",
+      "mc_b": "ERONE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "fsd_s7",
+      "round": "3rd_BATTLE",
+      "mc_a": "SAM",
+      "mc_b": "FORK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "Raika",
+      "mc_b": "shun-p",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "Y.A.S",
+      "mc_b": "蛇",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "GADORO",
+      "mc_b": "FEIDA-WAN",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "NAIKA MC",
+      "mc_b": "GOTIT",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "切刃",
+      "mc_b": "BUSS",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "MC松島",
+      "mc_b": "成",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "サイプレス上野",
+      "mc_b": "DISRY",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "ALICE",
+      "mc_b": "ふぁんく",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "GIL",
+      "mc_b": "BUCHI DA MIC",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "Kowree",
+      "mc_b": "marsh",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "SURRY",
+      "mc_b": "RHYME BOYA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "KOKI",
+      "mc_b": "MC☆ニガリ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "Ry-lax",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "スナフキン",
+      "mc_b": "輪入道",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "R-指定",
+      "mc_b": "MAC-T",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "1回戦",
+      "mc_a": "DOTAMA",
+      "mc_b": "KTSRO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "2回戦",
+      "mc_a": "shun-p",
+      "mc_b": "Y.A.S",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "2回戦",
+      "mc_a": "FEIDA-WAN",
+      "mc_b": "GOTIT",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "2回戦",
+      "mc_a": "MC松島",
+      "mc_b": "切刃",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "2回戦",
+      "mc_a": "サイプレス上野",
+      "mc_b": "ふぁんく",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "2回戦",
+      "mc_a": "GIL",
+      "mc_b": "marsh",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "2回戦",
+      "mc_a": "MC☆ニガリ",
+      "mc_b": "SURRY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "2回戦",
+      "mc_a": "スナフキン",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "2回戦",
+      "mc_a": "DOTAMA",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "ベスト8",
+      "mc_a": "GOTIT",
+      "mc_b": "Y.A.S",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "ベスト8",
+      "mc_a": "MC松島",
+      "mc_b": "ふぁんく",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "ベスト8",
+      "mc_a": "SURRY",
+      "mc_b": "GIL",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "ベスト8",
+      "mc_a": "R-指定",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "準決勝",
+      "mc_a": "ふぁんく",
+      "mc_b": "GOTIT",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "準決勝",
+      "mc_a": "R-指定",
+      "mc_b": "GIL",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2014",
+      "round": "決勝",
+      "mc_a": "GOTIT",
+      "mc_b": "R-指定",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "RUGSHOT",
+      "mc_b": "GOTIT",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "KRYZ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "NASSO",
+      "mc_b": "句潤",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "K-razy",
+      "mc_b": "Rozetta",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "マチネ",
+      "mc_b": "早雲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "MAC-T",
+      "mc_b": "HYPERNONMC",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "泉ピン太郎",
+      "mc_b": "山本びんた",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "成",
+      "mc_b": "NAIKA MC",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "紅桜",
+      "mc_b": "GIL",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "DOTAMA",
+      "mc_b": "SOTA-LOW",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "MAVEL",
+      "mc_b": "CHILL B",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "TENGG",
+      "mc_b": "U-Road",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "しぇん",
+      "mc_b": "MC☆ニガリ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "HI-JET",
+      "mc_b": "JAKE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "KARASS",
+      "mc_b": "猿tobi",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "1回戦",
+      "mc_a": "松元",
+      "mc_b": "BASE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "2回戦",
+      "mc_a": "GOTIT",
+      "mc_b": "CHICO CARLITO",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "2回戦",
+      "mc_a": "K-razy",
+      "mc_b": "句潤",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "2回戦",
+      "mc_a": "早雲",
+      "mc_b": "MAC-T",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "2回戦",
+      "mc_a": "NAIKA MC",
+      "mc_b": "山本びんた",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "2回戦",
+      "mc_a": "DOTAMA",
+      "mc_b": "GIL",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "2回戦",
+      "mc_a": "TENGG",
+      "mc_b": "CHILL B",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "2回戦",
+      "mc_a": "JAKE",
+      "mc_b": "MC☆ニガリ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "2回戦",
+      "mc_a": "BASE",
+      "mc_b": "KARASS",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "ベスト8",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "句潤",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "ベスト8",
+      "mc_a": "NAIKA MC",
+      "mc_b": "早雲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "ベスト8",
+      "mc_a": "DOTAMA",
+      "mc_b": "CHILL B",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "ベスト8",
+      "mc_a": "JAKE",
+      "mc_b": "BASE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "準決勝",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "早雲",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "準決勝",
+      "mc_a": "DOTAMA",
+      "mc_b": "JAKE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2015",
+      "round": "決勝",
+      "mc_a": "DOTAMA",
+      "mc_b": "CHICO CARLITO",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "RACK",
+      "mc_b": "SIVA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "MAD ASH",
+      "mc_b": "ロープ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "ウジミツ",
+      "mc_b": "SAM",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "MOL53",
+      "mc_b": "MAVEL",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "ふぁんく",
+      "mc_b": "ヤングたかじん",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "Kasced",
+      "mc_b": "BOBO",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "G-ROD",
+      "mc_b": "KARASS",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "黄猿",
+      "mc_b": "Kowree",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "R.O.G",
+      "mc_b": "LEON",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "Kai-Tone",
+      "mc_b": "QUARK",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "しぇん",
+      "mc_b": "BUCHI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "MCニガリ",
+      "mc_b": "KOKI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "Parmlight",
+      "mc_b": "句潤",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "DISY",
+      "mc_b": "LOWCH",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "要",
+      "mc_b": "DEP FROG",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "1回戦",
+      "mc_a": "Smill",
+      "mc_b": "DOTAMA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "SONNY",
+      "mc_b": "SIVA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "Authority",
+      "mc_b": "MAD ASH",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "JOE",
+      "mc_b": "ウジミツ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "BOZ",
+      "mc_b": "MOL53",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "Strider",
+      "mc_b": "ヤングたかじん",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "TOTOROW",
+      "mc_b": "BOBO",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "MAC-T",
+      "mc_b": "KARASS",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "雄猿",
+      "mc_b": "黄猿",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "ムートン",
+      "mc_b": "LEON",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "BASE",
+      "mc_b": "QUARK",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "miniRA",
+      "mc_b": "BUCHI",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "Disry",
+      "mc_b": "MCニガリ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "JAKE",
+      "mc_b": "句潤",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "じょう",
+      "mc_b": "LOWCH",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "KOOPA",
+      "mc_b": "要",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "2回戦",
+      "mc_a": "NAIKA MC",
+      "mc_b": "DOTAMA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "ベスト16",
+      "mc_a": "MAD ASH",
+      "mc_b": "SIVA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "ベスト16",
+      "mc_a": "mol53",
+      "mc_b": "ウジミツ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "ベスト16",
+      "mc_a": "BOBO",
+      "mc_b": "ヤングたかじん",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "ベスト16",
+      "mc_a": "黄猿",
+      "mc_b": "MAC-T",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "ベスト16",
+      "mc_a": "ムートン",
+      "mc_b": "BASE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "ベスト16",
+      "mc_a": "miniRA",
+      "mc_b": "MCニガリ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "ベスト16",
+      "mc_a": "句潤",
+      "mc_b": "じょう",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "ベスト16",
+      "mc_a": "NAIKA MC",
+      "mc_b": "要",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "ベスト8",
+      "mc_a": "Siva",
+      "mc_b": "MOL53",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "ベスト8",
+      "mc_a": "ヤングたかじん",
+      "mc_b": "MAC-T",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "ベスト8",
+      "mc_a": "MCニガリ",
+      "mc_b": "ムートン",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "ベスト8",
+      "mc_a": "NAIKA MC",
+      "mc_b": "句潤",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "準決勝",
+      "mc_a": "ヤングたかじん",
+      "mc_b": "mol53",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "準決勝",
+      "mc_a": "NAIKA MC",
+      "mc_b": "MCニガリ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2016",
+      "round": "決勝",
+      "mc_a": "NAIKA MC",
+      "mc_b": "ヤングたかじん",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "Fugry",
+      "mc_b": "DOTAMA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "Siva",
+      "mc_b": "R.O.G",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "True or 4-SE",
+      "mc_b": "EFTRA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "MC松島",
+      "mc_b": "KOOPA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "T-STONE",
+      "mc_b": "MC☆ニガリ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "キョンス",
+      "mc_b": "KTSRO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "とびっきり",
+      "mc_b": "O",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "マチネ",
+      "mc_b": "我次郎MIC",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "SORA",
+      "mc_b": "ホロンバイム",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "BATTLE手裏剣",
+      "mc_b": "M.O.J.I.",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "BUCHI DA MIC",
+      "mc_b": "cosmo da ug",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "釈楽",
+      "mc_b": "ムートン",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "RUG SHOT",
+      "mc_b": "Disry",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "晋平太",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "JOE",
+      "mc_b": "Authority",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "1回戦",
+      "mc_a": "SMARD",
+      "mc_b": "椿",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "HIBIKI",
+      "mc_b": "DOTAMA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "MC.YO",
+      "mc_b": "Siva",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "VENOM",
+      "mc_b": "True or 4-SE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "弘明",
+      "mc_b": "KOOPA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "Lyrical",
+      "mc_b": "MC☆ニガリ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "ALCI",
+      "mc_b": "キョンス",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "ロープ",
+      "mc_b": "O",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "Scooby J",
+      "mc_b": "我次郎MIC",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "ILL AIK",
+      "mc_b": "ホロンバイム",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "THUG HEADS",
+      "mc_b": "BATTLE手裏剣",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "ALBA-TROSS",
+      "mc_b": "cosmo da ug",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "ふぁんく",
+      "mc_b": "釈楽",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "JACKTER",
+      "mc_b": "Disry",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "parmlight",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "JAKE",
+      "mc_b": "Authority",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "2回戦",
+      "mc_a": "BARBER",
+      "mc_b": "椿",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "ベスト16",
+      "mc_a": "DOTAMA",
+      "mc_b": "Siva",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "ベスト16",
+      "mc_a": "KOOPA",
+      "mc_b": "VENOM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "ベスト16",
+      "mc_a": "MC☆ニガリ",
+      "mc_b": "キョンス",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "ベスト16",
+      "mc_a": "Scooby J",
+      "mc_b": "ロープ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "ベスト16",
+      "mc_a": "ホロンバイム",
+      "mc_b": "BATTLE手裏剣",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "ベスト16",
+      "mc_a": "ふぁんく",
+      "mc_b": "ALBA-TROSS",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "ベスト16",
+      "mc_a": "呂布カルマ",
+      "mc_b": "Disry",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "ベスト16",
+      "mc_a": "椿",
+      "mc_b": "JAKE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "ベスト8",
+      "mc_a": "KOOPA",
+      "mc_b": "DOTAMA",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "ベスト8",
+      "mc_a": "Scooby J",
+      "mc_b": "MC☆ニガリ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "ベスト8",
+      "mc_a": "ふぁんく",
+      "mc_b": "BATTLE手裏剣",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "ベスト8",
+      "mc_a": "JAKE",
+      "mc_b": "呂布カルマ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "準決勝",
+      "mc_a": "DOTAMA",
+      "mc_b": "MC☆ニガリ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "準決勝",
+      "mc_a": "ふぁんく",
+      "mc_b": "呂布カルマ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2017",
+      "round": "決勝",
+      "mc_a": "DOTAMA",
+      "mc_b": "ふぁんく",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "紅桜",
+      "mc_b": "BAMBLE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "富博",
+      "mc_b": "RYU",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "MC松島",
+      "mc_b": "Mac Ass Tiger",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "BALA a.k.a.SBKN",
+      "mc_b": "Jony the sonata",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "ALCI",
+      "mc_b": "MU-TON",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "T-STONE",
+      "mc_b": "O.G.K",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "Disry",
+      "mc_b": "GOTIT",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "MCニガリ",
+      "mc_b": "SKRYU",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "むら",
+      "mc_b": "B_ZERO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "EVOL",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "小池潔宗",
+      "mc_b": "ふーわ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "Atmoshiphere",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "DAISEI",
+      "mc_b": "KZ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "しぇん",
+      "mc_b": "kNaxx",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "IZ",
+      "mc_b": "Authority",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "1回戦",
+      "mc_a": "TORA",
+      "mc_b": "梵頭",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "まーしゃる",
+      "mc_b": "紅桜",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "Bluek",
+      "mc_b": "RYU",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "Pein Mirra",
+      "mc_b": "MC松島",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "Folgoregia",
+      "mc_b": "Jony the sonata",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "KaRaAgE",
+      "mc_b": "MU-TON",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "だーひー",
+      "mc_b": "T-STONE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "椿",
+      "mc_b": "GOTIT",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "Lyrical",
+      "mc_b": "MCニガリ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "KAKKY",
+      "mc_b": "むら",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "BASE",
+      "mc_b": "SAM",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "USTR",
+      "mc_b": "小池潔宗",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "Mud Ash",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "APACHE",
+      "mc_b": "KZ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "BARBER",
+      "mc_b": "しぇん",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "JACKTER",
+      "mc_b": "AUTHORITY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "2回戦",
+      "mc_a": "裸武",
+      "mc_b": "TORA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "ベスト16",
+      "mc_a": "Bluek",
+      "mc_b": "紅桜",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "ベスト16",
+      "mc_a": "Jony the sonata",
+      "mc_b": "MC松島",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "ベスト16",
+      "mc_a": "MU-TON",
+      "mc_b": "だーひー",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "ベスト16",
+      "mc_a": "GOTIT",
+      "mc_b": "MCニガリ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "ベスト16",
+      "mc_a": "SAM",
+      "mc_b": "KAKKY",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "ベスト16",
+      "mc_a": "小池潔宗",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "ベスト16",
+      "mc_a": "しぇん",
+      "mc_b": "KZ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "ベスト16",
+      "mc_a": "裸武",
+      "mc_b": "AUTHORITY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "ベスト8",
+      "mc_a": "MC松島",
+      "mc_b": "紅桜",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "ベスト8",
+      "mc_a": "MU-TON",
+      "mc_b": "GOTIT",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "ベスト8",
+      "mc_a": "SAM",
+      "mc_b": "輪入道",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "ベスト8",
+      "mc_a": "KZ",
+      "mc_b": "AUTHORITY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "準決勝",
+      "mc_a": "MU-TON",
+      "mc_b": "紅桜",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "準決勝",
+      "mc_a": "輪入道",
+      "mc_b": "AUTHORITY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2018",
+      "round": "決勝",
+      "mc_a": "AUTHORITY",
+      "mc_b": "MU-TON",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "SURRY",
+      "mc_b": "MAVEL",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "Atmoshiphere",
+      "mc_b": "MC☆ニガリ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "MULBE",
+      "mc_b": "KBD",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "山本びんた",
+      "mc_b": "TORA",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "梵頭",
+      "mc_b": "USTR",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "脱走",
+      "mc_b": "鋼",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "狛犬",
+      "mc_b": "J-Mack",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "KATY",
+      "mc_b": "Kowree",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "KOOPA",
+      "mc_b": "JAKE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "MAKA",
+      "mc_b": "早雲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "小池潔宗",
+      "mc_b": "KUYA MIGUEL",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "Eftra",
+      "mc_b": "KZ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "SHAMO",
+      "mc_b": "SKRYU",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "T-STONE",
+      "mc_b": "CJ",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "だーひー",
+      "mc_b": "PONEY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "1回戦",
+      "mc_a": "Amg",
+      "mc_b": "BUCHI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "裂固",
+      "mc_b": "SURRY",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "H1GH BR1DG3",
+      "mc_b": "Atmoshiphere",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "Dar-Tなたでここ",
+      "mc_b": "KBD",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "Jony the sonata",
+      "mc_b": "山本びんた",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "OSCAR",
+      "mc_b": "梵頭",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "U-t.o.",
+      "mc_b": "脱走",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "SHIN DA ENLARGEMEN.",
+      "mc_b": "狛犬",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "Authority",
+      "mc_b": "Kowree",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "GOTIT",
+      "mc_b": "JAKE",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "スナフキン",
+      "mc_b": "早雲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "しぇん",
+      "mc_b": "KUYA MIGUEL",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "BALA a.k.a SBKN",
+      "mc_b": "KZ",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "視聴覚アルピニスト",
+      "mc_b": "SHAMO",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "ふーわ",
+      "mc_b": "T-STONE",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "RAGA",
+      "mc_b": "PONEY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "2回戦",
+      "mc_a": "玲音",
+      "mc_b": "BUCHI",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "ベスト16",
+      "mc_a": "Atmoshiphere",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "ベスト16",
+      "mc_a": "山本びんた",
+      "mc_b": "KBD",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "ベスト16",
+      "mc_a": "梵頭",
+      "mc_b": "脱走",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "ベスト16",
+      "mc_a": "Authority",
+      "mc_b": "狛犬",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "ベスト16",
+      "mc_a": "GOTIT",
+      "mc_b": "早雲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "ベスト16",
+      "mc_a": "KZ",
+      "mc_b": "しぇん",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "ベスト16",
+      "mc_a": "T-STONE",
+      "mc_b": "SHAMO",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "ベスト16",
+      "mc_a": "BUCHI",
+      "mc_b": "PONEY",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "ベスト8",
+      "mc_a": "KBD",
+      "mc_b": "裂固",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "ベスト8",
+      "mc_a": "梵頭",
+      "mc_b": "Authority",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "ベスト8",
+      "mc_a": "しぇん",
+      "mc_b": "早雲",
+      "winner": "b"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "ベスト8",
+      "mc_a": "SHAMO",
+      "mc_b": "PONEY",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "準決勝",
+      "mc_a": "Authority",
+      "mc_b": "裂固",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "準決勝",
+      "mc_a": "早雲",
+      "mc_b": "SHAMO",
+      "winner": "a"
+    },
+    {
+      "tournament_key": "umb2019",
+      "round": "決勝",
+      "mc_a": "早雲",
+      "mc_b": "Authority",
+      "winner": "b"
+    }
+  ]
+}

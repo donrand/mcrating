@@ -18,9 +18,10 @@ DECLARE
 
   rec       RECORD;
 
-  -- 現在レートと試合数をJSONBでメモリ管理（一時テーブル不要）
+  -- 現在レートと試合数・勝利数をJSONBでメモリ管理（一時テーブル不要）
   mc_ratings JSONB := '{}'::JSONB;
   mc_counts  JSONB := '{}'::JSONB;
+  mc_wins    JSONB := '{}'::JSONB;
 
   v_key_a text;
   v_key_b text;
@@ -108,6 +109,15 @@ BEGIN
     mc_counts  := jsonb_set(mc_counts,  ARRAY[v_key_b],
       to_jsonb(COALESCE((mc_counts ->> v_key_b)::integer, 0) + 1), true);
 
+    -- 勝利数を更新（引き分けはカウントしない）
+    IF rec.winner = 'a' THEN
+      mc_wins := jsonb_set(mc_wins, ARRAY[v_key_a],
+        to_jsonb(COALESCE((mc_wins ->> v_key_a)::integer, 0) + 1), true);
+    ELSIF rec.winner = 'b' THEN
+      mc_wins := jsonb_set(mc_wins, ARRAY[v_key_b],
+        to_jsonb(COALESCE((mc_wins ->> v_key_b)::integer, 0) + 1), true);
+    END IF;
+
     v_count := v_count + 1;
   END LOOP;
 
@@ -115,7 +125,8 @@ BEGIN
   UPDATE mcs m
   SET
     current_rating = COALESCE((mc_ratings ->> m.id::text)::numeric, c_initial),
-    battle_count   = COALESCE((mc_counts  ->> m.id::text)::integer, 0);
+    battle_count   = COALESCE((mc_counts  ->> m.id::text)::integer, 0),
+    win_count      = COALESCE((mc_wins    ->> m.id::text)::integer, 0);
 
   RETURN json_build_object('battles_processed', v_count);
 END;

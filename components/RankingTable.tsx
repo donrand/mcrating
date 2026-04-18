@@ -16,7 +16,7 @@ export default function RankingTable({ mcs }: Props) {
             <th className="pb-3 pr-4 w-12">順位</th>
             <th className="pb-3 pr-4">MC名</th>
             <th className="pb-3 pr-4 text-right">レート</th>
-            <th className="pb-3 pr-4 text-right hidden sm:table-cell">変動</th>
+            <th className="pb-3 pr-4 text-right hidden sm:table-cell">勝率</th>
             <th className="pb-3 text-right hidden sm:table-cell">試合数</th>
           </tr>
         </thead>
@@ -47,8 +47,10 @@ export default function RankingTable({ mcs }: Props) {
               <td className="py-3 pr-4 text-right font-mono font-bold text-yellow-400">
                 {Math.round(mc.current_rating)}
               </td>
-              <td className="py-3 pr-4 text-right hidden sm:table-cell">
-                —
+              <td className="py-3 pr-4 text-right hidden sm:table-cell text-gray-300">
+                {mc.battle_count > 0
+                  ? `${Math.round((mc.win_count / mc.battle_count) * 100)}%`
+                  : '—'}
               </td>
               <td className="py-3 text-right text-gray-400 hidden sm:table-cell">
                 {mc.battle_count}
