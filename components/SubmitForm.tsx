@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { submitBattle } from '@/app/submit/actions';
 
 type MC = { id: string; name: string };
 type Tournament = { id: string; name: string };
@@ -56,20 +56,20 @@ export default function SubmitForm({ mcs, tournaments }: Props) {
     if (!tournamentName) { setError('大会名を入力してください'); return; }
 
     setSubmitting(true);
-    const { error: dbError } = await supabase.from('submissions').insert({
+    const { error: actionError } = await submitBattle({
       tournament_name: tournamentName,
       held_on: form.held_on,
       mc_a_name: mcAName,
       mc_b_name: mcBName,
-      winner: form.winner,
+      winner: form.winner as 'a' | 'b' | 'draw',
       round_name: form.round_name || null,
       evidence_url: form.evidence_url || null,
       note: form.note || null,
     });
     setSubmitting(false);
 
-    if (dbError) {
-      setError('送信に失敗しました。時間をおいて再度お試しください。');
+    if (actionError) {
+      setError(actionError);
       return;
     }
     setDone(true);

@@ -35,6 +35,21 @@ export async function bulkSubmit(input: BulkSubmitInput): Promise<{ registered: 
       continue;
     }
 
+    // 重複チェック：同一の試合内容が5分以内に投稿されていないか確認
+    const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000).toISOString();
+    const { count } = await supabase
+      .from('submissions')
+      .select('id', { count: 'exact', head: true })
+      .eq('mc_a_name', b.mc_a_name.trim())
+      .eq('mc_b_name', b.mc_b_name.trim())
+      .eq('tournament_name', input.tournament_name.trim())
+      .gte('created_at', fiveMinutesAgo);
+
+    if ((count ?? 0) > 0) {
+      errors.push(`行${i + 1}: 同じ内容がすでに投稿済みです`);
+      continue;
+    }
+
     const { error } = await supabase.from('submissions').insert({
       tournament_name: input.tournament_name.trim(),
       held_on: input.held_on || null,
