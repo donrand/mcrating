@@ -15,7 +15,7 @@ export default async function TournamentDetailPage({ params }: Props) {
     admin.from('tournaments').select('id, name, grade_coeff, held_on').eq('id', params.id).single(),
     admin
       .from('battles')
-      .select('id, winner, round_name, mc_a:mcs!battles_mc_a_id_fkey(id, name), mc_b:mcs!battles_mc_b_id_fkey(id, name)')
+      .select('id, winner, round_name, mc_a:mcs!battles_mc_a_id_fkey(id, name), mc_b:mcs!battles_mc_b_id_fkey(id, name), ratings(mc_id, rating_before, rating_after, delta)')
       .eq('tournament_id', params.id)
       .eq('status', 'approved'),
   ]);
@@ -71,26 +71,50 @@ export default async function TournamentDetailPage({ params }: Props) {
               </h2>
               <div className="space-y-1">
                 {grouped[round].map(b => {
+                  type RatingRow = { mc_id: string; rating_before: number; rating_after: number; delta: number };
                   const mcA = (b.mc_a as unknown as { id: string; name: string } | null);
                   const mcB = (b.mc_b as unknown as { id: string; name: string } | null);
+                  const ratings = (b.ratings as unknown as RatingRow[] | null) ?? [];
+                  const ratingA = ratings.find(r => r.mc_id === mcA?.id);
+                  const ratingB = ratings.find(r => r.mc_id === mcB?.id);
                   const winnerName =
                     b.winner === 'a' ? mcA?.name :
                     b.winner === 'b' ? mcB?.name :
                     '引き分け';
                   return (
                     <div key={b.id} className="flex items-center gap-3 px-4 py-3 bg-gray-900 rounded-lg">
-                      <span className={`text-sm font-medium ${b.winner === 'a' ? 'text-yellow-400' : 'text-gray-300'}`}>
-                        {mcA ? (
-                          <Link href={`/mc/${mcA.id}`} className="hover:underline">{mcA.name}</Link>
-                        ) : '—'}
-                      </span>
-                      <span className="text-gray-600 text-xs">vs</span>
-                      <span className={`text-sm font-medium ${b.winner === 'b' ? 'text-yellow-400' : 'text-gray-300'}`}>
-                        {mcB ? (
-                          <Link href={`/mc/${mcB.id}`} className="hover:underline">{mcB.name}</Link>
-                        ) : '—'}
-                      </span>
-                      <span className="ml-auto text-xs text-gray-500">
+                      <div className="flex flex-col min-w-0">
+                        <span className={`text-sm font-medium ${b.winner === 'a' ? 'text-yellow-400' : 'text-gray-300'}`}>
+                          {mcA ? (
+                            <Link href={`/mc/${mcA.id}`} className="hover:underline">{mcA.name}</Link>
+                          ) : '—'}
+                        </span>
+                        {ratingA && (
+                          <span className="text-xs text-gray-500">
+                            {ratingA.rating_after.toFixed(0)}
+                            <span className={ratingA.delta >= 0 ? 'text-green-400 ml-1' : 'text-red-400 ml-1'}>
+                              ({ratingA.delta >= 0 ? '+' : ''}{ratingA.delta.toFixed(1)})
+                            </span>
+                          </span>
+                        )}
+                      </div>
+                      <span className="text-gray-600 text-xs shrink-0">vs</span>
+                      <div className="flex flex-col min-w-0">
+                        <span className={`text-sm font-medium ${b.winner === 'b' ? 'text-yellow-400' : 'text-gray-300'}`}>
+                          {mcB ? (
+                            <Link href={`/mc/${mcB.id}`} className="hover:underline">{mcB.name}</Link>
+                          ) : '—'}
+                        </span>
+                        {ratingB && (
+                          <span className="text-xs text-gray-500">
+                            {ratingB.rating_after.toFixed(0)}
+                            <span className={ratingB.delta >= 0 ? 'text-green-400 ml-1' : 'text-red-400 ml-1'}>
+                              ({ratingB.delta >= 0 ? '+' : ''}{ratingB.delta.toFixed(1)})
+                            </span>
+                          </span>
+                        )}
+                      </div>
+                      <span className="ml-auto text-xs text-gray-500 shrink-0">
                         勝者: <span className="text-yellow-400">{winnerName}</span>
                       </span>
                     </div>
