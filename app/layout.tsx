@@ -25,6 +25,7 @@ export default function RootLayout({
               <Link href="/battles" className="hover:text-white transition-colors">試合結果</Link>
               <Link href="/tournaments" className="hover:text-white transition-colors">大会一覧</Link>
               <Link href="/submit" className="hover:text-white transition-colors">情報提供</Link>
+              <Link href="/about" className="hover:text-white transition-colors">About</Link>
             </nav>
             <div className="ml-auto">
               <Link href="/admin" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
