@@ -101,6 +101,7 @@ export async function recalculateAllRatings() {
   revalidatePath('/');
   revalidatePath('/battles');
   revalidatePath('/tournaments', 'layout');
+  revalidatePath('/mc', 'layout');
 }
 
 /**
