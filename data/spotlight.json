@@ -1,0 +1,2656 @@
+{
+  "tournaments": [
+    {
+      "key": "spotlight2009",
+      "name": "SPOTLIGHT 2009",
+      "held_on": "2009-10-25",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2010",
+      "name": "SPOTLIGHT 2010",
+      "held_on": "2010-12-23",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2012",
+      "name": "SPOTLIGHT 2012",
+      "held_on": "2012-12-23",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2015",
+      "name": "SPOTLIGHT 2015",
+      "held_on": "2015-12-03",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2016",
+      "name": "SPOTLIGHT 2016",
+      "held_on": "2016-12-03",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2017",
+      "name": "SPOTLIGHT 2017",
+      "held_on": "2017-12-03",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2018",
+      "name": "SPOTLIGHT 2018",
+      "held_on": "2018-11-25",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2019",
+      "name": "SPOTLIGHT 2019",
+      "held_on": "2019-12-01",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2020",
+      "name": "SPOTLIGHT 2020",
+      "held_on": "2020-12-13",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2021",
+      "name": "SPOTLIGHT 2021",
+      "held_on": "2021-12-04",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2022kanto",
+      "name": "SPOTLIGHT 2022関東編",
+      "held_on": "2022-07-01",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2022",
+      "name": "SPOTLIGHT 2022",
+      "held_on": "2022-12-04",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2023tokyo",
+      "name": "SPOTLIGHT 2023東京編",
+      "held_on": "2023-06-09",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2023osaka",
+      "name": "SPOTLIGHT 2023大阪編",
+      "held_on": "2023-11-23",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2024kanto",
+      "name": "SPOTLIGHT 2024関東編",
+      "held_on": "2024-04-29",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2024osaka",
+      "name": "SPOTLIGHT 2024大阪編",
+      "held_on": "2024-12-14",
+      "grade_coeff": 2.0
+    },
+    {
+      "key": "spotlight2025",
+      "name": "SPOTLIGHT 2025",
+      "held_on": "2025-12-20",
+      "grade_coeff": 2.0
+    }
+  ],
+  "battles": [
+    {
+      "tournament_key": "spotlight2009",
+      "mc_a": "ERONE",
+      "mc_b": "ちゃくらメンソール",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2009",
+      "mc_a": "KOPERU",
+      "mc_b": "悠然",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2009",
+      "mc_a": "HIDADDY",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2009",
+      "mc_a": "R-指定",
+      "mc_b": "あきらめん",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2009",
+      "mc_a": "ERONE",
+      "mc_b": "KOPERU",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2009",
+      "mc_a": "CIMA",
+      "mc_b": "R-指定",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2009",
+      "mc_a": "ERONE",
+      "mc_b": "R-指定",
+      "winner": "b",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2010",
+      "mc_a": "KBD",
+      "mc_b": "R-指定",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2010",
+      "mc_a": "TKS",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2010",
+      "mc_a": "peko",
+      "mc_b": "チプルソ",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2010",
+      "mc_a": "大超",
+      "mc_b": "ちゃくらメンソール",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2010",
+      "mc_a": "RIGHT",
+      "mc_b": "ふぁんく",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2010",
+      "mc_a": "R-指定",
+      "mc_b": "CIMA",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2010",
+      "mc_a": "peko",
+      "mc_b": "HIDADDY",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2010",
+      "mc_a": "大超",
+      "mc_b": "ERONE",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2010",
+      "mc_a": "ふぁんく",
+      "mc_b": "HI-KING TAKASE",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2010",
+      "mc_a": "R-指定",
+      "mc_b": "peko",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2010",
+      "mc_a": "ERONE",
+      "mc_b": "ふぁんく",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2010",
+      "mc_a": "peko",
+      "mc_b": "ふぁんく",
+      "winner": "a",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "R-指定",
+      "mc_b": "CIMA",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "Lard",
+      "mc_b": "peko",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "KBD",
+      "mc_b": "NAJIMI",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "TATSU",
+      "mc_b": "ハジメ",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "ヌマバラ山ボール",
+      "mc_b": "JUNKY",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "TKS",
+      "mc_b": "HIDADDY",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "KZ",
+      "mc_b": "NAIKA MC",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "SURRY",
+      "mc_b": "歩歩",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "R-指定",
+      "mc_b": "peko",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "KBD",
+      "mc_b": "TATSU",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "JUNKY",
+      "mc_b": "HIDADDY",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "NAIKA MC",
+      "mc_b": "SURRY",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "R-指定",
+      "mc_b": "KBD",
+      "winner": "b",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "HIDADDY",
+      "mc_b": "SURRY",
+      "winner": "b",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2012",
+      "mc_a": "KBD",
+      "mc_b": "SURRY",
+      "winner": "b",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "ACE",
+      "mc_b": "MADJAG",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "K-razy",
+      "mc_b": "peko",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "KBD",
+      "mc_b": "ミステリオ",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "R-LINU$",
+      "mc_b": "MC frog",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "じょう",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "スナフキン",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "MC☆ニガリa.k.a赤い稲妻",
+      "mc_b": "西",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "LARD",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "ACE",
+      "mc_b": "K-razy",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "KBD",
+      "mc_b": "MC frog",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "呂布カルマ",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "MC☆ニガリa.k.a赤い稲妻",
+      "mc_b": "CIMA",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "K-razy",
+      "mc_b": "KBD",
+      "winner": "b",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "呂布カルマ",
+      "mc_b": "MC☆ニガリa.k.a赤い稲妻",
+      "winner": "a",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2015",
+      "mc_a": "KBD",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "K-razy",
+      "mc_b": "けんしろー",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "CIMA",
+      "mc_b": "peko",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "晋平太",
+      "mc_b": "がーどまん",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "マーダー",
+      "mc_b": "キョンス",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "Lick-G",
+      "mc_b": "裂固",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "Breaker",
+      "mc_b": "じょう",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "HIDADDY",
+      "mc_b": "崇勲",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "KBD",
+      "mc_b": "ERONE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "K-razy",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "晋平太",
+      "mc_b": "キョンス",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "裂固",
+      "mc_b": "じょう",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "崇勲",
+      "mc_b": "KBD",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "CIMA",
+      "mc_b": "晋平太",
+      "winner": "b",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "裂固",
+      "mc_b": "KBD",
+      "winner": "a",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2016",
+      "mc_a": "晋平太",
+      "mc_b": "裂固",
+      "winner": "b",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "MOL53",
+      "mc_b": "KBD",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "MCfrog",
+      "mc_b": "K-razy",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "けんしろー",
+      "mc_b": "FEIDA-WAN",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "Dragon One",
+      "mc_b": "TKda黒ぶち",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "じょう",
+      "mc_b": "CIMA",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "テークエム",
+      "mc_b": "西a.k.a Grizzly",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "SURRY",
+      "mc_b": "スナフキン",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "HIDADDY",
+      "mc_b": "MC松島",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "オニサワ",
+      "mc_b": "Scooby J",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "PONY",
+      "mc_b": "崇勲",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "輪入道",
+      "mc_b": "サイプレス上野",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "T-Tongue",
+      "mc_b": "NAIKA MC",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "9for",
+      "mc_b": "ミメイ",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "peko",
+      "mc_b": "キョンス",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "晋平太",
+      "mc_b": "裂固",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "HARDY",
+      "mc_b": "押忍マン",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "MOL53",
+      "mc_b": "MCfrog",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "FEIDA-WAN",
+      "mc_b": "TKda黒ぶち",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "じょう",
+      "mc_b": "西a.k.a Grizzly",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "スナフキン",
+      "mc_b": "HIDADDY",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "Scooby J",
+      "mc_b": "PONY",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "輪入道",
+      "mc_b": "NAIKA MC",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "ミメイ",
+      "mc_b": "peko",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "裂固",
+      "mc_b": "HARDY",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "MOL53",
+      "mc_b": "TKda黒ぶち",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "じょう",
+      "mc_b": "スナフキン",
+      "winner": "b",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "Scooby J",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "ミメイ",
+      "mc_b": "HARDY",
+      "winner": "b",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "MOL53",
+      "mc_b": "スナフキン",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "輪入道",
+      "mc_b": "HARDY",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2017",
+      "mc_a": "MOL53",
+      "mc_b": "HARDY",
+      "winner": "a",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "K-razy",
+      "mc_b": "LITO",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "9for",
+      "mc_b": "MCマロン",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "オニサワ",
+      "mc_b": "RAWAXXX",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "歩歩",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "裂固",
+      "mc_b": "智大",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "FRANKEN",
+      "mc_b": "キョンス",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "ミステリオ",
+      "mc_b": "ダースレイダー",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "道",
+      "mc_b": "Dragon One",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "Scooby J",
+      "mc_b": "掌幻",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "じょう",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "JAKE",
+      "mc_b": "百足",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "CIMA",
+      "mc_b": "スナフキン",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "HARDY",
+      "mc_b": "晋平太",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "ミラクル",
+      "mc_b": "藤KooS",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "ERONE",
+      "mc_b": "玉露",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "ふぁんく",
+      "mc_b": "NAIKA MC",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "K-razy",
+      "mc_b": "9for",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "RAWAXXX",
+      "mc_b": "輪入道",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "裂固",
+      "mc_b": "FRANKEN",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "ミステリオ",
+      "mc_b": "Dragon One",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "Scooby J",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "JAKE",
+      "mc_b": "CIMA",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "HARDY",
+      "mc_b": "ミラクル",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "ERONE",
+      "mc_b": "ふぁんく",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "9for",
+      "mc_b": "RAWAXXX",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "裂固",
+      "mc_b": "ミステリオ",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "呂布カルマ",
+      "mc_b": "JAKE",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "HARDY",
+      "mc_b": "ERONE",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "9for",
+      "mc_b": "裂固",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "呂布カルマ",
+      "mc_b": "HARDY",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2018",
+      "mc_a": "裂固",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "9for",
+      "mc_b": "じょう",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "HARDY",
+      "mc_b": "AUTHORITY",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "晋平太",
+      "mc_b": "裂固",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "バチスタ",
+      "mc_b": "無欲",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "キョンス",
+      "mc_b": "Mr.Q",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "呂布カルマ",
+      "mc_b": "がーどまん",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "KZ",
+      "mc_b": "百足",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "ACE",
+      "mc_b": "KOPERU",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "JAKE",
+      "mc_b": "ミステリオ",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "歩歩",
+      "mc_b": "崇勲",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "CIMA",
+      "mc_b": "サイプレス上野",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "ERONE",
+      "mc_b": "炉馬",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "ふぁんく",
+      "mc_b": "MC☆ニガリa.k.a赤い稲妻",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "RYO",
+      "mc_b": "韻マン",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "Scooby J",
+      "mc_b": "TKda黒ぶち",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "J.O.E",
+      "mc_b": "梵頭",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "じょう",
+      "mc_b": "AUTHORITY",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "裂固",
+      "mc_b": "バチスタ",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "キョンス",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "KZ",
+      "mc_b": "KOPERU",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "JAKE",
+      "mc_b": "歩歩",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "CIMA",
+      "mc_b": "ERONE",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "MC☆ニガリa.k.a赤い稲妻",
+      "mc_b": "RYO",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "Scooby J",
+      "mc_b": "梵頭",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "AUTHORITY",
+      "mc_b": "裂固",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "呂布カルマ",
+      "mc_b": "KZ",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "JAKE",
+      "mc_b": "CIMA",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "MC☆ニガリa.k.a赤い稲妻",
+      "mc_b": "梵頭",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "AUTHORITY",
+      "mc_b": "呂布カルマ",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "JAKE",
+      "mc_b": "MC☆ニガリa.k.a赤い稲妻",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2019",
+      "mc_a": "AUTHORITY",
+      "mc_b": "JAKE",
+      "winner": "a",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "K-razy",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "Scooby J",
+      "mc_b": "JAKE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "AUTHORITY",
+      "mc_b": "漢",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "DOPEMAN",
+      "mc_b": "T-TANGG",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "mindboi",
+      "mc_b": "ミメイ",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "ERONE",
+      "mc_b": "ドルバケツ",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "ZACK",
+      "mc_b": "HARDY",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "早雲",
+      "mc_b": "梵頭",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "ふぁんく",
+      "mc_b": "NERVE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "RAGA",
+      "mc_b": "KBD",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "Amateras",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "HIDADDY",
+      "mc_b": "FUMA NO KTR",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "輪入道",
+      "mc_b": "裂固",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "ミステリオ",
+      "mc_b": "Ryo",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "キョンス",
+      "mc_b": "binks",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "BIG MOOLA",
+      "mc_b": "J.O.E",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "K-razy",
+      "mc_b": "Scooby J",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "AUTHORITY",
+      "mc_b": "DOPEMAN",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "ミメイ",
+      "mc_b": "ERONE",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "HARDY",
+      "mc_b": "梵頭",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "ふぁんく",
+      "mc_b": "RAGA",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "CIMA",
+      "mc_b": "FUMA NO KTR",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "輪入道",
+      "mc_b": "ミステリオ",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "キョンス",
+      "mc_b": "BIG MOOLA",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "K-razy",
+      "mc_b": "AUTHORITY",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "ミメイ",
+      "mc_b": "梵頭",
+      "winner": "b",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "ふぁんく",
+      "mc_b": "CIMA",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "輪入道",
+      "mc_b": "キョンス",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "K-razy",
+      "mc_b": "梵頭",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "ふぁんく",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2020",
+      "mc_a": "梵頭",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "KBD",
+      "mc_b": "JAKE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "早雲",
+      "mc_b": "梵頭",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "サイプレス上野",
+      "mc_b": "BIG MOOOLA",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "PAW",
+      "mc_b": "DARTHREIDER",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "NERVE",
+      "mc_b": "鬼ピュアワンライン",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "SILENT KILLA JOINT",
+      "mc_b": "Fuma no KTR",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "裂固",
+      "mc_b": "キョンス",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "歩歩",
+      "mc_b": "BASE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "FEIDA-WAN",
+      "mc_b": "PONEY",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "HIDADDY",
+      "mc_b": "RAGA",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "MC☆ニガリa.k.a赤い稲妻",
+      "mc_b": "TERU",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "TARO SOUL",
+      "mc_b": "KOPERU",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "ERONE",
+      "mc_b": "S-kaine",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "HUNGER",
+      "mc_b": "P-PONG",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "KATY",
+      "mc_b": "HARDY",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "ACE",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "KBD",
+      "mc_b": "早雲",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "サイプレス上野",
+      "mc_b": "PAW",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "鬼ピュアワンライン",
+      "mc_b": "Fuma no KTR",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "裂固",
+      "mc_b": "歩歩",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "FEIDA-WAN",
+      "mc_b": "HIDADDY",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "MC☆ニガリa.k.a赤い稲妻",
+      "mc_b": "KOPERU",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "ERONE",
+      "mc_b": "P-PONG",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "KATY",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "KBD",
+      "mc_b": "サイプレス上野",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "Fuma no KTR",
+      "mc_b": "裂固",
+      "winner": "b",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "FEIDA-WAN",
+      "mc_b": "MC☆ニガリa.k.a赤い稲妻",
+      "winner": "b",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "ERONE",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "KBD",
+      "mc_b": "裂固",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "MC☆ニガリa.k.a赤い稲妻",
+      "mc_b": "CIMA",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2021",
+      "mc_a": "KBD",
+      "mc_b": "MC☆ニガリa.k.a赤い稲妻",
+      "winner": "b",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "ミステリオ",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "MC☆ニガリa.k.a赤い稲妻",
+      "mc_b": "ERONE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "輪入道",
+      "mc_b": "MU-TON",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "CIMA",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "FORK",
+      "mc_b": "句潤",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "早雲",
+      "mc_b": "裂固",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "JAKE",
+      "mc_b": "S-kaine",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "RAWAXXX",
+      "mc_b": "KBD",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "呂布カルマ",
+      "mc_b": "MC☆ニガリa.k.a赤い稲妻",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "輪入道",
+      "mc_b": "CIMA",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "FORK",
+      "mc_b": "裂固",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "JAKE",
+      "mc_b": "RAWAXXX",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "呂布カルマ",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "裂固",
+      "mc_b": "RAWAXXX",
+      "winner": "a",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2022kanto",
+      "mc_a": "輪入道",
+      "mc_b": "裂固",
+      "winner": "a",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "SILENT KILLA JOINT",
+      "mc_b": "MU-TON",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "ERONE",
+      "mc_b": "GOCCI",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "JUMBO MAATCH",
+      "mc_b": "梵頭",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "煩悩",
+      "mc_b": "MOL53",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "レイジ",
+      "mc_b": "S-kaine",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "ブッダ",
+      "mc_b": "DOTAMA",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "Maiji",
+      "mc_b": "SURRY",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "晋平太",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "MU-TON",
+      "mc_b": "ERONE",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "JUMBO MAATCH",
+      "mc_b": "MOL53",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "レイジ",
+      "mc_b": "DOTAMA",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "Maiji",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "MU-TON",
+      "mc_b": "MOL53",
+      "winner": "b",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "DOTAMA",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2022",
+      "mc_a": "MOL53",
+      "mc_b": "CIMA",
+      "winner": "a",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "ACE",
+      "mc_b": "ID",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "NAIKA MC",
+      "mc_b": "B.I.G JOE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "梵頭",
+      "mc_b": "CHICO CARLITO",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "MCQ",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "ミステリオ",
+      "mc_b": "ERONE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "ミメイ",
+      "mc_b": "DOTAMA",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "MOL53",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "CIMA",
+      "mc_b": "晋平太",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "ID",
+      "mc_b": "NAIKA MC",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "梵頭",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "ミステリオ",
+      "mc_b": "DOTAMA",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "輪入道",
+      "mc_b": "CIMA",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "NAIKA MC",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "DOTAMA",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2023tokyo",
+      "mc_a": "呂布カルマ",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "ミメイ",
+      "mc_b": "L.B.R.L",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "Zeal",
+      "mc_b": "Rude-α",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "CHICO CARLITO",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "KOPERU",
+      "mc_b": "MOL53",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "Laze",
+      "mc_b": "裂固",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "Fuma no KTR",
+      "mc_b": "MC☆ニガリa.k.a赤い稲妻",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "DOTAMA",
+      "mc_b": "NAJIMI",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "HARDY",
+      "mc_b": "ミステリオ",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "ERONE",
+      "mc_b": "無欲",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "STEEL",
+      "mc_b": "ACE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "レイジ",
+      "mc_b": "K-razy",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "REDWING",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "KBD",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "CIMA",
+      "mc_b": "TERU",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "梵頭",
+      "mc_b": "Authority",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "NERVE",
+      "mc_b": "JAKE",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "ミメイ",
+      "mc_b": "Zeal",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "輪入道",
+      "mc_b": "MOL53",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "裂固",
+      "mc_b": "MC☆ニガリa.k.a赤い稲妻",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "DOTAMA",
+      "mc_b": "ミステリオ",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "ERONE",
+      "mc_b": "STEEL",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "レイジ",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "KBD",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "梵頭",
+      "mc_b": "JAKE",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "輪入道",
+      "mc_b": "ミメイ",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "MC☆ニガリa.k.a赤い稲妻",
+      "mc_b": "ミステリオ",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "ERONE",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "CIMA",
+      "mc_b": "JAKE",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "輪入道",
+      "mc_b": "MC☆ニガリa.k.a赤い稲妻",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "呂布カルマ",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2023osaka",
+      "mc_a": "MC☆ニガリa.k.a赤い稲妻",
+      "mc_b": "CIMA",
+      "winner": "a",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "DOTAMA",
+      "mc_b": "GOTIT",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "MAKA",
+      "mc_b": "泰斗a.k.a.裂固",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "ふぁんく",
+      "mc_b": "NAIKA MC",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "MC☆ニガリa.k.a赤い稲妻",
+      "mc_b": "GIL",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "ERONE",
+      "mc_b": "MOL53",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "L.B.R.L",
+      "mc_b": "ミステリオ",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "TKda黒ぶち",
+      "mc_b": "POWER WAVE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "Ry-lax",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "DOTAMA",
+      "mc_b": "泰斗a.k.a.裂固",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "ふぁんく",
+      "mc_b": "GIL",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "MOL53",
+      "mc_b": "L.B.R.L",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "TKda黒ぶち",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "泰斗a.k.a.裂固",
+      "mc_b": "GIL",
+      "winner": "a",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "MOL53",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2024kanto",
+      "mc_a": "泰斗a.k.a.裂固",
+      "mc_b": "CIMA",
+      "winner": "a",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "楓",
+      "mc_b": "猿-TARØET",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "RKID'z",
+      "mc_b": "RunLine",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "ミメイ",
+      "mc_b": "NERVE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "KBD",
+      "mc_b": "Ryo",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "MC☆ニガリa.k.a赤い稲妻",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "j-flag",
+      "mc_b": "泰斗a.k.a.裂固",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "梵頭",
+      "mc_b": "知葉瑠",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "ACE",
+      "mc_b": "SILENT KILLA JOINT",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "JUMBO MAATCH",
+      "mc_b": "KATY",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "ふぁんく",
+      "mc_b": "DOTAMA",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "KOPERU",
+      "mc_b": "KYO虎",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "Sto$",
+      "mc_b": "MAKA",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "ミステリオ",
+      "mc_b": "レイジ",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "VITE",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "HIDADDY",
+      "mc_b": "ERONE",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "RUGSHOT",
+      "mc_b": "Zeal",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "楓",
+      "mc_b": "RKID'z",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "ミメイ",
+      "mc_b": "KBD",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "CIMA",
+      "mc_b": "泰斗a.k.a.裂固",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "梵頭",
+      "mc_b": "ACE",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "JUMBO MAATCH",
+      "mc_b": "DOTAMA",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "KOPERU",
+      "mc_b": "Sto$",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "ミステリオ",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "ERONE",
+      "mc_b": "RUGSHOT",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "楓",
+      "mc_b": "ミメイ",
+      "winner": "b",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "CIMA",
+      "mc_b": "梵頭",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "JUMBO MAATCH",
+      "mc_b": "KOPERU",
+      "winner": "b",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "輪入道",
+      "mc_b": "ERONE",
+      "winner": "a",
+      "round": "ベスト8"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "ミメイ",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "KOPERU",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2024osaka",
+      "mc_a": "CIMA",
+      "mc_b": "輪入道",
+      "winner": "a",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "Sto$",
+      "mc_b": "ERONE",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "CIMA",
+      "mc_b": "NERVE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "レイジ",
+      "mc_b": "歩歩",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "ミステリオ",
+      "mc_b": "HIDADDY",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "MOL53",
+      "mc_b": "KAKKY",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "公家バイブス",
+      "mc_b": "五月雨",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "REDWING",
+      "mc_b": "Sitissy luvit",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "HARDY",
+      "mc_b": "GIL",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "輪入道",
+      "mc_b": "KATY",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "STEEL",
+      "mc_b": "Bendy",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "Zeal",
+      "mc_b": "サッチャー",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "ふぁんく",
+      "mc_b": "K-razy",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "ERONE",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "レイジ",
+      "mc_b": "ミステリオ",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "MOL53",
+      "mc_b": "五月雨",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "Sitissy luvit",
+      "mc_b": "HARDY",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "輪入道",
+      "mc_b": "STEEL",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "Zeal",
+      "mc_b": "K-razy",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "CIMA",
+      "mc_b": "レイジ",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "MOL53",
+      "mc_b": "Sitissy luvit",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "輪入道",
+      "mc_b": "K-razy",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "レイジ",
+      "mc_b": "MOL53",
+      "winner": "a",
+      "round": "ベスト4"
+    },
+    {
+      "tournament_key": "spotlight2025",
+      "mc_a": "輪入道",
+      "mc_b": "レイジ",
+      "winner": "b",
+      "round": "決勝"
+    }
+  ]
+}

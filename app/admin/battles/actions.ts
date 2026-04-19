@@ -4,6 +4,52 @@ import { createAdminClient } from '@/lib/supabase';
 import { createSupabaseServerClient } from '@/lib/supabase-server';
 import { revalidatePath } from 'next/cache';
 
+// MC名義統合の定義（merge_mcs.mjs と同期して管理する）
+const MERGE_GROUPS = [
+  { canonical: '呂布カルマ',  aliases: ['ヤングたかじん', '呂布000カルマ'] },
+  { canonical: 'R-指定',      aliases: ['R指定'] },
+  { canonical: 'MOL53',       aliases: ['鬼ピュアワンライン', 'RAWAXXX'] },
+  { canonical: 'CHEHON',      aliases: ['BUFFALO SOLDIER'] },
+  { canonical: 'S-kaine',     aliases: ['S-kainê'] },
+] as const;
+
+async function mergeMcAliases(admin: ReturnType<typeof createAdminClient>): Promise<string[]> {
+  const logs: string[] = [];
+
+  for (const group of MERGE_GROUPS) {
+    const { data: canonicalMc } = await admin
+      .from('mcs').select('id, name').eq('name', group.canonical).maybeSingle();
+    if (!canonicalMc) continue;
+
+    for (const aliasName of group.aliases) {
+      const { data: aliasMc } = await admin
+        .from('mcs').select('id, name').eq('name', aliasName).maybeSingle();
+      if (!aliasMc) continue;
+
+      const cId = canonicalMc.id;
+      const aId = aliasMc.id;
+
+      // 自己対戦になるバトルを削除
+      const { data: selfBattles } = await admin.from('battles').select('id')
+        .or(`and(mc_a_id.eq.${cId},mc_b_id.eq.${aId}),and(mc_a_id.eq.${aId},mc_b_id.eq.${cId})`);
+      if (selfBattles && selfBattles.length > 0) {
+        const selfIds = selfBattles.map((b: { id: string }) => b.id);
+        await admin.from('ratings').delete().in('battle_id', selfIds);
+        await admin.from('battles').delete().in('id', selfIds);
+      }
+
+      await admin.from('battles').update({ mc_a_id: cId }).eq('mc_a_id', aId);
+      await admin.from('battles').update({ mc_b_id: cId }).eq('mc_b_id', aId);
+      await admin.from('ratings').update({ mc_id: cId }).eq('mc_id', aId);
+      await admin.from('mcs').delete().eq('id', aId);
+
+      logs.push(`「${aliasName}」→「${group.canonical}」統合`);
+    }
+  }
+
+  return logs;
+}
+
 /**
  * キャッシュのみクリアする（SQL Editorで再計算した後に使用）
  */
@@ -35,6 +81,12 @@ export async function recalculateAllRatings(): Promise<{ ok: boolean; message: s
   }
 
   const admin = createAdminClient();
+
+  // 再計算前にMCエイリアスを統合する
+  const mergeLogs = await mergeMcAliases(admin);
+  if (mergeLogs.length > 0) {
+    console.log('[recalculate] MC統合:', mergeLogs.join(', '));
+  }
 
   let result: { data: unknown; error: { message: string; code?: string; details?: string; hint?: string } | null };
   try {
