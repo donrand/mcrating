@@ -9,7 +9,8 @@ export type TournamentRow = {
   held_on: string | null;
   grade_coeff: number;
   displayName: string;
-  registered: boolean;
+  inMaster: boolean;  // マスターでregistered/partial（表示色の基準）
+  registered: boolean; // DBに実際に存在する（編集可否の基準）
 };
 
 export type CategoryGroup = {
@@ -146,13 +147,13 @@ export default function CoefficientClient({ categories }: { categories: Category
               <div
                 key={t.id ?? t.name}
                 className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
-                  t.registered
+                  t.inMaster
                     ? 'bg-gray-900 hover:bg-gray-800'
                     : 'bg-gray-900/40 opacity-40'
                 }`}
               >
                 <div className="flex-1 min-w-0">
-                  <span className={`text-sm font-medium ${t.registered ? 'text-white' : 'text-gray-500'}`}>
+                  <span className={`text-sm font-medium ${t.inMaster ? 'text-white' : 'text-gray-500'}`}>
                     {t.displayName}
                   </span>
                   <span className="text-xs text-gray-600 ml-2">{t.held_on ?? '—'}</span>

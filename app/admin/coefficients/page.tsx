@@ -34,6 +34,8 @@ export default async function CoefficientsPage() {
         held_on: row?.held_on ?? t.heldOn ?? null,
         grade_coeff: row?.grade_coeff ?? 1.0,
         displayName: t.displayName,
+        // 表示はマスターのstatusを基準にし、編集可能かはDBのIDの有無で判断
+        inMaster: t.status === 'registered' || t.status === 'partial',
         registered: !!row,
       });
     }
