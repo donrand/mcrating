@@ -12,8 +12,9 @@ export default async function CoefficientsPage() {
     .from('tournaments')
     .select('id, name, held_on, grade_coeff');
 
+  // 大文字小文字・前後スペントを無視して照合するためlowercaseキーで管理
   const nameToRow = new Map(
-    (tournaments ?? []).map(t => [t.name.trim(), t])
+    (tournaments ?? []).map(t => [t.name.trim().toLowerCase(), t])
   );
 
   // マスターリストを使ってカテゴリ別にグルーピング
@@ -24,13 +25,13 @@ export default async function CoefficientsPage() {
 
     for (const t of cat.tournaments) {
       if (!t.supabaseName) continue;
-      const row = nameToRow.get(t.supabaseName);
+      const row = nameToRow.get(t.supabaseName.trim().toLowerCase());
       if (!row) continue;
       rows.push({
         id: row.id,
         name: row.name,
         held_on: row.held_on,
-        grade_coeff: row.grade_coeff,
+        grade_coeff: row.grade_coeff ?? 1.0,
         displayName: t.displayName,
       });
     }
@@ -43,16 +44,17 @@ export default async function CoefficientsPage() {
   // マスターに載っていない大会は「その他」へ
   const masterNames = new Set(
     TOURNAMENT_MASTER.flatMap(c => c.tournaments)
-      .map(t => t.supabaseName)
+      .map(t => t.supabaseName?.trim().toLowerCase())
       .filter(Boolean) as string[]
   );
   const others: TournamentRow[] = (tournaments ?? [])
-    .filter(t => !masterNames.has(t.name.trim()))
+    .filter(t => !masterNames.has(t.name.trim().toLowerCase()))
+    .sort((a, b) => (a.held_on ?? '').localeCompare(b.held_on ?? ''))
     .map(t => ({
       id: t.id,
       name: t.name,
       held_on: t.held_on,
-      grade_coeff: t.grade_coeff,
+      grade_coeff: t.grade_coeff ?? 1.0,
       displayName: t.name,
     }));
   if (others.length > 0) {
