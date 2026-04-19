@@ -90,6 +90,9 @@ export default async function TournamentsPage() {
                   const supaId = t.supabaseName ? registeredNames.get(t.supabaseName) : undefined;
                   const isRegistered = !!supaId;
 
+                  const isPartialWithData = t.status === 'partial' && !!supaId;
+                  const isLinkable = (isRegistered || isPartialWithData) && !!supaId;
+
                   const content = (
                     <div
                       className={`flex flex-col gap-1 px-3 py-2 rounded-lg border text-sm transition-colors ${
@@ -97,17 +100,19 @@ export default async function TournamentsPage() {
                           ? 'bg-gray-900/30 border-gray-800/50 opacity-50'
                           : isRegistered
                           ? 'bg-gray-900 border-gray-700 hover:border-green-700'
+                          : isPartialWithData
+                          ? 'bg-gray-900 border-yellow-900/50 hover:border-yellow-700'
                           : 'bg-gray-900/50 border-gray-800'
                       }`}
                     >
-                      <span className={`font-medium ${isRegistered ? 'text-white' : 'text-gray-500'}`}>
+                      <span className={`font-medium ${isLinkable ? 'text-white' : 'text-gray-500'}`}>
                         {t.displayName}
                       </span>
                       <StatusBadge status={t.status} registered={isRegistered} />
                     </div>
                   );
 
-                  return isRegistered && supaId ? (
+                  return isLinkable && supaId ? (
                     <Link key={t.key} href={`/tournaments/${supaId}`}>
                       {content}
                     </Link>
