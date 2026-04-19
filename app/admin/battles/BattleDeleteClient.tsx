@@ -20,7 +20,7 @@ export default function BattleDeleteClient({ battles }: Props) {
   const [processing, setProcessing] = useState(false);
   const [done, setDone] = useState<string | null>(null);
   const [recalculating, setRecalculating] = useState(false);
-  const [recalcResult, setRecalcResult] = useState<{ ok: boolean; message: string } | null>(null);
+  const [recalcResult, setRecalcResult] = useState<{ ok: boolean; message: string; details?: string } | null>(null);
   const [purging, setPurging] = useState(false);
 
   function toggleOne(id: string) {
@@ -56,10 +56,11 @@ export default function BattleDeleteClient({ battles }: Props) {
     setRecalculating(true);
     setRecalcResult(null);
     try {
-      await recalculateAllRatings();
-      setRecalcResult({ ok: true, message: 'レーティングの再計算が完了しました' });
-    } catch {
-      setRecalcResult({ ok: false, message: 'レーティングの再計算に失敗しました' });
+      const res = await recalculateAllRatings();
+      setRecalcResult(res);
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      setRecalcResult({ ok: false, message: '予期しないエラー', details: msg });
     } finally {
       setRecalculating(false);
     }
@@ -121,8 +122,11 @@ export default function BattleDeleteClient({ battles }: Props) {
           </button>
         </div>
         {recalcResult && (
-          <div className={`p-2 rounded text-sm ${recalcResult.ok ? 'bg-green-900/30 border border-green-700 text-green-400' : 'bg-red-900/30 border border-red-700 text-red-400'}`}>
-            {recalcResult.message}
+          <div className={`p-2 rounded text-sm space-y-1 ${recalcResult.ok ? 'bg-green-900/30 border border-green-700 text-green-400' : 'bg-red-900/30 border border-red-700 text-red-400'}`}>
+            <p>{recalcResult.message}</p>
+            {recalcResult.details && (
+              <p className="text-xs opacity-75 font-mono break-all">{recalcResult.details}</p>
+            )}
           </div>
         )}
         <div className="flex items-center justify-between border-t border-gray-800 pt-3">

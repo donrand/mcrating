@@ -25,17 +25,45 @@ async function requireAdmin() {
  * 計算は Supabase の PostgreSQL 関数 recalculate_all_ratings() で実行される。
  * タイムアウトなし・データ量無制限。
  */
-export async function recalculateAllRatings() {
-  await requireAdmin();
+export async function recalculateAllRatings(): Promise<{ ok: boolean; message: string; details?: string }> {
+  try {
+    await requireAdmin();
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e);
+    console.error('[recalculate] auth error:', msg);
+    return { ok: false, message: '認証エラー', details: msg };
+  }
+
   const admin = createAdminClient();
 
-  const { error } = await admin.rpc('recalculate_all_ratings');
-  if (error) throw new Error(error.message);
+  let result: { data: unknown; error: { message: string; code?: string; details?: string; hint?: string } | null };
+  try {
+    result = await admin.rpc('recalculate_all_ratings') as typeof result;
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e);
+    console.error('[recalculate] rpc call threw exception:', msg);
+    return { ok: false, message: 'RPC呼び出し例外', details: msg };
+  }
+
+  if (result.error) {
+    const { message, code, details, hint } = result.error;
+    console.error('[recalculate] rpc error:', { message, code, details, hint });
+    return {
+      ok: false,
+      message: message,
+      details: [code && `code: ${code}`, details && `details: ${details}`, hint && `hint: ${hint}`]
+        .filter(Boolean).join(' / ') || undefined,
+    };
+  }
+
+  console.log('[recalculate] success:', result.data);
 
   revalidatePath('/');
   revalidatePath('/battles');
   revalidatePath('/tournaments', 'layout');
   revalidatePath('/mc', 'layout');
+
+  return { ok: true, message: `再計算完了 (${JSON.stringify(result.data)})` };
 }
 
 /**

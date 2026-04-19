@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { createAdminClient } from '@/lib/supabase';
 import BattleDeleteClient from './BattleDeleteClient';
 import AdminNav from '../AdminNav';
