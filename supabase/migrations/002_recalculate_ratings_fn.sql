@@ -67,10 +67,8 @@ BEGIN
       END
   LOOP
     -- 現在レートを取得（PKインデックスで高速）
-    SELECT current_rating INTO v_ra FROM _recalc_scratch WHERE mc_id = rec.mc_a_id;
-    SELECT current_rating INTO v_rb FROM _recalc_scratch WHERE mc_id = rec.mc_b_id;
-    v_ra := COALESCE(v_ra, c_initial);
-    v_rb := COALESCE(v_rb, c_initial);
+    v_ra := COALESCE((SELECT current_rating FROM _recalc_scratch WHERE mc_id = rec.mc_a_id), c_initial);
+    v_rb := COALESCE((SELECT current_rating FROM _recalc_scratch WHERE mc_id = rec.mc_b_id), c_initial);
 
     -- 期待勝率（標準 Elo 式）
     v_exp_a := 1.0 / (1.0 + power(10.0, (v_rb - v_ra) / 400.0));
