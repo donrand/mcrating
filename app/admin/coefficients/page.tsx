@@ -41,25 +41,6 @@ export default async function CoefficientsPage() {
     }
   }
 
-  // マスターに載っていない大会は「その他」へ
-  const masterNames = new Set(
-    TOURNAMENT_MASTER.flatMap(c => c.tournaments)
-      .map(t => t.supabaseName?.trim().toLowerCase())
-      .filter(Boolean) as string[]
-  );
-  const others: TournamentRow[] = (tournaments ?? [])
-    .filter(t => !masterNames.has(t.name.trim().toLowerCase()))
-    .sort((a, b) => (a.held_on ?? '').localeCompare(b.held_on ?? ''))
-    .map(t => ({
-      id: t.id,
-      name: t.name,
-      held_on: t.held_on,
-      grade_coeff: t.grade_coeff ?? 1.0,
-      displayName: t.name,
-    }));
-  if (others.length > 0) {
-    categories.push({ id: 'other', label: 'その他', tournaments: others });
-  }
 
   return (
     <div>
