@@ -1,5 +1,6 @@
 -- 全レーティング再計算 PostgreSQL関数
 -- Supabase SQL Editor で実行してください
+-- 事前に 004_recalc_scratch_table.sql を実行しておくこと
 -- 呼び出し: SELECT recalculate_all_ratings();
 --           または admin.rpc('recalculate_all_ratings')
 
@@ -16,15 +17,7 @@ DECLARE
   c_floor   CONSTANT numeric := 1000;
   c_bonus   CONSTANT numeric := 5;
 
-  rec       RECORD;
-
-  -- 現在レートと試合数・勝利数をJSONBでメモリ管理（一時テーブル不要）
-  mc_ratings JSONB := '{}'::JSONB;
-  mc_counts  JSONB := '{}'::JSONB;
-  mc_wins    JSONB := '{}'::JSONB;
-
-  v_key_a text;
-  v_key_b text;
+  rec     RECORD;
   v_ra    numeric;
   v_rb    numeric;
   v_exp_a numeric;
@@ -38,6 +31,14 @@ DECLARE
   v_nb    numeric;
   v_count integer := 0;
 BEGIN
+  -- 同時実行を防ぐ
+  LOCK TABLE _recalc_scratch IN EXCLUSIVE MODE;
+
+  -- ── スクラッチテーブルをリセット ────────────────────────
+  TRUNCATE _recalc_scratch;
+  INSERT INTO _recalc_scratch (mc_id, current_rating, battle_count, win_count)
+  SELECT id, c_initial, 0, 0 FROM mcs;
+
   -- ── 既存 ratings を全削除（クリーン再構築）──────────────
   DELETE FROM ratings;
 
@@ -65,12 +66,11 @@ BEGIN
         ELSE 999
       END
   LOOP
-    v_key_a := rec.mc_a_id::text;
-    v_key_b := rec.mc_b_id::text;
-
-    -- 現在レートを取得（初出場なら初期値）
-    v_ra := COALESCE((mc_ratings ->> v_key_a)::numeric, c_initial);
-    v_rb := COALESCE((mc_ratings ->> v_key_b)::numeric, c_initial);
+    -- 現在レートを取得（PKインデックスで高速）
+    SELECT current_rating INTO v_ra FROM _recalc_scratch WHERE mc_id = rec.mc_a_id;
+    SELECT current_rating INTO v_rb FROM _recalc_scratch WHERE mc_id = rec.mc_b_id;
+    v_ra := COALESCE(v_ra, c_initial);
+    v_rb := COALESCE(v_rb, c_initial);
 
     -- 期待勝率（標準 Elo 式）
     v_exp_a := 1.0 / (1.0 + power(10.0, (v_rb - v_ra) / 400.0));
@@ -101,22 +101,20 @@ BEGIN
       (rec.mc_a_id, rec.id, v_ra, v_na, v_da),
       (rec.mc_b_id, rec.id, v_rb, v_nb, v_db);
 
-    -- JSONB でメモリ内レートを更新
-    mc_ratings := jsonb_set(mc_ratings, ARRAY[v_key_a], to_jsonb(v_na), true);
-    mc_ratings := jsonb_set(mc_ratings, ARRAY[v_key_b], to_jsonb(v_nb), true);
-    mc_counts  := jsonb_set(mc_counts,  ARRAY[v_key_a],
-      to_jsonb(COALESCE((mc_counts ->> v_key_a)::integer, 0) + 1), true);
-    mc_counts  := jsonb_set(mc_counts,  ARRAY[v_key_b],
-      to_jsonb(COALESCE((mc_counts ->> v_key_b)::integer, 0) + 1), true);
+    -- スクラッチテーブルを更新
+    UPDATE _recalc_scratch
+    SET
+      current_rating = v_na,
+      battle_count   = battle_count + 1,
+      win_count      = win_count + CASE WHEN rec.winner = 'a' THEN 1 ELSE 0 END
+    WHERE mc_id = rec.mc_a_id;
 
-    -- 勝利数を更新（引き分けはカウントしない）
-    IF rec.winner = 'a' THEN
-      mc_wins := jsonb_set(mc_wins, ARRAY[v_key_a],
-        to_jsonb(COALESCE((mc_wins ->> v_key_a)::integer, 0) + 1), true);
-    ELSIF rec.winner = 'b' THEN
-      mc_wins := jsonb_set(mc_wins, ARRAY[v_key_b],
-        to_jsonb(COALESCE((mc_wins ->> v_key_b)::integer, 0) + 1), true);
-    END IF;
+    UPDATE _recalc_scratch
+    SET
+      current_rating = v_nb,
+      battle_count   = battle_count + 1,
+      win_count      = win_count + CASE WHEN rec.winner = 'b' THEN 1 ELSE 0 END
+    WHERE mc_id = rec.mc_b_id;
 
     v_count := v_count + 1;
   END LOOP;
@@ -124,9 +122,11 @@ BEGIN
   -- ── 最終レートを mcs テーブルに書き戻し ─────────────────
   UPDATE mcs m
   SET
-    current_rating = COALESCE((mc_ratings ->> m.id::text)::numeric, c_initial),
-    battle_count   = COALESCE((mc_counts  ->> m.id::text)::integer, 0),
-    win_count      = COALESCE((mc_wins    ->> m.id::text)::integer, 0);
+    current_rating = s.current_rating,
+    battle_count   = s.battle_count,
+    win_count      = s.win_count
+  FROM _recalc_scratch s
+  WHERE m.id = s.mc_id;
 
   RETURN json_build_object('battles_processed', v_count);
 END;

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { deleteBattles, recalculateAllRatings } from './actions';
+import { deleteBattles, recalculateAllRatings, purgeCache } from './actions';
 
 type BattleRow = {
   id: string;
@@ -21,6 +21,7 @@ export default function BattleDeleteClient({ battles }: Props) {
   const [done, setDone] = useState<string | null>(null);
   const [recalculating, setRecalculating] = useState(false);
   const [recalcResult, setRecalcResult] = useState<{ ok: boolean; message: string } | null>(null);
+  const [purging, setPurging] = useState(false);
 
   function toggleOne(id: string) {
     setChecked(prev => {
@@ -105,7 +106,7 @@ export default function BattleDeleteClient({ battles }: Props) {
       )}
 
       {/* レーティング全再計算 */}
-      <div className="mb-6 p-4 bg-gray-900 rounded-xl border border-gray-800">
+      <div className="mb-6 p-4 bg-gray-900 rounded-xl border border-gray-800 space-y-3">
         <div className="flex items-center justify-between">
           <div>
             <p className="text-sm font-semibold text-gray-300">レーティング全再計算</p>
@@ -120,10 +121,23 @@ export default function BattleDeleteClient({ battles }: Props) {
           </button>
         </div>
         {recalcResult && (
-          <div className={`mt-3 p-2 rounded text-sm ${recalcResult.ok ? 'bg-green-900/30 border border-green-700 text-green-400' : 'bg-red-900/30 border border-red-700 text-red-400'}`}>
+          <div className={`p-2 rounded text-sm ${recalcResult.ok ? 'bg-green-900/30 border border-green-700 text-green-400' : 'bg-red-900/30 border border-red-700 text-red-400'}`}>
             {recalcResult.message}
           </div>
         )}
+        <div className="flex items-center justify-between border-t border-gray-800 pt-3">
+          <div>
+            <p className="text-sm font-semibold text-gray-400">キャッシュクリア</p>
+            <p className="text-xs text-gray-600 mt-0.5">SQL Editorで再計算した後にサイトへ反映する</p>
+          </div>
+          <button
+            onClick={async () => { setPurging(true); await purgeCache(); setPurging(false); }}
+            disabled={purging}
+            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 disabled:opacity-40 disabled:cursor-not-allowed text-white font-semibold rounded-lg text-sm transition-colors shrink-0"
+          >
+            {purging ? '処理中...' : 'キャッシュをクリア'}
+          </button>
+        </div>
       </div>
 
       {battles.length === 0 && (

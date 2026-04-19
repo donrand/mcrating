@@ -4,6 +4,17 @@ import { createAdminClient } from '@/lib/supabase';
 import { createSupabaseServerClient } from '@/lib/supabase-server';
 import { revalidatePath } from 'next/cache';
 
+/**
+ * キャッシュのみクリアする（SQL Editorで再計算した後に使用）
+ */
+export async function purgeCache() {
+  await requireAdmin();
+  revalidatePath('/');
+  revalidatePath('/battles');
+  revalidatePath('/tournaments', 'layout');
+  revalidatePath('/mc', 'layout');
+}
+
 async function requireAdmin() {
   const { data: { user } } = await createSupabaseServerClient().auth.getUser();
   if (!user) throw new Error('認証が必要です');
