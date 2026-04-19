@@ -33,6 +33,7 @@ const MERGE_GROUPS = [
   { canonical: 'R-指定',           aliases: ['R指定'] },
   { canonical: 'MOL53',            aliases: ['鬼ピュアワンライン', 'RAWAXXX'] },
   { canonical: 'CHEHON',           aliases: ['BUFFALO SOLDIER'] },
+  { canonical: 'S-kaine',           aliases: ['S-kainê'] },
 ];
 
 async function getMcId(name) {
