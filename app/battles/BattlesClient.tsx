@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import ReportButton from '@/components/ReportButton';
 
 type BattleRow = {
   id: string;
@@ -97,6 +100,11 @@ export default function BattlesClient({ battles, total, page, totalPages, q }: P
                     <span className="text-xs text-gray-700 ml-auto">
                       {b.tournaments?.held_on ?? '—'}
                     </span>
+                    <ReportButton
+                      battleId={b.id}
+                      mcAName={b.mc_a?.name ?? 'MC A'}
+                      mcBName={b.mc_b?.name ?? 'MC B'}
+                    />
                   </div>
 
                   {/* 対戦カード */}

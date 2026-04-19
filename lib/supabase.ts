@@ -61,6 +61,18 @@ export type Rating = {
   created_at: string;
 };
 
+export type BattleCorrection = {
+  id: string;
+  battle_id: string;
+  description: string;
+  suggested_winner: 'a' | 'b' | 'draw' | null;
+  suggested_round: string | null;
+  evidence_url: string | null;
+  status: 'pending' | 'resolved' | 'dismissed';
+  submitted_at: string;
+  resolved_at: string | null;
+};
+
 export type Submission = {
   id: string;
   tournament_name: string;

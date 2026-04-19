@@ -1,0 +1,561 @@
+{
+  "tournaments": [
+    {
+      "key": "kok2015",
+      "name": "KING OF KINGS 2015 GRAND CHAMPIONSHIP FINAL",
+      "held_on": "2015-09-23",
+      "grade_coeff": 3.0
+    },
+    {
+      "key": "kok2016",
+      "name": "KING OF KINGS 2016 GRAND CHAMPIONSHIP FINAL",
+      "held_on": "2017-01-08",
+      "grade_coeff": 3.0
+    },
+    {
+      "key": "kok2017",
+      "name": "KING OF KINGS 2017 GRAND CHAMPIONSHIP FINAL",
+      "held_on": "2018-01-12",
+      "grade_coeff": 3.0
+    },
+    {
+      "key": "kok2018",
+      "name": "KING OF KINGS 2018 GRAND CHAMPIONSHIP FINAL",
+      "held_on": "2019-01-06",
+      "grade_coeff": 3.0
+    },
+    {
+      "key": "kok2019",
+      "name": "KING OF KINGS 2019 GRAND CHAMPIONSHIP FINAL",
+      "held_on": "2020-01-11",
+      "grade_coeff": 3.0
+    }
+  ],
+  "battles": [
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "サイプレス上野",
+      "mc_b": "FEIDA-WAN",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "MC☆ニガリ a.k.a 赤い稲妻",
+      "mc_b": "GADORO",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "CIMA",
+      "mc_b": "NAGION",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "NONKEY",
+      "mc_b": "崇勲",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "仙人掌",
+      "mc_b": "押忍マン",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "HI-KING a.k.a TAKASE",
+      "mc_b": "KAI",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "呂布カルマ",
+      "mc_b": "Lick-G",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "JAG-ME",
+      "mc_b": "Jony the sonata",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "サイプレス上野",
+      "mc_b": "GADORO",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "CIMA",
+      "mc_b": "崇勲",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "押忍マン",
+      "mc_b": "HI-KING a.k.a TAKASE",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "呂布カルマ",
+      "mc_b": "JAG-ME",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "崇勲",
+      "mc_b": "GADORO",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "HI-KING a.k.a TAKASE",
+      "mc_b": "JAG-ME",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "kok2015",
+      "mc_a": "崇勲",
+      "mc_b": "JAG-ME",
+      "winner": "a",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "ACE",
+      "mc_b": "ERONE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "ISSUGI",
+      "mc_b": "SURRY",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "GADORO",
+      "mc_b": "CIMA",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "裂固",
+      "mc_b": "サイプレス上野",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "FEIDA-WAN",
+      "mc_b": "HI-KING a.k.a TAKASE",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "崇勲",
+      "mc_b": "じょう",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "呂布カルマ",
+      "mc_b": "押忍マン",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "輪入道",
+      "mc_b": "Lick-G",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "ACE",
+      "mc_b": "SURRY",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "GADORO",
+      "mc_b": "裂固",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "HI-KING a.k.a TAKASE",
+      "mc_b": "崇勲",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "呂布カルマ",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "ACE",
+      "mc_b": "GADORO",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "崇勲",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "kok2016",
+      "mc_a": "GADORO",
+      "mc_b": "輪入道",
+      "winner": "a",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "NAIKA MC",
+      "mc_b": "CIMA",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "ミメイ",
+      "mc_b": "MU-TON",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "HARDY",
+      "mc_b": "D.D.S",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "がーどまん",
+      "mc_b": "RAWAXXX",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "DARK",
+      "mc_b": "BASE",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "MULBE",
+      "mc_b": "輪入道",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "PONY",
+      "mc_b": "智大",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "呂布カルマ",
+      "mc_b": "SIMON JAP",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "CIMA",
+      "mc_b": "RAWAXXX",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "MU-TON",
+      "mc_b": "D.D.S",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "輪入道",
+      "mc_b": "BASE",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "呂布カルマ",
+      "mc_b": "智大",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "RAWAXXX",
+      "mc_b": "MU-TON",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "BASE",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "kok2018",
+      "mc_a": "呂布カルマ",
+      "mc_b": "RAWAXXX",
+      "winner": "a",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "Authority",
+      "mc_b": "HARDY",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "SAM",
+      "mc_b": "D.D.S",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "Randy Wati Sati",
+      "mc_b": "梵頭",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "スナフキン",
+      "mc_b": "ACE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "MU-TON",
+      "mc_b": "CROWN-D",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "呂布カルマ",
+      "mc_b": "T-TANGG",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "智大",
+      "mc_b": "HI-KING TAKASE",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "DANIEL a.k.a 464underground",
+      "mc_b": "RAWAXXX",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "SAM",
+      "mc_b": "Authority",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "スナフキン",
+      "mc_b": "梵頭",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "MU-TON",
+      "mc_b": "呂布カルマ",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "RAWAXXX",
+      "mc_b": "智大",
+      "winner": "a",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "Authority",
+      "mc_b": "梵頭",
+      "winner": "a",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "呂布カルマ",
+      "mc_b": "RAWAXXX",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "kok2019",
+      "mc_a": "RAWAXXX",
+      "mc_b": "Authority",
+      "winner": "a",
+      "round": "決勝"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "ふぁんく",
+      "mc_b": "PONY",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "FEIDA-WAN",
+      "mc_b": "SIMON JAP",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "Dragon One",
+      "mc_b": "BASE",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "NAIKA MC",
+      "mc_b": "GADORO",
+      "winner": "b",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "T-TANGG",
+      "mc_b": "スナフキン",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "mu-ton",
+      "mc_b": "黄猿",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "CIMA",
+      "mc_b": "句潤",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "MOL53",
+      "mc_b": "喰吐",
+      "winner": "a",
+      "round": "1回戦"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "ふぁんく",
+      "mc_b": "SIMON JAP",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "BASE",
+      "mc_b": "GADORO",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "T-TANGG",
+      "mc_b": "mu-ton",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "CIMA",
+      "mc_b": "MOL53",
+      "winner": "b",
+      "round": "2回戦"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "SIMON JAP",
+      "mc_b": "GADORO",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "mu-ton",
+      "mc_b": "MOL53",
+      "winner": "b",
+      "round": "準決勝"
+    },
+    {
+      "tournament_key": "kok2017",
+      "mc_a": "GADORO",
+      "mc_b": "MOL53",
+      "winner": "a",
+      "round": "決勝"
+    }
+  ]
+}
