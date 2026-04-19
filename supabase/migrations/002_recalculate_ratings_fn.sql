@@ -40,7 +40,8 @@ BEGIN
   SELECT id, c_initial, 0, 0 FROM mcs;
 
   -- ── 既存 ratings を全削除（クリーン再構築）──────────────
-  DELETE FROM ratings;
+  -- DELETE FROM ratings はPostgRESTのWHERE句必須チェックに引っかかるためTRUNCATEを使用
+  TRUNCATE ratings;
 
   -- ── 承認済みバトルを時系列順に処理 ─────────────────────
   FOR rec IN
