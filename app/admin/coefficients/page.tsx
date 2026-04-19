@@ -17,28 +17,28 @@ export default async function CoefficientsPage() {
     (tournaments ?? []).map(t => [t.name.trim().toLowerCase(), t])
   );
 
-  // マスターリストを使ってカテゴリ別にグルーピング
+  // マスターリストを使ってカテゴリ別にグルーピング（大会一覧と同じスコープ）
   const categories: CategoryGroup[] = [];
 
   for (const cat of TOURNAMENT_MASTER) {
     const rows: TournamentRow[] = [];
 
     for (const t of cat.tournaments) {
-      if (!t.supabaseName) continue;
-      const row = nameToRow.get(t.supabaseName.trim().toLowerCase());
-      if (!row) continue;
+      if (t.status === 'excluded') continue;
+      const row = t.supabaseName
+        ? nameToRow.get(t.supabaseName.trim().toLowerCase())
+        : undefined;
       rows.push({
-        id: row.id,
-        name: row.name,
-        held_on: row.held_on,
-        grade_coeff: row.grade_coeff ?? 1.0,
+        id: row?.id ?? null,
+        name: row?.name ?? t.supabaseName ?? t.displayName,
+        held_on: row?.held_on ?? t.heldOn ?? null,
+        grade_coeff: row?.grade_coeff ?? 1.0,
         displayName: t.displayName,
+        registered: !!row,
       });
     }
 
-    if (rows.length > 0) {
-      categories.push({ id: cat.id, label: cat.label, tournaments: rows });
-    }
+    categories.push({ id: cat.id, label: cat.label, tournaments: rows });
   }
 
 

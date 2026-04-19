@@ -4,11 +4,12 @@ import { useState, useTransition } from 'react';
 import { updateTournamentCoeff, updateCategoryCoeff } from './actions';
 
 export type TournamentRow = {
-  id: string;
+  id: string | null;
   name: string;
   held_on: string | null;
   grade_coeff: number;
   displayName: string;
+  registered: boolean;
 };
 
 export type CategoryGroup = {
@@ -75,9 +76,10 @@ function CategoryBulkUpdate({ category }: { category: CategoryGroup }) {
   function handleBulkSave() {
     const v = parseFloat(coeff);
     if (isNaN(v) || v <= 0) return;
-    if (!confirm(`「${category.label}」の全${category.tournaments.length}件を格係数 ${v.toFixed(1)} に変更しますか？`)) return;
+    const registered = category.tournaments.filter(t => t.registered && t.id);
+    if (!confirm(`「${category.label}」の登録済${registered.length}件を格係数 ${v.toFixed(1)} に変更しますか？`)) return;
     startTransition(async () => {
-      await updateCategoryCoeff(category.tournaments.map(t => t.id), v);
+      await updateCategoryCoeff(registered.map(t => t.id!), v);
       setResult(`全${category.tournaments.length}件を ${v.toFixed(1)} に更新しました`);
       setCoeff('');
       setTimeout(() => setResult(null), 3000);
@@ -141,16 +143,29 @@ export default function CoefficientClient({ categories }: { categories: Category
           {/* 個別リスト */}
           <div className="space-y-1">
             {cat.tournaments.map(t => (
-              <div key={t.id} className="flex items-center gap-3 px-3 py-2 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
+              <div
+                key={t.id ?? t.name}
+                className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
+                  t.registered
+                    ? 'bg-gray-900 hover:bg-gray-800'
+                    : 'bg-gray-900/40 opacity-40'
+                }`}
+              >
                 <div className="flex-1 min-w-0">
-                  <span className="text-sm text-white font-medium">{t.displayName}</span>
+                  <span className={`text-sm font-medium ${t.registered ? 'text-white' : 'text-gray-500'}`}>
+                    {t.displayName}
+                  </span>
                   <span className="text-xs text-gray-600 ml-2">{t.held_on ?? '—'}</span>
                 </div>
                 <span className="text-xs text-gray-600 hidden sm:block truncate max-w-48">{t.name}</span>
-                <CoeffInput
-                  value={t.grade_coeff}
-                  onSave={v => updateTournamentCoeff(t.id, v)}
-                />
+                {t.registered && t.id ? (
+                  <CoeffInput
+                    value={t.grade_coeff}
+                    onSave={v => updateTournamentCoeff(t.id!, v)}
+                  />
+                ) : (
+                  <span className="text-xs text-gray-700">未登録</span>
+                )}
               </div>
             ))}
           </div>
