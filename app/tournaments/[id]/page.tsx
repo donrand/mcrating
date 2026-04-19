@@ -1,6 +1,7 @@
 import { createAdminClient } from '@/lib/supabase';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import ReportButton from '@/components/ReportButton';
 
 export const revalidate = 3600;
 
@@ -114,9 +115,16 @@ export default async function TournamentDetailPage({ params }: Props) {
                           </span>
                         )}
                       </div>
-                      <span className="ml-auto text-xs text-gray-500 shrink-0">
-                        勝者: <span className="text-yellow-400">{winnerName}</span>
-                      </span>
+                      <div className="ml-auto flex flex-col items-end gap-1 shrink-0">
+                        <span className="text-xs text-gray-500">
+                          勝者: <span className="text-yellow-400">{winnerName}</span>
+                        </span>
+                        <ReportButton
+                          battleId={b.id}
+                          mcAName={mcA?.name ?? 'MC A'}
+                          mcBName={mcB?.name ?? 'MC B'}
+                        />
+                      </div>
                     </div>
                   );
                 })}
