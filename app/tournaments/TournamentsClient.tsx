@@ -1,0 +1,109 @@
+'use client';
+
+import Link from 'next/link';
+import { useState, useMemo } from 'react';
+
+export type TournamentRow = {
+  key: string;
+  displayName: string;
+  heldOn: string;
+  categoryLabel: string;
+  supaId: string;
+  status: string;
+};
+
+function extractYear(heldOn: string): number {
+  return parseInt(heldOn.slice(0, 4), 10);
+}
+
+export default function TournamentsClient({ tournaments }: { tournaments: TournamentRow[] }) {
+  const [query, setQuery] = useState('');
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return tournaments;
+    return tournaments.filter(t =>
+      t.displayName.toLowerCase().includes(q) ||
+      t.categoryLabel.toLowerCase().includes(q) ||
+      t.heldOn.includes(q)
+    );
+  }, [query, tournaments]);
+
+  const isSearching = query.trim().length > 0;
+
+  // 年別グループ化（検索中はグループなしでフラット表示）
+  const byYear = useMemo(() => {
+    if (isSearching) return null;
+    return filtered.reduce<Record<number, TournamentRow[]>>((acc, t) => {
+      const year = extractYear(t.heldOn);
+      if (!acc[year]) acc[year] = [];
+      acc[year].push(t);
+      return acc;
+    }, {});
+  }, [filtered, isSearching]);
+
+  const years = byYear
+    ? Object.keys(byYear).map(Number).sort((a, b) => b - a)
+    : [];
+
+  return (
+    <div>
+      <h1 className="text-2xl font-bold mb-1">大会一覧</h1>
+      <p className="text-gray-500 text-sm mb-4">{tournaments.length} 大会収録</p>
+
+      <input
+        type="text"
+        value={query}
+        onChange={e => setQuery(e.target.value)}
+        placeholder="大会名・シリーズ名で検索..."
+        className="w-full max-w-sm px-3 py-2 rounded-lg bg-gray-900 border border-gray-700 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-gray-500 mb-6"
+      />
+
+      {filtered.length === 0 ? (
+        <p className="text-gray-600 text-sm">該当する大会が見つかりません</p>
+      ) : isSearching ? (
+        // 検索中：フラットリスト
+        <div>
+          <p className="text-xs text-gray-600 mb-3">{filtered.length} 件</p>
+          <div className="flex flex-wrap gap-2">
+            {filtered.map(t => (
+              <Link key={t.key} href={`/tournaments/${t.supaId}`}>
+                <div className="flex flex-col gap-1 px-3 py-2 rounded-lg border text-sm bg-gray-900 border-gray-700 hover:border-green-700 transition-colors">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-xs text-gray-600 shrink-0">{t.categoryLabel}</span>
+                    <span className="font-medium text-white">{t.displayName}</span>
+                  </div>
+                  <span className="text-xs text-gray-600">{t.heldOn}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      ) : (
+        // 通常：年別グループ
+        <div className="space-y-8">
+          {years.map(year => (
+            <section key={year}>
+              <div className="flex items-baseline gap-3 mb-3 pb-2 border-b border-gray-800">
+                <h2 className="text-lg font-bold text-white">{year}</h2>
+                <span className="text-xs text-gray-600">{byYear![year].length}件</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {byYear![year].map(t => (
+                  <Link key={t.key} href={`/tournaments/${t.supaId}`}>
+                    <div className="flex flex-col gap-1 px-3 py-2 rounded-lg border text-sm bg-gray-900 border-gray-700 hover:border-green-700 transition-colors">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-xs text-gray-600 shrink-0">{t.categoryLabel}</span>
+                        <span className="font-medium text-white">{t.displayName}</span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
