@@ -3,30 +3,31 @@ import AdminNav from '../AdminNav';
 
 export const metadata: Metadata = { title: '使い方ガイド | 管理画面' };
 
-const SAMPLE_SINGLE = `tournament_name,held_on,grade_coeff,mc_a,mc_b,winner,round
-UMB 2024 GRAND CHAMPIONSHIP,2024-12-22,3.0,R-指定,呂布カルマ,a,決勝
-UMB 2024 GRAND CHAMPIONSHIP,2024-12-22,3.0,MOL53,CIMA,b,準決勝
-UMB 2024 GRAND CHAMPIONSHIP,2024-12-22,3.0,T-PABLOW,晋平太,a,準決勝
-UMB 2024 GRAND CHAMPIONSHIP,2024-12-22,3.0,R-指定,MOL53,a,ベスト8
-UMB 2024 GRAND CHAMPIONSHIP,2024-12-22,3.0,呂布カルマ,CIMA,a,ベスト8`;
+const SAMPLE_SINGLE = `tournament_name,held_on,grade_coeff,mc_a,mc_b,winner,round,series
+UMB 2024 GRAND CHAMPIONSHIP,2024-12-28,3.0,R-指定,呂布カルマ,a,決勝,UMB
+UMB 2024 GRAND CHAMPIONSHIP,2024-12-28,3.0,MOL53,CIMA,b,準決勝,UMB
+UMB 2024 GRAND CHAMPIONSHIP,2024-12-28,3.0,T-PABLOW,晋平太,a,準決勝,UMB
+UMB 2024 GRAND CHAMPIONSHIP,2024-12-28,3.0,R-指定,MOL53,a,ベスト8,UMB
+UMB 2024 GRAND CHAMPIONSHIP,2024-12-28,3.0,呂布カルマ,CIMA,a,ベスト8,UMB`;
 
-const SAMPLE_MULTI = `tournament_name,held_on,grade_coeff,mc_a,mc_b,winner,round
-UMB 2024 GRAND CHAMPIONSHIP,2024-12-22,3.0,R-指定,呂布カルマ,a,決勝
-UMB 2024 GRAND CHAMPIONSHIP,2024-12-22,3.0,MOL53,CIMA,b,準決勝
-KOK 2024 FINAL,2024-11-03,3.0,T-PABLOW,晋平太,a,決勝
-KOK 2024 FINAL,2024-11-03,3.0,舐達麻,FORK,b,準決勝
-地方大会 2024,2024-10-15,1.5,MC太郎,MC次郎,a,決勝`;
+const SAMPLE_MULTI = `tournament_name,held_on,grade_coeff,mc_a,mc_b,winner,round,series
+UMB 2024 GRAND CHAMPIONSHIP,2024-12-28,3.0,R-指定,呂布カルマ,a,決勝,UMB
+UMB 2024 GRAND CHAMPIONSHIP,2024-12-28,3.0,MOL53,CIMA,b,準決勝,UMB
+KOK 2024 GRAND CHAMPIONSHIP FINAL,2025-01-11,3.0,T-PABLOW,晋平太,a,決勝,KOK
+KOK 2024 GRAND CHAMPIONSHIP FINAL,2025-01-11,3.0,舐達麻,FORK,b,準決勝,KOK
+地方大会 2024,2024-10-15,1.5,MC太郎,MC次郎,a,決勝,`;
 
 type Column = { name: string; required: boolean; description: string; example: string };
 
 const columns: Column[] = [
-  { name: 'tournament_name', required: true,  description: '大会名（同名の既存大会があれば自動で紐付け）', example: 'UMB 2024 GRAND CHAMPIONSHIP' },
-  { name: 'held_on',         required: false, description: '開催日（YYYY-MM-DD 形式）。空欄可',           example: '2024-12-22' },
-  { name: 'grade_coeff',     required: true,  description: '大会格係数（正の数値）',                       example: '3.0' },
-  { name: 'mc_a',            required: true,  description: 'MC A の名前',                                  example: 'R-指定' },
-  { name: 'mc_b',            required: true,  description: 'MC B の名前',                                  example: '呂布カルマ' },
-  { name: 'winner',          required: true,  description: '勝者（下表参照）',                             example: 'a' },
-  { name: 'round',           required: false, description: 'ラウンド名（下表参照）。空欄可',               example: '決勝' },
+  { name: 'tournament_name', required: true,  description: '大会名（同名の既存大会があれば自動で紐付け）',         example: 'UMB 2024 GRAND CHAMPIONSHIP' },
+  { name: 'held_on',         required: false, description: '開催日（YYYY-MM-DD 形式）。空欄可',                   example: '2024-12-28' },
+  { name: 'grade_coeff',     required: true,  description: '大会格係数（正の数値）',                             example: '3.0' },
+  { name: 'mc_a',            required: true,  description: 'MC A の名前',                                        example: 'R-指定' },
+  { name: 'mc_b',            required: true,  description: 'MC B の名前',                                        example: '呂布カルマ' },
+  { name: 'winner',          required: true,  description: '勝者（下表参照）',                                   example: 'a' },
+  { name: 'round',           required: false, description: 'ラウンド名（下表参照）。空欄可',                     example: '決勝' },
+  { name: 'series',          required: false, description: 'シリーズタグ。同大会名の行で共通値を使用。空欄可',   example: 'UMB' },
 ];
 
 const winnerValues = [
@@ -73,7 +74,7 @@ export default function GuidePage() {
         {/* フォーマット */}
         <section>
           <h3 className="text-base font-semibold mb-3 text-yellow-400">CSVフォーマット</h3>
-          <CopyBlock text="tournament_name,held_on,grade_coeff,mc_a,mc_b,winner[,round]" />
+          <CopyBlock text="tournament_name,held_on,grade_coeff,mc_a,mc_b,winner[,round[,series]]" />
           <p className="text-xs text-gray-500 mt-2">
             1行目はヘッダー行として自動スキップされます（<code className="bg-gray-800 px-1 rounded">tournament_name</code> や <code className="bg-gray-800 px-1 rounded">mc_a</code> などが含まれる場合）。
             ヘッダーなしでも動作します。
@@ -182,6 +183,7 @@ export default function GuidePage() {
               <CopyBlock text={SAMPLE_MULTI} />
               <p className="text-xs text-gray-600 mt-2">
                 大会名が同じ行は自動でグループ化されます。既存の大会名と一致する場合は既存大会に紐付けられます（大文字・小文字を区別しません）。
+                series 列は大会ごとに最初の非空値が使用されます。空欄の場合は登録画面のシリーズ選択と合わせてください。
               </p>
             </div>
           </div>
@@ -217,6 +219,7 @@ export default function GuidePage() {
           <ul className="space-y-2 text-sm text-gray-400">
             <li className="flex gap-2"><span className="text-yellow-400 shrink-0">•</span><span>MC名は既存のMCと<strong className="text-white">完全一致</strong>（大文字小文字不問）する場合に自動で紐付けられます。一致しない場合は新規MCとして登録されます。</span></li>
             <li className="flex gap-2"><span className="text-yellow-400 shrink-0">•</span><span>同一人物の別名義がある場合は、登録後に「全再計算」が必要です。名義統合は <code className="bg-gray-800 px-1 rounded text-xs">scripts/merge_mcs.mjs</code> を使用してください。</span></li>
+            <li className="flex gap-2"><span className="text-yellow-400 shrink-0">•</span><span>同一大会内で同じ MC ペアがすでに登録されている場合、そのバトルは<strong className="text-white">自動でスキップ</strong>されます（重複防止）。スキップ件数は登録結果に表示されます。</span></li>
             <li className="flex gap-2"><span className="text-yellow-400 shrink-0">•</span><span>登録済みの大会にバトルを追加した場合、レーティングの整合性のために「全再計算」（バトル管理ページ）を実行することを推奨します。</span></li>
             <li className="flex gap-2"><span className="text-yellow-400 shrink-0">•</span><span>格係数を後から変更した場合は必ず全再計算を実行してください。</span></li>
             <li className="flex gap-2"><span className="text-yellow-400 shrink-0">•</span><span>CSV の文字コードは UTF-8 で保存してください。Shift-JIS では文字化けする場合があります。</span></li>
