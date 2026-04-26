@@ -112,6 +112,7 @@ export async function recalculateAllRatings(): Promise<{ ok: boolean; message: s
 
   revalidatePath('/');
   revalidatePath('/battles');
+  revalidatePath('/tournaments');
   revalidatePath('/tournaments', 'layout');
   revalidatePath('/mc', 'layout');
 

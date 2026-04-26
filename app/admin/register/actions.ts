@@ -178,6 +178,8 @@ export async function registerBattles(
 
   revalidatePath('/');
   revalidatePath('/battles');
+  revalidatePath('/tournaments');
+  revalidatePath('/tournaments', 'layout');
   revalidatePath('/admin');
   revalidatePath('/admin/register');
 
