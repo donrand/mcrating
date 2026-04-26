@@ -1,8 +1,10 @@
 'use client';
 
 import { useState, useRef, useTransition } from 'react';
-import { analyzeTournamentImage, ExtractedBattle } from './actions';
+import { ExtractedBattle } from './actions';
 import { registerBattles, RegisterResult } from '../register/actions';
+
+const PYTHON_API = 'http://localhost:8000';
 
 type Step = 'upload' | 'review' | 'complete';
 
@@ -48,12 +50,25 @@ export default function TournamentImportClient() {
     startTransition(async () => {
       const fd = new FormData();
       fd.append('image', imageFile);
-      const result = await analyzeTournamentImage(fd);
-      if (!result.success) {
-        setAnalyzeError(result.error);
+
+      let res: Response;
+      try {
+        res = await fetch(`${PYTHON_API}/analyze`, { method: 'POST', body: fd });
+      } catch {
+        setAnalyzeError(
+          `解析サーバーに接続できません。\n` +
+          `ターミナルで以下を実行してください:\n` +
+          `cd /workspaces/ClaudeCode/tournament-analyzer && python3 api.py`,
+        );
         return;
       }
-      setBattles(result.battles);
+
+      const json = await res.json() as { success: boolean; battles: ExtractedBattle[]; error?: string };
+      if (!json.success) {
+        setAnalyzeError(json.error ?? '解析に失敗しました');
+        return;
+      }
+      setBattles(json.battles);
       setStep('review');
     });
   }
