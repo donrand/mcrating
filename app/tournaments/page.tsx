@@ -1,5 +1,4 @@
 import { createAdminClient } from '@/lib/supabase';
-import { TOURNAMENT_MASTER } from '@/data/tournament_master';
 import TournamentsClient from './TournamentsClient';
 
 export const revalidate = 3600;
@@ -7,30 +6,19 @@ export const revalidate = 3600;
 export default async function TournamentsPage() {
   const admin = createAdminClient();
 
-  const { data: supabaseTournaments } = await admin
+  const { data } = await admin
     .from('tournaments')
-    .select('id, name');
+    .select('id, name, held_on, series')
+    .order('held_on', { ascending: false });
 
-  const registeredNames = new Map<string, string>(
-    (supabaseTournaments ?? []).map(t => [t.name.trim(), t.id])
-  );
-
-  const tournaments = TOURNAMENT_MASTER.flatMap(category =>
-    category.tournaments
-      .filter(t => t.supabaseName && registeredNames.has(t.supabaseName))
-      .map(t => ({
-        key: t.key,
-        displayName: t.displayName,
-        heldOn: t.heldOn,
-        status: t.status,
-        categoryLabel: category.label,
-        supaId: registeredNames.get(t.supabaseName!)!,
-      }))
-  ).sort((a, b) => {
-    const da = a.heldOn.padEnd(10, '-99');
-    const db = b.heldOn.padEnd(10, '-99');
-    return db.localeCompare(da);
-  });
+  const tournaments = (data ?? [])
+    .filter(t => t.held_on) // held_on 未設定は表示しない
+    .map(t => ({
+      id: t.id,
+      name: t.name,
+      heldOn: t.held_on as string,
+      series: t.series as string | null,
+    }));
 
   return <TournamentsClient tournaments={tournaments} />;
 }

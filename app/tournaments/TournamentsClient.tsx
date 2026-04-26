@@ -4,12 +4,10 @@ import Link from 'next/link';
 import { useState, useMemo } from 'react';
 
 export type TournamentRow = {
-  key: string;
-  displayName: string;
+  id: string;
+  name: string;
   heldOn: string;
-  categoryLabel: string;
-  supaId: string;
-  status: string;
+  series: string | null;
 };
 
 function extractYear(heldOn: string): number {
@@ -23,15 +21,14 @@ export default function TournamentsClient({ tournaments }: { tournaments: Tourna
     const q = query.trim().toLowerCase();
     if (!q) return tournaments;
     return tournaments.filter(t =>
-      t.displayName.toLowerCase().includes(q) ||
-      t.categoryLabel.toLowerCase().includes(q) ||
+      t.name.toLowerCase().includes(q) ||
+      (t.series ?? '').toLowerCase().includes(q) ||
       t.heldOn.includes(q)
     );
   }, [query, tournaments]);
 
   const isSearching = query.trim().length > 0;
 
-  // 年別グループ化（検索中はグループなしでフラット表示）
   const byYear = useMemo(() => {
     if (isSearching) return null;
     return filtered.reduce<Record<number, TournamentRow[]>>((acc, t) => {
@@ -45,6 +42,24 @@ export default function TournamentsClient({ tournaments }: { tournaments: Tourna
   const years = byYear
     ? Object.keys(byYear).map(Number).sort((a, b) => b - a)
     : [];
+
+  function Card({ t }: { t: TournamentRow }) {
+    return (
+      <Link href={`/tournaments/${t.id}`}>
+        <div className="flex flex-col gap-1 px-3 py-2 rounded-lg border text-sm bg-gray-900 border-gray-700 hover:border-green-700 transition-colors">
+          <div className="flex items-center gap-1.5">
+            {t.series && (
+              <span className="text-xs text-gray-600 shrink-0">{t.series}</span>
+            )}
+            <span className="font-medium text-white">{t.name}</span>
+          </div>
+          {isSearching && (
+            <span className="text-xs text-gray-600">{t.heldOn}</span>
+          )}
+        </div>
+      </Link>
+    );
+  }
 
   return (
     <div>
@@ -62,25 +77,13 @@ export default function TournamentsClient({ tournaments }: { tournaments: Tourna
       {filtered.length === 0 ? (
         <p className="text-gray-600 text-sm">該当する大会が見つかりません</p>
       ) : isSearching ? (
-        // 検索中：フラットリスト
         <div>
           <p className="text-xs text-gray-600 mb-3">{filtered.length} 件</p>
           <div className="flex flex-wrap gap-2">
-            {filtered.map(t => (
-              <Link key={t.key} href={`/tournaments/${t.supaId}`}>
-                <div className="flex flex-col gap-1 px-3 py-2 rounded-lg border text-sm bg-gray-900 border-gray-700 hover:border-green-700 transition-colors">
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-xs text-gray-600 shrink-0">{t.categoryLabel}</span>
-                    <span className="font-medium text-white">{t.displayName}</span>
-                  </div>
-                  <span className="text-xs text-gray-600">{t.heldOn}</span>
-                </div>
-              </Link>
-            ))}
+            {filtered.map(t => <Card key={t.id} t={t} />)}
           </div>
         </div>
       ) : (
-        // 通常：年別グループ
         <div className="space-y-8">
           {years.map(year => (
             <section key={year}>
@@ -89,16 +92,7 @@ export default function TournamentsClient({ tournaments }: { tournaments: Tourna
                 <span className="text-xs text-gray-600">{byYear![year].length}件</span>
               </div>
               <div className="flex flex-wrap gap-2">
-                {byYear![year].map(t => (
-                  <Link key={t.key} href={`/tournaments/${t.supaId}`}>
-                    <div className="flex flex-col gap-1 px-3 py-2 rounded-lg border text-sm bg-gray-900 border-gray-700 hover:border-green-700 transition-colors">
-                      <div className="flex items-center gap-1.5">
-                        <span className="text-xs text-gray-600 shrink-0">{t.categoryLabel}</span>
-                        <span className="font-medium text-white">{t.displayName}</span>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
+                {byYear![year].map(t => <Card key={t.id} t={t} />)}
               </div>
             </section>
           ))}

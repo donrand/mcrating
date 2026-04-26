@@ -3,6 +3,8 @@
 import { useState, useRef } from 'react';
 import { registerBattles, registerMultipleTournaments, MultiRegisterResult } from './actions';
 
+const SERIES_OPTIONS = ['UMB', '戦極', 'KOK', 'FSD', 'ADRENALINE', 'SPOTLIGHT', '凱旋', '罵倒', '口喧嘩祭', 'NEO GENESIS', 'U-22'];
+
 // ---- 型定義 ----------------------------------------------------------------
 
 type MC = { id: string; name: string };
@@ -19,6 +21,7 @@ type TournamentGroup = {
   tournament_name: string;
   held_on: string;
   grade_coeff: number;
+  series: string;
   battles: BattleRow[];
 };
 
@@ -57,7 +60,7 @@ function parseCsv(text: string): { result: ParseResult; errors: string[] } {
       continue;
     }
 
-    const [tournament_name, held_on, grade_coeff_str, mc_a_name, mc_b_name, winnerRaw, round_name = ''] = cols;
+    const [tournament_name, held_on, grade_coeff_str, mc_a_name, mc_b_name, winnerRaw, round_name = '', series = ''] = cols;
 
     if (!tournament_name) { errors.push(`${lineNo}行目: 大会名が空`); continue; }
     if (!mc_a_name || !mc_b_name) { errors.push(`${lineNo}行目: MC名が空`); continue; }
@@ -75,7 +78,9 @@ function parseCsv(text: string): { result: ParseResult; errors: string[] } {
     }
 
     if (!groupMap.has(tournament_name)) {
-      groupMap.set(tournament_name, { tournament_name, held_on: held_on || '', grade_coeff, battles: [] });
+      groupMap.set(tournament_name, { tournament_name, held_on: held_on || '', grade_coeff, series, battles: [] });
+    } else if (series && !groupMap.get(tournament_name)!.series) {
+      groupMap.get(tournament_name)!.series = series;
     }
     groupMap.get(tournament_name)!.battles.push({ mc_a_name, mc_b_name, winner, round_name });
   }
@@ -98,6 +103,7 @@ export default function RegisterClient({ mcs, tournaments }: Props) {
   const [tournamentName, setTournamentName] = useState('');
   const [heldOn, setHeldOn] = useState('');
   const [gradeCoeff, setGradeCoeff] = useState<number | ''>('');
+  const [series, setSeries] = useState('');
   const [rows, setRows] = useState<BattleRow[]>([emptyRow(), emptyRow()]);
   const [processing, setProcessing] = useState(false);
   const [result, setResult] = useState<{ registered: number; errors: string[] } | null>(null);
@@ -145,6 +151,7 @@ export default function RegisterClient({ mcs, tournaments }: Props) {
         tournament_name: g.tournament_name,
         held_on: g.held_on,
         grade_coeff: g.grade_coeff,
+        series: g.series || undefined,
         battles: g.battles.map(b => ({ ...b, winner: b.winner as 'a' | 'b' | 'draw' })),
       })),
     );
@@ -189,6 +196,7 @@ export default function RegisterClient({ mcs, tournaments }: Props) {
         name: tName,
         held_on: heldOn,
         grade_coeff: Number(gradeCoeff),
+        series: series || undefined,
       },
       validRows.map(r => ({ ...r, winner: r.winner as 'a' | 'b' | 'draw' })),
     );
@@ -221,7 +229,7 @@ export default function RegisterClient({ mcs, tournaments }: Props) {
 
         {!showCsv && (
           <div className="text-xs text-gray-600">
-            <code className="bg-gray-800 px-1 rounded">tournament_name, held_on, grade_coeff, mc_a, mc_b, winner[, round]</code>
+            <code className="bg-gray-800 px-1 rounded">tournament_name, held_on, grade_coeff, mc_a, mc_b, winner[, round[, series]]</code>
           </div>
         )}
 
@@ -229,9 +237,10 @@ export default function RegisterClient({ mcs, tournaments }: Props) {
           <div className="space-y-3">
             <div className="text-xs text-gray-500 space-y-1 bg-gray-800 rounded-lg p-3">
               <p className="font-medium text-gray-400 mb-2">フォーマット（ヘッダー行は自動スキップ）</p>
-              <p><code>tournament_name, held_on, grade_coeff, mc_a, mc_b, winner[, round]</code></p>
+              <p><code>tournament_name, held_on, grade_coeff, mc_a, mc_b, winner[, round[, series]]</code></p>
               <p className="text-gray-600">winner: a / b / draw（a側・1・引き分けなども可）</p>
               <p className="text-gray-600">held_on: YYYY-MM-DD 形式（空欄可）</p>
+              <p className="text-gray-600">series: UMB / 戦極 / KOK など（任意・大会全行共通）</p>
             </div>
 
             <div className="flex items-center gap-3">
@@ -256,10 +265,10 @@ export default function RegisterClient({ mcs, tournaments }: Props) {
               value={csvText}
               onChange={e => setCsvText(e.target.value)}
               placeholder={
-                'tournament_name,held_on,grade_coeff,mc_a,mc_b,winner,round\n' +
-                'UMB 2024 GRAND CHAMPIONSHIP,2024-12-22,3.0,R-指定,呂布カルマ,a,決勝\n' +
-                'UMB 2024 GRAND CHAMPIONSHIP,2024-12-22,3.0,MOL53,CIMA,b,準決勝\n' +
-                'KOK 2024,2024-11-03,3.0,T-PABLOW,晋平太,a,決勝'
+                'tournament_name,held_on,grade_coeff,mc_a,mc_b,winner,round,series\n' +
+                'UMB 2024 GRAND CHAMPIONSHIP,2024-12-22,3.0,R-指定,呂布カルマ,a,決勝,UMB\n' +
+                'UMB 2024 GRAND CHAMPIONSHIP,2024-12-22,3.0,MOL53,CIMA,b,準決勝,UMB\n' +
+                'KOK 2024,2024-11-03,3.0,T-PABLOW,晋平太,a,決勝,KOK'
               }
               rows={7}
               className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-xs font-mono placeholder-gray-700 focus:outline-none focus:border-yellow-400 resize-y"
@@ -307,6 +316,8 @@ export default function RegisterClient({ mcs, tournaments }: Props) {
                   <span className="ml-3 text-xs text-gray-500">
                     {g.held_on && <>{g.held_on} · </>}
                     格係数 <span className="text-yellow-400 font-medium">{g.grade_coeff}</span>
+                    {g.series && <> · <span className="text-blue-400">{g.series}</span></>}
+                    {!g.series && <> · <span className="text-red-400">シリーズ未設定</span></>}
                   </span>
                 </div>
                 <span className="text-xs text-gray-500 shrink-0 ml-4">{g.battles.length}バトル</span>
@@ -387,6 +398,19 @@ export default function RegisterClient({ mcs, tournaments }: Props) {
                 ))}
               </select>
             )}
+          </div>
+
+          {/* シリーズ */}
+          <div>
+            <label className="block text-xs text-gray-400 mb-1">シリーズ <span className="text-red-400">*</span></label>
+            <select
+              value={series}
+              onChange={e => setSeries(e.target.value)}
+              className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400"
+            >
+              <option value="">選択してください</option>
+              {SERIES_OPTIONS.map(s => <option key={s} value={s}>{s}</option>)}
+            </select>
           </div>
 
           {/* 開催日 */}

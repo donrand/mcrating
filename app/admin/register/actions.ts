@@ -22,6 +22,7 @@ type TournamentInput = {
   name: string;
   held_on: string;
   grade_coeff: number;
+  series?: string;
 };
 
 export type RegisterResult = {
@@ -34,6 +35,7 @@ export type TournamentGroupInput = {
   tournament_name: string;
   held_on: string;
   grade_coeff: number;
+  series?: string;
   battles: BattleInput[];
 };
 
@@ -61,7 +63,11 @@ export async function registerBattles(
     tournamentId = tournament.id;
     await admin
       .from('tournaments')
-      .update({ grade_coeff: tournament.grade_coeff, held_on: tournament.held_on || null })
+      .update({
+        grade_coeff: tournament.grade_coeff,
+        held_on: tournament.held_on || null,
+        ...(tournament.series ? { series: tournament.series } : {}),
+      })
       .eq('id', tournamentId);
   } else {
     const { data: newTournament, error } = await admin
@@ -70,6 +76,7 @@ export async function registerBattles(
         name: tournament.name.trim(),
         held_on: tournament.held_on || null,
         grade_coeff: tournament.grade_coeff,
+        series: tournament.series || null,
       })
       .select('id')
       .single();
@@ -212,6 +219,7 @@ export async function registerMultipleTournaments(
         name: group.tournament_name,
         held_on: group.held_on,
         grade_coeff: group.grade_coeff,
+        series: group.series,
       },
       group.battles,
     );
