@@ -35,10 +35,13 @@ function StatusBadge({ status, registered }: StatusBadgeProps) {
   );
 }
 
+function extractYear(heldOn: string): number {
+  return parseInt(heldOn.slice(0, 4), 10);
+}
+
 export default async function TournamentsPage() {
   const admin = createAdminClient();
 
-  // Supabase に登録されている大会名のセット（マッチング用）
   const { data: supabaseTournaments } = await admin
     .from('tournaments')
     .select('id, name');
@@ -47,83 +50,100 @@ export default async function TournamentsPage() {
     (supabaseTournaments ?? []).map(t => [t.name.trim(), t.id])
   );
 
-  // 集計
-  const total = TOURNAMENT_MASTER.flatMap(c => c.tournaments).length;
-  const registeredCount = TOURNAMENT_MASTER.flatMap(c => c.tournaments)
-    .filter(t => t.supabaseName && registeredNames.has(t.supabaseName)).length;
+  // 全大会をフラット化してカテゴリ情報を付与
+  const allTournaments = TOURNAMENT_MASTER.flatMap(category =>
+    category.tournaments.map(t => ({ ...t, categoryLabel: category.label }))
+  );
+
+  // heldOn で降順ソート（新しい順）
+  const sorted = allTournaments.slice().sort((a, b) => {
+    const da = a.heldOn.padEnd(10, '-99');
+    const db = b.heldOn.padEnd(10, '-99');
+    return db.localeCompare(da);
+  });
+
+  // 年ごとにグループ化
+  const byYear = sorted.reduce<Record<number, typeof sorted>>((acc, t) => {
+    const year = extractYear(t.heldOn);
+    if (!acc[year]) acc[year] = [];
+    acc[year].push(t);
+    return acc;
+  }, {});
+
+  const years = Object.keys(byYear)
+    .map(Number)
+    .sort((a, b) => b - a);
+
+  const total = allTournaments.length;
+  const registeredCount = allTournaments.filter(
+    t => t.supabaseName && registeredNames.has(t.supabaseName)
+  ).length;
 
   return (
     <div>
       <h1 className="text-2xl font-bold mb-1">大会一覧</h1>
       <p className="text-gray-500 text-sm mb-2">主要大会の収録状況</p>
 
-      {/* 全体サマリ */}
       <div className="flex gap-4 mb-8 text-sm">
         <span className="text-green-400 font-semibold">{registeredCount} 登録済</span>
         <span className="text-gray-600">/</span>
         <span className="text-gray-400">{total} 大会</span>
       </div>
 
-      {/* カテゴリ別 */}
-      <div className="space-y-10">
-        {TOURNAMENT_MASTER.map(category => {
-          const catRegistered = category.tournaments.filter(
-            t => t.supabaseName && registeredNames.has(t.supabaseName)
-          ).length;
-          const catTotal = category.tournaments.filter(t => t.status !== 'excluded').length;
+      <div className="space-y-8">
+        {years.map(year => (
+          <section key={year}>
+            <div className="flex items-baseline gap-3 mb-3 pb-2 border-b border-gray-800">
+              <h2 className="text-lg font-bold text-white">{year}</h2>
+              <span className="text-xs text-gray-500">
+                {byYear[year].filter(t => t.supabaseName && registeredNames.has(t.supabaseName)).length > 0 && (
+                  <span className="text-green-400 font-semibold">
+                    {byYear[year].filter(t => t.supabaseName && registeredNames.has(t.supabaseName)).length}件登録
+                  </span>
+                )}
+              </span>
+            </div>
 
-          return (
-            <section key={category.id}>
-              {/* カテゴリヘッダー */}
-              <div className="flex items-baseline gap-3 mb-3 pb-2 border-b border-gray-800">
-                <h2 className="text-lg font-bold text-white">{category.label}</h2>
-                <span className="text-xs text-gray-500">{category.description}</span>
-                <span className="ml-auto text-xs text-gray-500">
-                  <span className="text-green-400 font-semibold">{catRegistered}</span>
-                  <span className="text-gray-700"> / {catTotal}</span>
-                </span>
-              </div>
+            <div className="flex flex-wrap gap-2">
+              {byYear[year].map(t => {
+                const supaId = t.supabaseName ? registeredNames.get(t.supabaseName) : undefined;
+                const isRegistered = !!supaId;
+                const isPartialWithData = t.status === 'partial' && !!supaId;
+                const isLinkable = (isRegistered || isPartialWithData) && !!supaId;
 
-              {/* トーナメント一覧（横並びグリッド） */}
-              <div className="flex flex-wrap gap-2">
-                {category.tournaments.map(t => {
-                  const supaId = t.supabaseName ? registeredNames.get(t.supabaseName) : undefined;
-                  const isRegistered = !!supaId;
-
-                  const isPartialWithData = t.status === 'partial' && !!supaId;
-                  const isLinkable = (isRegistered || isPartialWithData) && !!supaId;
-
-                  const content = (
-                    <div
-                      className={`flex flex-col gap-1 px-3 py-2 rounded-lg border text-sm transition-colors ${
-                        t.status === 'excluded'
-                          ? 'bg-gray-900/30 border-gray-800/50 opacity-50'
-                          : isRegistered
-                          ? 'bg-gray-900 border-gray-700 hover:border-green-700'
-                          : isPartialWithData
-                          ? 'bg-gray-900 border-yellow-900/50 hover:border-yellow-700'
-                          : 'bg-gray-900/50 border-gray-800'
-                      }`}
-                    >
+                const content = (
+                  <div
+                    className={`flex flex-col gap-1 px-3 py-2 rounded-lg border text-sm transition-colors ${
+                      t.status === 'excluded'
+                        ? 'bg-gray-900/30 border-gray-800/50 opacity-50'
+                        : isRegistered
+                        ? 'bg-gray-900 border-gray-700 hover:border-green-700'
+                        : isPartialWithData
+                        ? 'bg-gray-900 border-yellow-900/50 hover:border-yellow-700'
+                        : 'bg-gray-900/50 border-gray-800'
+                    }`}
+                  >
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-xs text-gray-600 shrink-0">{t.categoryLabel}</span>
                       <span className={`font-medium ${isLinkable ? 'text-white' : 'text-gray-500'}`}>
                         {t.displayName}
                       </span>
-                      <StatusBadge status={t.status} registered={isRegistered} />
                     </div>
-                  );
+                    <StatusBadge status={t.status} registered={isRegistered} />
+                  </div>
+                );
 
-                  return isLinkable && supaId ? (
-                    <Link key={t.key} href={`/tournaments/${supaId}`}>
-                      {content}
-                    </Link>
-                  ) : (
-                    <div key={t.key}>{content}</div>
-                  );
-                })}
-              </div>
-            </section>
-          );
-        })}
+                return isLinkable && supaId ? (
+                  <Link key={t.key} href={`/tournaments/${supaId}`}>
+                    {content}
+                  </Link>
+                ) : (
+                  <div key={t.key}>{content}</div>
+                );
+              })}
+            </div>
+          </section>
+        ))}
       </div>
     </div>
   );
