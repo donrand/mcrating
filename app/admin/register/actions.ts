@@ -30,6 +30,19 @@ export type RegisterResult = {
   errors: string[];
 };
 
+export type TournamentGroupInput = {
+  tournament_name: string;
+  held_on: string;
+  grade_coeff: number;
+  battles: BattleInput[];
+};
+
+export type MultiRegisterResult = {
+  success: boolean;
+  totalRegistered: number;
+  results: Array<{ tournamentName: string; registered: number; errors: string[] }>;
+};
+
 /**
  * 大会単位で複数バトルを一括登録する
  */
@@ -169,4 +182,45 @@ export async function registerBattles(
   revalidatePath('/admin/register');
 
   return { success: errors.length === 0, registered, errors };
+}
+
+/**
+ * 複数大会を一括登録する（CSVマルチフォーマット用）
+ */
+export async function registerMultipleTournaments(
+  groups: TournamentGroupInput[],
+): Promise<MultiRegisterResult> {
+  await requireAdmin();
+  const admin = createAdminClient();
+
+  let totalRegistered = 0;
+  const results: MultiRegisterResult['results'] = [];
+
+  for (const group of groups) {
+    // 同名の既存大会を検索
+    const { data: existing } = await admin
+      .from('tournaments')
+      .select('id')
+      .ilike('name', group.tournament_name.trim())
+      .maybeSingle();
+
+    const r = await registerBattles(
+      {
+        id: existing?.id ?? null,
+        name: group.tournament_name,
+        held_on: group.held_on,
+        grade_coeff: group.grade_coeff,
+      },
+      group.battles,
+    );
+
+    totalRegistered += r.registered;
+    results.push({ tournamentName: group.tournament_name, registered: r.registered, errors: r.errors });
+  }
+
+  return {
+    success: results.every(r => r.errors.length === 0),
+    totalRegistered,
+    results,
+  };
 }
