@@ -130,6 +130,18 @@ export async function registerBattles(
       const mcAId = await resolveMc(b.mc_a_name);
       const mcBId = await resolveMc(b.mc_b_name);
 
+      // 同一大会内の重複チェック（A/B順不問）
+      const { data: existing } = await admin
+        .from('battles')
+        .select('id')
+        .eq('tournament_id', tournamentId)
+        .or(`and(mc_a_id.eq.${mcAId},mc_b_id.eq.${mcBId}),and(mc_a_id.eq.${mcBId},mc_b_id.eq.${mcAId})`)
+        .maybeSingle();
+      if (existing) {
+        errors.push(`行${i + 1}: ${b.mc_a_name} vs ${b.mc_b_name} はすでに登録済みのためスキップ`);
+        continue;
+      }
+
       // 最新レートを取得
       const [{ data: mcARow }, { data: mcBRow }] = await Promise.all([
         admin.from('mcs').select('current_rating, battle_count').eq('id', mcAId).single(),
