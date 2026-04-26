@@ -1,6 +1,5 @@
 'use server';
 
-import Anthropic from '@anthropic-ai/sdk';
 import { createSupabaseServerClient } from '@/lib/supabase-server';
 
 async function requireAdmin() {
@@ -19,8 +18,7 @@ export type AnalyzeResult =
   | { success: true; battles: ExtractedBattle[] }
   | { success: false; error: string };
 
-const SUPPORTED_MIME = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'] as const;
-type SupportedMime = (typeof SUPPORTED_MIME)[number];
+const API_URL = (process.env.TOURNAMENT_API_URL ?? 'http://localhost:8000').replace(/\/$/, '');
 
 export async function analyzeTournamentImage(formData: FormData): Promise<AnalyzeResult> {
   await requireAdmin();
@@ -29,77 +27,41 @@ export async function analyzeTournamentImage(formData: FormData): Promise<Analyz
   if (!file || file.size === 0) {
     return { success: false, error: '画像が選択されていません' };
   }
-  if (file.size > 5 * 1024 * 1024) {
-    return { success: false, error: '画像サイズは5MB以下にしてください' };
+  if (file.size > 10 * 1024 * 1024) {
+    return { success: false, error: '画像サイズは10MB以下にしてください' };
   }
 
-  const mimeType = file.type as SupportedMime;
-  if (!SUPPORTED_MIME.includes(mimeType)) {
-    return { success: false, error: 'JPEG / PNG / GIF / WebP のみ対応しています' };
-  }
+  // Python API サーバーに画像を送信
+  const apiForm = new FormData();
+  apiForm.append('image', file);
 
-  const buffer = Buffer.from(await file.arrayBuffer());
-  const base64 = buffer.toString('base64');
-
-  const client = new Anthropic();
-
-  let rawText = '';
+  let res: Response;
   try {
-    const response = await client.messages.create({
-      model: 'claude-opus-4-7',
-      max_tokens: 2048,
-      messages: [
-        {
-          role: 'user',
-          content: [
-            {
-              type: 'image',
-              source: { type: 'base64', media_type: mimeType, data: base64 },
-            },
-            {
-              type: 'text',
-              text: `このトーナメント表の画像から全試合の情報を抽出してください。
-
-以下のJSON配列形式のみで返してください（説明文は不要）：
-[
-  {
-    "mc_a": "選手Aの名前",
-    "mc_b": "選手Bの名前",
-    "winner": "a" または "b" または "draw",
-    "round": "ラウンド名"
-  }
-]
-
-抽出ルール：
-- 赤い線・矢印・強調で示された選手が勝者（winnerは"a"か"b"）
-- 勝敗が判断できない場合は "draw"
-- roundは「決勝」「準決勝」「3位決定戦」「ベスト8」「ベスト16」「2回戦」「1回戦」など
-- 選手名は画像の文字を正確に抽出
-- 全試合を漏れなく抽出`,
-            },
-          ],
-        },
-      ],
+    res = await fetch(`${API_URL}/analyze`, {
+      method: 'POST',
+      body: apiForm,
+      signal: AbortSignal.timeout(60_000),
     });
-
-    rawText = response.content[0].type === 'text' ? response.content[0].text : '';
-  } catch (e) {
+  } catch {
     return {
       success: false,
-      error: `Claude API エラー: ${e instanceof Error ? e.message : '不明なエラー'}`,
+      error:
+        `解析サーバーに接続できません (${API_URL})。\n` +
+        `tournament-analyzer/ で「python3 api.py」を起動してください。`,
     };
   }
 
-  const jsonMatch = rawText.match(/\[[\s\S]*\]/);
-  if (!jsonMatch) {
-    return { success: false, error: '解析結果をJSON形式で取得できませんでした' };
+  if (!res.ok) {
+    const text = await res.text().catch(() => '');
+    return { success: false, error: `サーバーエラー (${res.status}): ${text}` };
   }
 
-  try {
-    const battles = JSON.parse(jsonMatch[0]) as ExtractedBattle[];
-    if (!Array.isArray(battles)) throw new Error('配列形式ではありません');
-    return { success: true, battles };
-  } catch {
-    return { success: false, error: 'JSON解析に失敗しました: ' + rawText.slice(0, 200) };
+  type ApiResponse = { success: boolean; battles: ExtractedBattle[]; error?: string };
+  const json = (await res.json()) as ApiResponse;
+
+  if (!json.success) {
+    return { success: false, error: json.error ?? '解析に失敗しました' };
   }
+
+  return { success: true, battles: json.battles };
 }
