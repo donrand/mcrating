@@ -3,7 +3,6 @@
 import { useState, useRef } from 'react';
 import { registerBattles, registerMultipleTournaments, MultiRegisterResult } from './actions';
 
-const SERIES_OPTIONS = ['UMB', '戦極', 'KOK', 'FSD', 'ADRENALINE', 'SPOTLIGHT', '凱旋', '罵倒', '口喧嘩祭', 'NEO GENESIS', 'U-22'];
 
 // ---- 型定義 ----------------------------------------------------------------
 
@@ -92,11 +91,11 @@ function parseCsv(text: string): { result: ParseResult; errors: string[] } {
 
 const emptyRow = (): BattleRow => ({ mc_a_name: '', mc_b_name: '', winner: '', round_name: '' });
 
-type Props = { mcs: MC[]; tournaments: Tournament[] };
+type Props = { mcs: MC[]; tournaments: Tournament[]; seriesOptions: string[] };
 
 // ---- コンポーネント --------------------------------------------------------
 
-export default function RegisterClient({ mcs, tournaments }: Props) {
+export default function RegisterClient({ mcs, tournaments, seriesOptions }: Props) {
   // 単一大会フォーム
   const [tournamentId, setTournamentId] = useState('');
   const [isNewTournament, setIsNewTournament] = useState(false);
@@ -409,7 +408,7 @@ export default function RegisterClient({ mcs, tournaments }: Props) {
               className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400"
             >
               <option value="">選択してください</option>
-              {SERIES_OPTIONS.map(s => <option key={s} value={s}>{s}</option>)}
+              {seriesOptions.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
           </div>
 

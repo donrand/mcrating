@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-type Tab = 'review' | 'register' | 'battles' | 'coefficients' | 'corrections' | 'guide';
+type Tab = 'review' | 'register' | 'battles' | 'coefficients' | 'corrections' | 'series' | 'guide';
 
 type Props = { active: Tab };
 
@@ -10,6 +10,7 @@ const tabs = [
   { key: 'battles' as Tab,      label: 'バトル管理',   href: '/admin/battles' },
   { key: 'coefficients' as Tab, label: '格係数管理',   href: '/admin/coefficients' },
   { key: 'corrections' as Tab,  label: '誤り報告',     href: '/admin/corrections' },
+  { key: 'series' as Tab,       label: 'シリーズ',     href: '/admin/series' },
   { key: 'guide' as Tab,        label: '使い方',       href: '/admin/guide' },
 ];
 

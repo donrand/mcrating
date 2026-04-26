@@ -5,9 +5,10 @@ import RegisterClient from './RegisterClient';
 export default async function RegisterPage() {
   const admin = createAdminClient();
 
-  const [{ data: mcs }, { data: tournaments }] = await Promise.all([
+  const [{ data: mcs }, { data: tournaments }, { data: seriesData }] = await Promise.all([
     admin.from('mcs').select('id, name').order('name'),
     admin.from('tournaments').select('id, name, held_on, grade_coeff').order('held_on', { ascending: false }),
+    admin.from('series').select('name').order('name'),
   ]);
 
   return (
@@ -23,6 +24,7 @@ export default async function RegisterPage() {
           ...t,
           held_on: t.held_on ?? null,
         }))}
+        seriesOptions={(seriesData ?? []).map(s => s.name)}
       />
     </div>
   );
