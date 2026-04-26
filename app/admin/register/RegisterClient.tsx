@@ -3,7 +3,6 @@
 import { useState, useRef } from 'react';
 import { registerBattles, registerMultipleTournaments, MultiRegisterResult } from './actions';
 
-
 // ---- 型定義 ----------------------------------------------------------------
 
 type MC = { id: string; name: string };
@@ -41,14 +40,12 @@ function parseCsv(text: string): { result: ParseResult; errors: string[] } {
   const errors: string[] = [];
   if (lines.length === 0) return { result: { groups: [] }, errors };
 
-  // ヘッダー行スキップ判定
   let start = 0;
   const firstLower = lines[0].toLowerCase();
   if (firstLower.includes('tournament') || firstLower.includes('mc_a') || firstLower.includes('mc a') || firstLower.includes('winner')) {
     start = 1;
   }
 
-  // フォーマット: tournament_name, held_on, grade_coeff, mc_a, mc_b, winner[, round]
   const groupMap = new Map<string, TournamentGroup>();
 
   for (let i = start; i < lines.length; i++) {
@@ -87,7 +84,10 @@ function parseCsv(text: string): { result: ParseResult; errors: string[] } {
   return { result: { groups: Array.from(groupMap.values()) }, errors };
 }
 
-// ---- ユーティリティ --------------------------------------------------------
+// ---- 定数 -----------------------------------------------------------------
+
+const ALL_ROUNDS = ['1回戦', 'シード戦', '2回戦', 'ベスト16', 'ベスト8', '準決勝', '3位決定戦', '決勝'];
+const DEFAULT_ROUNDS = ['1回戦', '2回戦', '準決勝', '決勝'];
 
 const emptyRow = (): BattleRow => ({ mc_a_name: '', mc_b_name: '', winner: '', round_name: '' });
 
@@ -96,13 +96,22 @@ type Props = { mcs: MC[]; tournaments: Tournament[]; seriesOptions: string[] };
 // ---- コンポーネント --------------------------------------------------------
 
 export default function RegisterClient({ mcs, tournaments, seriesOptions }: Props) {
-  // 単一大会フォーム
+  // 大会設定
   const [tournamentId, setTournamentId] = useState('');
   const [isNewTournament, setIsNewTournament] = useState(false);
   const [tournamentName, setTournamentName] = useState('');
   const [heldOn, setHeldOn] = useState('');
   const [gradeCoeff, setGradeCoeff] = useState<number | ''>('');
   const [series, setSeries] = useState('');
+
+  // 出場MC
+  const [participantMcs, setParticipantMcs] = useState<string[]>([]);
+  const [mcInput, setMcInput] = useState('');
+
+  // ラウンド設定
+  const [selectedRounds, setSelectedRounds] = useState<string[]>(DEFAULT_ROUNDS);
+
+  // バトル入力
   const [rows, setRows] = useState<BattleRow[]>([emptyRow(), emptyRow()]);
   const [processing, setProcessing] = useState(false);
   const [result, setResult] = useState<{ registered: number; errors: string[] } | null>(null);
@@ -118,7 +127,33 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
   const [multiProcessing, setMultiProcessing] = useState(false);
   const [multiResult, setMultiResult] = useState<MultiRegisterResult | null>(null);
 
-  // ---- ハンドラー ----------------------------------------------------------
+  // ---- MC 登録ハンドラー ---------------------------------------------------
+
+  function addParticipant(name: string) {
+    const trimmed = name.trim();
+    if (!trimmed || participantMcs.includes(trimmed)) return;
+    setParticipantMcs(p => [...p, trimmed]);
+    setMcInput('');
+  }
+
+  function removeParticipant(name: string) {
+    setParticipantMcs(p => p.filter(m => m !== name));
+    setRows(r => r.map(row => ({
+      ...row,
+      mc_a_name: row.mc_a_name === name ? '' : row.mc_a_name,
+      mc_b_name: row.mc_b_name === name ? '' : row.mc_b_name,
+    })));
+  }
+
+  // ---- ラウンド設定ハンドラー -----------------------------------------------
+
+  function toggleRound(round: string) {
+    setSelectedRounds(r =>
+      r.includes(round) ? r.filter(x => x !== round) : [...r, round]
+    );
+  }
+
+  // ---- CSV ハンドラー -------------------------------------------------------
 
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
@@ -131,7 +166,6 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
   function handleCsvImport() {
     const { result: parsed, errors } = parseCsv(csvText);
     setCsvErrors(errors);
-
     if (parsed.groups.length > 0) {
       setMultiGroups(parsed.groups);
       setMultiResult(null);
@@ -139,6 +173,8 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
       setCsvText('');
     }
   }
+
+  // ---- 複数大会ハンドラー ---------------------------------------------------
 
   async function handleMultiSubmit() {
     if (!multiGroups || multiGroups.length === 0) return;
@@ -160,7 +196,7 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
     if (res.success) setMultiGroups(null);
   }
 
-  const mcNames = mcs.map(m => m.name);
+  // ---- バトル行ハンドラー ---------------------------------------------------
 
   function updateRow(index: number, patch: Partial<BattleRow>) {
     setRows(r => r.map((row, i) => i === index ? { ...row, ...patch } : row));
@@ -177,6 +213,8 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
       setGradeCoeff(t.grade_coeff);
     }
   }
+
+  // ---- 単一大会登録 ---------------------------------------------------------
 
   async function handleSubmit() {
     if (!gradeCoeff) { alert('大会格係数を設定してください'); return; }
@@ -207,13 +245,17 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
 
   const filledRows = rows.filter(r => r.mc_a_name || r.mc_b_name || r.winner).length;
   const multiTotal = multiGroups?.reduce((s, g) => s + g.battles.length, 0) ?? 0;
+  const mcNames = mcs.map(m => m.name);
+
+  // ドロップダウン用MCリスト: 出場MC登録済みならそちらを優先、なければ全MCから選択
+  const dropdownMcs = participantMcs.length > 0 ? participantMcs : mcNames;
 
   // ---- レンダリング --------------------------------------------------------
 
   return (
     <div className="space-y-8">
 
-      {/* CSV インポート */}
+      {/* CSV インポート（折りたたみ） */}
       <div className="bg-gray-900 border border-gray-800 rounded-xl p-6">
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">CSV インポート</h2>
@@ -354,11 +396,10 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
         </div>
       )}
 
-      {/* 大会設定 */}
+      {/* ① 大会設定 */}
       <div className="bg-gray-900 border border-gray-800 rounded-xl p-6">
-        <h2 className="text-sm font-semibold text-gray-400 mb-4 uppercase tracking-wider">大会設定（単一大会）</h2>
+        <h2 className="text-sm font-semibold text-gray-400 mb-4 uppercase tracking-wider">① 大会設定</h2>
         <div className="grid sm:grid-cols-2 gap-4">
-          {/* 大会選択 */}
           <div className="sm:col-span-2">
             <label className="block text-xs text-gray-400 mb-1">大会</label>
             <div className="flex gap-2 mb-2">
@@ -399,7 +440,6 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
             )}
           </div>
 
-          {/* シリーズ */}
           <div>
             <label className="block text-xs text-gray-400 mb-1">シリーズ <span className="text-red-400">*</span></label>
             <select
@@ -412,7 +452,6 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
             </select>
           </div>
 
-          {/* 開催日 */}
           <div>
             <label className="block text-xs text-gray-400 mb-1">開催日</label>
             <input
@@ -423,7 +462,6 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
             />
           </div>
 
-          {/* 大会格係数 */}
           <div>
             <label className="block text-xs text-gray-400 mb-1">大会格係数 <span className="text-red-400">*</span></label>
             <div className="flex gap-2">
@@ -451,11 +489,90 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
         </div>
       </div>
 
-      {/* バトル一覧 */}
+      {/* ② 出場MC登録 */}
+      <div className="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">② 出場MC登録</h2>
+          <span className="text-xs text-gray-600">登録するとバトル入力がドロップダウンになります</span>
+        </div>
+
+        <datalist id="mc-all-list">
+          {mcNames.map(name => <option key={name} value={name} />)}
+        </datalist>
+
+        <div className="flex gap-2 mb-4">
+          <input
+            type="text"
+            list="mc-all-list"
+            placeholder="MC名を入力または選択"
+            value={mcInput}
+            onChange={e => setMcInput(e.target.value)}
+            onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); addParticipant(mcInput); } }}
+            className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400"
+          />
+          <button
+            type="button"
+            onClick={() => addParticipant(mcInput)}
+            disabled={!mcInput.trim()}
+            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 disabled:opacity-40 text-gray-200 text-sm rounded-lg transition-colors"
+          >
+            追加
+          </button>
+        </div>
+
+        {participantMcs.length > 0 ? (
+          <div className="flex flex-wrap gap-2">
+            {participantMcs.map(name => (
+              <span
+                key={name}
+                className="inline-flex items-center gap-1.5 px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-sm text-gray-200"
+              >
+                {name}
+                <button
+                  type="button"
+                  onClick={() => removeParticipant(name)}
+                  className="text-gray-500 hover:text-red-400 leading-none transition-colors"
+                  aria-label={`${name}を削除`}
+                >
+                  ×
+                </button>
+              </span>
+            ))}
+          </div>
+        ) : (
+          <p className="text-xs text-gray-600">出場MCを登録するとバトル入力欄がドロップダウンになります（未登録時は全MCから選択）</p>
+        )}
+      </div>
+
+      {/* ③ ラウンド設定 */}
+      <div className="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <h2 className="text-sm font-semibold text-gray-400 mb-4 uppercase tracking-wider">③ ラウンド設定</h2>
+        <div className="flex flex-wrap gap-2">
+          {ALL_ROUNDS.map(round => (
+            <button
+              key={round}
+              type="button"
+              onClick={() => toggleRound(round)}
+              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors border ${
+                selectedRounds.includes(round)
+                  ? 'bg-yellow-400 border-yellow-400 text-gray-900'
+                  : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-500'
+              }`}
+            >
+              {round}
+            </button>
+          ))}
+        </div>
+        {selectedRounds.length === 0 && (
+          <p className="mt-2 text-xs text-red-400">ラウンドを1つ以上選択してください</p>
+        )}
+      </div>
+
+      {/* ④ バトル入力 */}
       <div>
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
-            バトル一覧
+            ④ バトル入力
             {filledRows > 0 && <span className="ml-2 text-yellow-400">{filledRows}件入力中</span>}
           </h2>
           <button
@@ -467,45 +584,57 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
           </button>
         </div>
 
-        <datalist id="mc-list">
-          {mcNames.map(name => <option key={name} value={name} />)}
-        </datalist>
-
         <div className="space-y-2">
-          <div className="hidden sm:grid sm:grid-cols-[1fr_1fr_8rem_8rem_2rem] gap-2 px-3 text-xs text-gray-600">
+          <div className="hidden sm:grid sm:grid-cols-[1fr_1fr_10rem_8rem_2rem] gap-2 px-3 text-xs text-gray-600">
             <span>MC A</span><span>MC B</span><span>勝者</span><span>ラウンド</span><span></span>
           </div>
 
           {rows.map((row, i) => (
-            <div key={i} className="grid sm:grid-cols-[1fr_1fr_8rem_8rem_2rem] gap-2 items-center bg-gray-900 rounded-lg p-3 border border-gray-800">
-              <input
-                type="text" list="mc-list" placeholder="MC A"
+            <div key={i} className="grid sm:grid-cols-[1fr_1fr_10rem_8rem_2rem] gap-2 items-center bg-gray-900 rounded-lg p-3 border border-gray-800">
+              <select
                 value={row.mc_a_name}
                 onChange={e => updateRow(i, { mc_a_name: e.target.value })}
                 className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400 w-full"
-              />
-              <input
-                type="text" list="mc-list" placeholder="MC B"
+              >
+                <option value="">MC A を選択</option>
+                {dropdownMcs.map(name => (
+                  <option key={name} value={name}>{name}</option>
+                ))}
+              </select>
+
+              <select
                 value={row.mc_b_name}
                 onChange={e => updateRow(i, { mc_b_name: e.target.value })}
                 className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400 w-full"
-              />
+              >
+                <option value="">MC B を選択</option>
+                {dropdownMcs.map(name => (
+                  <option key={name} value={name}>{name}</option>
+                ))}
+              </select>
+
               <select
                 value={row.winner}
                 onChange={e => updateRow(i, { winner: e.target.value as BattleRow['winner'] })}
                 className="bg-gray-800 border border-gray-700 rounded-lg px-2 py-2 text-sm focus:outline-none focus:border-yellow-400 w-full"
               >
                 <option value="">勝者</option>
-                <option value="a">A 勝利</option>
-                <option value="b">B 勝利</option>
+                <option value="a">{row.mc_a_name || 'A'} 勝利</option>
+                <option value="b">{row.mc_b_name || 'B'} 勝利</option>
                 <option value="draw">引き分け</option>
               </select>
-              <input
-                type="text" placeholder="ラウンド（任意）"
+
+              <select
                 value={row.round_name}
                 onChange={e => updateRow(i, { round_name: e.target.value })}
-                className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400 w-full"
-              />
+                className="bg-gray-800 border border-gray-700 rounded-lg px-2 py-2 text-sm focus:outline-none focus:border-yellow-400 w-full"
+              >
+                <option value="">ラウンド</option>
+                {selectedRounds.map(r => (
+                  <option key={r} value={r}>{r}</option>
+                ))}
+              </select>
+
               <button
                 type="button" onClick={() => removeRow(i)}
                 className="text-gray-600 hover:text-red-400 text-lg leading-none transition-colors"
@@ -535,7 +664,7 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
         </div>
       )}
 
-      {/* 送信ボタン（単一大会） */}
+      {/* 送信ボタン */}
       <button
         type="button"
         onClick={handleSubmit}
