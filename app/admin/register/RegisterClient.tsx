@@ -120,6 +120,7 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
   const [csvText, setCsvText] = useState('');
   const [csvErrors, setCsvErrors] = useState<string[]>([]);
   const [showCsv, setShowCsv] = useState(false);
+  const [csvDefaultSeries, setCsvDefaultSeries] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // 複数大会インポート
@@ -167,7 +168,10 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
     const { result: parsed, errors } = parseCsv(csvText);
     setCsvErrors(errors);
     if (parsed.groups.length > 0) {
-      setMultiGroups(parsed.groups);
+      const groups = csvDefaultSeries
+        ? parsed.groups.map(g => ({ ...g, series: g.series || csvDefaultSeries }))
+        : parsed.groups;
+      setMultiGroups(groups);
       setMultiResult(null);
       setShowCsv(false);
       setCsvText('');
@@ -284,7 +288,7 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
               <p className="text-gray-600">series: UMB / 戦極 / KOK など（任意・大会全行共通）</p>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <input
                 ref={fileInputRef}
                 type="file"
@@ -300,6 +304,19 @@ export default function RegisterClient({ mcs, tournaments, seriesOptions }: Prop
                 ファイルを選択
               </button>
               <span className="text-xs text-gray-600">または下に貼り付け</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <label className="text-xs text-gray-400 shrink-0">デフォルトシリーズ</label>
+              <select
+                value={csvDefaultSeries}
+                onChange={e => setCsvDefaultSeries(e.target.value)}
+                className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:border-yellow-400"
+              >
+                <option value="">指定しない</option>
+                {seriesOptions.map(s => <option key={s} value={s}>{s}</option>)}
+              </select>
+              <span className="text-xs text-gray-600 shrink-0">CSV の series 列が空の行に適用</span>
             </div>
 
             <textarea

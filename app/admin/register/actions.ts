@@ -18,7 +18,7 @@ type BattleInput = {
 };
 
 type TournamentInput = {
-  id: string | null; // null = 新規作成
+  id: string | null;
   name: string;
   held_on: string;
   grade_coeff: number;
@@ -46,7 +46,17 @@ export type MultiRegisterResult = {
 };
 
 /**
- * 大会単位で複数バトルを一括登録する
+ * 大会単位で複数バトルを一括登録する（バッチ処理版）
+ *
+ * 旧実装: バトル1件ごとに6〜8回のDB呼び出しを直列実行 → タイムアウト
+ * 新実装:
+ *   1. MC名を並列解決（1ラウンドの並列クエリ）
+ *   2. 既存バトルを1クエリで一括取得
+ *   3. 関連MCの現在レートを1クエリで一括取得
+ *   4. レーティング計算はインメモリ（DBアクセスなし）
+ *   5. battles を1回のバッチINSERT
+ *   6. ratings を1回のバッチINSERT
+ *   7. MCレートを並列UPDATE
  */
 export async function registerBattles(
   tournament: TournamentInput,
@@ -55,9 +65,8 @@ export async function registerBattles(
   await requireAdmin();
   const admin = createAdminClient();
   const errors: string[] = [];
-  let registered = 0;
 
-  // 大会を解決（既存 or 新規）
+  // ── 1. 大会を解決 ──────────────────────────────────────────────
   let tournamentId: string;
   if (tournament.id) {
     tournamentId = tournament.id;
@@ -86,35 +95,8 @@ export async function registerBattles(
     tournamentId = newTournament.id;
   }
 
-  // MCキャッシュ（同一バトル内で同じMCが複数回出る場合に備えて）
-  const mcCache = new Map<string, string>(); // name -> id
-
-  async function resolveMc(name: string): Promise<string> {
-    const key = name.trim().toLowerCase();
-    if (mcCache.has(key)) return mcCache.get(key)!;
-
-    const { data: existing } = await admin
-      .from('mcs')
-      .select('id')
-      .ilike('name', name.trim())
-      .maybeSingle();
-
-    if (existing) {
-      mcCache.set(key, existing.id);
-      return existing.id;
-    }
-
-    const { data: newMc, error } = await admin
-      .from('mcs')
-      .insert({ name: name.trim() })
-      .select('id')
-      .single();
-    if (error || !newMc) throw new Error(`MC「${name}」の作成に失敗しました`);
-    mcCache.set(key, newMc.id);
-    return newMc.id;
-  }
-
-  // バトルを順番に登録（レーティングは逐次更新）
+  // ── 2. バリデーション ──────────────────────────────────────────
+  const validBattles: Array<{ b: BattleInput; idx: number }> = [];
   for (let i = 0; i < battles.length; i++) {
     const b = battles[i];
     if (!b.mc_a_name.trim() || !b.mc_b_name.trim()) {
@@ -125,75 +107,186 @@ export async function registerBattles(
       errors.push(`行${i + 1}: MC A と MC B が同じ名前です`);
       continue;
     }
-
-    try {
-      const mcAId = await resolveMc(b.mc_a_name);
-      const mcBId = await resolveMc(b.mc_b_name);
-
-      // 同一大会内の重複チェック（A/B順不問）
-      const { data: existing } = await admin
-        .from('battles')
-        .select('id')
-        .eq('tournament_id', tournamentId)
-        .or(`and(mc_a_id.eq.${mcAId},mc_b_id.eq.${mcBId}),and(mc_a_id.eq.${mcBId},mc_b_id.eq.${mcAId})`)
-        .maybeSingle();
-      if (existing) {
-        errors.push(`行${i + 1}: ${b.mc_a_name} vs ${b.mc_b_name} はすでに登録済みのためスキップ`);
-        continue;
-      }
-
-      // 最新レートを取得
-      const [{ data: mcARow }, { data: mcBRow }] = await Promise.all([
-        admin.from('mcs').select('current_rating, battle_count').eq('id', mcAId).single(),
-        admin.from('mcs').select('current_rating, battle_count').eq('id', mcBId).single(),
-      ]);
-      const mcARating = mcARow?.current_rating ?? INITIAL_RATING;
-      const mcBRating = mcBRow?.current_rating ?? INITIAL_RATING;
-
-      const { deltaA, deltaB, newRatingA, newRatingB } = calcRatingDelta(
-        mcARating,
-        mcBRating,
-        b.winner,
-        tournament.grade_coeff,
-      );
-
-      // battles登録
-      const { data: battle, error: battleError } = await admin
-        .from('battles')
-        .insert({
-          tournament_id: tournamentId,
-          mc_a_id: mcAId,
-          mc_b_id: mcBId,
-          winner: b.winner,
-          round_name: b.round_name.trim() || null,
-          status: 'approved',
-          approved_at: new Date().toISOString(),
-        })
-        .select('id')
-        .single();
-
-      if (battleError || !battle) {
-        errors.push(`行${i + 1}: 試合の登録に失敗しました`);
-        continue;
-      }
-
-      // ratings記録
-      await admin.from('ratings').insert([
-        { mc_id: mcAId, battle_id: battle.id, rating_before: mcARating, rating_after: newRatingA, delta: deltaA },
-        { mc_id: mcBId, battle_id: battle.id, rating_before: mcBRating, rating_after: newRatingB, delta: deltaB },
-      ]);
-
-      // MCレート更新
-      await Promise.all([
-        admin.from('mcs').update({ current_rating: newRatingA, battle_count: (mcARow?.battle_count ?? 0) + 1 }).eq('id', mcAId),
-        admin.from('mcs').update({ current_rating: newRatingB, battle_count: (mcBRow?.battle_count ?? 0) + 1 }).eq('id', mcBId),
-      ]);
-
-      registered++;
-    } catch (e) {
-      errors.push(`行${i + 1}: ${e instanceof Error ? e.message : '不明なエラー'}`);
-    }
+    validBattles.push({ b, idx: i });
   }
+  if (validBattles.length === 0) {
+    return { success: errors.length === 0, registered: 0, errors };
+  }
+
+  // ── 3. ユニークMC名を並列解決（ilike検索 → なければINSERT）──
+  const uniqueNames = Array.from(
+    new Set([
+      ...validBattles.map(({ b }) => b.mc_a_name.trim()),
+      ...validBattles.map(({ b }) => b.mc_b_name.trim()),
+    ]),
+  );
+
+  async function resolveMcId(name: string): Promise<string> {
+    const { data: existing } = await admin.from('mcs').select('id').ilike('name', name).maybeSingle();
+    if (existing) return existing.id;
+    const { data: newMc, error } = await admin.from('mcs').insert({ name: name.trim() }).select('id').single();
+    if (error || !newMc) throw new Error(`MC「${name}」の作成に失敗しました`);
+    return newMc.id;
+  }
+
+  let mcMap: Map<string, string>; // lowercased name -> MC id
+  try {
+    const entries = await Promise.all(
+      uniqueNames.map(async (name): Promise<[string, string]> => [name.toLowerCase(), await resolveMcId(name)]),
+    );
+    mcMap = new Map(entries);
+  } catch (e) {
+    return { success: false, registered: 0, errors: [e instanceof Error ? e.message : 'MC解決エラー'] };
+  }
+
+  // ── 4. 既存バトルを1クエリで一括取得（重複チェック用）────────
+  const { data: existingBattles } = await admin
+    .from('battles')
+    .select('mc_a_id, mc_b_id')
+    .eq('tournament_id', tournamentId);
+
+  const existingPairs = new Set<string>(
+    (existingBattles ?? []).flatMap(b => [
+      `${b.mc_a_id}:${b.mc_b_id}`,
+      `${b.mc_b_id}:${b.mc_a_id}`,
+    ]),
+  );
+
+  // ── 5. 関連MCの現在レートを1クエリで一括取得 ─────────────────
+  const allMcIds = Array.from(new Set(mcMap.values()));
+  const { data: mcRows } = await admin
+    .from('mcs')
+    .select('id, current_rating, battle_count')
+    .in('id', allMcIds);
+
+  const mcState = new Map<string, { current_rating: number; battle_count: number }>(
+    (mcRows ?? []).map(r => [
+      r.id,
+      {
+        current_rating: (r.current_rating as number) ?? INITIAL_RATING,
+        battle_count: (r.battle_count as number) ?? 0,
+      },
+    ]),
+  );
+
+  // ── 6. インメモリでレーティング計算 ───────────────────────────
+  type BattleRecord = {
+    tournament_id: string;
+    mc_a_id: string;
+    mc_b_id: string;
+    winner: string;
+    round_name: string | null;
+    status: string;
+    approved_at: string;
+  };
+  type RatingSnapshot = {
+    mcAId: string; mcBId: string;
+    mcARatingBefore: number; mcBRatingBefore: number;
+    newRatingA: number; newRatingB: number;
+    deltaA: number; deltaB: number;
+  };
+
+  const battlesToInsert: BattleRecord[] = [];
+  const ratingSnapshots: RatingSnapshot[] = [];
+  const updatedMcIds = new Set<string>();
+
+  for (const { b, idx } of validBattles) {
+    const mcAId = mcMap.get(b.mc_a_name.trim().toLowerCase())!;
+    const mcBId = mcMap.get(b.mc_b_name.trim().toLowerCase())!;
+
+    if (existingPairs.has(`${mcAId}:${mcBId}`)) {
+      errors.push(`行${idx + 1}: ${b.mc_a_name} vs ${b.mc_b_name} はすでに登録済みのためスキップ`);
+      continue;
+    }
+
+    const mcA = mcState.get(mcAId) ?? { current_rating: INITIAL_RATING, battle_count: 0 };
+    const mcB = mcState.get(mcBId) ?? { current_rating: INITIAL_RATING, battle_count: 0 };
+
+    const { deltaA, deltaB, newRatingA, newRatingB } = calcRatingDelta(
+      mcA.current_rating,
+      mcB.current_rating,
+      b.winner,
+      tournament.grade_coeff,
+    );
+
+    // インメモリ状態を更新（次の試合の計算に使用）
+    mcState.set(mcAId, { current_rating: newRatingA, battle_count: mcA.battle_count + 1 });
+    mcState.set(mcBId, { current_rating: newRatingB, battle_count: mcB.battle_count + 1 });
+    existingPairs.add(`${mcAId}:${mcBId}`);
+    existingPairs.add(`${mcBId}:${mcAId}`);
+    updatedMcIds.add(mcAId);
+    updatedMcIds.add(mcBId);
+
+    battlesToInsert.push({
+      tournament_id: tournamentId,
+      mc_a_id: mcAId,
+      mc_b_id: mcBId,
+      winner: b.winner,
+      round_name: b.round_name.trim() || null,
+      status: 'approved',
+      approved_at: new Date().toISOString(),
+    });
+
+    ratingSnapshots.push({
+      mcAId, mcBId,
+      mcARatingBefore: mcA.current_rating,
+      mcBRatingBefore: mcB.current_rating,
+      newRatingA, newRatingB,
+      deltaA, deltaB,
+    });
+  }
+
+  if (battlesToInsert.length === 0) {
+    return { success: errors.length === 0, registered: 0, errors };
+  }
+
+  // ── 7. バトルを一括INSERT ─────────────────────────────────────
+  const { data: insertedBattles, error: insertError } = await admin
+    .from('battles')
+    .insert(battlesToInsert)
+    .select('id, mc_a_id, mc_b_id');
+
+  if (insertError || !insertedBattles) {
+    return {
+      success: false,
+      registered: 0,
+      errors: ['バトルの一括登録に失敗しました: ' + insertError?.message],
+    };
+  }
+
+  // ── 8. レーティング履歴を一括INSERT（挿入順に対応）──────────
+  const ratingRows = insertedBattles.flatMap((battle, i) => {
+    const snap = ratingSnapshots[i];
+    return [
+      {
+        mc_id: battle.mc_a_id,
+        battle_id: battle.id,
+        rating_before: snap.mcARatingBefore,
+        rating_after: snap.newRatingA,
+        delta: snap.deltaA,
+      },
+      {
+        mc_id: battle.mc_b_id,
+        battle_id: battle.id,
+        rating_before: snap.mcBRatingBefore,
+        rating_after: snap.newRatingB,
+        delta: snap.deltaB,
+      },
+    ];
+  });
+
+  await admin.from('ratings').insert(ratingRows);
+
+  // ── 9. 影響MCのレートを並列UPDATE ────────────────────────────
+  await Promise.all(
+    Array.from(updatedMcIds).map(id => {
+      const state = mcState.get(id)!;
+      return admin
+        .from('mcs')
+        .update({ current_rating: state.current_rating, battle_count: state.battle_count })
+        .eq('id', id);
+    }),
+  );
 
   revalidatePath('/');
   revalidatePath('/battles');
@@ -202,7 +295,7 @@ export async function registerBattles(
   revalidatePath('/admin');
   revalidatePath('/admin/register');
 
-  return { success: errors.length === 0, registered, errors };
+  return { success: errors.length === 0, registered: battlesToInsert.length, errors };
 }
 
 /**
@@ -218,7 +311,6 @@ export async function registerMultipleTournaments(
   const results: MultiRegisterResult['results'] = [];
 
   for (const group of groups) {
-    // 同名の既存大会を検索
     const { data: existing } = await admin
       .from('tournaments')
       .select('id')
