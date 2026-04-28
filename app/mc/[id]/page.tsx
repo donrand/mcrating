@@ -65,6 +65,11 @@ export default async function MCProfilePage({ params, searchParams }: Props) {
     return (roundA === -1 ? 999 : roundA) - (roundB === -1 ? 999 : roundB);
   });
 
+  const peakRating = sortedAsc.reduce<number>(
+    (max, r) => Math.max(max, r.rating_after),
+    (mc.current_rating as number) ?? 1500,
+  );
+
   // グラフ用（時系列昇順、全件）
   const chartData = sortedAsc.map(r => ({
     date: r.battles?.tournaments?.held_on?.slice(0, 7) ?? '不明',
@@ -101,10 +106,16 @@ export default async function MCProfilePage({ params, searchParams }: Props) {
       </div>
 
       {/* ステータスカード */}
-      <div className="grid grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
         <div className="bg-gray-900 rounded-xl p-4 text-center">
           <p className="text-xs text-gray-500 mb-1">現在レート</p>
           <p className="text-2xl font-bold text-yellow-400">{Math.round(mc.current_rating)}</p>
+        </div>
+        <div className="bg-gray-900 rounded-xl p-4 text-center">
+          <p className="text-xs text-gray-500 mb-1">最高レート</p>
+          <p className={`text-2xl font-bold ${peakRating <= Math.round(mc.current_rating) ? 'text-yellow-400' : 'text-blue-400'}`}>
+            {Math.round(peakRating)}
+          </p>
         </div>
         <div className="bg-gray-900 rounded-xl p-4 text-center">
           <p className="text-xs text-gray-500 mb-1">ランキング</p>

@@ -156,20 +156,22 @@ export async function registerBattles(
   const allMcIds = Array.from(new Set(mcMap.values()));
   const { data: mcRows } = await admin
     .from('mcs')
-    .select('id, current_rating, battle_count')
+    .select('id, current_rating, battle_count, peak_rating')
     .in('id', allMcIds);
 
-  const mcState = new Map<string, { current_rating: number; battle_count: number }>(
+  const mcState = new Map<string, { current_rating: number; battle_count: number; peak_rating: number }>(
     (mcRows ?? []).map(r => [
       r.id,
       {
         current_rating: (r.current_rating as number) ?? INITIAL_RATING,
         battle_count: (r.battle_count as number) ?? 0,
+        peak_rating: (r.peak_rating as number) ?? INITIAL_RATING,
       },
     ]),
   );
 
   // ── 6. インメモリでレーティング計算 ───────────────────────────
+  type McState = { current_rating: number; battle_count: number; peak_rating: number };
   type BattleRecord = {
     tournament_id: string;
     mc_a_id: string;
@@ -199,8 +201,8 @@ export async function registerBattles(
       continue;
     }
 
-    const mcA = mcState.get(mcAId) ?? { current_rating: INITIAL_RATING, battle_count: 0 };
-    const mcB = mcState.get(mcBId) ?? { current_rating: INITIAL_RATING, battle_count: 0 };
+    const mcA: McState = mcState.get(mcAId) ?? { current_rating: INITIAL_RATING, battle_count: 0, peak_rating: INITIAL_RATING };
+    const mcB: McState = mcState.get(mcBId) ?? { current_rating: INITIAL_RATING, battle_count: 0, peak_rating: INITIAL_RATING };
 
     const { deltaA, deltaB, newRatingA, newRatingB } = calcRatingDelta(
       mcA.current_rating,
@@ -210,8 +212,8 @@ export async function registerBattles(
     );
 
     // インメモリ状態を更新（次の試合の計算に使用）
-    mcState.set(mcAId, { current_rating: newRatingA, battle_count: mcA.battle_count + 1 });
-    mcState.set(mcBId, { current_rating: newRatingB, battle_count: mcB.battle_count + 1 });
+    mcState.set(mcAId, { current_rating: newRatingA, battle_count: mcA.battle_count + 1, peak_rating: Math.max(mcA.peak_rating, newRatingA) });
+    mcState.set(mcBId, { current_rating: newRatingB, battle_count: mcB.battle_count + 1, peak_rating: Math.max(mcB.peak_rating, newRatingB) });
     existingPairs.add(`${mcAId}:${mcBId}`);
     existingPairs.add(`${mcBId}:${mcAId}`);
     updatedMcIds.add(mcAId);
@@ -283,7 +285,7 @@ export async function registerBattles(
       const state = mcState.get(id)!;
       return admin
         .from('mcs')
-        .update({ current_rating: state.current_rating, battle_count: state.battle_count })
+        .update({ current_rating: state.current_rating, battle_count: state.battle_count, peak_rating: state.peak_rating })
         .eq('id', id);
     }),
   );

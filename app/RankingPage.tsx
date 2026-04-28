@@ -6,6 +6,7 @@ export type RankingMC = {
   id: string;
   name: string;
   current_rating: number;
+  peak_rating: number | null;
   battle_count: number;
   win_count: number;
 };

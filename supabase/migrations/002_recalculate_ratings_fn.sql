@@ -36,8 +36,8 @@ BEGIN
 
   -- ── スクラッチテーブルをリセット ────────────────────────
   TRUNCATE _recalc_scratch;
-  INSERT INTO _recalc_scratch (mc_id, current_rating, battle_count, win_count)
-  SELECT id, c_initial, 0, 0 FROM mcs;
+  INSERT INTO _recalc_scratch (mc_id, current_rating, battle_count, win_count, peak_rating)
+  SELECT id, c_initial, 0, 0, c_initial FROM mcs;
 
   -- ── 既存 ratings を全削除（クリーン再構築）──────────────
   -- DELETE FROM ratings はPostgRESTのWHERE句必須チェックに引っかかるためTRUNCATEを使用
@@ -105,14 +105,16 @@ BEGIN
     SET
       current_rating = v_na,
       battle_count   = battle_count + 1,
-      win_count      = win_count + CASE WHEN rec.winner = 'a' THEN 1 ELSE 0 END
+      win_count      = win_count + CASE WHEN rec.winner = 'a' THEN 1 ELSE 0 END,
+      peak_rating    = GREATEST(peak_rating, v_na)
     WHERE mc_id = rec.mc_a_id;
 
     UPDATE _recalc_scratch
     SET
       current_rating = v_nb,
       battle_count   = battle_count + 1,
-      win_count      = win_count + CASE WHEN rec.winner = 'b' THEN 1 ELSE 0 END
+      win_count      = win_count + CASE WHEN rec.winner = 'b' THEN 1 ELSE 0 END,
+      peak_rating    = GREATEST(peak_rating, v_nb)
     WHERE mc_id = rec.mc_b_id;
 
     v_count := v_count + 1;
@@ -123,7 +125,8 @@ BEGIN
   SET
     current_rating = s.current_rating,
     battle_count   = s.battle_count,
-    win_count      = s.win_count
+    win_count      = s.win_count,
+    peak_rating    = s.peak_rating
   FROM _recalc_scratch s
   WHERE m.id = s.mc_id;
 
