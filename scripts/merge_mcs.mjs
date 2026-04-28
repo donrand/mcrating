@@ -29,11 +29,18 @@ const admin = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE_RO
 
 // 統合定義: { canonical: 正名義名, aliases: [別名義名, ...] }
 const MERGE_GROUPS = [
-  { canonical: '呂布カルマ',       aliases: ['ヤングたかじん', '呂布000カルマ'] },
-  { canonical: 'R-指定',           aliases: ['R指定'] },
-  { canonical: 'MOL53',            aliases: ['鬼ピュアワンライン', 'RAWAXXX'] },
-  { canonical: 'CHEHON',           aliases: ['BUFFALO SOLDIER'] },
-  { canonical: 'S-kaine',           aliases: ['S-kainê'] },
+  { canonical: '呂布カルマ',                    aliases: ['ヤングたかじん', '呂布000カルマ'] },
+  { canonical: 'R-指定',                        aliases: ['R指定'] },
+  { canonical: 'MOL53',                         aliases: ['鬼ピュアワンライン', 'RAWAXXX'] },
+  { canonical: 'CHEHON',                        aliases: ['BUFFALO SOLDIER'] },
+  { canonical: 'S-kaine',                       aliases: ['S-kainê'] },
+  { canonical: 'MC☆ニガリ a.k.a 赤い稲妻',    aliases: ['MC☆ニガリa.k.a赤い稲妻', 'MCニガリ'] },
+  { canonical: 'Fuma no KTR',                   aliases: ['八咫烏', '藤KooS'] },
+  { canonical: 'T-TANGG',                       aliases: ['T-TONGUE', 'T-Tongue', 'T-Toungue'] },
+  { canonical: '蛆密',                          aliases: ['ウジミツ'] },
+  { canonical: '裂固',                          aliases: ['泰斗a.k.a.裂固'] },
+  { canonical: 'Rude-α',                        aliases: ['5LEEP3ALKER'] },
+  { canonical: 'キョンス',                      aliases: ['Kyons'] },
 ];
 
 async function getMcId(name) {
