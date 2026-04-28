@@ -34,7 +34,7 @@ const MERGE_GROUPS = [
   { canonical: 'MOL53',                         aliases: ['鬼ピュアワンライン', 'RAWAXXX'] },
   { canonical: 'CHEHON',                        aliases: ['BUFFALO SOLDIER'] },
   { canonical: 'S-kaine',                       aliases: ['S-kainê'] },
-  { canonical: 'MC☆ニガリ a.k.a 赤い稲妻',    aliases: ['MC☆ニガリa.k.a赤い稲妻', 'MCニガリ'] },
+  { canonical: 'MC☆ニガリ a.k.a 赤い稲妻',    aliases: ['MC☆ニガリa.k.a赤い稲妻', 'MCニガリ', 'MC☆ニガリ'] },
   { canonical: 'Fuma no KTR',                   aliases: ['八咫烏', '藤KooS'] },
   { canonical: 'T-TANGG',                       aliases: ['T-TONGUE', 'T-Tongue', 'T-Toungue'] },
   { canonical: '蛆密',                          aliases: ['ウジミツ'] },
