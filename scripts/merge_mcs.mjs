@@ -42,6 +42,7 @@ const MERGE_GROUPS = [
   { canonical: 'Rude-α',                        aliases: ['5LEEP3ALKER'] },
   { canonical: 'キョンス',                      aliases: ['Kyons'] },
   { canonical: '漢 a.k.a. GAMI',               aliases: ['漢 a.k.a GAMI', '漢'] },
+  { canonical: 'MU-TON',                        aliases: ['MUTON', 'COCRGI WHITE'] },
 ];
 
 async function getMcId(name) {

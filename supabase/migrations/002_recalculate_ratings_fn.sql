@@ -15,7 +15,6 @@ DECLARE
   c_initial CONSTANT numeric := 1500;
   c_k       CONSTANT numeric := 20;
   c_floor   CONSTANT numeric := 1000;
-  c_bonus   CONSTANT numeric := 5;
 
   rec     RECORD;
   v_ra    numeric;
@@ -23,8 +22,6 @@ DECLARE
   v_exp_a numeric;
   v_sa    numeric;
   v_sb    numeric;
-  v_ba    numeric;
-  v_bb    numeric;
   v_da    numeric;
   v_db    numeric;
   v_na    numeric;
@@ -77,18 +74,15 @@ BEGIN
     -- 実際のスコアと勝者ボーナス（勝者のみ付与）
     IF rec.winner = 'a' THEN
       v_sa := 1.0; v_sb := 0.0;
-      v_ba := rec.grade_coeff * c_bonus; v_bb := 0;
     ELSIF rec.winner = 'b' THEN
       v_sa := 0.0; v_sb := 1.0;
-      v_ba := 0; v_bb := rec.grade_coeff * c_bonus;
     ELSE  -- draw
       v_sa := 0.5; v_sb := 0.5;
-      v_ba := 0;   v_bb := 0;
     END IF;
 
     -- レート変動（小数第1位で丸め）
-    v_da := round((v_ba + c_k * rec.grade_coeff * (v_sa - v_exp_a))::numeric, 1);
-    v_db := round((v_bb + c_k * rec.grade_coeff * (v_sb - (1.0 - v_exp_a)))::numeric, 1);
+    v_da := round((c_k * rec.grade_coeff * (v_sa - v_exp_a))::numeric, 1);
+    v_db := round((c_k * rec.grade_coeff * (v_sb - (1.0 - v_exp_a)))::numeric, 1);
 
     -- 新レート（下限あり）
     v_na := round(greatest(c_floor, v_ra + v_da)::numeric, 1);

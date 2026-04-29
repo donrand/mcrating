@@ -23,7 +23,9 @@ export type MC = {
   image_url: string | null;
   is_active: boolean;
   current_rating: number;
+  peak_rating: number;
   battle_count: number;
+  win_count: number;
   created_at: string;
 };
 

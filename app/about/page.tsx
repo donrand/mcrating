@@ -54,10 +54,9 @@ export default function AboutPage() {
           <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 space-y-3">
             <p className="font-semibold text-white">計算式</p>
             <div className="font-mono text-xs bg-gray-950 rounded-lg px-4 py-3 text-green-400 leading-relaxed">
-              新レート = 旧レート + 出場ボーナス + K × 大会格係数 × (結果 − 期待勝率)
+              新レート = 旧レート + K × 大会格係数 × (結果 − 期待勝率)
             </div>
             <ul className="text-xs text-gray-400 space-y-1 list-disc list-inside">
-              <li><span className="text-gray-200">出場ボーナス</span>：勝者のみ「大会格係数 × 5pt」を加算</li>
               <li><span className="text-gray-200">期待勝率</span>：相手との実力差から算出（Elo標準式）</li>
               <li><span className="text-gray-200">大会格係数</span>：大会の規模・格に応じて設定（1.0〜3.0程度）</li>
             </ul>

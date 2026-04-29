@@ -14,13 +14,6 @@ export function expectedScore(ratingA: number, ratingB: number): number {
 }
 
 /**
- * 出場ボーナスを計算する（大会格係数 × 5pt）
- */
-export function participationBonus(gradeCoeff: number): number {
-  return gradeCoeff * 5;
-}
-
-/**
  * 1試合のレーティング変動を計算する
  * @param ratingA - MC A の現在レート
  * @param ratingB - MC B の現在レート
@@ -56,12 +49,8 @@ export function calcRatingDelta(
     scoreB = 0.5;
   }
 
-  // 出場ボーナスは勝者のみに付与
-  const bonusA = result === 'a' ? gradeCoeff * 5 : 0;
-  const bonusB = result === 'b' ? gradeCoeff * 5 : 0;
-
-  const deltaA = bonusA + K * gradeCoeff * (scoreA - expectedA);
-  const deltaB = bonusB + K * gradeCoeff * (scoreB - expectedB);
+  const deltaA = K * gradeCoeff * (scoreA - expectedA);
+  const deltaB = K * gradeCoeff * (scoreB - expectedB);
 
   const newRatingA = Math.max(RATING_FLOOR, ratingA + deltaA);
   const newRatingB = Math.max(RATING_FLOOR, ratingB + deltaB);

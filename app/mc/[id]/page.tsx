@@ -106,7 +106,7 @@ export default async function MCProfilePage({ params, searchParams }: Props) {
       </div>
 
       {/* ステータスカード */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-8">
         <div className="bg-gray-900 rounded-xl p-4 text-center">
           <p className="text-xs text-gray-500 mb-1">現在レート</p>
           <p className="text-2xl font-bold text-yellow-400">{Math.round(mc.current_rating)}</p>
@@ -120,6 +120,12 @@ export default async function MCProfilePage({ params, searchParams }: Props) {
         <div className="bg-gray-900 rounded-xl p-4 text-center">
           <p className="text-xs text-gray-500 mb-1">ランキング</p>
           <p className="text-2xl font-bold">{rank > 0 ? `#${rank}` : '—'}</p>
+        </div>
+        <div className="bg-gray-900 rounded-xl p-4 text-center">
+          <p className="text-xs text-gray-500 mb-1">勝率</p>
+          <p className="text-2xl font-bold text-green-400">
+            {mc.battle_count > 0 ? `${Math.round((mc.win_count / mc.battle_count) * 100)}%` : '—'}
+          </p>
         </div>
         <div className="bg-gray-900 rounded-xl p-4 text-center">
           <p className="text-xs text-gray-500 mb-1">累計試合数</p>
