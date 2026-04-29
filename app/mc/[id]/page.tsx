@@ -2,6 +2,7 @@ import { supabase } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import RatingChart from '@/components/RatingChart';
+import YearSelect from './YearSelect';
 
 export const revalidate = 60;
 
@@ -10,7 +11,7 @@ const PAGE_SIZE = 20;
 
 type Props = {
   params: { id: string };
-  searchParams: { page?: string };
+  searchParams: { page?: string; year?: string };
 };
 
 type RatingRow = {
@@ -30,12 +31,17 @@ type RatingRow = {
   } | null;
 };
 
-function buildUrl(id: string, page: number) {
-  return page === 1 ? `/mc/${id}` : `/mc/${id}?page=${page}`;
+function buildUrl(id: string, page: number, year: string | null) {
+  const qs = new URLSearchParams();
+  if (page > 1) qs.set('page', String(page));
+  if (year) qs.set('year', year);
+  const s = qs.toString();
+  return `/mc/${id}${s ? `?${s}` : ''}`;
 }
 
 export default async function MCProfilePage({ params, searchParams }: Props) {
   const page = Math.max(1, parseInt(searchParams.page ?? '1', 10));
+  const selectedYear = searchParams.year ?? null;
 
   const [{ data: mc }, { data: ratingsRaw }, { data: allMcs }] = await Promise.all([
     supabase.from('mcs').select('*').eq('id', params.id).single(),
@@ -70,15 +76,44 @@ export default async function MCProfilePage({ params, searchParams }: Props) {
     (mc.current_rating as number) ?? 1500,
   );
 
-  // グラフ用（時系列昇順、全件）
+  // グラフ用（全件・時系列昇順）
   const chartData = sortedAsc.map(r => ({
     date: r.battles?.tournaments?.held_on?.slice(0, 7) ?? '不明',
     rating: r.rating_after,
     opponent: '',
   }));
 
+  // 選択可能な年一覧（降順）
+  const availableYears = Array.from(
+    new Set(
+      sortedAsc
+        .map(r => r.battles?.tournaments?.held_on?.slice(0, 4))
+        .filter((y): y is string => !!y),
+    ),
+  ).sort((a, b) => b.localeCompare(a));
+
+  // 年フィルター適用
+  const filteredAsc = selectedYear
+    ? sortedAsc.filter(r => r.battles?.tournaments?.held_on?.slice(0, 4) === selectedYear)
+    : sortedAsc;
+
+  // 年別スタッツ
+  const yearStats = selectedYear
+    ? {
+        battles: filteredAsc.length,
+        wins: filteredAsc.filter(r => {
+          const b = r.battles;
+          return b && (
+            (b.winner === 'a' && b.mc_a_id === params.id) ||
+            (b.winner === 'b' && b.mc_b_id === params.id)
+          );
+        }).length,
+        peak: filteredAsc.reduce((max, r) => Math.max(max, r.rating_after), 0),
+      }
+    : null;
+
   // 試合履歴（新しい順でページネーション）
-  const sortedDesc = [...sortedAsc].reverse();
+  const sortedDesc = [...filteredAsc].reverse();
   const total = sortedDesc.length;
   const totalPages = Math.ceil(total / PAGE_SIZE);
   const battleHistory = sortedDesc.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
@@ -151,13 +186,44 @@ export default async function MCProfilePage({ params, searchParams }: Props) {
 
       {/* 試合履歴 */}
       <div>
-        <div className="flex items-baseline gap-3 mb-4">
-          <h2 className="text-lg font-bold">試合履歴</h2>
-          <span className="text-sm text-gray-500">全{total}件</span>
+        {/* ヘッダー行：タイトル＋年セレクター */}
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <div className="flex items-baseline gap-3">
+            <h2 className="text-lg font-bold">試合履歴</h2>
+            <span className="text-sm text-gray-500">{selectedYear ? `${selectedYear}年 ${total}件` : `全${total}件`}</span>
+          </div>
+          {availableYears.length > 0 && (
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-gray-500">年:</span>
+              <YearSelect mcId={params.id} currentYear={selectedYear} years={availableYears} />
+            </div>
+          )}
         </div>
 
+        {/* 年別サマリー */}
+        {yearStats && (
+          <div className="grid grid-cols-3 gap-3 mb-4">
+            <div className="bg-gray-900 rounded-lg p-3 text-center">
+              <p className="text-xs text-gray-500 mb-1">年間試合数</p>
+              <p className="text-xl font-bold">{yearStats.battles}</p>
+            </div>
+            <div className="bg-gray-900 rounded-lg p-3 text-center">
+              <p className="text-xs text-gray-500 mb-1">年間勝率</p>
+              <p className="text-xl font-bold text-green-400">
+                {yearStats.battles > 0 ? `${Math.round((yearStats.wins / yearStats.battles) * 100)}%` : '—'}
+              </p>
+            </div>
+            <div className="bg-gray-900 rounded-lg p-3 text-center">
+              <p className="text-xs text-gray-500 mb-1">年間ピーク</p>
+              <p className="text-xl font-bold text-blue-400">{yearStats.peak > 0 ? Math.round(yearStats.peak) : '—'}</p>
+            </div>
+          </div>
+        )}
+
         {total === 0 ? (
-          <p className="text-gray-600 text-center py-8">試合データがありません</p>
+          <p className="text-gray-600 text-center py-8">
+            {selectedYear ? `${selectedYear}年の試合データがありません` : '試合データがありません'}
+          </p>
         ) : (
           <>
             <div className="overflow-x-auto mb-6">
@@ -213,11 +279,11 @@ export default async function MCProfilePage({ params, searchParams }: Props) {
             {totalPages > 1 && (
               <div className="flex items-center justify-between gap-4">
                 <span className="text-xs text-gray-500">
-                  {start}–{end} 件 / 全{total}件
+                  {start}–{end} 件 / {total}件
                 </span>
                 <div className="flex items-center gap-1">
                   {page > 1 ? (
-                    <Link href={buildUrl(params.id, page - 1)} className="px-3 py-1.5 text-sm bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
+                    <Link href={buildUrl(params.id, page - 1, selectedYear)} className="px-3 py-1.5 text-sm bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
                       ← 前
                     </Link>
                   ) : (
@@ -237,7 +303,7 @@ export default async function MCProfilePage({ params, searchParams }: Props) {
                       ) : (
                         <Link
                           key={p}
-                          href={buildUrl(params.id, p as number)}
+                          href={buildUrl(params.id, p as number, selectedYear)}
                           className={`w-9 h-8 flex items-center justify-center text-sm rounded-lg transition-colors ${
                             p === page ? 'bg-yellow-400 text-gray-900 font-bold' : 'bg-gray-800 hover:bg-gray-700 text-gray-300'
                           }`}
@@ -248,7 +314,7 @@ export default async function MCProfilePage({ params, searchParams }: Props) {
                     )}
 
                   {page < totalPages ? (
-                    <Link href={buildUrl(params.id, page + 1)} className="px-3 py-1.5 text-sm bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
+                    <Link href={buildUrl(params.id, page + 1, selectedYear)} className="px-3 py-1.5 text-sm bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
                       次 →
                     </Link>
                   ) : (
