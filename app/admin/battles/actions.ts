@@ -4,24 +4,29 @@ import { createAdminClient } from '@/lib/supabase';
 import { createSupabaseServerClient } from '@/lib/supabase-server';
 import { revalidatePath } from 'next/cache';
 
-// MC名義統合の定義（merge_mcs.mjs と同期して管理する）
-const MERGE_GROUPS = [
-  { canonical: '呂布カルマ',  aliases: ['ヤングたかじん', '呂布000カルマ'] },
-  { canonical: 'R-指定',      aliases: ['R指定'] },
-  { canonical: 'MOL53',       aliases: ['鬼ピュアワンライン', 'RAWAXXX'] },
-  { canonical: 'CHEHON',      aliases: ['BUFFALO SOLDIER'] },
-  { canonical: 'S-kaine',     aliases: ['S-kainê'] },
-] as const;
-
 async function mergeMcAliases(admin: ReturnType<typeof createAdminClient>): Promise<string[]> {
   const logs: string[] = [];
 
-  for (const group of MERGE_GROUPS) {
+  const { data: rules } = await admin
+    .from('mc_merge_rules')
+    .select('canonical_name, alias_name')
+    .order('canonical_name');
+
+  if (!rules || rules.length === 0) return logs;
+
+  // canonical_name ごとにグループ化
+  const groups = new Map<string, string[]>();
+  for (const r of rules as { canonical_name: string; alias_name: string }[]) {
+    if (!groups.has(r.canonical_name)) groups.set(r.canonical_name, []);
+    groups.get(r.canonical_name)!.push(r.alias_name);
+  }
+
+  for (const [canonicalName, aliases] of Array.from(groups.entries())) {
     const { data: canonicalMc } = await admin
-      .from('mcs').select('id, name').eq('name', group.canonical).maybeSingle();
+      .from('mcs').select('id, name').eq('name', canonicalName).maybeSingle();
     if (!canonicalMc) continue;
 
-    for (const aliasName of group.aliases) {
+    for (const aliasName of aliases) {
       const { data: aliasMc } = await admin
         .from('mcs').select('id, name').eq('name', aliasName).maybeSingle();
       if (!aliasMc) continue;
@@ -43,7 +48,7 @@ async function mergeMcAliases(admin: ReturnType<typeof createAdminClient>): Prom
       await admin.from('ratings').update({ mc_id: cId }).eq('mc_id', aId);
       await admin.from('mcs').delete().eq('id', aId);
 
-      logs.push(`「${aliasName}」→「${group.canonical}」統合`);
+      logs.push(`「${aliasName}」→「${canonicalName}」統合`);
     }
   }
 

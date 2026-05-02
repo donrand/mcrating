@@ -1,6 +1,6 @@
 /**
  * MC名義統合スクリプト
- * 同一人物の別名義を正名義に統合する
+ * Supabase の mc_merge_rules テーブルからルールを読み込み、同一人物の別名義を正名義に統合する
  *
  * 実行方法:
  *   node scripts/merge_mcs.mjs
@@ -27,26 +27,8 @@ const admin = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE_RO
   auth: { persistSession: false },
 });
 
-// 統合定義: { canonical: 正名義名, aliases: [別名義名, ...] }
-const MERGE_GROUPS = [
-  { canonical: '呂布カルマ',                    aliases: ['ヤングたかじん', '呂布000カルマ'] },
-  { canonical: 'R-指定',                        aliases: ['R指定'] },
-  { canonical: 'MOL53',                         aliases: ['鬼ピュアワンライン', 'RAWAXXX'] },
-  { canonical: 'CHEHON',                        aliases: ['BUFFALO SOLDIER'] },
-  { canonical: 'S-kaine',                       aliases: ['S-kainê'] },
-  { canonical: 'MC☆ニガリ a.k.a 赤い稲妻',    aliases: ['MC☆ニガリa.k.a赤い稲妻', 'MCニガリ', 'MC☆ニガリ'] },
-  { canonical: 'Fuma no KTR',                   aliases: ['八咫烏', '藤KooS'] },
-  { canonical: 'T-TANGG',                       aliases: ['T-TONGUE', 'T-Tongue', 'T-Toungue'] },
-  { canonical: '蛆密',                          aliases: ['ウジミツ'] },
-  { canonical: '裂固',                          aliases: ['泰斗a.k.a.裂固'] },
-  { canonical: 'Rude-α',                        aliases: ['5LEEP3ALKER'] },
-  { canonical: 'キョンス',                      aliases: ['Kyons'] },
-  { canonical: '漢 a.k.a. GAMI',               aliases: ['漢 a.k.a GAMI', '漢'] },
-  { canonical: 'MU-TON',                        aliases: ['MUTON', 'COCRGI WHITE'] },
-];
-
-async function getMcId(name) {
-  const { data } = await admin.from('mcs').select('id, name, battle_count').eq('name', name).maybeSingle();
+async function getMcById(id) {
+  const { data } = await admin.from('mcs').select('id, name, battle_count').eq('id', id).maybeSingle();
   return data;
 }
 
@@ -56,7 +38,6 @@ async function mergeMc(canonicalMc, aliasMc) {
 
   console.log(`  統合: 「${aliasMc.name}」(${aliasMc.battle_count}戦) → 「${canonicalMc.name}」`);
 
-  // 自己対戦になるバトルを確認（本来あってはならないが念のため）
   const { data: selfBattles } = await admin
     .from('battles')
     .select('id')
@@ -68,30 +49,20 @@ async function mergeMc(canonicalMc, aliasMc) {
     await admin.from('battles').delete().in('id', selfIds);
   }
 
-  // battles.mc_a_id を差し替え
   const { count: countA } = await admin
-    .from('battles')
-    .update({ mc_a_id: cId })
-    .eq('mc_a_id', aId)
+    .from('battles').update({ mc_a_id: cId }).eq('mc_a_id', aId)
     .select('id', { count: 'exact', head: true });
 
-  // battles.mc_b_id を差し替え
   const { count: countB } = await admin
-    .from('battles')
-    .update({ mc_b_id: cId })
-    .eq('mc_b_id', aId)
+    .from('battles').update({ mc_b_id: cId }).eq('mc_b_id', aId)
     .select('id', { count: 'exact', head: true });
 
-  // ratings.mc_id を差し替え
   const { count: countR } = await admin
-    .from('ratings')
-    .update({ mc_id: cId })
-    .eq('mc_id', aId)
+    .from('ratings').update({ mc_id: cId }).eq('mc_id', aId)
     .select('id', { count: 'exact', head: true });
 
   console.log(`    battles(mc_a): ${countA ?? '?'}件, battles(mc_b): ${countB ?? '?'}件, ratings: ${countR ?? '?'}件 を更新`);
 
-  // 別名義MCを削除
   const { error } = await admin.from('mcs').delete().eq('id', aId);
   if (error) {
     console.error(`    削除失敗: ${error.message}`);
@@ -103,16 +74,41 @@ async function mergeMc(canonicalMc, aliasMc) {
 async function main() {
   console.log('=== MC名義統合スクリプト ===\n');
 
-  for (const group of MERGE_GROUPS) {
-    const canonicalMc = await getMcId(group.canonical);
+  // mc_merge_rules テーブルからルールを取得
+  const { data: rules, error: rulesError } = await admin
+    .from('mc_merge_rules')
+    .select('canonical_name, alias_name')
+    .order('canonical_name');
+
+  if (rulesError) {
+    console.error('mc_merge_rules の取得に失敗しました:', rulesError.message);
+    process.exit(1);
+  }
+
+  if (!rules || rules.length === 0) {
+    console.log('統合ルールが登録されていません。');
+    return;
+  }
+
+  // canonical_name ごとにグループ化
+  const groups = new Map();
+  for (const r of rules) {
+    if (!groups.has(r.canonical_name)) groups.set(r.canonical_name, []);
+    groups.get(r.canonical_name).push(r.alias_name);
+  }
+
+  for (const [canonicalName, aliases] of groups) {
+    const { data: canonicalMc } = await admin
+      .from('mcs').select('id, name, battle_count').eq('name', canonicalName).maybeSingle();
     if (!canonicalMc) {
-      console.error(`正名義「${group.canonical}」が見つかりません`);
+      console.error(`正名義「${canonicalName}」が見つかりません`);
       continue;
     }
-    console.log(`\n【${group.canonical}】(現在 ${canonicalMc.battle_count}戦)`);
+    console.log(`\n【${canonicalName}】(現在 ${canonicalMc.battle_count}戦)`);
 
-    for (const aliasName of group.aliases) {
-      const aliasMc = await getMcId(aliasName);
+    for (const aliasName of aliases) {
+      const { data: aliasMc } = await admin
+        .from('mcs').select('id, name, battle_count').eq('name', aliasName).maybeSingle();
       if (!aliasMc) {
         console.log(`  「${aliasName}」はDBに存在しないためスキップ`);
         continue;

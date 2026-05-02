@@ -75,6 +75,13 @@ export type BattleCorrection = {
   resolved_at: string | null;
 };
 
+export type McaMergeRule = {
+  id: string;
+  canonical_name: string;
+  alias_name: string;
+  created_at: string;
+};
+
 export type Submission = {
   id: string;
   tournament_name: string;
