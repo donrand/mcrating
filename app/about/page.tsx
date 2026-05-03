@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'このサイトについて | MCバトル レーティング',
-  description: 'MCバトルレーティングのレーティング算出方法・情報提供の使い方・連絡先',
+  description: 'MCバトルレーティングのレーティング算出方法・連絡先',
 };
 
 export default function AboutPage() {
@@ -85,61 +84,6 @@ export default function AboutPage() {
             ※ レーティングは試合の時系列順（開催日 → ラウンド順）に計算されます。
             ランキングには5試合以上の出場者のみ表示されます。
           </p>
-        </div>
-      </section>
-
-      {/* 情報提供の方法 */}
-      <section>
-        <h2 className="text-lg font-bold mb-4">情報提供の方法</h2>
-        <div className="space-y-4 text-sm text-gray-300">
-          <p>
-            試合結果の情報提供はどなたでも匿名で行えます。管理者が内容を確認した後、レーティングに反映されます。
-          </p>
-
-          <div className="space-y-3">
-            {/* STEP 1 */}
-            <div className="flex gap-4 bg-gray-900 border border-gray-800 rounded-xl p-4">
-              <div className="flex-shrink-0 w-7 h-7 rounded-full bg-yellow-400 text-gray-900 font-bold text-xs flex items-center justify-center">1</div>
-              <div>
-                <p className="font-semibold text-white mb-1">情報提供フォームを開く</p>
-                <p className="text-gray-400 text-xs">
-                  ナビゲーションの「情報提供」または下のボタンからアクセスできます。
-                  1件ずつ入力する「単一入力」と、複数試合をまとめて入力する「一括入力」の2種類があります。
-                </p>
-              </div>
-            </div>
-
-            {/* STEP 2 */}
-            <div className="flex gap-4 bg-gray-900 border border-gray-800 rounded-xl p-4">
-              <div className="flex-shrink-0 w-7 h-7 rounded-full bg-yellow-400 text-gray-900 font-bold text-xs flex items-center justify-center">2</div>
-              <div>
-                <p className="font-semibold text-white mb-1">試合情報を入力する</p>
-                <p className="text-gray-400 text-xs">
-                  大会名・開催日・対戦MC・勝者・ラウンド名を入力してください。
-                  YouTubeやXのURLを証拠として添付すると審査がスムーズです（任意）。
-                </p>
-              </div>
-            </div>
-
-            {/* STEP 3 */}
-            <div className="flex gap-4 bg-gray-900 border border-gray-800 rounded-xl p-4">
-              <div className="flex-shrink-0 w-7 h-7 rounded-full bg-yellow-400 text-gray-900 font-bold text-xs flex items-center justify-center">3</div>
-              <div>
-                <p className="font-semibold text-white mb-1">管理者が審査・反映</p>
-                <p className="text-gray-400 text-xs">
-                  投稿内容を管理者が確認します。問題がなければ承認され、レーティングに反映されます。
-                  内容に誤りがある場合は却下されることがあります。
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <Link
-            href="/submit"
-            className="inline-block mt-2 px-5 py-2 bg-yellow-400 text-gray-900 font-bold rounded-xl text-sm hover:bg-yellow-300 transition-colors"
-          >
-            情報提供フォームへ
-          </Link>
         </div>
       </section>
 
