@@ -1,10 +1,8 @@
 import { createAdminClient } from '@/lib/supabase';
-import { createSupabaseServerClient } from '@/lib/supabase-server';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReportButton from '@/components/ReportButton';
 import TournamentBracket, { type BracketBattle } from './TournamentBracket';
-import TournamentCsvImport from './TournamentCsvImport';
 
 export const revalidate = 3600;
 
@@ -82,16 +80,14 @@ function buildMcSummary(battles: Battle[]) {
 export default async function TournamentDetailPage({ params }: Props) {
   const admin = createAdminClient();
 
-  const [{ data: tournament }, { data: raw }, { data: { user } }] = await Promise.all([
+  const [{ data: tournament }, { data: raw }] = await Promise.all([
     admin.from('tournaments').select('id, name, grade_coeff, held_on').eq('id', params.id).single(),
     admin
       .from('battles')
       .select('id, winner, round_name, mc_a:mcs!battles_mc_a_id_fkey(id, name), mc_b:mcs!battles_mc_b_id_fkey(id, name), ratings(mc_id, rating_before, rating_after, delta)')
       .eq('tournament_id', params.id)
       .eq('status', 'approved'),
-    createSupabaseServerClient().auth.getUser(),
   ]);
-  const isAdmin = !!user;
 
   if (!tournament) notFound();
 
@@ -286,12 +282,15 @@ export default async function TournamentDetailPage({ params }: Props) {
         </div>
       )}
 
-      {isAdmin && (
-        <TournamentCsvImport
-          tournamentId={tournament.id}
-          gradeCoeff={Number(tournament.grade_coeff)}
-        />
-      )}
+      <div className="mt-6 pt-4 border-t border-gray-800">
+        <a
+          href={`/tournaments/${tournament.id}/csv`}
+          download
+          className="text-xs text-gray-600 hover:text-gray-400 transition-colors"
+        >
+          ↓ CSV ダウンロード
+        </a>
+      </div>
     </div>
   );
 }
