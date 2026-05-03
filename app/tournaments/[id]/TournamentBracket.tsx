@@ -59,58 +59,63 @@ function buildColumns(battles: BracketBattle[]): Column[] {
 }
 
 /**
- * 前ラウンドの勝者MCを手がかりに次ラウンドの試合を正しいスロットへ並び替える。
- * 例: 1回戦 match[0] の勝者が2回戦 match[2] に登録されていた場合、
- *     2回戦 match[2] をスロット0に移動して位置を揃える。
+ * 決勝から遡り、各ラウンドの参加MCをその前ラウンドで勝ったマッチと照合して並び替える。
+ *
+ * 前向き（1回戦→2回戦）だと「連続ペアが前提」になり不定形トーナメントで崩れる。
+ * 後ろ向き（決勝←準決勝←...）にすることで、各マッチの参加者を起点に
+ * 前ラウンドの該当マッチを正確に特定できる。
+ *
+ * 例: 2回戦 match に MC-A と MC-B が出場 → 1回戦で MC-A が勝ったマッチをスロット前半へ、
+ *     MC-B が勝ったマッチをスロット後半へ配置。
  */
 function alignByWinners(columns: Column[]): Column[] {
   const cols = columns.map(c => ({ ...c, matches: [...c.matches] }));
 
-  for (let ci = 0; ci < cols.length - 1; ci++) {
-    const cur = cols[ci];
-    const nxt = cols[ci + 1];
-    const mc = cur.matches.length;
-    const nextMc = nxt.matches.length;
-    const groupSize = Math.max(1, Math.round(mc / nextMc));
+  // 右の列（後のラウンド）から左の列（前のラウンド）へ遡る
+  for (let ci = cols.length - 1; ci >= 1; ci--) {
+    const cur = cols[ci];      // 現在のラウンド（右）
+    const prev = cols[ci - 1]; // 前のラウンド（左）
+    const curMc = cur.matches.length;
+    const prevMc = prev.matches.length;
+    const groupSize = Math.max(1, Math.round(prevMc / curMc));
 
-    // 各スロットに「期待される勝者のMC ID」を収集
-    const expected: (string | null)[] = Array(nextMc).fill(null);
-    for (let mi = 0; mi < mc; mi += groupSize) {
-      const slot = Math.floor(mi / groupSize);
-      for (let g = 0; g < groupSize && mi + g < mc; g++) {
-        const m = cur.matches[mi + g];
-        const wId =
-          m.winner === 'top' ? m.topMc?.id :
-          m.winner === 'bottom' ? m.bottomMc?.id : null;
-        if (wId && expected[slot] === null) expected[slot] = wId;
+    const pool: Match[] = [...prev.matches];
+    const placed: (Match | null)[] = Array(prevMc).fill(null);
+
+    for (let curMi = 0; curMi < curMc; curMi++) {
+      const m = cur.matches[curMi];
+      const baseSlot = curMi * groupSize;
+
+      // このマッチの参加者（topMc→bottomMc の順）を前ラウンドで探す
+      const participants = ([m.topMc, m.bottomMc] as (McInfo | null)[])
+        .filter((mc): mc is McInfo => !!mc);
+
+      let slotOffset = 0;
+      for (const mc of participants) {
+        if (slotOffset >= groupSize) break;
+        // 前ラウンドで mc が勝者だったマッチを探す
+        const idx = pool.findIndex(
+          pm =>
+            (pm.winner === 'top' && pm.topMc?.id === mc.id) ||
+            (pm.winner === 'bottom' && pm.bottomMc?.id === mc.id),
+        );
+        if (idx !== -1) {
+          placed[baseSlot + slotOffset] = pool.splice(idx, 1)[0];
+          slotOffset++;
+        }
       }
     }
 
-    // 期待MCを含む試合を対応スロットに配置し直す
-    const pool: Match[] = [...nxt.matches];
-    const placed: (Match | null)[] = Array(nextMc).fill(null);
-
-    for (let slot = 0; slot < nextMc; slot++) {
-      const wId = expected[slot];
-      if (!wId) continue;
-      const idx = pool.findIndex(
-        m => m.topMc?.id === wId || m.bottomMc?.id === wId,
-      );
-      if (idx !== -1) {
-        placed[slot] = pool.splice(idx, 1)[0];
-      }
-    }
-
-    // 残った試合（勝者が未登録 or 期待MCなし）を空きスロットへ順番に埋める
+    // マッチングできなかった試合（シード選手など前ラウンド不参加）を空きスロットへ順番に埋める
     let pi = 0;
-    for (let slot = 0; slot < nextMc; slot++) {
+    for (let slot = 0; slot < prevMc; slot++) {
       if (placed[slot] === null) {
         placed[slot] = pool[pi] ?? { battleId: null, topMc: null, bottomMc: null, winner: null };
         pi++;
       }
     }
 
-    cols[ci + 1] = { ...nxt, matches: placed as Match[] };
+    cols[ci - 1] = { ...prev, matches: placed as Match[] };
   }
 
   return cols;
