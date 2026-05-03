@@ -68,8 +68,8 @@ function buildMcSummary(battles: Battle[]) {
   }
 
   for (const b of battles) {
-    const rA = b.ratings.find(r => r.mc_id === b.mc_a?.id);
-    const rB = b.ratings.find(r => r.mc_id === b.mc_b?.id);
+    const rA = b.ratings?.find(r => r.mc_id === b.mc_a?.id);
+    const rB = b.ratings?.find(r => r.mc_id === b.mc_b?.id);
     if (b.mc_a && rA) upsert(b.mc_a, rA, 'a', b.winner);
     if (b.mc_b && rB) upsert(b.mc_b, rB, 'b', b.winner);
   }
@@ -204,8 +204,8 @@ export default async function TournamentDetailPage({ params }: Props) {
                     {grouped[round].map(b => {
                       const mcA = b.mc_a;
                       const mcB = b.mc_b;
-                      const ratingA = b.ratings.find(r => r.mc_id === mcA?.id);
-                      const ratingB = b.ratings.find(r => r.mc_id === mcB?.id);
+                      const ratingA = b.ratings?.find(r => r.mc_id === mcA?.id);
+                      const ratingB = b.ratings?.find(r => r.mc_id === mcB?.id);
                       const winA = b.winner === 'a';
                       const winB = b.winner === 'b';
                       const isDraw = b.winner === 'draw';
