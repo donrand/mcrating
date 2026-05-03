@@ -106,12 +106,10 @@ function alignByWinners(columns: Column[]): Column[] {
       }
     }
 
-    // マッチングできなかった試合（シード選手など前ラウンド不参加）を空きスロットへ順番に埋める
-    let pi = 0;
+    // 照合できなかったスロットはすべて？で埋める（無関係なマッチを入れない）
     for (let slot = 0; slot < prevMc; slot++) {
       if (placed[slot] === null) {
-        placed[slot] = pool[pi] ?? { battleId: null, topMc: null, bottomMc: null, winner: null };
-        pi++;
+        placed[slot] = { battleId: null, topMc: null, bottomMc: null, winner: null };
       }
     }
 
