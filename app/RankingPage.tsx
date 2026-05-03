@@ -21,7 +21,8 @@ type Props = {
   year: number | null;
 };
 
-const YEARS = Array.from({ length: 20 }, (_, i) => 2006 + i);
+const currentYear = new Date().getFullYear();
+const YEARS = Array.from({ length: currentYear - 2006 + 1 }, (_, i) => 2006 + i);
 
 export default function RankingPage({ initialMcs, year }: Props) {
   const router = useRouter();
