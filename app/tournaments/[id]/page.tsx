@@ -200,58 +200,76 @@ export default async function TournamentDetailPage({ params }: Props) {
                   <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 pb-1 border-b border-gray-800">
                     {round}
                   </h3>
-                  <div className="space-y-1">
+                  <div className="border border-gray-700/60 rounded-xl overflow-hidden divide-y divide-gray-700/60">
                     {grouped[round].map(b => {
                       const mcA = b.mc_a;
                       const mcB = b.mc_b;
                       const ratingA = b.ratings.find(r => r.mc_id === mcA?.id);
                       const ratingB = b.ratings.find(r => r.mc_id === mcB?.id);
-                      const winnerName =
-                        b.winner === 'a' ? mcA?.name :
-                        b.winner === 'b' ? mcB?.name :
-                        '引き分け';
+                      const winA = b.winner === 'a';
+                      const winB = b.winner === 'b';
+                      const isDraw = b.winner === 'draw';
+
                       return (
-                        <div key={b.id} className="flex items-center gap-3 px-4 py-3 bg-gray-900 rounded-lg">
-                          <div className="flex flex-col min-w-0">
-                            <span className={`text-sm font-medium ${b.winner === 'a' ? 'text-yellow-400' : 'text-gray-300'}`}>
-                              {mcA ? (
-                                <Link href={`/mc/${mcA.id}`} className="hover:underline">{mcA.name}</Link>
-                              ) : '—'}
-                            </span>
-                            {ratingA && (
-                              <span className="text-xs text-gray-500 font-mono">
-                                {ratingA.rating_after.toFixed(0)}
-                                <span className={`ml-1 ${ratingA.delta >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                                  ({sign(ratingA.delta)})
-                                </span>
-                              </span>
+                        <div key={b.id} className="grid grid-cols-[1fr_auto_1fr] bg-gray-900">
+                          {/* MC A */}
+                          <div className={`flex items-center gap-2.5 px-4 py-3 ${winA ? 'bg-yellow-400/5' : ''}`}>
+                            {winA && (
+                              <span className="text-[10px] font-bold text-yellow-400 bg-yellow-400/10 border border-yellow-400/30 rounded px-1 py-0.5 shrink-0">勝</span>
                             )}
-                          </div>
-                          <span className="text-gray-600 text-xs shrink-0">vs</span>
-                          <div className="flex flex-col min-w-0">
-                            <span className={`text-sm font-medium ${b.winner === 'b' ? 'text-yellow-400' : 'text-gray-300'}`}>
-                              {mcB ? (
-                                <Link href={`/mc/${mcB.id}`} className="hover:underline">{mcB.name}</Link>
-                              ) : '—'}
-                            </span>
-                            {ratingB && (
-                              <span className="text-xs text-gray-500 font-mono">
-                                {ratingB.rating_after.toFixed(0)}
-                                <span className={`ml-1 ${ratingB.delta >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                                  ({sign(ratingB.delta)})
-                                </span>
-                              </span>
+                            {isDraw && (
+                              <span className="text-[10px] font-bold text-gray-400 bg-gray-700/40 border border-gray-600/30 rounded px-1 py-0.5 shrink-0">分</span>
                             )}
+                            <div className="flex flex-col min-w-0">
+                              <span className={`text-sm font-medium truncate ${winA ? 'text-yellow-300' : 'text-slate-200'}`}>
+                                {mcA ? (
+                                  <Link href={`/mc/${mcA.id}`} className="hover:underline">{mcA.name}</Link>
+                                ) : '—'}
+                              </span>
+                              {ratingA && (
+                                <span className="text-xs text-gray-500 font-mono">
+                                  {ratingA.rating_after.toFixed(0)}
+                                  <span className={`ml-1 ${ratingA.delta >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                                    ({sign(ratingA.delta)})
+                                  </span>
+                                </span>
+                              )}
+                            </div>
                           </div>
-                          <div className="ml-auto flex flex-col items-end gap-1 shrink-0">
-                            <span className="text-xs text-gray-500">
-                              勝者: <span className="text-yellow-400">{winnerName}</span>
-                            </span>
+
+                          {/* vs + report */}
+                          <div className="flex flex-col items-center justify-center gap-1 px-3 border-x border-gray-700/40">
+                            <span className="text-gray-600 text-xs font-medium">vs</span>
                             <ReportButton
                               battleId={b.id}
                               mcAName={mcA?.name ?? 'MC A'}
                               mcBName={mcB?.name ?? 'MC B'}
                             />
+                          </div>
+
+                          {/* MC B */}
+                          <div className={`flex items-center justify-end gap-2.5 px-4 py-3 ${winB ? 'bg-yellow-400/5' : ''}`}>
+                            <div className="flex flex-col items-end min-w-0">
+                              <span className={`text-sm font-medium truncate ${winB ? 'text-yellow-300' : 'text-slate-200'}`}>
+                                {mcB ? (
+                                  <Link href={`/mc/${mcB.id}`} className="hover:underline">{mcB.name}</Link>
+                                ) : '—'}
+                              </span>
+                              {ratingB && (
+                                <span className="text-xs text-gray-500 font-mono">
+                                  {ratingB.rating_after.toFixed(0)}
+                                  <span className={`ml-1 ${ratingB.delta >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                                    ({sign(ratingB.delta)})
+                                  </span>
+                                </span>
+                              )}
+                            </div>
+                            {winB && (
+                              <span className="text-[10px] font-bold text-yellow-400 bg-yellow-400/10 border border-yellow-400/30 rounded px-1 py-0.5 shrink-0">勝</span>
+                            )}
+                            {isDraw && (
+                              <span className="text-[10px] font-bold text-gray-400 bg-gray-700/40 border border-gray-600/30 rounded px-1 py-0.5 shrink-0">分</span>
+                            )}
                           </div>
                         </div>
                       );
