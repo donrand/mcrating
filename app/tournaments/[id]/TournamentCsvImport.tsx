@@ -93,29 +93,14 @@ export default function TournamentCsvImport({ tournamentId, gradeCoeff }: Props)
   return (
     <div className="mt-8 border-t border-gray-800 pt-6">
       <div className="flex items-center justify-between mb-3">
-        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">CSV 管理</h2>
-        <div className="flex items-center gap-3">
-          {/* ダウンロードボタン（常時表示） */}
-          <a
-            href={`/tournaments/${tournamentId}/csv`}
-            download
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg text-xs text-gray-300 transition-colors"
-          >
-            ↓ CSV ダウンロード
-          </a>
-          {/* インポート開閉 */}
-          <button
-            onClick={() => { setOpen(v => !v); setPreview(null); setResult(null); }}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg text-xs text-gray-300 transition-colors"
-          >
-            ↑ CSV インポート
-          </button>
-        </div>
+        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">CSV インポート</h2>
+        <button
+          onClick={() => { setOpen(v => !v); setPreview(null); setResult(null); }}
+          className="text-xs text-gray-600 hover:text-gray-400 transition-colors"
+        >
+          {open ? '閉じる' : '開く'}
+        </button>
       </div>
-
-      <p className="text-xs text-gray-700 mb-4">
-        CSVをダウンロードして末尾に新しいバトルを追記し、再インポートすると差分のみ登録されます
-      </p>
 
       {open && (
         <div className="border border-gray-700 rounded-xl p-5 space-y-4 bg-gray-900/60">
