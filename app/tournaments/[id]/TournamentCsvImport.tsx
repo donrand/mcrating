@@ -3,8 +3,6 @@
 import { useRef, useState } from 'react';
 import { importTournamentCsv, type TournamentCsvRow } from './actions';
 
-const ROUND_OPTIONS = ['1回戦', 'シード戦', '2回戦', 'ベスト16', 'ベスト8', '準決勝', '3位決定戦', '決勝'];
-
 function normalizeWinner(raw: string): 'a' | 'b' | 'draw' | null {
   const w = raw.toLowerCase().replace(/\s/g, '');
   if (w === 'a' || w === 'a側' || w === '1') return 'a';
@@ -19,7 +17,6 @@ function parseCsv(text: string): { rows: TournamentCsvRow[]; errors: string[] } 
   const rows: TournamentCsvRow[] = [];
   if (lines.length === 0) return { rows, errors };
 
-  // skip header if detected
   let start = 0;
   const first = lines[0].toLowerCase();
   if (first.includes('mc_a') || first.includes('mc a') || first.includes('winner') || first.includes('勝者')) {
@@ -28,7 +25,10 @@ function parseCsv(text: string): { rows: TournamentCsvRow[]; errors: string[] } 
 
   for (let i = start; i < lines.length; i++) {
     const lineNo = i + 1;
-    const cols = lines[i].split(',').map(c => c.trim());
+    // CSVパース（ダブルクォート対応）
+    const cols = lines[i].match(/("(?:[^"]|"")*"|[^,]*)/g)
+      ?.map(c => c.startsWith('"') ? c.slice(1, -1).replace(/""/g, '"') : c)
+      .map(c => c.trim()) ?? [];
     if (cols.length < 3) {
       errors.push(`${lineNo}行目: 列数不足（mc_a, mc_b, winner[, round_name]）`);
       continue;
@@ -61,8 +61,13 @@ export default function TournamentCsvImport({ tournamentId, gradeCoeff }: Props)
     const file = e.target.files?.[0];
     if (!file) return;
     const reader = new FileReader();
-    reader.onload = ev => setCsvText(ev.target?.result as string ?? '');
+    reader.onload = ev => {
+      setCsvText(ev.target?.result as string ?? '');
+      setPreview(null);
+      setResult(null);
+    };
     reader.readAsText(file, 'utf-8');
+    e.target.value = '';
   }
 
   function handleParse() {
@@ -85,118 +90,130 @@ export default function TournamentCsvImport({ tournamentId, gradeCoeff }: Props)
     }
   }
 
-  if (!open) {
-    return (
-      <div className="mt-6 border-t border-gray-800 pt-4">
-        <button
-          onClick={() => setOpen(true)}
-          className="text-xs text-gray-600 hover:text-gray-400 transition-colors"
-        >
-          + CSV でバトルを一括登録
-        </button>
-      </div>
-    );
-  }
-
   return (
-    <div className="mt-6 border border-gray-700 rounded-xl p-5 space-y-4 bg-gray-900/60">
-      <div className="flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-gray-300">CSV 一括登録</h3>
-        <button onClick={() => setOpen(false)} className="text-xs text-gray-600 hover:text-gray-400 transition-colors">閉じる</button>
+    <div className="mt-8 border-t border-gray-800 pt-6">
+      <div className="flex items-center justify-between mb-3">
+        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">CSV 管理</h2>
+        <div className="flex items-center gap-3">
+          {/* ダウンロードボタン（常時表示） */}
+          <a
+            href={`/tournaments/${tournamentId}/csv`}
+            download
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg text-xs text-gray-300 transition-colors"
+          >
+            ↓ CSV ダウンロード
+          </a>
+          {/* インポート開閉 */}
+          <button
+            onClick={() => { setOpen(v => !v); setPreview(null); setResult(null); }}
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg text-xs text-gray-300 transition-colors"
+          >
+            ↑ CSV インポート
+          </button>
+        </div>
       </div>
 
-      <div className="text-xs text-gray-600 bg-gray-800/60 rounded-lg p-3 space-y-1">
-        <p className="text-gray-500 font-medium">フォーマット</p>
-        <code className="text-gray-400">mc_a, mc_b, winner[, round_name]</code>
-        <p>winner: <code>a</code> / <code>b</code> / <code>draw</code></p>
-        <p>round_name（省略可）: {ROUND_OPTIONS.join(' / ')}</p>
-        <p className="text-gray-700">例: R-指定,呂布カルマ,a,決勝</p>
-      </div>
+      <p className="text-xs text-gray-700 mb-4">
+        CSVをダウンロードして末尾に新しいバトルを追記し、再インポートすると差分のみ登録されます
+      </p>
 
-      <div className="flex items-center gap-3">
-        <input ref={fileRef} type="file" accept=".csv,.txt" onChange={handleFile} className="hidden" />
-        <button
-          type="button"
-          onClick={() => fileRef.current?.click()}
-          className="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg text-xs text-gray-300 transition-colors"
-        >
-          ファイルを選択
-        </button>
-        <span className="text-xs text-gray-700">または下に貼り付け</span>
-      </div>
-
-      <textarea
-        value={csvText}
-        onChange={e => setCsvText(e.target.value)}
-        placeholder={'mc_a,mc_b,winner,round_name\nR-指定,呂布カルマ,a,決勝\nT-PABLOW,晋平太,a,準決勝'}
-        rows={6}
-        className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-xs font-mono placeholder-gray-700 focus:outline-none focus:border-yellow-400 resize-y"
-      />
-
-      {parseErrors.length > 0 && (
-        <ul className="text-xs text-red-400 space-y-0.5">
-          {parseErrors.map((e, i) => <li key={i}>・{e}</li>)}
-        </ul>
-      )}
-
-      <button
-        type="button"
-        onClick={handleParse}
-        disabled={!csvText.trim()}
-        className="px-4 py-2 bg-gray-700 hover:bg-gray-600 disabled:opacity-40 text-gray-200 text-sm rounded-lg transition-colors"
-      >
-        内容を確認
-      </button>
-
-      {preview && preview.length > 0 && (
-        <div className="space-y-3">
-          <p className="text-xs text-gray-400 font-medium">{preview.length}件のバトルが検出されました</p>
-          <div className="border border-gray-700 rounded-lg overflow-hidden">
-            <table className="w-full text-xs">
-              <thead>
-                <tr className="bg-gray-800 text-gray-500">
-                  <th className="px-3 py-1.5 text-left font-medium">MC A</th>
-                  <th className="px-3 py-1.5 text-left font-medium">MC B</th>
-                  <th className="px-3 py-1.5 text-left font-medium">勝者</th>
-                  <th className="px-3 py-1.5 text-left font-medium">ラウンド</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-800">
-                {preview.map((row, i) => (
-                  <tr key={i} className="bg-gray-900">
-                    <td className="px-3 py-1.5 text-gray-300">{row.mc_a_name}</td>
-                    <td className="px-3 py-1.5 text-gray-300">{row.mc_b_name}</td>
-                    <td className="px-3 py-1.5">
-                      <span className={row.winner === 'a' ? 'text-yellow-300' : row.winner === 'b' ? 'text-blue-300' : 'text-gray-400'}>
-                        {row.winner === 'a' ? 'A勝利' : row.winner === 'b' ? 'B勝利' : '引き分け'}
-                      </span>
-                    </td>
-                    <td className="px-3 py-1.5 text-gray-500">{row.round_name || '—'}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      {open && (
+        <div className="border border-gray-700 rounded-xl p-5 space-y-4 bg-gray-900/60">
+          <div className="text-xs text-gray-600 bg-gray-800/60 rounded-lg p-3 space-y-1">
+            <p className="text-gray-500 font-medium">フォーマット（ダウンロードしたCSVと同じ形式）</p>
+            <code className="text-gray-400">mc_a, mc_b, winner, round_name</code>
+            <p>winner: <code>a</code>（左勝）/ <code>b</code>（右勝）/ <code>draw</code>（引き分け）</p>
+            <p className="text-gray-700">既存バトルと重複する行は自動スキップされます</p>
           </div>
 
-          {result && (
-            <div className={`p-3 rounded-lg text-xs border ${result.errors.length === 0 ? 'bg-green-900/30 border-green-700 text-green-400' : 'bg-yellow-900/30 border-yellow-700 text-yellow-300'}`}>
-              <p className="font-semibold">{result.registered}件を登録しました</p>
-              {result.errors.length > 0 && (
-                <ul className="mt-1 space-y-0.5">
-                  {result.errors.map((e, i) => <li key={i}>・{e}</li>)}
-                </ul>
-              )}
-            </div>
+          <div className="flex items-center gap-3">
+            <input ref={fileRef} type="file" accept=".csv,.txt" onChange={handleFile} className="hidden" />
+            <button
+              type="button"
+              onClick={() => fileRef.current?.click()}
+              className="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg text-xs text-gray-300 transition-colors"
+            >
+              ファイルを選択
+            </button>
+            <span className="text-xs text-gray-700">または下に貼り付け</span>
+          </div>
+
+          <textarea
+            value={csvText}
+            onChange={e => { setCsvText(e.target.value); setPreview(null); setResult(null); }}
+            placeholder={'mc_a,mc_b,winner,round_name\nR-指定,呂布カルマ,a,決勝\nT-PABLOW,晋平太,a,準決勝'}
+            rows={6}
+            className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-xs font-mono placeholder-gray-700 focus:outline-none focus:border-yellow-400 resize-y"
+          />
+
+          {parseErrors.length > 0 && (
+            <ul className="text-xs text-red-400 space-y-0.5">
+              {parseErrors.map((e, i) => <li key={i}>・{e}</li>)}
+            </ul>
           )}
 
           <button
             type="button"
-            onClick={handleSubmit}
-            disabled={processing}
-            className="w-full py-2.5 bg-yellow-400 hover:bg-yellow-300 disabled:opacity-50 text-gray-900 font-bold text-sm rounded-lg transition-colors"
+            onClick={handleParse}
+            disabled={!csvText.trim()}
+            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 disabled:opacity-40 text-gray-200 text-sm rounded-lg transition-colors"
           >
-            {processing ? '登録中...' : `${preview.length}件を登録する`}
+            内容を確認
           </button>
+
+          {preview && preview.length > 0 && (
+            <div className="space-y-3">
+              <p className="text-xs text-gray-400 font-medium">{preview.length}行を読み込みました（既存バトルと重複する行はスキップされます）</p>
+              <div className="border border-gray-700 rounded-lg overflow-hidden max-h-60 overflow-y-auto">
+                <table className="w-full text-xs">
+                  <thead className="sticky top-0">
+                    <tr className="bg-gray-800 text-gray-500">
+                      <th className="px-3 py-1.5 text-left font-medium">MC A</th>
+                      <th className="px-3 py-1.5 text-left font-medium">MC B</th>
+                      <th className="px-3 py-1.5 text-left font-medium">勝者</th>
+                      <th className="px-3 py-1.5 text-left font-medium">ラウンド</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-800">
+                    {preview.map((row, i) => (
+                      <tr key={i} className="bg-gray-900">
+                        <td className="px-3 py-1.5 text-gray-300">{row.mc_a_name}</td>
+                        <td className="px-3 py-1.5 text-gray-300">{row.mc_b_name}</td>
+                        <td className="px-3 py-1.5">
+                          <span className={row.winner === 'a' ? 'text-yellow-300' : row.winner === 'b' ? 'text-blue-300' : 'text-gray-400'}>
+                            {row.winner === 'a' ? 'A勝' : row.winner === 'b' ? 'B勝' : '引分'}
+                          </span>
+                        </td>
+                        <td className="px-3 py-1.5 text-gray-500">{row.round_name || '—'}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {result && (
+                <div className={`p-3 rounded-lg text-xs border ${result.errors.length === 0 && result.registered > 0 ? 'bg-green-900/30 border-green-700 text-green-400' : result.registered === 0 && result.errors.length === 0 ? 'bg-gray-800 border-gray-700 text-gray-400' : 'bg-yellow-900/30 border-yellow-700 text-yellow-300'}`}>
+                  <p className="font-semibold">
+                    {result.registered > 0 ? `${result.registered}件を新規登録しました` : '新規バトルはありませんでした（全行スキップ）'}
+                  </p>
+                  {result.errors.length > 0 && (
+                    <ul className="mt-1 space-y-0.5">
+                      {result.errors.map((e, i) => <li key={i}>・{e}</li>)}
+                    </ul>
+                  )}
+                </div>
+              )}
+
+              <button
+                type="button"
+                onClick={handleSubmit}
+                disabled={processing}
+                className="w-full py-2.5 bg-yellow-400 hover:bg-yellow-300 disabled:opacity-50 text-gray-900 font-bold text-sm rounded-lg transition-colors"
+              >
+                {processing ? '登録中...' : `インポート実行（${preview.length}行）`}
+              </button>
+            </div>
+          )}
         </div>
       )}
     </div>
