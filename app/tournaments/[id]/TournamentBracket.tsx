@@ -106,10 +106,14 @@ function alignByWinners(columns: Column[]): Column[] {
       }
     }
 
-    // 照合できなかったスロットはすべて？で埋める（無関係なマッチを入れない）
+    // 未照合の実バトルを空きスロットへ順番に配置し、それ以上余れば？で埋める
+    const realPool = pool.filter(m => m.battleId !== null || m.topMc !== null || m.bottomMc !== null);
+    let ri = 0;
     for (let slot = 0; slot < prevMc; slot++) {
       if (placed[slot] === null) {
-        placed[slot] = { battleId: null, topMc: null, bottomMc: null, winner: null };
+        placed[slot] = ri < realPool.length
+          ? realPool[ri++]
+          : { battleId: null, topMc: null, bottomMc: null, winner: null };
       }
     }
 
