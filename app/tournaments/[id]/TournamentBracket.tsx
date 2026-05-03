@@ -151,30 +151,41 @@ export default function TournamentBracket({ battles }: { battles: BracketBattle[
 
   const posMap = new Map(positions.map(p => [`${p.ci}-${p.mi}`, p]));
 
-  // Build SVG bracket connector paths for each adjacent column pair
+  // Build SVG bracket connector paths for each adjacent column pair.
+  // groupSize = how many matches in col merge into one match in the next col.
+  //   1 → 1:1 direct line (e.g. 1回戦→2回戦 with equal match counts)
+  //   2 → standard bracket arm (halving)
+  //   4+ → wide arm spanning multiple rounds (e.g. when a round is skipped)
   const connectors: { d: string; key: string }[] = columns.slice(0, -1).flatMap((col, ci) => {
     const result: { d: string; key: string }[] = [];
+    const nextCol = columns[ci + 1];
     const mc = col.matches.length;
-    for (let mi = 0; mi < mc; mi += 2) {
+    const nextMc = nextCol.matches.length;
+    const groupSize = Math.max(1, Math.round(mc / nextMc));
+
+    for (let mi = 0; mi < mc; mi += groupSize) {
       const p1 = posMap.get(`${ci}-${mi}`);
-      const p2 = posMap.get(`${ci}-${mi + 1}`);
-      const p3 = posMap.get(`${ci + 1}-${Math.floor(mi / 2)}`);
+      const p3 = posMap.get(`${ci + 1}-${Math.floor(mi / groupSize)}`);
       if (!p1 || !p3) continue;
 
-      const rx = p1.x + CARD_W;       // right edge of card
-      const mx = rx + COL_GAP / 2;    // horizontal midpoint between columns
-      const midY = p2 ? (p1.cy + p2.cy) / 2 : p1.cy;
+      const rx = p1.x + CARD_W;
+      const mx = rx + COL_GAP / 2;
 
-      // Horizontal arm from top match → midpoint
-      let d = `M ${rx} ${p1.cy} H ${mx}`;
-      if (p2) {
-        // Horizontal arm from bottom match → midpoint, plus vertical bar
-        d += ` M ${rx} ${p2.cy} H ${mx} M ${mx} ${p1.cy} V ${p2.cy}`;
+      if (groupSize === 1) {
+        // 1:1 直接接続（1回戦→2回戦 など同数ラウンド）
+        result.push({ d: `M ${rx} ${p1.cy} H ${p3.x}`, key: `${ci}-${mi}` });
+      } else {
+        // n:1 ブラケットアーム（2試合以上を1試合へ集約）
+        const lastMi = Math.min(mi + groupSize - 1, mc - 1);
+        const pLast = posMap.get(`${ci}-${lastMi}`);
+        const midY = pLast ? (p1.cy + pLast.cy) / 2 : p1.cy;
+        let d = `M ${rx} ${p1.cy} H ${mx}`;
+        if (pLast && pLast.mi !== p1.mi) {
+          d += ` M ${rx} ${pLast.cy} H ${mx} M ${mx} ${p1.cy} V ${pLast.cy}`;
+        }
+        d += ` M ${mx} ${midY} H ${p3.x}`;
+        result.push({ d, key: `${ci}-${mi}` });
       }
-      // Horizontal line from midpoint to left edge of next-round match
-      d += ` M ${mx} ${midY} H ${p3.x}`;
-
-      result.push({ d, key: `${ci}-${mi}` });
     }
     return result;
   });
