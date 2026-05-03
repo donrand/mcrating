@@ -1,7 +1,7 @@
 import { createAdminClient } from '@/lib/supabase';
 import { NextResponse } from 'next/server';
 
-const ROUND_ORDER = ['1回戦', 'シード戦', '2回戦', 'ベスト16', 'ベスト8', '準決勝', '3位決定戦', '決勝'];
+const ROUND_ORDER = ['1回戦', 'シード戦', '2回戦', 'ベスト16', 'ベスト8', '準準決勝', '準決勝', '3位決定戦', '決勝'];
 
 type McInfo = { name: string };
 type BattleRow = {

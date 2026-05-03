@@ -6,7 +6,7 @@ import TournamentBracket, { type BracketBattle } from './TournamentBracket';
 
 export const revalidate = 3600;
 
-const ROUND_ORDER = ['1回戦', 'シード戦', '2回戦', 'ベスト16', 'ベスト8', '準決勝', '決勝'];
+const ROUND_ORDER = ['1回戦', 'シード戦', '2回戦', 'ベスト16', 'ベスト8', '準準決勝', '準決勝', '決勝'];
 
 type Props = { params: { id: string } };
 type McInfo = { id: string; name: string };
