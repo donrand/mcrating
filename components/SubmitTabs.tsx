@@ -3,15 +3,7 @@
 import { useState } from 'react';
 import type { ReactNode } from 'react';
 
-type MC = { id: string; name: string };
-type Tournament = { id: string; name: string };
-
-type Props = {
-  mcs: MC[];
-  tournaments: Tournament[];
-  singleForm: ReactNode;
-  bulkForm: ReactNode;
-};
+type Props = { singleForm: ReactNode; bulkForm: ReactNode };
 
 export default function SubmitTabs({ singleForm, bulkForm }: Props) {
   const [tab, setTab] = useState<'single' | 'bulk'>('single');

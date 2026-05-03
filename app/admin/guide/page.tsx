@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import AdminNav from '../AdminNav';
+import { ROUND_ORDER } from '@/lib/rounds';
 
 export const metadata: Metadata = { title: '使い方ガイド | 管理画面' };
 
@@ -36,12 +37,7 @@ const winnerValues = [
   { values: 'draw / 引き分け / 0', meaning: '引き分け' },
 ];
 
-const roundValues = [
-  '1回戦', '2回戦', '3回戦', '4回戦',
-  'ベスト64', 'ベスト32', 'ベスト16', 'ベスト8', 'ベスト4',
-  '準決勝', '3位決定戦', '決勝',
-  '1st_BATTLE', '2nd_BATTLE', '3rd_BATTLE', '4th_BATTLE', 'FINAL_BATTLE',
-];
+const roundValues = [...ROUND_ORDER];
 
 const coeffGuide = [
   { label: '草大会・予選', value: '1.0' },

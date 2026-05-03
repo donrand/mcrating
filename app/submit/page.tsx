@@ -16,8 +16,6 @@ export default async function SubmitPage() {
         匿名で投稿できます。管理者が確認後、レーティングに反映されます。
       </p>
       <SubmitTabs
-        mcs={mcs ?? []}
-        tournaments={tournaments ?? []}
         singleForm={<SubmitForm mcs={mcs ?? []} tournaments={tournaments ?? []} />}
         bulkForm={<BulkSubmitForm mcs={mcs ?? []} tournaments={tournaments ?? []} />}
       />
