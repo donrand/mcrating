@@ -77,13 +77,16 @@ function alignByWinners(columns: Column[]): Column[] {
     const prev = cols[ci - 1]; // 前のラウンド（左）
     const curMc = cur.matches.length;
     const prevMc = prev.matches.length;
+    if (curMc === 0 || prevMc === 0) continue;
     const groupSize = Math.max(1, Math.round(prevMc / curMc));
 
-    const pool: Match[] = [...prev.matches];
+    // prev.matches から null/undefined を除いて pool を構築
+    const pool: Match[] = prev.matches.filter((m): m is Match => m != null);
     const placed: (Match | null)[] = Array(prevMc).fill(null);
 
     for (let curMi = 0; curMi < curMc; curMi++) {
       const m = cur.matches[curMi];
+      if (!m) continue;
       const baseSlot = curMi * groupSize;
 
       // このマッチの参加者（topMc→bottomMc の順）を前ラウンドで探す
@@ -93,21 +96,26 @@ function alignByWinners(columns: Column[]): Column[] {
       let slotOffset = 0;
       for (const mc of participants) {
         if (slotOffset >= groupSize) break;
+        const targetSlot = baseSlot + slotOffset;
+        if (targetSlot >= prevMc) break; // prevMc 境界を超えないようガード
         // 前ラウンドで mc が勝者だったマッチを探す
         const idx = pool.findIndex(
           pm =>
-            (pm.winner === 'top' && pm.topMc?.id === mc.id) ||
-            (pm.winner === 'bottom' && pm.bottomMc?.id === mc.id),
+            pm != null &&
+            ((pm.winner === 'top' && pm.topMc?.id === mc.id) ||
+             (pm.winner === 'bottom' && pm.bottomMc?.id === mc.id)),
         );
         if (idx !== -1) {
-          placed[baseSlot + slotOffset] = pool.splice(idx, 1)[0];
+          placed[targetSlot] = pool.splice(idx, 1)[0];
           slotOffset++;
         }
       }
     }
 
     // 未照合の実バトルを空きスロットへ順番に配置し、それ以上余れば？で埋める
-    const realPool = pool.filter(m => m.battleId !== null || m.topMc !== null || m.bottomMc !== null);
+    const realPool = pool.filter((m): m is Match =>
+      m != null && (m.battleId !== null || m.topMc !== null || m.bottomMc !== null),
+    );
     let ri = 0;
     for (let slot = 0; slot < prevMc; slot++) {
       if (placed[slot] === null) {
@@ -170,6 +178,7 @@ function McSlot({
 }
 
 function MatchCard({ match }: { match: Match }) {
+  if (!match) return null;
   const empty = !match.topMc && !match.bottomMc && !match.battleId;
   const isDraw = match.winner === 'draw';
   return (
