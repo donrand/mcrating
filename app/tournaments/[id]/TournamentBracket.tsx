@@ -58,6 +58,64 @@ function buildColumns(battles: BracketBattle[]): Column[] {
   return columns;
 }
 
+/**
+ * 前ラウンドの勝者MCを手がかりに次ラウンドの試合を正しいスロットへ並び替える。
+ * 例: 1回戦 match[0] の勝者が2回戦 match[2] に登録されていた場合、
+ *     2回戦 match[2] をスロット0に移動して位置を揃える。
+ */
+function alignByWinners(columns: Column[]): Column[] {
+  const cols = columns.map(c => ({ ...c, matches: [...c.matches] }));
+
+  for (let ci = 0; ci < cols.length - 1; ci++) {
+    const cur = cols[ci];
+    const nxt = cols[ci + 1];
+    const mc = cur.matches.length;
+    const nextMc = nxt.matches.length;
+    const groupSize = Math.max(1, Math.round(mc / nextMc));
+
+    // 各スロットに「期待される勝者のMC ID」を収集
+    const expected: (string | null)[] = Array(nextMc).fill(null);
+    for (let mi = 0; mi < mc; mi += groupSize) {
+      const slot = Math.floor(mi / groupSize);
+      for (let g = 0; g < groupSize && mi + g < mc; g++) {
+        const m = cur.matches[mi + g];
+        const wId =
+          m.winner === 'top' ? m.topMc?.id :
+          m.winner === 'bottom' ? m.bottomMc?.id : null;
+        if (wId && expected[slot] === null) expected[slot] = wId;
+      }
+    }
+
+    // 期待MCを含む試合を対応スロットに配置し直す
+    const pool: Match[] = [...nxt.matches];
+    const placed: (Match | null)[] = Array(nextMc).fill(null);
+
+    for (let slot = 0; slot < nextMc; slot++) {
+      const wId = expected[slot];
+      if (!wId) continue;
+      const idx = pool.findIndex(
+        m => m.topMc?.id === wId || m.bottomMc?.id === wId,
+      );
+      if (idx !== -1) {
+        placed[slot] = pool.splice(idx, 1)[0];
+      }
+    }
+
+    // 残った試合（勝者が未登録 or 期待MCなし）を空きスロットへ順番に埋める
+    let pi = 0;
+    for (let slot = 0; slot < nextMc; slot++) {
+      if (placed[slot] === null) {
+        placed[slot] = pool[pi] ?? { battleId: null, topMc: null, bottomMc: null, winner: null };
+        pi++;
+      }
+    }
+
+    cols[ci + 1] = { ...nxt, matches: placed as Match[] };
+  }
+
+  return cols;
+}
+
 // Layout constants (px)
 const CARD_W = 148;
 const MC_H = 30;
@@ -132,7 +190,7 @@ function MatchCard({ match }: { match: Match }) {
 }
 
 export default function TournamentBracket({ battles }: { battles: BracketBattle[] }) {
-  const columns = buildColumns(battles);
+  const columns = alignByWinners(buildColumns(battles));
   if (columns.length === 0) return null;
 
   const N = columns[0].matches.length;
