@@ -24,7 +24,7 @@ export default async function CorrectionsPage() {
     : { data: [] };
 
   type BattleData = {
-    id: string; winner: string; round_name: string | null;
+    id: string; winner: string; round_name: string | null; tournament_id: string | null;
     tournaments: { name: string; held_on: string | null } | null;
     mc_a: { name: string } | null;
     mc_b: { name: string } | null;
@@ -34,11 +34,20 @@ export default async function CorrectionsPage() {
     ((battles ?? []) as unknown as BattleData[]).map(b => [b.id, b])
   );
 
-  const rows = (corrections ?? []).map(c => {
+  type CorrectionRow = {
+    id: string; battle_id: string; tournament_id: string | null;
+    description: string; suggested_winner: 'a' | 'b' | 'draw' | null;
+    suggested_round: string | null; evidence_url: string | null; submitted_at: string;
+    battle: { winner: string; round_name: string | null; tournament_name: string | null;
+              held_on: string | null; mc_a_name: string | null; mc_b_name: string | null; } | null;
+  };
+
+  const rows: CorrectionRow[] = (corrections ?? []).map(c => {
     const b = battleMap.get(c.battle_id);
     return {
       ...c,
       suggested_winner: c.suggested_winner as 'a' | 'b' | 'draw' | null,
+      tournament_id: b?.tournament_id ?? null,
       battle: b ? {
         winner: b.winner,
         round_name: b.round_name,

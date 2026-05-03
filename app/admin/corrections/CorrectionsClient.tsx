@@ -2,10 +2,12 @@
 
 import { useState, useTransition } from 'react';
 import { applyCorrection, dismissCorrection } from './actions';
+import { ROUND_ORDER } from '@/lib/rounds';
 
 type CorrectionRow = {
   id: string;
   battle_id: string;
+  tournament_id: string | null;
   description: string;
   suggested_winner: 'a' | 'b' | 'draw' | null;
   suggested_round: string | null;
@@ -101,16 +103,20 @@ function CorrectionCard({ c }: { c: CorrectionRow }) {
             value={round}
             onChange={e => setRound(e.target.value)}
             disabled={pending}
+            list="round-options"
             placeholder="例: 準決勝"
-            className="bg-gray-800 border border-gray-700 rounded px-2 py-1.5 text-sm focus:outline-none focus:border-yellow-500 w-32"
+            className="bg-gray-800 border border-gray-700 rounded px-2 py-1.5 text-sm focus:outline-none focus:border-yellow-500 w-36"
           />
+          <datalist id="round-options">
+            {ROUND_ORDER.map(r => <option key={r} value={r} />)}
+          </datalist>
         </div>
       </div>
 
       <div className="flex gap-2">
         <button
           onClick={() => startTransition(async () => {
-            await applyCorrection(c.id, c.battle_id, winner as 'a' | 'b' | 'draw', round);
+            await applyCorrection(c.id, c.battle_id, c.tournament_id, winner as 'a' | 'b' | 'draw', round);
             setDone('resolved');
           })}
           disabled={pending}

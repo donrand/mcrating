@@ -15,6 +15,7 @@ async function requireAdmin() {
 export async function applyCorrection(
   correctionId: string,
   battleId: string,
+  tournamentId: string | null,
   winner: 'a' | 'b' | 'draw',
   roundName: string,
 ) {
@@ -34,6 +35,7 @@ export async function applyCorrection(
   revalidatePath('/admin/corrections');
   revalidatePath('/battles');
   revalidatePath('/tournaments', 'layout');
+  if (tournamentId) revalidatePath(`/tournaments/${tournamentId}`);
 }
 
 /**
