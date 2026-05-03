@@ -36,7 +36,12 @@ const winnerValues = [
   { values: 'draw / 引き分け / 0', meaning: '引き分け' },
 ];
 
-const roundValues = ['1回戦', 'シード戦', '2回戦', 'ベスト16', 'ベスト8', '準決勝', '決勝'];
+const roundValues = [
+  '1回戦', '2回戦', '3回戦', '4回戦',
+  'ベスト64', 'ベスト32', 'ベスト16', 'ベスト8', 'ベスト4',
+  '準決勝', '3位決定戦', '決勝',
+  '1st_BATTLE', '2nd_BATTLE', '3rd_BATTLE', '4th_BATTLE', 'FINAL_BATTLE',
+];
 
 const coeffGuide = [
   { label: '草大会・予選', value: '1.0' },
@@ -148,7 +153,8 @@ export default function GuidePage() {
             ))}
           </div>
           <p className="text-xs text-gray-600 mt-2">
-            上記以外の名称でも登録できますが、ラウンド順ソートの対象外になります（末尾扱い）。
+            上記以外の名称でも登録できますが、ラウンド順ソートの対象外になります（末尾扱い）。<br />
+            シード選手が出場する試合は「シード戦」ではなく <span className="font-mono text-gray-400">2回戦</span> で登録してください。
           </p>
         </section>
 

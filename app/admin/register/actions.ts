@@ -294,6 +294,7 @@ export async function registerBattles(
   revalidatePath('/battles');
   revalidatePath('/tournaments');
   revalidatePath('/tournaments', 'layout');
+  revalidatePath(`/tournaments/${tournament.id}`);
   revalidatePath('/admin');
   revalidatePath('/admin/register');
 

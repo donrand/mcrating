@@ -118,6 +118,8 @@ export async function approveSubmission(
 
   revalidatePath('/');
   revalidatePath('/battles');
+  revalidatePath('/tournaments');
+  revalidatePath(`/tournaments/${tournamentId}`);
   revalidatePath('/admin');
   revalidatePath(`/mc/${mcAId}`);
   revalidatePath(`/mc/${mcBId}`);

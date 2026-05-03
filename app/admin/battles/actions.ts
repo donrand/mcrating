@@ -55,15 +55,25 @@ async function mergeMcAliases(admin: ReturnType<typeof createAdminClient>): Prom
   return logs;
 }
 
+async function revalidateAllTournaments(admin: ReturnType<typeof createAdminClient>) {
+  const { data: tournaments } = await admin.from('tournaments').select('id');
+  for (const t of tournaments ?? []) {
+    revalidatePath(`/tournaments/${t.id}`);
+  }
+}
+
 /**
  * キャッシュのみクリアする（SQL Editorで再計算した後に使用）
  */
 export async function purgeCache() {
   await requireAdmin();
+  const admin = createAdminClient();
   revalidatePath('/');
   revalidatePath('/battles');
+  revalidatePath('/tournaments');
   revalidatePath('/tournaments', 'layout');
   revalidatePath('/mc', 'layout');
+  await revalidateAllTournaments(admin);
 }
 
 async function requireAdmin() {
@@ -120,6 +130,7 @@ export async function recalculateAllRatings(): Promise<{ ok: boolean; message: s
   revalidatePath('/tournaments');
   revalidatePath('/tournaments', 'layout');
   revalidatePath('/mc', 'layout');
+  await revalidateAllTournaments(admin);
 
   return { ok: true, message: `再計算完了 (${JSON.stringify(result.data)})` };
 }
@@ -132,6 +143,10 @@ export async function deleteBattles(battleIds: string[]) {
   await requireAdmin();
   const admin = createAdminClient();
 
+  // 削除前にtournament_idを取得してrevalidate対象を把握
+  const { data: battles } = await admin.from('battles').select('tournament_id').in('id', battleIds);
+  const tournamentIds = Array.from(new Set((battles ?? []).map((b: { tournament_id: string }) => b.tournament_id).filter(Boolean)));
+
   // ratingsを先に削除（FK制約のため）
   await admin.from('ratings').delete().in('battle_id', battleIds);
 
@@ -139,4 +154,9 @@ export async function deleteBattles(battleIds: string[]) {
   await admin.from('battles').delete().in('id', battleIds);
 
   revalidatePath('/admin/battles');
+  revalidatePath('/battles');
+  revalidatePath('/tournaments');
+  for (const tid of tournamentIds) {
+    revalidatePath(`/tournaments/${tid}`);
+  }
 }
