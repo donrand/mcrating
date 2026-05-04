@@ -53,30 +53,46 @@ export default function AboutPage() {
           <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 space-y-3">
             <p className="font-semibold text-white">計算式</p>
             <div className="font-mono text-xs bg-gray-950 rounded-lg px-4 py-3 text-green-400 leading-relaxed">
-              新レート = 旧レート + K × 大会格係数 × (結果 − 期待勝率)
+              新レート = 旧レート + K × 大会係数 × (結果 − 期待勝率)
             </div>
             <ul className="text-xs text-gray-400 space-y-1 list-disc list-inside">
               <li><span className="text-gray-200">期待勝率</span>：相手との実力差から算出（Elo標準式）</li>
-              <li><span className="text-gray-200">大会格係数</span>：大会の規模・格に応じて設定（1.0〜3.0程度）</li>
+              <li><span className="text-gray-200">大会係数</span>：大会ティア（A/B/C）により自動決定</li>
             </ul>
           </div>
 
-          {/* 大会格係数の目安 */}
-          <div className="bg-gray-900 border border-gray-800 rounded-xl p-4">
-            <p className="font-semibold text-white mb-3">大会格係数の目安</p>
+          {/* 大会ティアシステム */}
+          <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 space-y-3">
+            <p className="font-semibold text-white">大会ティアと係数</p>
             <div className="grid grid-cols-3 gap-2 text-xs text-center">
               {[
-                { label: '草大会・予選', coeff: '1.0' },
-                { label: '中規模大会', coeff: '1.5' },
-                { label: '主要大会', coeff: '2.0' },
-                { label: '全国規模', coeff: '2.5' },
-                { label: 'トップ大会', coeff: '3.0' },
-              ].map(({ label, coeff }) => (
-                <div key={coeff} className="bg-gray-800 rounded-lg px-2 py-2">
-                  <div className="text-gray-400">{label}</div>
+                { tier: 'A', label: 'ハイレベル大会', coeff: '1.15', color: 'text-yellow-400', bg: 'bg-yellow-400/10 border-yellow-400/30' },
+                { tier: 'B', label: '標準大会', coeff: '1.00', color: 'text-blue-400', bg: 'bg-blue-400/10 border-blue-400/30' },
+                { tier: 'C', label: '参加者層が低レート', coeff: '0.90', color: 'text-gray-400', bg: 'bg-gray-800 border-gray-700' },
+              ].map(({ tier, label, coeff, color, bg }) => (
+                <div key={tier} className={`rounded-lg px-2 py-3 border ${bg}`}>
+                  <div className={`font-bold text-base ${color}`}>{tier}</div>
+                  <div className="text-gray-400 mt-1 leading-snug">{label}</div>
                   <div className="font-mono text-yellow-300 font-bold mt-1">×{coeff}</div>
                 </div>
               ))}
+            </div>
+
+            <div className="bg-gray-950 rounded-lg px-4 py-3 space-y-2">
+              <p className="text-xs text-gray-400 font-semibold">ティアの自動判定（z-score方式）</p>
+              <div className="font-mono text-xs text-green-400 space-y-1">
+                <div>T = 大会参加者の平均レート（大会直前時点）</div>
+                <div>Y = その年の年初の全体平均レート</div>
+                <div>z = (T − Y) / σY</div>
+              </div>
+              <div className="grid grid-cols-3 gap-1 text-xs text-center mt-2">
+                <div className="bg-yellow-400/10 rounded px-1 py-1 text-yellow-400">z ≥ +0.5 → A</div>
+                <div className="bg-blue-400/10 rounded px-1 py-1 text-blue-400">−0.5 ＜ z ＜ +0.5 → B</div>
+                <div className="bg-gray-800 rounded px-1 py-1 text-gray-400">z ≤ −0.5 → C</div>
+              </div>
+              <p className="text-xs text-gray-600">
+                ※ 参加者8名未満の大会は自動的に B に分類されます。
+              </p>
             </div>
           </div>
 
