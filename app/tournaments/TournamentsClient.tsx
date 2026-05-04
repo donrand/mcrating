@@ -15,11 +15,15 @@ function extractYear(heldOn: string): number {
 }
 
 const SERIES_COLOR: Record<string, { active: string; badge: string }> = {
-  UMB:       { active: 'bg-yellow-400/20 text-yellow-300 border-yellow-400/50 font-semibold', badge: 'text-yellow-500/80' },
-  KOK:       { active: 'bg-blue-400/20 text-blue-300 border-blue-400/50 font-semibold',       badge: 'text-blue-500/80' },
-  '戦極':    { active: 'bg-red-400/20 text-red-300 border-red-400/50 font-semibold',          badge: 'text-red-500/80' },
-  SPOTLIGHT: { active: 'bg-purple-400/20 text-purple-300 border-purple-400/50 font-semibold', badge: 'text-purple-500/80' },
-  Dis4U:     { active: 'bg-green-400/20 text-green-300 border-green-400/50 font-semibold',    badge: 'text-green-500/80' },
+  UMB:        { active: 'bg-yellow-400/20 text-yellow-300 border-yellow-400/50 font-semibold',  badge: 'text-yellow-500/80' },
+  KOK:        { active: 'bg-blue-400/20 text-blue-300 border-blue-400/50 font-semibold',        badge: 'text-blue-500/80' },
+  '戦極':     { active: 'bg-red-400/20 text-red-300 border-red-400/50 font-semibold',           badge: 'text-red-500/80' },
+  SPOTLIGHT:  { active: 'bg-purple-400/20 text-purple-300 border-purple-400/50 font-semibold',  badge: 'text-purple-500/80' },
+  Dis4U:      { active: 'bg-green-400/20 text-green-300 border-green-400/50 font-semibold',     badge: 'text-green-500/80' },
+  '凱旋':     { active: 'bg-teal-400/20 text-teal-300 border-teal-400/50 font-semibold',        badge: 'text-teal-500/80' },
+  FSD:        { active: 'bg-orange-400/20 text-orange-300 border-orange-400/50 font-semibold',  badge: 'text-orange-500/80' },
+  ADRENALINE: { active: 'bg-rose-400/20 text-rose-300 border-rose-400/50 font-semibold',        badge: 'text-rose-500/80' },
+  'U-22':     { active: 'bg-indigo-400/20 text-indigo-300 border-indigo-400/50 font-semibold',  badge: 'text-indigo-500/80' },
 };
 const DEFAULT_COLOR = { active: 'bg-gray-400/20 text-gray-200 border-gray-400/50 font-semibold', badge: 'text-gray-500' };
 
