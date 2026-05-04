@@ -47,16 +47,17 @@ export default async function Home({ searchParams }: Props) {
   // バトルIDに紐づくレーティングを取得
   const { data: ratings } = await supabase
     .from('ratings')
-    .select('mc_id, rating_after')
+    .select('mc_id, rating_after, delta')
     .in('battle_id', battleIds);
 
   // MC別の年代スタッツを集計
-  const eraMap = new Map<string, { peakRating: number; battles: number; wins: number }>();
+  const eraMap = new Map<string, { peakRating: number; ratingGain: number; battles: number; wins: number }>();
 
   for (const r of ratings ?? []) {
-    const curr = eraMap.get(r.mc_id) ?? { peakRating: 0, battles: 0, wins: 0 };
+    const curr = eraMap.get(r.mc_id) ?? { peakRating: 0, ratingGain: 0, battles: 0, wins: 0 };
     eraMap.set(r.mc_id, {
       peakRating: Math.max(curr.peakRating, r.rating_after),
+      ratingGain: curr.ratingGain + (r.delta ?? 0),
       battles: curr.battles + 1,
       wins: curr.wins,
     });
@@ -99,6 +100,7 @@ export default async function Home({ searchParams }: Props) {
         era_rating: s.peakRating,
         era_battles: s.battles,
         era_wins: s.wins,
+        era_rating_gain: Math.round(s.ratingGain),
       };
     })
     .sort((a, b) => (b.era_rating ?? 0) - (a.era_rating ?? 0));
