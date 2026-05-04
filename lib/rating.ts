@@ -63,4 +63,13 @@ export function calcRatingDelta(
   };
 }
 
+// ティア係数（007_recalculate_fn_v2.sql と同値）
+export const TIER_COEFFS = {
+  A: 1.15,
+  B: 1.00,
+  C: 0.90,
+} as const;
+
+export type TierLabel = keyof typeof TIER_COEFFS;
+
 export { INITIAL_RATING, RATING_FLOOR, K };

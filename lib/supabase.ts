@@ -29,6 +29,8 @@ export type MC = {
   created_at: string;
 };
 
+export type TournamentTier = 'A' | 'B' | 'C';
+
 export type Tournament = {
   id: string;
   name: string;
@@ -36,6 +38,28 @@ export type Tournament = {
   grade_coeff: number;
   held_on: string | null;
   created_at: string;
+  // ティアシステム（v2）
+  auto_tier: TournamentTier | null;
+  manual_tier: TournamentTier | null;
+  final_tier: TournamentTier | null;
+  tier_calc_version: number | null;
+  tier_locked: boolean;
+  tier_t: number | null;
+  tier_y: number | null;
+  tier_sigma_y: number | null;
+  tier_z: number | null;
+};
+
+export type TierLog = {
+  id: number;
+  tournament_id: string;
+  changed_at: string;
+  changed_by: string | null;
+  prev_manual_tier: TournamentTier | null;
+  new_manual_tier: TournamentTier | null;
+  reason: string | null;
+  auto_tier: TournamentTier | null;
+  final_tier: TournamentTier | null;
 };
 
 export type Battle = {

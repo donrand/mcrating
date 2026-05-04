@@ -1,0 +1,220 @@
+tournament_name,held_on,grade_coeff,mc_a,mc_b,winner,round,series
+# ============================================================
+# Dis4U MC BATTLE 全試合まとめ
+# EPISODE 1〜10（2021〜2023年）
+# grade_coeff: EP.1〜9=2.0、EP.10（GRAND CHAMPIONSHIP）=2.5
+# ============================================================
+#
+# ---- EPISODE 1 (2021-11-28 / 渋谷R Lounge) ----
+# 優勝：苺梨 準優勝：C.karter
+# ※トーナメント表画像のみ、全試合未確認
+Dis4U EPISODE 1,2021-11-28,2.0,苺梨,C.karter,a,決勝,Dis4U
+#
+# ---- EPISODE 2 (2022-02-23 / 渋谷R Lounge) ----
+# 優勝：TERU 準優勝：ゆうま
+# ※トーナメント表画像のみ、全試合未確認
+Dis4U EPISODE 2,2022-02-23,2.0,TERU,ゆうま,a,決勝,Dis4U
+#
+# ---- EPISODE 3 (2022-05-03 / 渋谷R LOUNGE 6F) ----
+# 優勝：輪入道 準優勝：Fuma no KTR / 20人トーナメント
+Dis4U EPISODE 3,2022-05-03,2.0,lame ass,Fuma no KTR,b,1回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,STACK THE PINK,Bendex,a,1回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,Victor The Challenger,TERESA,b,1回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,輪入道,TJ,a,1回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,Runline,龍鬼,b,2回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,Fuma no KTR,STACK THE PINK,a,2回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,SHJ,SHOICHIRO,a,2回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,RAWAXXX,MOGURA,b,2回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,N1NYO,Luiz alves,b,2回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,十六夜,Vivaldi,a,2回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,AILI a.k.a 立仙愛理,ゆうま,b,2回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,TERESA,輪入道,b,2回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,龍鬼,Fuma no KTR,b,3回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,SHJ,MOGURA,b,3回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,Luiz alves,十六夜,b,3回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,ゆうま,輪入道,b,3回戦,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,Fuma no KTR,MOGURA,a,ベスト4,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,十六夜,輪入道,b,ベスト4,Dis4U
+Dis4U EPISODE 3,2022-05-03,2.0,輪入道,Fuma no KTR,a,決勝,Dis4U
+#
+# ---- EPISODE 4 (2022-08-20 / 渋谷CLUB HARLEM) ----
+# 優勝：ふぁんく 準優勝：ベル / 16人トーナメント
+Dis4U EPISODE 4,2022-08-20,2.0,REDWING,RunLine,a,1回戦,Dis4U
+Dis4U EPISODE 4,2022-08-20,2.0,Yella goat,MK34,a,1回戦,Dis4U
+Dis4U EPISODE 4,2022-08-20,2.0,9for,シバタユウスケ,a,1回戦,Dis4U
+Dis4U EPISODE 4,2022-08-20,2.0,ふぁんく,TERU,a,1回戦,Dis4U
+Dis4U EPISODE 4,2022-08-20,2.0,risano,SONOTA,a,1回戦,Dis4U
+Dis4U EPISODE 4,2022-08-20,2.0,Nidra Assassin,ベル,b,1回戦,Dis4U
+Dis4U EPISODE 4,2022-08-20,2.0,梵頭,SHJ,a,1回戦,Dis4U
+Dis4U EPISODE 4,2022-08-20,2.0,L-指定,RAWAXXX,b,1回戦,Dis4U
+Dis4U EPISODE 4,2022-08-20,2.0,REDWING,Yella goat,a,ベスト8,Dis4U
+Dis4U EPISODE 4,2022-08-20,2.0,9for,ふぁんく,b,ベスト8,Dis4U
+Dis4U EPISODE 4,2022-08-20,2.0,risano,ベル,b,ベスト8,Dis4U
+Dis4U EPISODE 4,2022-08-20,2.0,梵頭,RAWAXXX,a,ベスト8,Dis4U
+Dis4U EPISODE 4,2022-08-20,2.0,REDWING,ふぁんく,b,ベスト4,Dis4U
+Dis4U EPISODE 4,2022-08-20,2.0,ベル,梵頭,a,ベスト4,Dis4U
+Dis4U EPISODE 4,2022-08-20,2.0,ふぁんく,ベル,a,決勝,Dis4U
+#
+# ---- EPISODE 5 (2022-10-15 / 渋谷R LOUNGE 6F) ----
+# 優勝：RAWAXXX 準優勝：Amateras / 32人トーナメント
+Dis4U EPISODE 5,2022-10-15,2.0,RunLine,斑,a,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,夢句,MK34,b,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,無欲,十六夜,b,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,sillylin,RAWAXXX,b,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,SHJ,ガチギレMC,a,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,梵頭,lame ass,a,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,FRANKEN,歌々詩,a,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,GOTIT,タカトラ,a,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,回鍋肉,coco,b,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,SHOICHIRO,clocodil,b,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,ハダカイン,Siuta,a,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,胡桃そら,Amateras,b,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,9for,TJ,a,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,ゆうま,MOGURA,a,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,ハハノシキュウ,9L!,a,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,バチスタ,脱走,a,1回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,RunLine,MK34,b,2回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,十六夜,RAWAXXX,b,2回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,SHJ,梵頭,a,2回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,FRANKEN,GOTIT,b,2回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,coco,clocodil,a,2回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,ハダカイン,Amateras,b,2回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,9for,ゆうま,a,2回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,ハハノシキュウ,バチスタ,b,2回戦,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,MK34,RAWAXXX,b,ベスト8,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,SHJ,GOTIT,b,ベスト8,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,coco,Amateras,b,ベスト8,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,9for,バチスタ,a,ベスト8,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,RAWAXXX,GOTIT,a,ベスト4,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,Amateras,9for,a,ベスト4,Dis4U
+Dis4U EPISODE 5,2022-10-15,2.0,RAWAXXX,Amateras,a,決勝,Dis4U
+#
+# ---- EPISODE 6 (2023-01-21 / 渋谷R LOUNGE 6F) ----
+# 優勝：梵頭 準優勝：MK-34
+Dis4U EPISODE 6,2023-01-21,2.0,RunLine,Bass,a,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,coco.,BOZ,b,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,梵頭,Nidra Assassin,a,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,じゅなた,ハダカイン,a,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,Randy Wati Sati,sillylin,a,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,SHJ,Filepe,a,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,斑,NIHA-C,b,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,ケツのアブノーマル,VENM,b,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,K'iLL,ビシキマ,a,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,Sonic'K,密鬼,b,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,buntes,ほらお,a,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,MAKA,AS flexin,a,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,BATTLE手裏剣,MK-34,b,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,L-指定,Amateras,b,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,NAGASE,しーじん,b,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,DOTAMA,胡桃そら,a,1回戦,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,RunLine,梵頭,b,ベスト8,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,SHJ,VENM,b,ベスト8,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,K'iLL,MAKA,b,ベスト8,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,MK-34,DOTAMA,a,ベスト8,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,梵頭,VENM,a,ベスト4,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,MAKA,MK-34,b,ベスト4,Dis4U
+Dis4U EPISODE 6,2023-01-21,2.0,梵頭,MK-34,a,決勝,Dis4U
+#
+# ---- EPISODE 7 (2023-04-16 / 渋谷R LOUNGE 6F) ----
+# 優勝：ミステリオ 準優勝：MAKA / 32人トーナメント
+Dis4U EPISODE 7,2023-04-16,2.0,RunLine,クフェア,b,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,SONOTA,晋平太,b,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,歌々詩,Lotten follow,b,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,バチスタ,Bass,a,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,MAKA,ガチギレMC,a,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,JyaRi,VENM,b,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,K-rush,密鬼,a,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,KUREI,sosume,a,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,NIHA-C,9L!,b,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,AYPE,SHABAZ,b,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,じゅなた,リルマリファーナ,b,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,yukarin,ハダカイン,a,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,L-指定,ミステリオ,b,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,NAGASE,彼岸,b,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,B.I.G JOHN,溝上たんぼ,a,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,胡桃そら,ゆうま,b,1回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,クフェア,晋平太,b,2回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,Lotten follow,バチスタ,b,2回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,MAKA,VENM,a,2回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,K-rush,KUREI,a,2回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,9L!,SHABAZ,a,2回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,リルマリファーナ,yukarin,a,2回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,ミステリオ,彼岸,a,2回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,B.I.G JOHN,ゆうま,b,2回戦,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,晋平太,バチスタ,a,ベスト8,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,MAKA,K-rush,a,ベスト8,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,9L!,リルマリファーナ,a,ベスト8,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,ミステリオ,ゆうま,a,ベスト8,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,晋平太,MAKA,b,ベスト4,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,9L!,ミステリオ,b,ベスト4,Dis4U
+Dis4U EPISODE 7,2023-04-16,2.0,MAKA,ミステリオ,b,決勝,Dis4U
+#
+# ---- EPISODE 8 (2023-06-18) ----
+# 優勝：龍鬼 準優勝：yella goat
+Dis4U EPISODE 8,2023-06-18,2.0,Nidra Assassin,梵頭,b,1回戦,Dis4U
+Dis4U EPISODE 8,2023-06-18,2.0,HARDY,龍鬼,a,1回戦,Dis4U
+Dis4U EPISODE 8,2023-06-18,2.0,MCニガリ,K-rush,b,1回戦,Dis4U
+Dis4U EPISODE 8,2023-06-18,2.0,輪入道,N1NYO,a,1回戦,Dis4U
+Dis4U EPISODE 8,2023-06-18,2.0,buntes,Fuma no KTR,b,1回戦,Dis4U
+Dis4U EPISODE 8,2023-06-18,2.0,lame ass,TERU,a,1回戦,Dis4U
+Dis4U EPISODE 8,2023-06-18,2.0,RunLine,ミメイ,b,1回戦,Dis4U
+Dis4U EPISODE 8,2023-06-18,2.0,yella goat,RAWAXXX,a,1回戦,Dis4U
+Dis4U EPISODE 8,2023-06-18,2.0,梵頭,HARDY,a,2回戦,Dis4U
+Dis4U EPISODE 8,2023-06-18,2.0,K-rush,輪入道,b,2回戦,Dis4U
+Dis4U EPISODE 8,2023-06-18,2.0,Fuma no KTR,TERU,a,2回戦,Dis4U
+Dis4U EPISODE 8,2023-06-18,2.0,ミメイ,RAWAXXX,b,2回戦,Dis4U
+Dis4U EPISODE 8,2023-06-18,2.0,龍鬼,K-rush,a,ベスト4,Dis4U
+Dis4U EPISODE 8,2023-06-18,2.0,yella goat,Fuma no KTR,a,ベスト4,Dis4U
+Dis4U EPISODE 8,2023-06-18,2.0,龍鬼,yella goat,a,決勝,Dis4U
+#
+# ---- EPISODE 9 (2023-08-05) ----
+# 優勝：ID 準優勝：黄猿
+Dis4U EPISODE 9,2023-08-05,2.0,寿君,Ry-lax,a,1回戦,Dis4U
+Dis4U EPISODE 9,2023-08-05,2.0,DOTAMA,ピラフ星人,a,1回戦,Dis4U
+Dis4U EPISODE 9,2023-08-05,2.0,ID,GIL,a,1回戦,Dis4U
+Dis4U EPISODE 9,2023-08-05,2.0,輪入道,Sitissy luvit,a,1回戦,Dis4U
+Dis4U EPISODE 9,2023-08-05,2.0,POWER WAVE,MCニガリ,b,1回戦,Dis4U
+Dis4U EPISODE 9,2023-08-05,2.0,ミメイ,左流,a,1回戦,Dis4U
+Dis4U EPISODE 9,2023-08-05,2.0,ふぁんく,ハハノシキュウ,a,1回戦,Dis4U
+Dis4U EPISODE 9,2023-08-05,2.0,RAY,龍鬼,a,1回戦,Dis4U
+Dis4U EPISODE 9,2023-08-05,2.0,DOTAMA,寿君,a,2回戦,Dis4U
+Dis4U EPISODE 9,2023-08-05,2.0,輪入道,ID,b,2回戦,Dis4U
+Dis4U EPISODE 9,2023-08-05,2.0,MCニガリ,ミメイ,b,2回戦,Dis4U
+Dis4U EPISODE 9,2023-08-05,2.0,RAY,ふぁんく,b,2回戦,Dis4U
+Dis4U EPISODE 9,2023-08-05,2.0,ID,DOTAMA,a,ベスト4,Dis4U
+Dis4U EPISODE 9,2023-08-05,2.0,黄猿,MCニガリ,a,ベスト4,Dis4U
+Dis4U EPISODE 9,2023-08-05,2.0,ID,黄猿,a,決勝,Dis4U
+#
+# ---- EPISODE 10 GRAND CHAMPIONSHIP (2023-10-22 / 渋谷WOMB) ----
+# 優勝：DOTAMA 準優勝：MOL53 / 32人トーナメント
+Dis4U EPISODE 10,2023-10-22,2.5,KOPERU,Sitissy luvit,b,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,ID,gable,a,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,梵頭,Z-TON,b,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,ミステリオ,蘇流邪,a,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,龍鬼,Aicom,a,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,Bass,RunLine,a,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,Randy Wati Sati,Takuya IDE・T-iD,a,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,DOTAMA,胡桃そら,a,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,瀧澤彩香,yukarin,a,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,MOL53,May4,a,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,ADHD,Yella goat,b,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,ハハノシキュウ,JAVE,a,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,ミメイ,MOGURA,b,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,Nobody as MIRIN,DK,b,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,KBD,ブッダ,a,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,MAKA,溝上たんぼ,a,1回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,Sitissy luvit,ID,a,2回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,Z-TON,ミステリオ,b,2回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,龍鬼,Bass,a,2回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,Randy Wati Sati,DOTAMA,b,2回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,瀧澤彩香,MOL53,b,2回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,Yella goat,ハハノシキュウ,b,2回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,MOGURA,DK,a,2回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,KBD,MAKA,b,2回戦,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,Sitissy luvit,ミステリオ,a,ベスト8,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,龍鬼,DOTAMA,b,ベスト8,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,MOL53,ハハノシキュウ,a,ベスト8,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,MOGURA,MAKA,b,ベスト8,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,Sitissy luvit,DOTAMA,b,ベスト4,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,MOL53,MAKA,a,ベスト4,Dis4U
+Dis4U EPISODE 10,2023-10-22,2.5,DOTAMA,MOL53,a,決勝,Dis4U
