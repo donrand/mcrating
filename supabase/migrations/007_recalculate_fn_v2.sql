@@ -90,7 +90,7 @@ BEGIN
 
     -- ── 大会参加者のレートを取得してTを算出 ───────────────
     SELECT
-      count(DISTINCT mc_id),
+      count(DISTINCT p.mc_id),
       avg(s.current_rating)
     INTO v_participant_count, v_t
     FROM (

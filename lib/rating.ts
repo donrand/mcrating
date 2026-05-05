@@ -63,13 +63,30 @@ export function calcRatingDelta(
   };
 }
 
-// ティア係数（007_recalculate_fn_v2.sql と同値）
-export const TIER_COEFFS = {
-  A: 1.15,
-  B: 1.00,
-  C: 0.90,
+// ティアベース係数（010_recalculate_fn_v3.sql と同値）
+export const TIER_BASE_COEFFS = {
+  A: 2.6,
+  B: 2.2,
+  C: 1.8,
+  D: 1.4,
+  E: 1.1,
 } as const;
 
-export type TierLabel = keyof typeof TIER_COEFFS;
+export type TierLabel = keyof typeof TIER_BASE_COEFFS;
+
+// Q_participants パラメータ
+export const TIER_Q_ALPHA = 0.12;
+export const TIER_Q_MIN   = 0.92;
+export const TIER_Q_MAX   = 1.08;
+
+// grade_coeff 最終クランプ範囲
+export const TIER_COEFF_MIN = 1.0;
+export const TIER_COEFF_MAX = 3.0;
+
+// grade_coeff = clamp(1.0, 3.0, B_tier × Q)
+export function calcGradeCoeff(tier: TierLabel, q: number): number {
+  const base = TIER_BASE_COEFFS[tier];
+  return Math.max(TIER_COEFF_MIN, Math.min(TIER_COEFF_MAX, base * q));
+}
 
 export { INITIAL_RATING, RATING_FLOOR, K };

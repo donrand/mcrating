@@ -63,37 +63,34 @@ export default function AboutPage() {
 
           {/* 大会ティアシステム */}
           <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 space-y-3">
-            <p className="font-semibold text-white">大会ティアと係数</p>
-            <div className="grid grid-cols-3 gap-2 text-xs text-center">
+            <p className="font-semibold text-white">大会係数の算出方法</p>
+
+            <div className="bg-gray-950 rounded-lg px-4 py-3 font-mono text-xs text-green-400 space-y-1">
+              <div>grade_coeff = clamp(1.0, 3.0,  B_tier × Q)</div>
+              <div className="text-gray-600">Q = clamp(0.92, 1.08,  1 + 0.12 × (T−Y) / σY)</div>
+            </div>
+
+            <div className="grid grid-cols-5 gap-1.5 text-xs text-center">
               {[
-                { tier: 'A', label: 'ハイレベル大会', coeff: '1.15', color: 'text-yellow-400', bg: 'bg-yellow-400/10 border-yellow-400/30' },
-                { tier: 'B', label: '標準大会', coeff: '1.00', color: 'text-blue-400', bg: 'bg-blue-400/10 border-blue-400/30' },
-                { tier: 'C', label: '参加者層が低レート', coeff: '0.90', color: 'text-gray-400', bg: 'bg-gray-800 border-gray-700' },
-              ].map(({ tier, label, coeff, color, bg }) => (
-                <div key={tier} className={`rounded-lg px-2 py-3 border ${bg}`}>
-                  <div className={`font-bold text-base ${color}`}>{tier}</div>
-                  <div className="text-gray-400 mt-1 leading-snug">{label}</div>
-                  <div className="font-mono text-yellow-300 font-bold mt-1">×{coeff}</div>
+                { tier: 'A', label: '最上位',   base: '2.6', color: 'text-yellow-400', bg: 'bg-yellow-400/10 border-yellow-400/30' },
+                { tier: 'B', label: '上位',     base: '2.2', color: 'text-orange-400', bg: 'bg-orange-400/10 border-orange-400/30' },
+                { tier: 'C', label: '標準',     base: '1.8', color: 'text-blue-400',   bg: 'bg-blue-400/10 border-blue-400/30' },
+                { tier: 'D', label: '小規模',   base: '1.4', color: 'text-gray-400',   bg: 'bg-gray-800 border-gray-700' },
+                { tier: 'E', label: '草大会',   base: '1.1', color: 'text-gray-500',   bg: 'bg-gray-900 border-gray-800' },
+              ].map(({ tier, label, base, color, bg }) => (
+                <div key={tier} className={`rounded-lg px-1 py-2 border ${bg}`}>
+                  <div className={`font-bold text-sm ${color}`}>{tier}</div>
+                  <div className="text-gray-500 text-xs mt-0.5">{label}</div>
+                  <div className="font-mono text-yellow-300 font-bold mt-1">×{base}</div>
                 </div>
               ))}
             </div>
 
-            <div className="bg-gray-950 rounded-lg px-4 py-3 space-y-2">
-              <p className="text-xs text-gray-400 font-semibold">ティアの自動判定（z-score方式）</p>
-              <div className="font-mono text-xs text-green-400 space-y-1">
-                <div>T = 大会参加者の平均レート（大会直前時点）</div>
-                <div>Y = その年の年初の全体平均レート</div>
-                <div>z = (T − Y) / σY</div>
-              </div>
-              <div className="grid grid-cols-3 gap-1 text-xs text-center mt-2">
-                <div className="bg-yellow-400/10 rounded px-1 py-1 text-yellow-400">z ≥ +0.5 → A</div>
-                <div className="bg-blue-400/10 rounded px-1 py-1 text-blue-400">−0.5 ＜ z ＜ +0.5 → B</div>
-                <div className="bg-gray-800 rounded px-1 py-1 text-gray-400">z ≤ −0.5 → C</div>
-              </div>
-              <p className="text-xs text-gray-600">
-                ※ 参加者8名未満の大会は自動的に B に分類されます。
-              </p>
-            </div>
+            <ul className="text-xs text-gray-500 space-y-1 list-disc list-inside">
+              <li><span className="text-gray-300">B_tier</span>：大会シリーズに固定で設定されるベース係数</li>
+              <li><span className="text-gray-300">Q</span>：大会参加者の平均レートに基づく微調整（±8%以内）</li>
+              <li>参加者8名未満の大会は Q=1.0 固定</li>
+            </ul>
           </div>
 
           <p className="text-xs text-gray-500">

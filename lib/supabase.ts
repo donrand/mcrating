@@ -29,7 +29,7 @@ export type MC = {
   created_at: string;
 };
 
-export type TournamentTier = 'A' | 'B' | 'C';
+export type TournamentTier = 'A' | 'B' | 'C' | 'D' | 'E';
 
 export type Tournament = {
   id: string;
@@ -48,6 +48,7 @@ export type Tournament = {
   tier_y: number | null;
   tier_sigma_y: number | null;
   tier_z: number | null;
+  tier_q: number | null;
 };
 
 export type TierLog = {

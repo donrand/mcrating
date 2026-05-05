@@ -2,28 +2,31 @@
 
 import { useState, useTransition } from 'react';
 import { updateSeriesTier } from './actions';
-import type { TierLabel } from '@/lib/rating';
+import { TIER_BASE_COEFFS, type TierLabel } from '@/lib/rating';
 
 export type SeriesRow = {
   series: string;
   manual_tier: TierLabel | null;
-  grade_coeff: number;
   registered_count: number;
   auto_a: number;
   auto_b: number;
   auto_c: number;
 };
 
-const TIER_COLORS: Record<TierLabel, string> = {
-  A: 'bg-yellow-400 text-gray-900',
-  B: 'bg-blue-500 text-white',
-  C: 'bg-gray-600 text-gray-200',
+const TIER_STYLE: Record<TierLabel, { badge: string; section: string }> = {
+  A: { badge: 'bg-yellow-400 text-gray-900',  section: 'text-yellow-400' },
+  B: { badge: 'bg-orange-500 text-white',      section: 'text-orange-400' },
+  C: { badge: 'bg-blue-500 text-white',        section: 'text-blue-400'   },
+  D: { badge: 'bg-gray-500 text-white',        section: 'text-gray-400'   },
+  E: { badge: 'bg-gray-700 text-gray-300',     section: 'text-gray-500'   },
 };
+
+const TIERS: TierLabel[] = ['A', 'B', 'C', 'D', 'E'];
 
 function TierBadge({ tier }: { tier: TierLabel | null }) {
   if (!tier) return <span className="text-gray-600 text-xs">—</span>;
   return (
-    <span className={`inline-block rounded px-2 py-0.5 text-xs font-bold ${TIER_COLORS[tier]}`}>
+    <span className={`inline-block rounded px-2 py-0.5 text-xs font-bold ${TIER_STYLE[tier].badge}`}>
       {tier}
     </span>
   );
@@ -45,27 +48,25 @@ function SeriesRowItem({ row }: { row: SeriesRow }) {
     });
   }
 
+  const baseCoeff = row.manual_tier ? TIER_BASE_COEFFS[row.manual_tier] : null;
+
   return (
     <div className="flex items-center gap-4 px-4 py-3 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
       {/* シリーズ名 */}
-      <div className="w-40 font-medium text-white text-sm truncate">{row.series}</div>
+      <div className="w-44 font-medium text-white text-sm truncate">{row.series}</div>
 
       {/* 登録件数 */}
-      <div className="w-16 text-xs text-gray-500 text-right">
-        {row.registered_count}件
-      </div>
+      <div className="w-14 text-xs text-gray-500 text-right">{row.registered_count}件</div>
 
-      {/* auto_tier 分布 */}
-      <div className="flex gap-1 text-xs text-gray-600 w-32">
-        {row.auto_a > 0 && <span className="text-yellow-600">A:{row.auto_a}</span>}
-        {row.auto_b > 0 && <span className="text-blue-700">B:{row.auto_b}</span>}
-        {row.auto_c > 0 && <span className="text-gray-500">C:{row.auto_c}</span>}
-      </div>
-
-      {/* 現在のtier + 係数 */}
-      <div className="flex items-center gap-2 w-24">
+      {/* 現在のtier + ベース係数 */}
+      <div className="flex items-center gap-2 w-28">
         <TierBadge tier={row.manual_tier} />
-        <span className="text-xs font-mono text-gray-400">×{row.grade_coeff.toFixed(2)}</span>
+        {baseCoeff != null && (
+          <span className="text-xs font-mono text-gray-400">
+            ×{baseCoeff.toFixed(1)}
+            <span className="text-gray-600">±Q</span>
+          </span>
+        )}
       </div>
 
       {/* Tier変更セレクタ */}
@@ -77,9 +78,11 @@ function SeriesRowItem({ row }: { row: SeriesRow }) {
           className="bg-gray-800 border border-gray-700 rounded px-2 py-1 text-xs text-gray-300 focus:outline-none focus:border-yellow-400 disabled:opacity-50"
         >
           <option value="">変更…</option>
-          <option value="A">A（×1.15）</option>
-          <option value="B">B（×1.00）</option>
-          <option value="C">C（×0.90）</option>
+          {TIERS.map(t => (
+            <option key={t} value={t}>
+              {t}（×{TIER_BASE_COEFFS[t].toFixed(1)}）
+            </option>
+          ))}
         </select>
         <button
           onClick={handleSave}
@@ -94,60 +97,43 @@ function SeriesRowItem({ row }: { row: SeriesRow }) {
 }
 
 export default function TierClient({ seriesList }: { seriesList: SeriesRow[] }) {
-  const totalA = seriesList.filter(s => s.manual_tier === 'A').reduce((n, s) => n + s.registered_count, 0);
-  const totalB = seriesList.filter(s => s.manual_tier === 'B').reduce((n, s) => n + s.registered_count, 0);
-  const totalC = seriesList.filter(s => s.manual_tier === 'C').reduce((n, s) => n + s.registered_count, 0);
-
-  const tierA = seriesList.filter(s => s.manual_tier === 'A');
-  const tierB = seriesList.filter(s => s.manual_tier === 'B');
-  const tierC = seriesList.filter(s => s.manual_tier === 'C');
+  const grouped = TIERS.reduce<Record<TierLabel, SeriesRow[]>>(
+    (acc, t) => ({ ...acc, [t]: seriesList.filter(s => s.manual_tier === t) }),
+    {} as Record<TierLabel, SeriesRow[]>,
+  );
   const unset = seriesList.filter(s => !s.manual_tier);
 
   return (
     <div className="space-y-8">
-      {/* サマリー */}
-      <div className="flex gap-6 p-3 bg-gray-900 rounded-lg border border-gray-800 text-xs">
-        <span className="text-yellow-400 font-bold">A: {totalA}件</span>
-        <span className="text-blue-400 font-bold">B: {totalB}件</span>
-        <span className="text-gray-400 font-bold">C: {totalC}件</span>
-        <span className="text-gray-600 ml-auto">再計算後にレーティングへ反映</span>
+      {/* 計算式サマリー */}
+      <div className="p-3 bg-gray-900 rounded-lg border border-gray-800 text-xs text-gray-500 space-y-1">
+        <div className="font-mono text-gray-400">
+          grade_coeff = clamp(1.0, 3.0, B_tier × Q)
+        </div>
+        <div className="font-mono text-gray-600">
+          Q = clamp(0.92, 1.08, 1 + 0.12 × (T−Y)/σY)　※再計算時に自動算出
+        </div>
       </div>
 
-      {/* Tier A */}
-      {tierA.length > 0 && (
-        <section>
-          <h2 className="text-sm font-bold text-yellow-400 mb-2 flex items-center gap-2">
-            Tier A <span className="text-gray-600 font-normal">×1.15</span>
-          </h2>
-          <div className="space-y-1">
-            {tierA.map(s => <SeriesRowItem key={s.series} row={s} />)}
-          </div>
-        </section>
-      )}
-
-      {/* Tier B */}
-      {tierB.length > 0 && (
-        <section>
-          <h2 className="text-sm font-bold text-blue-400 mb-2 flex items-center gap-2">
-            Tier B <span className="text-gray-600 font-normal">×1.00</span>
-          </h2>
-          <div className="space-y-1">
-            {tierB.map(s => <SeriesRowItem key={s.series} row={s} />)}
-          </div>
-        </section>
-      )}
-
-      {/* Tier C */}
-      {tierC.length > 0 && (
-        <section>
-          <h2 className="text-sm font-bold text-gray-400 mb-2 flex items-center gap-2">
-            Tier C <span className="text-gray-600 font-normal">×0.90</span>
-          </h2>
-          <div className="space-y-1">
-            {tierC.map(s => <SeriesRowItem key={s.series} row={s} />)}
-          </div>
-        </section>
-      )}
+      {/* ティア別セクション */}
+      {TIERS.map(tier => {
+        const rows = grouped[tier];
+        if (rows.length === 0) return null;
+        const base = TIER_BASE_COEFFS[tier];
+        return (
+          <section key={tier}>
+            <h2 className={`text-sm font-bold mb-2 flex items-center gap-3 ${TIER_STYLE[tier].section}`}>
+              Tier {tier}
+              <span className="text-gray-600 font-normal font-mono">
+                ×{base.toFixed(1)}　({(base * 0.92).toFixed(2)}〜{(base * 1.08).toFixed(2)})
+              </span>
+            </h2>
+            <div className="space-y-1">
+              {rows.map(s => <SeriesRowItem key={s.series} row={s} />)}
+            </div>
+          </section>
+        );
+      })}
 
       {/* 未設定 */}
       {unset.length > 0 && (

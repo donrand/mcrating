@@ -10,7 +10,7 @@ export default async function CoefficientsPage() {
 
   const { data: tournaments } = await admin
     .from('tournaments')
-    .select('series, manual_tier, grade_coeff, auto_tier');
+    .select('series, manual_tier');
 
   // シリーズ単位に集計
   const seriesMap = new Map<string, SeriesRow>();
@@ -21,7 +21,6 @@ export default async function CoefficientsPage() {
       seriesMap.set(key, {
         series: key,
         manual_tier: (t.manual_tier ?? null) as TierLabel | null,
-        grade_coeff: t.grade_coeff ?? 1.0,
         registered_count: 0,
         auto_a: 0,
         auto_b: 0,
@@ -30,9 +29,6 @@ export default async function CoefficientsPage() {
     }
     const row = seriesMap.get(key)!;
     row.registered_count++;
-    if (t.auto_tier === 'A') row.auto_a++;
-    else if (t.auto_tier === 'B') row.auto_b++;
-    else if (t.auto_tier === 'C') row.auto_c++;
   }
 
   // manual_tier → A / B / C / null の順に並び替え
