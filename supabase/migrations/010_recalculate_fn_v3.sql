@@ -114,18 +114,19 @@ BEGIN
     END;
 
     -- Q_participants: 参加者レートによる微調整 (clamp 0.92〜1.08)
+    -- 参加者8名未満またはσY=0の場合は grade_coeff を 2.0 に固定
     IF v_participant_count < 8 OR v_sigma_y IS NULL OR v_sigma_y = 0 THEN
       v_q := 1.0;
       v_z := NULL;
+      v_grade_coeff := 2.0;
     ELSE
       v_z := round(((v_t - v_y) / v_sigma_y)::numeric, 3);
       v_q := GREATEST(c_q_min, LEAST(c_q_max, 1.0 + c_alpha * v_z));
+      -- grade_coeff = clamp(1.0, 3.0, B_tier × Q)
+      v_grade_coeff := GREATEST(c_coeff_min,
+                       LEAST(c_coeff_max,
+                       round((v_b_tier * v_q)::numeric, 3)));
     END IF;
-
-    -- grade_coeff = clamp(1.0, 3.0, B_tier × Q)
-    v_grade_coeff := GREATEST(c_coeff_min,
-                     LEAST(c_coeff_max,
-                     round((v_b_tier * v_q)::numeric, 3)));
 
     v_final_tier := COALESCE(t_rec.manual_tier, 'B');
 
