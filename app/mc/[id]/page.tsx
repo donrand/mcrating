@@ -249,7 +249,13 @@ export default async function MCProfilePage({ params, searchParams }: Props) {
                         : r.battles?.mc_a;
                     return (
                       <tr key={r.id} className="border-b border-gray-900 hover:bg-gray-900 transition-colors">
-                        <td className="py-3 pr-4 text-gray-300">{r.battles?.tournaments?.name ?? '不明'}</td>
+                        <td className="py-3 pr-4 text-gray-300">
+                          {r.battles?.tournament_id ? (
+                            <Link href={`/tournaments/${r.battles.tournament_id}`} className="hover:text-yellow-400 transition-colors">
+                              {r.battles.tournaments?.name ?? '不明'}
+                            </Link>
+                          ) : (r.battles?.tournaments?.name ?? '不明')}
+                        </td>
                         <td className="py-3 pr-4 text-gray-500">{r.battles?.round_name ?? '—'}</td>
                         <td className="py-3 pr-4">
                           <span className={`text-xs font-bold px-2 py-0.5 rounded ${
