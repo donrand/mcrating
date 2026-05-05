@@ -132,7 +132,7 @@ export const revalidate = 3600;  // 大会一覧・大会詳細
 
 1. **全再計算はPostgreSQL関数で実行** — TypeScript側でループ処理しないこと（タイムアウトの原因）
 2. **`as unknown as Type` の多用** — Supabase の join 型推論の限界のため unavoidable
-3. **ランキングは battle_count >= 5 のみ表示** — `app/page.tsx` で `.gte('battle_count', 5)`
+3. **ランキングは battle_count >= 10 のみ表示** — `app/page.tsx` で `.gte('battle_count', 10)`
 4. **tournaments.category は未使用** — スキーマに列があるがクエリに含めない
 5. **大会詳細は createAdminClient を使用** — anon key では全カラム取得できない可能性
 6. **大会一覧は tournament_master.ts と Supabase をクロス参照** — 新大会追加時は両方更新

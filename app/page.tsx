@@ -13,7 +13,7 @@ export default async function Home({ searchParams }: Props) {
       .from('mcs')
       .select('id, name, current_rating, peak_rating, battle_count, win_count')
       .eq('is_active', true)
-      .gte('battle_count', 5)
+      .gte('battle_count', 10)
       .order('current_rating', { ascending: false });
 
     if (error) console.error('Failed to fetch MCs:', error);

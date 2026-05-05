@@ -95,7 +95,7 @@ export default function AboutPage() {
 
           <p className="text-xs text-gray-500">
             ※ レーティングは試合の時系列順（開催日 → ラウンド順）に計算されます。
-            ランキングには5試合以上の出場者のみ表示されます。
+            ランキングには10試合以上の出場者のみ表示されます。
           </p>
         </div>
       </section>
