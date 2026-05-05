@@ -11,63 +11,24 @@ async function requireAdmin() {
   return user;
 }
 
-/** 手動ティアを設定（NULLで解除） */
-export async function updateManualTier(
-  tournamentId: string,
-  tier: TierLabel | null,
-  reason: string,
-) {
-  const user = await requireAdmin();
+/** シリーズ単位で manual_tier を一括更新する */
+export async function updateSeriesTier(series: string, tier: TierLabel) {
+  await requireAdmin();
   const admin = createAdminClient();
 
-  // 現在のauto_tierを取得
-  const { data: current, error: fetchErr } = await admin
-    .from('tournaments')
-    .select('auto_tier, manual_tier, final_tier')
-    .eq('id', tournamentId)
-    .single();
-  if (fetchErr || !current) throw new Error('大会取得に失敗しました');
+  const coeff = TIER_COEFFS[tier];
 
-  const newFinalTier = tier ?? (current.auto_tier as TierLabel | null) ?? 'B';
-  const newGradeCoeff = TIER_COEFFS[newFinalTier as TierLabel] ?? 1.0;
-
-  // tournaments を更新
-  const { error: updateErr } = await admin
+  const { error } = await admin
     .from('tournaments')
     .update({
       manual_tier: tier,
-      final_tier: newFinalTier,
-      grade_coeff: newGradeCoeff,
+      final_tier: tier,
+      grade_coeff: coeff,
     })
-    .eq('id', tournamentId);
-  if (updateErr) throw new Error('更新に失敗しました: ' + updateErr.message);
+    .eq('series', series);
 
-  // 監査ログを記録
-  const { error: logErr } = await admin
-    .from('tournament_tier_logs')
-    .insert({
-      tournament_id: tournamentId,
-      changed_by: user.id,
-      prev_manual_tier: current.manual_tier ?? null,
-      new_manual_tier: tier,
-      reason: reason || null,
-      auto_tier: current.auto_tier ?? null,
-      final_tier: newFinalTier,
-    });
-  if (logErr) console.error('監査ログ記録失敗:', logErr.message);
+  if (error) throw new Error('更新に失敗しました: ' + error.message);
 
   revalidatePath('/admin/coefficients');
   revalidatePath('/tournaments');
-}
-
-/** tier_locked トグル */
-export async function toggleTierLock(tournamentId: string, locked: boolean) {
-  await requireAdmin();
-  const admin = createAdminClient();
-  const { error } = await admin
-    .from('tournaments')
-    .update({ tier_locked: locked })
-    .eq('id', tournamentId);
-  if (error) throw new Error('ロック更新に失敗しました: ' + error.message);
-  revalidatePath('/admin/coefficients');
 }
