@@ -89,7 +89,7 @@ export default function AboutPage() {
             <ul className="text-xs text-gray-500 space-y-1 list-disc list-inside">
               <li><span className="text-gray-300">B_tier</span>：大会シリーズに固定で設定されるベース係数</li>
               <li><span className="text-gray-300">Q</span>：大会参加者の平均レートに基づく微調整（±8%以内）</li>
-              <li>参加者8名未満の大会は grade_coeff=2.0 固定</li>
+              <li>参加者8名未満の大会は Q=1.0 固定</li>
             </ul>
           </div>
 
